@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 3815504036818428860}
   - component: {fileID: 4654793529021173381}
   - component: {fileID: -3156021865077513048}
-  - component: {fileID: -8557346623331867755}
+  - component: {fileID: 1075186330234896792}
+  - component: {fileID: 4138749120751102788}
   m_Layer: 0
   m_Name: UnitSimple
   m_TagString: Enemy
@@ -46,7 +47,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5, z: 1}
-  m_Center: {x: 0, y: -0.15, z: 0}
+  m_Center: {x: 0, y: -0.25, z: 0}
 --- !u!54 &-3156021865077513048
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -61,9 +62,9 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 84
   m_CollisionDetection: 0
---- !u!114 &-8557346623331867755
+--- !u!114 &1075186330234896792
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,12 +73,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 3000821009540762047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01343b92ca1d23d4a91b5d5e99e6c36f, type: 3}
+  m_Script: {fileID: 11500000, guid: 47e1997da0dd3bb4cbcb043fd9d4db3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
-  health: 5
   town: {fileID: 0}
+  agent: {fileID: 4138749120751102788}
+--- !u!195 &4138749120751102788
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3000821009540762047}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 2
 --- !u!1 &4680117636825636513
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +113,7 @@ GameObject:
   - component: {fileID: 2167389181579302615}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Unit
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,7 +193,7 @@ GameObject:
   - component: {fileID: 3982927267667653873}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Unit
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

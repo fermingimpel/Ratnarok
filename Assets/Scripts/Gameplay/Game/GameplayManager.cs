@@ -12,9 +12,8 @@ public class GameplayManager : MonoBehaviour
 
     public delegate void StartOfAttack();
     public static event StartOfAttack startEnemyAttack;
-    void Start()
-    {
-        StartCoroutine(LateStart());   
+    void Start() {
+        StartCoroutine(LateStart());
     }
 
     IEnumerator LateStart() {
@@ -31,7 +30,7 @@ public class GameplayManager : MonoBehaviour
         StopCoroutine(AttackPhase());
         StartCoroutine(PreparePhase());
         if (endEnemyAttack != null)
-            endEnemyAttack(); 
+            endEnemyAttack();
         yield return null;
     }
     IEnumerator PreparePhase() {
