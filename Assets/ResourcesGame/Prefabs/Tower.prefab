@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6222929044393764987}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9816cb9c014f14d42a3e1d5e44205377, type: 2}
+  - {fileID: 2100000, guid: 24c83a5bbffcabb45851c5ac7442766b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 2178542688026175086}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,7 +138,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 24c83a5bbffcabb45851c5ac7442766b, type: 2}
+  - {fileID: 2100000, guid: b6e51b9a2ff52b24fb6bd5effc2eb31e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -168,8 +168,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 812174994789643686}
-  - component: {fileID: 8935164452049359447}
   - component: {fileID: 2745539849342240146}
+  - component: {fileID: 7793848188359601000}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Tower
@@ -192,22 +192,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8935164452049359447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7983530888400163335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 427f0c83a663b674b8782a6414b6feb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bc: {fileID: 2745539849342240146}
-  enemies: []
-  shoot: {fileID: 4091479588504880779, guid: fecdaa57c18899243a762eca16832f21, type: 3}
-  upset: {x: 0, y: 0, z: 0}
 --- !u!65 &2745539849342240146
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -219,5 +203,21 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 15, y: 1, z: 15}
-  m_Center: {x: 0, y: -1, z: 0}
+  m_Size: {x: 15, y: 2, z: 15}
+  m_Center: {x: 0, y: -2, z: 0}
+--- !u!114 &7793848188359601000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7983530888400163335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b3ba6a1d3bba341813cc4ccbdfc7fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bc: {fileID: 2745539849342240146}
+  enemies: []
+  shoot: {fileID: 2710839702630804571, guid: fecdaa57c18899243a762eca16832f21, type: 3}
+  upset: {x: 0, y: 0, z: 0}

@@ -78,6 +78,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   town: {fileID: 0}
   agent: {fileID: 4138749120751102788}
+  health: 5
 --- !u!195 &4138749120751102788
 NavMeshAgent:
   m_ObjectHideFlags: 0
