@@ -168,8 +168,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 812174994789643686}
-  - component: {fileID: 2745539849342240146}
   - component: {fileID: 7793848188359601000}
+  - component: {fileID: 7735834753466127287}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Tower
@@ -192,19 +192,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2745539849342240146
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7983530888400163335}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 15, y: 2, z: 15}
-  m_Center: {x: 0, y: -2, z: 0}
 --- !u!114 &7793848188359601000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,7 +204,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b3ba6a1d3bba341813cc4ccbdfc7fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bc: {fileID: 2745539849342240146}
   enemies: []
   shoot: {fileID: 2710839702630804571, guid: fecdaa57c18899243a762eca16832f21, type: 3}
   upset: {x: 0, y: 0, z: 0}
+  timeToAttack: 0.5
+  distanceToAttack: 8
+  damage: 2
+--- !u!65 &7735834753466127287
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7983530888400163335}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.5, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}

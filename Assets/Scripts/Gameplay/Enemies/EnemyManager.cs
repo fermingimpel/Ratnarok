@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour {
-    [SerializeField] GameObject spawnerPoints;
-    [SerializeField] GameObject enemyPrefab;
+    [SerializeField] GameObject[] spawnerPoints;
+    [SerializeField] GameObject[] enemies;
     [SerializeField] Transform enemyParent;
     [SerializeField] Vector3 upset;
     bool attacking = true;
+
+    public delegate void EnemyCreated(GameObject enemy);
+    public static event EnemyCreated CreatedEnemy;
+
     void Start() {
         GameplayManager.startEnemyAttack += StartSpawning;
         GameplayManager.endEnemyAttack += StopSpawning;
@@ -29,7 +33,7 @@ public class EnemyManager : MonoBehaviour {
     }
 
     IEnumerator PrepareEnemy() {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         CreateEnemies();
         StopCoroutine(PrepareEnemy());
         yield return null;
@@ -38,7 +42,12 @@ public class EnemyManager : MonoBehaviour {
         if (!attacking)
             return;
 
-        GameObject go = Instantiate(enemyPrefab, spawnerPoints.transform.position, Quaternion.identity, enemyParent);
+        for(int i = 0; i < spawnerPoints.Length; i++) {
+            GameObject go = Instantiate(enemies[Random.Range(0, enemies.Length)], spawnerPoints[i].transform.position, Quaternion.identity, enemyParent);
+            if (CreatedEnemy != null)
+                CreatedEnemy(go);
+        }
+       
         StartCoroutine(PrepareEnemy());
     }
 }

@@ -4,13 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Base
   - Tower
   - Spawner
   - Enemy
-  - Mountain
   - Town
   - Unit
+  - Road
+  - Base
+  - Map
   layers:
   - Default
   - TransparentFX

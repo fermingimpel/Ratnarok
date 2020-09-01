@@ -2,55 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tower : MonoBehaviour
-{
-    [SerializeField] BoxCollider bc;
+public class Tower : MonoBehaviour {
     [SerializeField] List<GameObject> enemies;
     [SerializeField] Shoot shoot;
     [SerializeField] Vector3 upset;
+    [SerializeField] float timeToAttack;
+    [SerializeField] float distanceToAttack;
+    [SerializeField] int damage;
     void Start() {
-        enemies.Add(null);
-      //  bc.enabled = false;
         GameplayManager.startEnemyAttack += StartDefend;
         GameplayManager.endEnemyAttack += StopDefend;
+
         StartCoroutine(PrepareAttack());
     }
 
     private void OnDisable() {
         GameplayManager.startEnemyAttack -= StartDefend;
         GameplayManager.endEnemyAttack -= StopDefend;
+
     }
 
     void StopDefend() {
-        enemies.Clear();
-        enemies.Add(null);
-        bc.enabled = false;
         StopCoroutine(PrepareAttack());
     }
 
     void StartDefend() {
-        enemies.Clear();
-        enemies.Add(null);
-        bc.enabled = true;
         StartCoroutine(PrepareAttack());
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag != "Enemy")
-            return;
-
-        enemies.Add(other.gameObject);
-    }
-
-    private void OnTriggerExit(Collider other) {
-        if (other.gameObject.tag != "Enemy")
-            return;
-
-        enemies.Remove(other.gameObject);
+    public void SetEnemyList(List<GameObject> list) {
+        enemies = list;
     }
 
     IEnumerator PrepareAttack() {
-        yield return new WaitForSeconds(0.33f);
+        yield return new WaitForSeconds(timeToAttack);
         int index = 0;
         float nearest = 999999;
         for (int i = 0; i < enemies.Count; i++) {
@@ -61,13 +46,14 @@ public class Tower : MonoBehaviour
                 }
         }
         StopCoroutine(PrepareAttack());
-        Attack(index);
+        Attack(index, nearest);
         yield return null;
     }
-    void Attack(int ind) {
-        if (enemies[ind] != null) {
+    void Attack(int ind, float dis) {
+        if (enemies[ind] != null && dis < distanceToAttack) {
             Shoot s = Instantiate(shoot, transform.position + upset, Quaternion.identity);
             s.SetObjective(enemies[ind].GetComponent<Enemy>());
+            s.SetDamage(damage);
         }
         StartCoroutine(PrepareAttack());
     }
