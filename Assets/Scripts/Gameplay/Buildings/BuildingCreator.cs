@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildingCreator : MonoBehaviour {
-    [SerializeField] GameObject tower;
+    [SerializeField] Build[] structures;
     [SerializeField] Vector3 upset;
     [SerializeField] Transform towerParent;
     [SerializeField] int limitTowers;
@@ -11,17 +11,27 @@ public class BuildingCreator : MonoBehaviour {
     bool canCreateTowers = true;
     Camera cam;
 
-   //public delegate void TowerUsed();
-   //public static event TowerUsed TowerCreated;
+    //public delegate void TowerUsed();
+    //public static event TowerUsed TowerCreated;
 
-    [SerializeField] List<Tower> towers;
-    [SerializeField] List<GameObject> enemies;
+    [SerializeField] int gold;
+    [SerializeField] int goldPerKill;
+
+    [SerializeField] List<Build> builds;
+    [SerializeField] List<Enemy> enemies;
+
+    public delegate void GoldChanged(int gold);
+    public static event GoldChanged ChangedGold;
 
     void Start() {
-        towers = new List<Tower>();
-        towers.Clear();
 
-        enemies = new List<GameObject>();
+        if (ChangedGold != null)
+            ChangedGold(gold);
+
+        builds = new List<Build>();
+        builds.Clear();
+
+        enemies = new List<Enemy>();
         enemies.Clear();
         enemies.Add(null);
 
@@ -30,8 +40,8 @@ public class BuildingCreator : MonoBehaviour {
         GameplayManager.endEnemyAttack += StartCreating;
         GameplayManager.startEnemyAttack += StopCreating;
 
-        EnemyManager.CreatedEnemy += AddEnemyToList;
-        Enemy.Dead += RemoveEnemyInList;
+        EnemyManager.CreatedEnemy += EnemyCreated;
+        Enemy.Dead += EnemyKilled;
 
     }
 
@@ -39,11 +49,10 @@ public class BuildingCreator : MonoBehaviour {
         GameplayManager.endEnemyAttack -= StartCreating;
         GameplayManager.startEnemyAttack -= StopCreating;
 
-        EnemyManager.CreatedEnemy -= AddEnemyToList;
-        Enemy.Dead -= RemoveEnemyInList;
+        EnemyManager.CreatedEnemy -= EnemyCreated;
+        Enemy.Dead -= EnemyKilled;
     }
 
-    // Update is called once per frame
     void Update() {
         if (!canCreateTowers)
             return;
@@ -60,30 +69,34 @@ public class BuildingCreator : MonoBehaviour {
                 if (hit.transform.tag == "Base") {
                     Vector3 pos = new Vector3((int)hit.transform.position.x, hit.point.y, (int)hit.transform.position.z);
                     pos += upset;
-                    GameObject go = Instantiate(tower, pos, Quaternion.identity, towerParent);
-                    Tower t = go.GetComponent<Tower>();
+                    Build go = Instantiate(structures[0], pos, Quaternion.identity, towerParent);
                    
-                    towers.Add(t);
-                    t.SetEnemyList(enemies);
+                   
+                    builds.Add(go);
+                    go.SetEnemyList(enemies);
                     actualTowers--;
                    //if (TowerCreated != null)
                    //    TowerCreated();
-
                 }
             }
         }
     }
 
-    void AddEnemyToList(GameObject e) {
+    void EnemyCreated(Enemy e) {
         enemies.Add(e);
-        for (int i = 0; i < towers.Count; i++)
-            towers[i].SetEnemyList(enemies);
+        for (int i = 0; i < builds.Count; i++)
+            builds[i].SetEnemyList(enemies);
     }
 
-    void RemoveEnemyInList(GameObject e) {
+    void EnemyKilled(Enemy e) {
+        gold += goldPerKill;
+
+        if (ChangedGold != null)
+            ChangedGold(gold);
+
         enemies.Remove(e);
-        for (int i = 0; i < towers.Count; i++)
-            towers[i].SetEnemyList(enemies);
+        for (int i = 0; i < builds.Count; i++)
+            builds[i].SetEnemyList(enemies);
     }
 
     public int GetActualTowers() {

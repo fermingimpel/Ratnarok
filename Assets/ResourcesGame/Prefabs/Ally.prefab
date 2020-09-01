@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 4138749120751102788}
   - component: {fileID: 2727385409866046656}
   m_Layer: 0
-  m_Name: Tank
-  m_TagString: Enemy
+  m_Name: Ally
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 2167389181579302615}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Enemy
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,7 +161,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9b7cb36552f043844a7d799ef922c05d, type: 2}
+  - {fileID: 2100000, guid: 666348ad77a931640ac1f6fbcc60658c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 3982927267667653873}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Enemy
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

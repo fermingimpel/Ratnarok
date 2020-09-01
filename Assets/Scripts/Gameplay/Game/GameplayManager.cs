@@ -12,7 +12,18 @@ public class GameplayManager : MonoBehaviour
 
     public delegate void StartOfAttack();
     public static event StartOfAttack startEnemyAttack;
+
+    public delegate void UpdateUIState(Stage s);
+    public static event UpdateUIState UIStateUpdate;
+
+    public enum Stage {
+        Preparing,
+        Attack
+    }
+
     void Start() {
+        if (UIStateUpdate != null)
+            UIStateUpdate(Stage.Preparing);
         StartCoroutine(LateStart());
     }
 
@@ -26,6 +37,8 @@ public class GameplayManager : MonoBehaviour
     }
 
     IEnumerator AttackPhase() {
+        if (UIStateUpdate != null)
+            UIStateUpdate(Stage.Attack); 
         yield return new WaitForSeconds(timeInAttack);
         StopCoroutine(AttackPhase());
         StartCoroutine(PreparePhase());
@@ -34,11 +47,14 @@ public class GameplayManager : MonoBehaviour
         yield return null;
     }
     IEnumerator PreparePhase() {
+        if (UIStateUpdate != null)
+            UIStateUpdate(Stage.Preparing);
         yield return new WaitForSeconds(timeInPrepare);
         StopCoroutine(PreparePhase());
         StartCoroutine(AttackPhase());
         if (startEnemyAttack != null)
             startEnemyAttack();
+
         yield return null;
     }
 }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour {
     [SerializeField] GameObject[] spawnerPoints;
-    [SerializeField] GameObject[] enemies;
+    [SerializeField] Enemy[] enemies;
     [SerializeField] Transform enemyParent;
     [SerializeField] Vector3 upset;
     bool attacking = true;
 
-    public delegate void EnemyCreated(GameObject enemy);
+    public delegate void EnemyCreated(Enemy enemy);
     public static event EnemyCreated CreatedEnemy;
 
     void Start() {
@@ -42,7 +42,7 @@ public class EnemyManager : MonoBehaviour {
             return;
 
         for(int i = 0; i < spawnerPoints.Length; i++) {
-            GameObject go = Instantiate(enemies[Random.Range(0, enemies.Length)], spawnerPoints[i].transform.position, Quaternion.identity, enemyParent);
+            Enemy go = Instantiate(enemies[Random.Range(0, enemies.Length)], spawnerPoints[i].transform.position, Quaternion.identity, enemyParent);
             if (CreatedEnemy != null)
                 CreatedEnemy(go);
         }

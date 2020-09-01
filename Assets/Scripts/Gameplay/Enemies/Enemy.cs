@@ -4,41 +4,43 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour {
-    [SerializeField] Town town;
-    [SerializeField] NavMeshAgent agent;
-    [SerializeField] int health;
-    [SerializeField] int damage;
+    [SerializeField] protected Town town;
+    [SerializeField] protected NavMeshAgent agent;
+    [SerializeField] protected int health;
+    [SerializeField] protected int damage;
 
-    public delegate void EnemyDead(GameObject e);
+    public delegate void EnemyDead(Enemy e);
     public static event EnemyDead Dead;
 
-    public enum Type {
-        Attacker,
-        Tank
-    }
-
-    void Start() {
+    protected virtual void Start() {
         town = FindObjectOfType<Town>();
         if (town != null)
             agent.destination = town.transform.position;
     }
 
-    public void ReceiveDamage(int d) {
+    public virtual void ReceiveDamage(int d) {
         health -= d;
         if (health <= 0) {
             if (Dead != null)
-                Dead(this.gameObject);
+                Dead(this);
 
             Destroy(this.gameObject);
         }
     }
 
-    void AttackTown() {
+    protected void OnDie() {
+        if (Dead != null)
+            Dead(this);
+
+        Destroy(this.gameObject);
+    }
+
+    protected virtual void AttackTown() {
         town.ReceiveDamage(damage);
         Destroy(this.gameObject);
     }
 
-    private void OnTriggerEnter(Collider other) {
+    protected virtual void OnTriggerEnter(Collider other) {
         switch (other.tag) {
             case "Town":
                 AttackTown();

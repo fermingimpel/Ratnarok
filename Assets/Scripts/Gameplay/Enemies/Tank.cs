@@ -3,13 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Tank : Enemy {
-    // Start is called before the first frame update
-    void Start() {
+    public override void ReceiveDamage(int d) {
+        health -= d;
+        if (health <= 0) {
+            base.OnDie();
 
+            Destroy(this.gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update() {
+    protected override void AttackTown() {
+        town.ReceiveDamage(damage);
+        Destroy(this.gameObject);
+    }
 
+    protected override void OnTriggerEnter(Collider other) {
+        switch (other.tag) {
+            case "Town":
+                AttackTown();
+                break;
+            case "Fence":
+                break;
+            default:
+                break;
+        }
     }
 }

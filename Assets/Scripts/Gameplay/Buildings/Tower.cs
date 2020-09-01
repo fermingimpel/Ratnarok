@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tower : MonoBehaviour {
-    [SerializeField] List<GameObject> enemies;
+public class Tower : Build {
     [SerializeField] Shoot shoot;
     [SerializeField] Vector3 upset;
     [SerializeField] float timeToAttack;
@@ -12,8 +11,6 @@ public class Tower : MonoBehaviour {
     void Start() {
         GameplayManager.startEnemyAttack += StartDefend;
         GameplayManager.endEnemyAttack += StopDefend;
-
-        StartCoroutine(PrepareAttack());
     }
 
     private void OnDisable() {
@@ -30,7 +27,7 @@ public class Tower : MonoBehaviour {
         StartCoroutine(PrepareAttack());
     }
 
-    public void SetEnemyList(List<GameObject> list) {
+    public override void SetEnemyList(List<Enemy> list) {
         enemies = list;
     }
 
