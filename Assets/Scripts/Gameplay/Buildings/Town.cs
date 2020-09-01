@@ -20,10 +20,4 @@ public class Town : MonoBehaviour {
         if (health <= 0)
             Destroy(this.gameObject);
     }
-
-    private void OnTriggerEnter(Collider other) {
-        if (other.transform.tag == "Enemy")
-            Destroy(other.gameObject);
-    }
-
 }

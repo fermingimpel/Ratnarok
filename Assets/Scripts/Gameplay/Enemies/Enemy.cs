@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour {
 
     void AttackTown() {
         town.ReceiveDamage(damage);
+        Destroy(this.gameObject);
     }
 
     private void OnTriggerEnter(Collider other) {

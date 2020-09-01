@@ -26,7 +26,6 @@ public class BuildingCreator : MonoBehaviour {
         enemies.Add(null);
 
         cam = Camera.main;
-        canCreateTowers = true;
         actualTowers = limitTowers;
         GameplayManager.endEnemyAttack += StartCreating;
         GameplayManager.startEnemyAttack += StopCreating;
@@ -96,7 +95,5 @@ public class BuildingCreator : MonoBehaviour {
     void StartCreating() {
         canCreateTowers = true;
         actualTowers = limitTowers;
-        //if (TowerCreated != null)
-        //    TowerCreated();
     }
 }

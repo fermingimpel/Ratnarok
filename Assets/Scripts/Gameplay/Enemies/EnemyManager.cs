@@ -15,7 +15,6 @@ public class EnemyManager : MonoBehaviour {
     void Start() {
         GameplayManager.startEnemyAttack += StartSpawning;
         GameplayManager.endEnemyAttack += StopSpawning;
-        StartCoroutine(PrepareEnemy());
     }
 
     private void OnDisable() {
