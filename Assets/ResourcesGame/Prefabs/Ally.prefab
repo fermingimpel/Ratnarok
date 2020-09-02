@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 3815504036818428860}
   - component: {fileID: 4654793529021173381}
   - component: {fileID: -3156021865077513048}
-  - component: {fileID: 4138749120751102788}
-  - component: {fileID: 2727385409866046656}
+  - component: {fileID: 4501115537939462211}
   m_Layer: 0
   m_Name: Ally
   m_TagString: Unit
@@ -64,29 +63,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!195 &4138749120751102788
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3000821009540762047}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 0
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 0
---- !u!114 &2727385409866046656
+--- !u!114 &4501115537939462211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,13 +72,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3000821009540762047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76ba04fe6bf2baa4f96d7fc1ad19f83f, type: 3}
+  m_Script: {fileID: 11500000, guid: daf87c23573eae04da9ec07e7c7167d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  town: {fileID: 0}
-  agent: {fileID: 4138749120751102788}
-  health: 20
-  damage: 1
+  spawnPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &4680117636825636513
 GameObject:
   m_ObjectHideFlags: 0

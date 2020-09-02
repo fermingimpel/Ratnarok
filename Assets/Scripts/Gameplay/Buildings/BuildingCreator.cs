@@ -6,13 +6,15 @@ public class BuildingCreator : MonoBehaviour {
     [SerializeField] Build[] structures;
     [SerializeField] Vector3 upset;
     [SerializeField] Transform towerParent;
-    [SerializeField] int limitTowers;
-    int actualTowers;
-    bool canCreateTowers = true;
-    Camera cam;
 
-    //public delegate void TowerUsed();
-    //public static event TowerUsed TowerCreated;
+    int buildToCreate = 0;
+    
+    public enum TypeOfBuilds {
+        Tower,
+        KnivesSpinner
+    }
+
+    Camera cam;
 
     [SerializeField] int gold;
     [SerializeField] int goldPerKill;
@@ -36,9 +38,6 @@ public class BuildingCreator : MonoBehaviour {
         enemies.Add(null);
 
         cam = Camera.main;
-        actualTowers = limitTowers;
-        GameplayManager.endEnemyAttack += StartCreating;
-        GameplayManager.startEnemyAttack += StopCreating;
 
         EnemyManager.CreatedEnemy += EnemyCreated;
         Enemy.Dead += EnemyKilled;
@@ -46,19 +45,15 @@ public class BuildingCreator : MonoBehaviour {
     }
 
     private void OnDisable() {
-        GameplayManager.endEnemyAttack -= StartCreating;
-        GameplayManager.startEnemyAttack -= StopCreating;
-
         EnemyManager.CreatedEnemy -= EnemyCreated;
         Enemy.Dead -= EnemyKilled;
     }
 
     void Update() {
-        if (!canCreateTowers)
-            return;
-
-        if (actualTowers <= 0)
-            return;
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+            buildToCreate = 0;
+        else if (Input.GetKeyDown(KeyCode.Alpha1))
+            buildToCreate = 1;
 
         Vector3 mousePos = Input.mousePosition;
         Ray ray = cam.ScreenPointToRay(mousePos);
@@ -67,16 +62,18 @@ public class BuildingCreator : MonoBehaviour {
         if (Physics.Raycast(ray, out hit, 200)) {
             if (Input.GetMouseButtonDown(0)) {
                 if (hit.transform.tag == "Base") {
-                    Vector3 pos = new Vector3((int)hit.transform.position.x, hit.point.y, (int)hit.transform.position.z);
-                    pos += upset;
-                    Build go = Instantiate(structures[0], pos, Quaternion.identity, towerParent);
-                   
-                   
-                    builds.Add(go);
-                    go.SetEnemyList(enemies);
-                    actualTowers--;
-                   //if (TowerCreated != null)
-                   //    TowerCreated();
+                    if (structures[buildToCreate].GetGoldCost() <= gold) {
+                        Vector3 pos = new Vector3((int)hit.transform.position.x, hit.point.y + upset.y, (int)hit.transform.position.z);
+                        Build go = Instantiate(structures[buildToCreate], pos, Quaternion.identity, towerParent);
+                        builds.Add(go);
+                        go.SetEnemyList(enemies);
+                        gold -= structures[buildToCreate].GetGoldCost();
+                        if (ChangedGold != null)
+                            ChangedGold(gold);
+
+                        //if (TowerCreated != null)
+                        //    TowerCreated();
+                    }
                 }
             }
         }
@@ -97,16 +94,5 @@ public class BuildingCreator : MonoBehaviour {
         enemies.Remove(e);
         for (int i = 0; i < builds.Count; i++)
             builds[i].SetEnemyList(enemies);
-    }
-
-    public int GetActualTowers() {
-        return actualTowers;
-    }
-    void StopCreating() {
-        canCreateTowers = false;
-    }
-    void StartCreating() {
-        canCreateTowers = true;
-        actualTowers = limitTowers;
     }
 }

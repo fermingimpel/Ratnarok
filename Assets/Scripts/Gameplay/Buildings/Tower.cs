@@ -5,32 +5,21 @@ using UnityEngine;
 public class Tower : Build {
     [SerializeField] Shoot shoot;
     [SerializeField] Vector3 upset;
-    [SerializeField] float timeToAttack;
-    [SerializeField] float distanceToAttack;
-    [SerializeField] int damage;
-    void Start() {
-        GameplayManager.startEnemyAttack += StartDefend;
-        GameplayManager.endEnemyAttack += StopDefend;
-    }
-
-    private void OnDisable() {
-        GameplayManager.startEnemyAttack -= StartDefend;
-        GameplayManager.endEnemyAttack -= StopDefend;
-
-    }
-
-    void StopDefend() {
+  
+    protected override void StopDefend() {
         StopCoroutine(PrepareAttack());
     }
 
-    void StartDefend() {
+    protected override void StartDefend() {
         StartCoroutine(PrepareAttack());
     }
 
     public override void SetEnemyList(List<Enemy> list) {
         enemies = list;
     }
-
+    public override int GetGoldCost() {
+        return goldCost;
+    }
     IEnumerator PrepareAttack() {
         yield return new WaitForSeconds(timeToAttack);
         int index = 0;

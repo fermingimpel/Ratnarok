@@ -14,11 +14,6 @@ public class Town : MonoBehaviour {
             ChangedHP(health);
     }
 
-    // Update is called once per frame
-    void Update() {
-
-    }
-
     public void ReceiveDamage(int d) {
         health -= d;
         if (health <= 0) {
