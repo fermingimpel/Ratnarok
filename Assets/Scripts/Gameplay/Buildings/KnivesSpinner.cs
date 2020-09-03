@@ -19,7 +19,6 @@ public class KnivesSpinner : Build {
     }
 
     IEnumerator PrepareAttack() {
-        Debug.Log("Coco");
         yield return new WaitForSeconds(timeToAttack);
         StopCoroutine(PrepareAttack());
         Attack();
