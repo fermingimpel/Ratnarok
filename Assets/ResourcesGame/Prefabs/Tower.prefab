@@ -206,11 +206,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies: []
   goldCost: 70
+  timeToAttack: 0.4
+  distanceToAttack: 8
+  damage: 20
   shoot: {fileID: 2710839702630804571, guid: fecdaa57c18899243a762eca16832f21, type: 3}
   upset: {x: 0, y: 0, z: 0}
-  timeToAttack: 0.5
-  distanceToAttack: 8
-  damage: 2
 --- !u!65 &7735834753466127287
 BoxCollider:
   m_ObjectHideFlags: 0

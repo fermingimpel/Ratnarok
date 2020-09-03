@@ -4078,7 +4078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f4b13713c523c46b319ff0064925eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeInAttack: 30
+  timeInAttack: 15
   timeInPrepare: 10
 --- !u!4 &1554486484
 Transform:
@@ -20562,7 +20562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c38aadac81a2a94ba95d7c0941b5ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 1000
 --- !u!1 &8488859974656428492
 GameObject:
   m_ObjectHideFlags: 0

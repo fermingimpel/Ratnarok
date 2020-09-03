@@ -100,8 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   town: {fileID: 0}
   agent: {fileID: 4138749120751102788}
-  health: 15
-  damage: 1
+  health: 150
+  damage: 50
 --- !u!1 &4680117636825636513
 GameObject:
   m_ObjectHideFlags: 0

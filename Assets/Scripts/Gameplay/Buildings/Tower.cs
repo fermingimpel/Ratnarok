@@ -6,13 +6,13 @@ public class Tower : Build {
     [SerializeField] Shoot shoot;
     [SerializeField] Vector3 upset;
   
-    protected override void StopDefend() {
-        StopCoroutine(PrepareAttack());
-    }
-
-    protected override void StartDefend() {
-        StartCoroutine(PrepareAttack());
-    }
+   protected override void StopDefend() {
+       StopCoroutine(PrepareAttack());
+   }
+   
+   protected override void StartDefend() {
+       StartCoroutine(PrepareAttack());
+   }
 
     public override void SetEnemyList(List<Enemy> list) {
         enemies = list;

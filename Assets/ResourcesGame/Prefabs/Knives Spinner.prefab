@@ -539,9 +539,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies: []
   goldCost: 70
-  timeToAttack: 0.33
+  timeToAttack: 2
   distanceToAttack: 5
-  damage: 2
+  damage: 25
   knives:
   - {fileID: 7192411760490209709}
   - {fileID: 5918856214267859753}

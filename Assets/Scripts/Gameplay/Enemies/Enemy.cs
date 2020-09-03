@@ -16,15 +16,17 @@ public class Enemy : MonoBehaviour {
         town = FindObjectOfType<Town>();
         if (town != null)
             agent.destination = town.transform.position;
+        GameplayManager.endEnemyAttack += OnDie;
+    }
+
+    private void OnDisable() {
+        GameplayManager.endEnemyAttack -= OnDie;
     }
 
     public virtual void ReceiveDamage(int d) {
         health -= d;
         if (health <= 0) {
-            if (Dead != null)
-                Dead(this);
-
-            Destroy(this.gameObject);
+            OnDie();
         }
     }
 

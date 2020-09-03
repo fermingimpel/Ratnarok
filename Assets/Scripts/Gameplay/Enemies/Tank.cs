@@ -7,8 +7,6 @@ public class Tank : Enemy {
         health -= d;
         if (health <= 0) {
             base.OnDie();
-
-            Destroy(this.gameObject);
         }
     }
 

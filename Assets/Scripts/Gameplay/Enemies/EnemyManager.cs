@@ -27,24 +27,32 @@ public class EnemyManager : MonoBehaviour {
     }
 
     void StartSpawning() {
+        Debug.Log("Entra start spawning");
         attacking = true;
         StartCoroutine(CreateEnemies());
     }
     void StopSpawning() {
+        Debug.Log("Entra stop spawning");
         attacking = false;
         StopCoroutine(PrepareEnemy());
+        StopCoroutine(CreateEnemies());
     }
 
     IEnumerator PrepareEnemy() {
         yield return new WaitForSeconds(timeToHorde);
-        StopCoroutine(PrepareEnemy());
-        StartCoroutine(CreateEnemies());
+        if (attacking) {
+            StopCoroutine(PrepareEnemy());
+            StartCoroutine(CreateEnemies());
+        }
+        else
+            StopCoroutine(PrepareEnemy());
         yield return null;
     }
     IEnumerator CreateEnemies() {
-        if (!attacking)
+        if (!attacking) {
+            StopCoroutine(CreateEnemies());
             yield return null;
-
+        }
         for (int i = 0; i < hordes; i++) {
             for (int j = 0; j < spawnerPoints.Length; j++) {
                 Enemy go = Instantiate(enemies[Random.Range(0, enemies.Length)], spawnerPoints[j].transform.position, Quaternion.identity, enemyParent);
@@ -54,8 +62,14 @@ public class EnemyManager : MonoBehaviour {
             yield return new WaitForSeconds(timeToSpawn);
         }
 
-        StopCoroutine(CreateEnemies());
-        StartCoroutine(PrepareEnemy());
+        if (attacking) {
+            StopCoroutine(CreateEnemies());
+            StartCoroutine(PrepareEnemy());
+        }
+        else {
+            StopCoroutine(PrepareEnemy());
+            StopCoroutine(CreateEnemies());
+        }
         yield return null;
     }
 }

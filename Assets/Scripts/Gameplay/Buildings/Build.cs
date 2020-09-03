@@ -8,6 +8,7 @@ public class Build : MonoBehaviour {
     [SerializeField] protected float timeToAttack;
     [SerializeField] protected float distanceToAttack;
     [SerializeField] protected int damage;
+    [SerializeField] protected bool defending;
     void Start() {
         GameplayManager.startEnemyAttack += StartDefend;
         GameplayManager.endEnemyAttack += StopDefend;
