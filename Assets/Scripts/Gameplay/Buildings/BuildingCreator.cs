@@ -42,20 +42,16 @@ public class BuildingCreator : MonoBehaviour {
 
         EnemyManager.CreatedEnemy += EnemyCreated;
         Enemy.Dead += EnemyKilled;
-
+        UIBuildings.BuildingButtonPressed += SelectTypeOfStructure;
     }
 
     private void OnDisable() {
         EnemyManager.CreatedEnemy -= EnemyCreated;
         Enemy.Dead -= EnemyKilled;
+        UIBuildings.BuildingButtonPressed -= SelectTypeOfStructure;
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            buildToCreate = (int)TypeOfBuilds.Tower;
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-            buildToCreate = (int)TypeOfBuilds.KnivesSpinner;
-
         Vector3 mousePos = Input.mousePosition;
         Ray ray = cam.ScreenPointToRay(mousePos);
 
@@ -78,6 +74,10 @@ public class BuildingCreator : MonoBehaviour {
                 }
             }
         }
+    }
+
+    void SelectTypeOfStructure(UIBuildings.TypeOfBuilds tob) {
+        buildToCreate = (int)tob;
     }
 
     void EnemyCreated(Enemy e) {
