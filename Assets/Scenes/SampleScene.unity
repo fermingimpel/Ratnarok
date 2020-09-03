@@ -1192,6 +1192,9 @@ MonoBehaviour:
   - {fileID: 1075186330234896792, guid: 4105afa5bf527af4c9cd65c131a1f14e, type: 3}
   enemyParent: {fileID: 1057995235}
   upset: {x: 0, y: 0.5, z: 0}
+  hordes: 5
+  timeToSpawn: 0.5
+  timeToHorde: 4
 --- !u!4 &604421523
 Transform:
   m_ObjectHideFlags: 0
@@ -3231,6 +3234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   structures:
+  - {fileID: 0}
   - {fileID: 7793848188359601000, guid: 0da6e27175166924a828aa185bf2a75c, type: 3}
   - {fileID: -5549936704840392927, guid: b190e5acfbd60e3478260ca2027d4d35, type: 3}
   upset: {x: 0, y: 1.5, z: 0}

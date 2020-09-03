@@ -9,6 +9,10 @@ public class EnemyManager : MonoBehaviour {
     [SerializeField] Vector3 upset;
     bool attacking = true;
 
+    [SerializeField] int hordes;
+    [SerializeField] float timeToSpawn;
+    [SerializeField] float timeToHorde;
+
     public delegate void EnemyCreated(Enemy enemy);
     public static event EnemyCreated CreatedEnemy;
 
@@ -24,7 +28,7 @@ public class EnemyManager : MonoBehaviour {
 
     void StartSpawning() {
         attacking = true;
-        StartCoroutine(PrepareEnemy());
+        StartCoroutine(CreateEnemies());
     }
     void StopSpawning() {
         attacking = false;
@@ -32,21 +36,26 @@ public class EnemyManager : MonoBehaviour {
     }
 
     IEnumerator PrepareEnemy() {
-        yield return new WaitForSeconds(1f);
-        CreateEnemies();
+        yield return new WaitForSeconds(timeToHorde);
         StopCoroutine(PrepareEnemy());
+        StartCoroutine(CreateEnemies());
         yield return null;
     }
-    void CreateEnemies() {
+    IEnumerator CreateEnemies() {
         if (!attacking)
-            return;
+            yield return null;
 
-        for(int i = 0; i < spawnerPoints.Length; i++) {
-            Enemy go = Instantiate(enemies[Random.Range(0, enemies.Length)], spawnerPoints[i].transform.position, Quaternion.identity, enemyParent);
-            if (CreatedEnemy != null)
-                CreatedEnemy(go);
+        for (int i = 0; i < hordes; i++) {
+            for (int j = 0; j < spawnerPoints.Length; j++) {
+                Enemy go = Instantiate(enemies[Random.Range(0, enemies.Length)], spawnerPoints[j].transform.position, Quaternion.identity, enemyParent);
+                if (CreatedEnemy != null)
+                    CreatedEnemy(go);
+            }
+            yield return new WaitForSeconds(timeToSpawn);
         }
-       
+
+        StopCoroutine(CreateEnemies());
         StartCoroutine(PrepareEnemy());
+        yield return null;
     }
 }

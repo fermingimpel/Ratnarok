@@ -7,9 +7,10 @@ public class BuildingCreator : MonoBehaviour {
     [SerializeField] Vector3 upset;
     [SerializeField] Transform towerParent;
 
-    int buildToCreate = 0;
+    int buildToCreate = 1;
     
     public enum TypeOfBuilds {
+        None,
         Tower,
         KnivesSpinner
     }
@@ -50,10 +51,10 @@ public class BuildingCreator : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-            buildToCreate = 0;
-        else if (Input.GetKeyDown(KeyCode.Alpha1))
-            buildToCreate = 1;
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            buildToCreate = (int)TypeOfBuilds.Tower;
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+            buildToCreate = (int)TypeOfBuilds.KnivesSpinner;
 
         Vector3 mousePos = Input.mousePosition;
         Ray ray = cam.ScreenPointToRay(mousePos);
