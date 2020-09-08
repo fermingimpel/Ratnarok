@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6222929044393764987}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Tower
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 2178542688026175086}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Tower
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 7735834753466127287}
   m_Layer: 0
   m_Name: Tower
-  m_TagString: Tower
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,11 +206,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies: []
   goldCost: 70
+  baseTimeToAttack: 0.4
   timeToAttack: 0.4
   distanceToAttack: 8
   health: 350
   damage: 20
   defending: 0
+  inFury: 0
   shoot: {fileID: 2710839702630804571, guid: fecdaa57c18899243a762eca16832f21, type: 3}
   upset: {x: 0, y: 0, z: 0}
 --- !u!65 &7735834753466127287

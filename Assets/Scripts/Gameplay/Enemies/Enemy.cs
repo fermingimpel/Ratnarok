@@ -9,9 +9,11 @@ public class Enemy : MonoBehaviour {
     [SerializeField] protected NavMeshAgent agent;
     [SerializeField] protected int health;
     [SerializeField] protected int damage;
+    [SerializeField] protected int speed;
     [SerializeField] protected int maxDistanceToAttack;
     [SerializeField] protected int maxDistanceToSelect;
     [SerializeField] protected float timeToAttack;
+    [SerializeField] protected bool freezed;
 
     bool goingToTown;
     bool attacking=false;
@@ -23,7 +25,7 @@ public class Enemy : MonoBehaviour {
 
     protected virtual void Start() {
         attacking = false;
-        GameplayManager.endEnemyAttack += OnDie;
+        //GameplayManager.endEnemyAttack += OnDie;
         BuildingCreator.ChangedBuilds += SetBuildsList;
         Build.DestroyedBuild += RemoveBuildInList;
         StartCoroutine(LateStart());
@@ -37,12 +39,16 @@ public class Enemy : MonoBehaviour {
     }
 
     private void OnDisable() {
-        GameplayManager.endEnemyAttack -= OnDie;
+        //GameplayManager.endEnemyAttack -= OnDie;
         BuildingCreator.ChangedBuilds -= SetBuildsList;
         Build.DestroyedBuild -= RemoveBuildInList;
     }
 
     private void Update() {
+        if(freezed)
+            return;
+        
+
         if (Vector3.Distance(transform.position, agent.destination) < maxDistanceToAttack) {
             if (!attacking)
                 StartCoroutine(AttackObjective());
@@ -91,6 +97,15 @@ public class Enemy : MonoBehaviour {
         if (ind == index)
             SetNewObjective();
     }
+
+    public void SetFreeze(bool f) {
+        freezed = f;
+        if (f) 
+            agent.speed = 0;
+        else
+            agent.speed = speed;
+    }
+
     public virtual void ReceiveDamage(int d) {
         health -= d;
         if (health <= 0) {

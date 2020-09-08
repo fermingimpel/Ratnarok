@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7382064884109742784}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: Untagged
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 6222929044393764987}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Tower
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 2178542688026175086}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Tower
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 7856585495466407216}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Untagged
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 3776423230111686915}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 6441068024653504408}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: -5549936704840392927}
   m_Layer: 0
   m_Name: Knives Spinner
-  m_TagString: Tower
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -539,11 +539,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies: []
   goldCost: 70
+  baseTimeToAttack: 2
   timeToAttack: 2
   distanceToAttack: 5
   health: 300
   damage: 25
   defending: 0
+  inFury: 0
   knives:
   - {fileID: 7192411760490209709}
   - {fileID: 5918856214267859753}

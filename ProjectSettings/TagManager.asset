@@ -12,6 +12,8 @@ TagManager:
   - Road
   - Base
   - Map
+  - Build
+  - Spell
   layers:
   - Default
   - TransparentFX

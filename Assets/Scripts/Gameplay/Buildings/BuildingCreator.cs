@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildingCreator : MonoBehaviour {
+    [SerializeField] GameObject buildingsUI;
     [SerializeField] Build[] structures;
     [SerializeField] Vector3 upset;
     [SerializeField] Transform towerParent;
+
+    Vector3 posSelected;
+
+    Vector3 offsetButtonsBuildUI = new Vector3(100,0,0);
 
     int buildToCreate = 1;
     
@@ -30,6 +35,7 @@ public class BuildingCreator : MonoBehaviour {
     public static event BuildsChanged ChangedBuilds;
 
     void Start() {
+        buildingsUI.SetActive(false);
 
         if (ChangedGold != null)
             ChangedGold(gold);
@@ -66,18 +72,21 @@ public class BuildingCreator : MonoBehaviour {
         if (Physics.Raycast(ray, out hit, 200)) {
             if (Input.GetMouseButtonDown(0)) {
                 if (hit.transform.tag == "Base") {
-                    if (structures[buildToCreate].GetGoldCost() <= gold) {
-                        Vector3 pos = new Vector3((int)hit.transform.position.x, hit.point.y + upset.y, (int)hit.transform.position.z);
-                        Build go = Instantiate(structures[buildToCreate], pos, Quaternion.identity, towerParent);
-                        builds.Add(go);
-                        go.SetEnemyList(enemies);
-                        gold -= structures[buildToCreate].GetGoldCost();
-                        if (ChangedGold != null)
-                            ChangedGold(gold);
-
-                        if (ChangedBuilds != null)
-                            ChangedBuilds(builds);
-                    }
+                    //if (structures[buildToCreate].GetGoldCost() <= gold) {
+                    //    Vector3 pos = new Vector3((int)hit.transform.position.x, hit.point.y + upset.y, (int)hit.transform.position.z);
+                    //    Build go = Instantiate(structures[buildToCreate], pos, Quaternion.identity, towerParent);
+                    //    builds.Add(go);
+                    //    go.SetEnemyList(enemies);
+                    //    gold -= structures[buildToCreate].GetGoldCost();
+                    //    if (ChangedGold != null)
+                    //        ChangedGold(gold);
+                    //
+                    //    if (ChangedBuilds != null)
+                    //        ChangedBuilds(builds);
+                    //}
+                    posSelected = new Vector3((int)hit.transform.position.x, hit.point.y + upset.y, (int)hit.transform.position.z);
+                    buildingsUI.SetActive(true);
+                    buildingsUI.transform.position = mousePos + offsetButtonsBuildUI;
                 }
             }
         }
@@ -96,6 +105,21 @@ public class BuildingCreator : MonoBehaviour {
 
     void SelectTypeOfStructure(UIBuildings.TypeOfBuilds tob) {
         buildToCreate = (int)tob;
+        if (structures[buildToCreate] != null) {
+            if (structures[buildToCreate].GetGoldCost() <= gold) {
+                Build go = Instantiate(structures[buildToCreate], posSelected, Quaternion.identity, towerParent);
+                builds.Add(go);
+                go.SetEnemyList(enemies);
+                gold -= structures[buildToCreate].GetGoldCost();
+                if (ChangedGold != null)
+                    ChangedGold(gold);
+
+                if (ChangedBuilds != null)
+                    ChangedBuilds(builds);
+            }
+        }
+
+        buildingsUI.SetActive(false);
     }
 
     void EnemyCreated(Enemy e) {
