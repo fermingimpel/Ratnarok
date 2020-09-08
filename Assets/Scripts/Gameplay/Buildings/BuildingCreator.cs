@@ -26,6 +26,9 @@ public class BuildingCreator : MonoBehaviour {
     public delegate void GoldChanged(int gold);
     public static event GoldChanged ChangedGold;
 
+    public delegate void BuildsChanged(List<Build> b);
+    public static event BuildsChanged ChangedBuilds;
+
     void Start() {
 
         if (ChangedGold != null)
@@ -43,12 +46,16 @@ public class BuildingCreator : MonoBehaviour {
         EnemyManager.CreatedEnemy += EnemyCreated;
         Enemy.Dead += EnemyKilled;
         UIBuildings.BuildingButtonPressed += SelectTypeOfStructure;
+        Build.DestroyedBuild += BuildDestroyed;
+        GameplayManager.endEnemyAttack += StartDefendPhase;
     }
 
     private void OnDisable() {
         EnemyManager.CreatedEnemy -= EnemyCreated;
         Enemy.Dead -= EnemyKilled;
         UIBuildings.BuildingButtonPressed -= SelectTypeOfStructure;
+        Build.DestroyedBuild -= BuildDestroyed;
+        GameplayManager.endEnemyAttack -= StartDefendPhase;
     }
 
     void Update() {
@@ -68,12 +75,23 @@ public class BuildingCreator : MonoBehaviour {
                         if (ChangedGold != null)
                             ChangedGold(gold);
 
-                        //if (TowerCreated != null)
-                        //    TowerCreated();
+                        if (ChangedBuilds != null)
+                            ChangedBuilds(builds);
                     }
                 }
             }
         }
+    }
+
+    void StartDefendPhase() {
+        enemies.Clear();
+        enemies.Add(null);
+    }
+
+    void BuildDestroyed(Build b) {
+        builds.Remove(b);
+        if (ChangedBuilds != null)
+            ChangedBuilds(builds);
     }
 
     void SelectTypeOfStructure(UIBuildings.TypeOfBuilds tob) {

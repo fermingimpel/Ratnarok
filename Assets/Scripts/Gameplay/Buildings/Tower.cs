@@ -5,8 +5,8 @@ using UnityEngine;
 public class Tower : Build {
     [SerializeField] Shoot shoot;
     [SerializeField] Vector3 upset;
-  
-   protected override void StopDefend() {
+
+    protected override void StopDefend() {
        StopCoroutine(PrepareAttack());
    }
    
@@ -14,9 +14,6 @@ public class Tower : Build {
        StartCoroutine(PrepareAttack());
    }
 
-    public override void SetEnemyList(List<Enemy> list) {
-        enemies = list;
-    }
     public override int GetGoldCost() {
         return goldCost;
     }

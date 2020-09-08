@@ -541,7 +541,9 @@ MonoBehaviour:
   goldCost: 70
   timeToAttack: 2
   distanceToAttack: 5
+  health: 300
   damage: 25
+  defending: 0
   knives:
   - {fileID: 7192411760490209709}
   - {fileID: 5918856214267859753}
