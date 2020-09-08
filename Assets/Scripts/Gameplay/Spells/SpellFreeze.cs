@@ -6,7 +6,7 @@ public class SpellFreeze : SpellBase {
     [SerializeField] float freezeTime;
 
     void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "Enemy") {
+        if (other.gameObject.CompareTag("Enemy")) {
             Enemy e = other.gameObject.GetComponent<Enemy>();
             if (e != null)
                 StartCoroutine(Freeze(e));

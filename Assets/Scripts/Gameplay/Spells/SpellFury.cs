@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpellFury : SpellBase {
     [SerializeField] float timeOfFury;
     private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "Build") {
+        if (other.gameObject.CompareTag("Build")) {
             Build b = other.gameObject.GetComponent<Build>();
             if (b != null)
                 StartCoroutine(StartFury(b));

@@ -10,10 +10,10 @@ public class BuildingCreator : MonoBehaviour {
 
     Vector3 posSelected;
 
-    Vector3 offsetButtonsBuildUI = new Vector3(100,0,0);
+    Vector3 offsetButtonsBuildUI = new Vector3(100, 0, 0);
 
     int buildToCreate = 1;
-    
+
     public enum TypeOfBuilds {
         None,
         Tower,
@@ -65,13 +65,16 @@ public class BuildingCreator : MonoBehaviour {
     }
 
     void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape) && buildingsUI.activeSelf)
+            buildingsUI.SetActive(false);
+
         Vector3 mousePos = Input.mousePosition;
         Ray ray = cam.ScreenPointToRay(mousePos);
 
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 200)) {
             if (Input.GetMouseButtonDown(0)) {
-                if (hit.transform.tag == "Base") {
+                if (hit.transform.CompareTag("Base")) {
                     //if (structures[buildToCreate].GetGoldCost() <= gold) {
                     //    Vector3 pos = new Vector3((int)hit.transform.position.x, hit.point.y + upset.y, (int)hit.transform.position.z);
                     //    Build go = Instantiate(structures[buildToCreate], pos, Quaternion.identity, towerParent);
@@ -90,6 +93,7 @@ public class BuildingCreator : MonoBehaviour {
                 }
             }
         }
+
     }
 
     void StartDefendPhase() {

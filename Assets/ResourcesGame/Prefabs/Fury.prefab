@@ -107,8 +107,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9053f2f7b55d10e4ab9e807724aad604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duration: 8
   cooldown: 45
-  rb: {fileID: 0}
+  canUseSpell: 1
   timeOfFury: 8
 --- !u!54 &8860466063825959303
 Rigidbody:
