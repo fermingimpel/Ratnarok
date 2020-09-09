@@ -61,14 +61,6 @@ public class Build : MonoBehaviour {
         float goldToUse = 0;
         if (bc != null) {
             goldToUse = goldCost - ((health / maxHealth) * goldCost);
-            //Debug.Log(goldToUse);
-            //Debug.Log(goldCost);
-           //Debug.Log("Health: " + health);
-           //Debug.Log("Max Health: " + maxHealth);
-           //Debug.Log("Health / maxHealth: " + (health / maxHealth));
-           // Debug.Log((health / maxHealth) * goldCost);
-            //Debug.Log(70 * 0.8f);
-            //Debug.Log(0.8f * 70);
             if(bc.GetGold() >= goldToUse) {
                 health = maxHealth;
                 bc.UseGold((int)goldToUse);

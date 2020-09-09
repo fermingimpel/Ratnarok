@@ -7,12 +7,12 @@ public class Tower : Build {
     [SerializeField] Vector3 upset;
 
     protected override void StopDefend() {
-       //StopCoroutine(PrepareAttack());
-   }
-   
-   protected override void StartDefend() {
-       //StartCoroutine(PrepareAttack());
-   }
+        StopCoroutine(PrepareAttack());
+    }
+
+    protected override void StartDefend() {
+        StartCoroutine(PrepareAttack());
+    }
 
     public override int GetGoldCost() {
         return goldCost;

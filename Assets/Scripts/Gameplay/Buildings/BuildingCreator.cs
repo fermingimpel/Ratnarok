@@ -57,7 +57,6 @@ public class BuildingCreator : MonoBehaviour {
         Enemy.Dead += EnemyKilled;
         UIBuildings.BuildingButtonPressed += SelectTypeOfStructure;
         Build.DestroyedBuild += BuildDestroyed;
-        GameplayManager.endEnemyAttack += StartDefendPhase;
     }
 
     private void OnDisable() {
@@ -65,7 +64,6 @@ public class BuildingCreator : MonoBehaviour {
         Enemy.Dead -= EnemyKilled;
         UIBuildings.BuildingButtonPressed -= SelectTypeOfStructure;
         Build.DestroyedBuild -= BuildDestroyed;
-        GameplayManager.endEnemyAttack -= StartDefendPhase;
     }
 
     void Update() {
@@ -102,11 +100,6 @@ public class BuildingCreator : MonoBehaviour {
             }
         }
 
-    }
-
-    void StartDefendPhase() {
-        enemies.Clear();
-        enemies.Add(null);
     }
 
     void BuildDestroyed(Build b) {

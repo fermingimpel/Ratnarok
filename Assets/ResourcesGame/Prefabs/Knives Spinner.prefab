@@ -539,8 +539,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies: []
   goldCost: 70
-  baseTimeToAttack: 2
-  timeToAttack: 2
+  baseTimeToAttack: 1.33
+  timeToAttack: 1.33
   distanceToAttack: 5
   health: 300
   damage: 25

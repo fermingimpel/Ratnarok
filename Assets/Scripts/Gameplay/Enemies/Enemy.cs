@@ -22,7 +22,6 @@ public class Enemy : MonoBehaviour {
     public delegate void EnemyDead(Enemy e);
     public static event EnemyDead Dead;
 
-
     protected virtual void Start() {
         attacking = false;
         //GameplayManager.endEnemyAttack += OnDie;
@@ -31,21 +30,18 @@ public class Enemy : MonoBehaviour {
         Town.DestroyedTown += OnDie;
         StartCoroutine(LateStart());
     }
-
     IEnumerator LateStart() {
         yield return new WaitForEndOfFrame();
         SetNewObjective();
         StopCoroutine(LateStart());
         yield return null;
     }
-
     private void OnDisable() {
         //GameplayManager.endEnemyAttack -= OnDie;
         BuildingCreator.ChangedBuilds -= SetBuildsList;
         Build.DestroyedBuild -= RemoveBuildInList;
         Town.DestroyedTown -= OnDie;
     }
-
     private void Update() {
         if(freezed)
             return;
@@ -57,7 +53,6 @@ public class Enemy : MonoBehaviour {
                 StartCoroutine(AttackObjective());
         }
     }
-
     public void SetNewObjective() {
         float nearest = 999999;
         for (int i = 0; i < builds.Count; i++) {
@@ -85,24 +80,20 @@ public class Enemy : MonoBehaviour {
             return;
         }
     }
-
     public void SetBuildsList(List<Build> b) {
         builds = b;
         SetNewObjective();
     }
-
     public void SetTown(Town t) {
         town = t;
         SetNewObjective();
     }
-
     void RemoveBuildInList(Build b) {
         int ind = builds.IndexOf(b);
         builds.Remove(b);
         if (ind == index)
             SetNewObjective();
     }
-
     public void SetFreeze(bool f) {
         freezed = f;
         if (f) 
@@ -110,29 +101,29 @@ public class Enemy : MonoBehaviour {
         else
             agent.speed = speed;
     }
-
     public virtual void ReceiveDamage(int d) {
         health -= d;
         if (health <= 0) {
             OnDie();
         }
     }
-
     protected void OnDie() {
         if (Dead != null)
             Dead(this);
 
         Destroy(this.gameObject);
     }
-
     protected IEnumerator AttackObjective() {
         attacking = true;
         yield return new WaitForSeconds(timeToAttack);
-        if (goingToTown) {
-   
-            if (town != null)
-                town.ReceiveDamage(damage);
-            Destroy(this.gameObject);
+        if (goingToTown ) {
+            if (town != null) {
+                if (Vector3.Distance(transform.position, town.transform.position) < maxDistanceToAttack) {
+                    Debug.Log("Coco");
+                    town.ReceiveDamage(damage);
+                    Destroy(this.gameObject);
+                }
+            }
         }
         else if (builds[index] != null) {
             builds[index].HitBuild(damage);    
