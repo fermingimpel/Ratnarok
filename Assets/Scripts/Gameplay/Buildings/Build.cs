@@ -58,4 +58,13 @@ public class Build : MonoBehaviour {
     public virtual int GetGoldCost() {
         return goldCost;
     }
+    public virtual float GetAttackSpeed() {
+        return timeToAttack;
+    }
+    public virtual int GetHP() {
+        return health;
+    }
+    public virtual int GetDamage() {
+        return damage;
+    }
 }
