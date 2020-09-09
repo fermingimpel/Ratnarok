@@ -75,18 +75,6 @@ public class BuildingCreator : MonoBehaviour {
         if (Physics.Raycast(ray, out hit, 200)) {
             if (Input.GetMouseButtonDown(0)) {
                 if (hit.transform.CompareTag("Base")) {
-                    //if (structures[buildToCreate].GetGoldCost() <= gold) {
-                    //    Vector3 pos = new Vector3((int)hit.transform.position.x, hit.point.y + upset.y, (int)hit.transform.position.z);
-                    //    Build go = Instantiate(structures[buildToCreate], pos, Quaternion.identity, towerParent);
-                    //    builds.Add(go);
-                    //    go.SetEnemyList(enemies);
-                    //    gold -= structures[buildToCreate].GetGoldCost();
-                    //    if (ChangedGold != null)
-                    //        ChangedGold(gold);
-                    //
-                    //    if (ChangedBuilds != null)
-                    //        ChangedBuilds(builds);
-                    //}
                     posSelected = new Vector3((int)hit.transform.position.x, hit.point.y + upset.y, (int)hit.transform.position.z);
                     buildingsUI.SetActive(true);
                     buildingsUI.transform.position = mousePos + offsetButtonsBuildUI;

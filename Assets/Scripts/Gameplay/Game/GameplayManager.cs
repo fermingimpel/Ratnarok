@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameplayManager : MonoBehaviour
 {
@@ -15,7 +16,6 @@ public class GameplayManager : MonoBehaviour
 
     public delegate void UpdateUIState(Stage s);
     public static event UpdateUIState UIStateUpdate;
-
     public enum Stage {
         Preparing,
         Attack
@@ -25,6 +25,12 @@ public class GameplayManager : MonoBehaviour
         if (UIStateUpdate != null)
             UIStateUpdate(Stage.Preparing);
         StartCoroutine(LateStart());
+    }
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.R)) {
+            SceneManager.LoadScene("Gameplay");
+        }
     }
 
     IEnumerator LateStart() {

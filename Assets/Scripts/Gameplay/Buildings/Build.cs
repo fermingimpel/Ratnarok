@@ -18,14 +18,14 @@ public class Build : MonoBehaviour {
 
     void Start() {
         timeToAttack = baseTimeToAttack;
-        GameplayManager.startEnemyAttack += StartDefend;
-        GameplayManager.endEnemyAttack += StopDefend;
+       // GameplayManager.startEnemyAttack += StartDefend;
+       // GameplayManager.endEnemyAttack += StopDefend;
         StartDefend();
     }
 
     private void OnDisable() {
-        GameplayManager.startEnemyAttack -= StartDefend;
-        GameplayManager.endEnemyAttack -= StopDefend;
+        //GameplayManager.startEnemyAttack -= StartDefend;
+        //GameplayManager.endEnemyAttack -= StopDefend;
     }
 
     protected virtual void StopDefend() {

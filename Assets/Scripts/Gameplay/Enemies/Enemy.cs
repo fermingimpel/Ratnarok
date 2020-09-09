@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour {
         //GameplayManager.endEnemyAttack += OnDie;
         BuildingCreator.ChangedBuilds += SetBuildsList;
         Build.DestroyedBuild += RemoveBuildInList;
+        Town.DestroyedTown += OnDie;
         StartCoroutine(LateStart());
     }
 
@@ -42,13 +43,15 @@ public class Enemy : MonoBehaviour {
         //GameplayManager.endEnemyAttack -= OnDie;
         BuildingCreator.ChangedBuilds -= SetBuildsList;
         Build.DestroyedBuild -= RemoveBuildInList;
+        Town.DestroyedTown -= OnDie;
     }
 
     private void Update() {
         if(freezed)
             return;
-        
 
+        if (town == null)
+            Destroy(this.gameObject);
         if (Vector3.Distance(transform.position, agent.destination) < maxDistanceToAttack) {
             if (!attacking)
                 StartCoroutine(AttackObjective());
@@ -79,6 +82,7 @@ public class Enemy : MonoBehaviour {
         if (builds[index] != null) {
             agent.destination = builds[index].transform.position;
             goingToTown = false;
+            return;
         }
     }
 
@@ -91,6 +95,7 @@ public class Enemy : MonoBehaviour {
         town = t;
         SetNewObjective();
     }
+
     void RemoveBuildInList(Build b) {
         int ind = builds.IndexOf(b);
         builds.Remove(b);

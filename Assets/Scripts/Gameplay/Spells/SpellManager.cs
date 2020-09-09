@@ -31,15 +31,7 @@ public class SpellManager : MonoBehaviour {
     }
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.Alpha1) && canUseSpell[(int)SpellsList.Freeze]) {
-            spellToUse = (int)SpellsList.Freeze;
-            ActivateViewerSelectedSpell(spellToUse);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2) && canUseSpell[(int)SpellsList.Fury]) {
-            spellToUse = (int)SpellsList.Fury;
-            ActivateViewerSelectedSpell(spellToUse);
-        }
-        else if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
             spellToUse = (int)SpellsList.None;
             ActivateViewerSelectedSpell(spellToUse);
         }
@@ -49,17 +41,34 @@ public class SpellManager : MonoBehaviour {
 
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 200)) {
+            if (hit.transform.CompareTag("Road")) {
+                if (Input.GetKeyDown(KeyCode.Alpha1) && canUseSpell[(int)SpellsList.Freeze]) {
+                    spellToUse = (int)SpellsList.Freeze;
+                    ActivateViewerSelectedSpell(spellToUse);
+                }
+                else if (Input.GetKeyDown(KeyCode.Alpha2) && canUseSpell[(int)SpellsList.Fury]) {
+                    spellToUse = (int)SpellsList.Fury;
+                    ActivateViewerSelectedSpell(spellToUse);
+                }
+            }
+            else {
+                spellToUse = (int)SpellsList.None;
+                ActivateViewerSelectedSpell(spellToUse);
+            }
+
             if (spellToUse != (int)SpellsList.None) {
                 Vector3 pos = Vector3.zero;
 
                 if (!hit.transform.CompareTag("Road")) {
                     if (spells[spellToUse] != null)
-                        if (spellsViewer[spellToUse].gameObject.activeSelf)
+                        if (spellsViewer[spellToUse].gameObject.activeSelf) {
                             spellsViewer[spellToUse].gameObject.SetActive(false);
+                            spellToUse = (int)SpellsList.None;
+                        }
                 }
                 else if (hit.transform.CompareTag("Road")) {
                     if (spellsViewer[spellToUse] != null) {
-                        if(!spellsViewer[spellToUse].gameObject.activeSelf)
+                        if (!spellsViewer[spellToUse].gameObject.activeSelf)
                             spellsViewer[spellToUse].gameObject.SetActive(true);
                         pos = new Vector3((int)hit.point.x, spellsViewer[spellToUse].transform.position.y, (int)hit.point.z);
                         spellsViewer[spellToUse].transform.position = pos;
@@ -69,7 +78,7 @@ public class SpellManager : MonoBehaviour {
                             if (canUseSpell[spellToUse]) {
                                 SpellBase sb = Instantiate(spells[spellToUse], pos, Quaternion.identity, spellsParent);
                                 StartCoroutine(StartCooldown(spellToUse));
-                                if(spellsViewer[spellToUse]!=null)
+                                if (spellsViewer[spellToUse] != null)
                                     spellsViewer[spellToUse].gameObject.SetActive(false);
                                 spellToUse = (int)SpellsList.None;
                             }
@@ -79,6 +88,7 @@ public class SpellManager : MonoBehaviour {
             }
         }
     }
+
 
     void ActivateViewerSelectedSpell(int stu) {
         for (int i = 0; i < spellsViewer.Length; i++)
@@ -95,8 +105,4 @@ public class SpellManager : MonoBehaviour {
         canUseSpell[stu] = true;
         yield return null;
     }
-
-
-
-
 }
