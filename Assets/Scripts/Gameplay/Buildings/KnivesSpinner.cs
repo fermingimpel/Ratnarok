@@ -7,10 +7,10 @@ public class KnivesSpinner : Build {
     [SerializeField] float rotationSpeed;
 
     protected override void StopDefend() {
-        StopCoroutine(PrepareAttack());
+        //StopCoroutine(PrepareAttack());
     }
     protected override void StartDefend() {
-        StartCoroutine(PrepareAttack());
+    //    StartCoroutine(PrepareAttack());
     }
 
     void Update() {

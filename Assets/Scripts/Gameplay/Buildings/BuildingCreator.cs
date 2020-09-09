@@ -122,6 +122,7 @@ public class BuildingCreator : MonoBehaviour {
                 Build go = Instantiate(structures[buildToCreate], posSelected, Quaternion.identity, towerParent);
                 builds.Add(go);
                 go.SetEnemyList(enemies);
+                go.SetBuildCreator(this);
                 gold -= structures[buildToCreate].GetGoldCost();
                 if (ChangedGold != null)
                     ChangedGold(gold);
@@ -149,5 +150,13 @@ public class BuildingCreator : MonoBehaviour {
         enemies.Remove(e);
         for (int i = 0; i < builds.Count; i++)
             builds[i].SetEnemyList(enemies);
+    }
+    public void UseGold(int g) {
+        gold -= g;
+        if (ChangedGold != null) 
+            ChangedGold(gold);
+    }
+    public int GetGold() {
+        return gold;
     }
 }

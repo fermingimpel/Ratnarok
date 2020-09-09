@@ -8,15 +8,19 @@ public class Build : MonoBehaviour {
     [SerializeField] protected float baseTimeToAttack;
     [SerializeField] protected float timeToAttack;
     [SerializeField] protected float distanceToAttack;
-    [SerializeField] protected int health;
+    [SerializeField] protected float health;
     [SerializeField] protected int damage;
     [SerializeField] protected bool defending;
     [SerializeField] protected bool inFury;
+
+    float maxHealth;
+    BuildingCreator bc;
 
     public delegate void BuildDestroyed(Build b);
     public static event BuildDestroyed DestroyedBuild;
 
     void Start() {
+        maxHealth = health;
         timeToAttack = baseTimeToAttack;
        // GameplayManager.startEnemyAttack += StartDefend;
        // GameplayManager.endEnemyAttack += StopDefend;
@@ -52,6 +56,28 @@ public class Build : MonoBehaviour {
         else
             timeToAttack = baseTimeToAttack;
     }
+
+    public void RepairBuild() {
+        float goldToUse = 0;
+        if (bc != null) {
+            goldToUse = goldCost - ((health / maxHealth) * goldCost);
+            //Debug.Log(goldToUse);
+            //Debug.Log(goldCost);
+           //Debug.Log("Health: " + health);
+           //Debug.Log("Max Health: " + maxHealth);
+           //Debug.Log("Health / maxHealth: " + (health / maxHealth));
+           // Debug.Log((health / maxHealth) * goldCost);
+            //Debug.Log(70 * 0.8f);
+            //Debug.Log(0.8f * 70);
+            if(bc.GetGold() >= goldToUse) {
+                health = maxHealth;
+                bc.UseGold((int)goldToUse);
+            }
+        }
+    }
+    public void SetBuildCreator(BuildingCreator buildc) {
+        bc = buildc;
+    }
     public virtual void SetEnemyList(List<Enemy> list) {
         enemies = list;
     }
@@ -62,7 +88,7 @@ public class Build : MonoBehaviour {
         return timeToAttack;
     }
     public virtual int GetHP() {
-        return health;
+        return (int)health;
     }
     public virtual int GetDamage() {
         return damage;

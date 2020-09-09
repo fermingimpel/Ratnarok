@@ -3499,7 +3499,7 @@ GameObject:
   - component: {fileID: 886999718}
   - component: {fileID: 886999717}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Repair Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3567,7 +3567,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 886999718}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1969994524}
+        m_MethodName: ClickRepairButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &886999718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7366,6 +7377,7 @@ MonoBehaviour:
   textBuildHP: {fileID: 73763187}
   textBuildDamage: {fileID: 67618282}
   textBuildAS: {fileID: 763796544}
+  build: {fileID: 0}
 --- !u!1 &1980108863
 GameObject:
   m_ObjectHideFlags: 0
