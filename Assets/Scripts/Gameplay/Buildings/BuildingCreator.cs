@@ -152,4 +152,9 @@ public class BuildingCreator : MonoBehaviour {
     public int GetGold() {
         return gold;
     }
+    public void AddGold(int g) {
+        gold += g;
+        if (ChangedGold != null)
+            ChangedGold(gold);
+    }
 }

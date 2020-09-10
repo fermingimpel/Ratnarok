@@ -48,5 +48,13 @@ public class UIInformationBuilds : MonoBehaviour {
         }
     }
 
+    public void ClickDeleteButton() {
+        if(build != null) {
+            build.DestroyBuild();
+            this.gameObject.SetActive(false);
+        }
+            
+    }
+
 
 }

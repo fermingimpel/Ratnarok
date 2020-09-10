@@ -14,7 +14,7 @@ public class Build : MonoBehaviour {
     [SerializeField] protected bool inFury;
 
     float maxHealth;
-    BuildingCreator bc;
+    BuildingCreator buildCreator;
 
     public delegate void BuildDestroyed(Build b);
     public static event BuildDestroyed DestroyedBuild;
@@ -59,16 +59,27 @@ public class Build : MonoBehaviour {
 
     public void RepairBuild() {
         float goldToUse = 0;
-        if (bc != null) {
+        if (buildCreator != null) {
             goldToUse = goldCost - ((health / maxHealth) * goldCost);
-            if(bc.GetGold() >= goldToUse) {
+            if(buildCreator.GetGold() >= goldToUse) {
                 health = maxHealth;
-                bc.UseGold((int)goldToUse);
+                buildCreator.UseGold((int)goldToUse);
             }
         }
     }
+
+    public void DestroyBuild() {
+        if (buildCreator != null) {
+            int goldToReturn = goldCost / 2;
+            buildCreator.AddGold(goldToReturn);
+            if (DestroyedBuild != null)
+                DestroyedBuild(this);
+            Destroy(this.gameObject);
+        }
+    }
+
     public void SetBuildCreator(BuildingCreator buildc) {
-        bc = buildc;
+        buildCreator = buildc;
     }
     public virtual void SetEnemyList(List<Enemy> list) {
         enemies = list;
