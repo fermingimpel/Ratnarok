@@ -16,6 +16,10 @@ public class GameplayManager : MonoBehaviour
 
     public delegate void UpdateUIState(Stage s);
     public static event UpdateUIState UIStateUpdate;
+
+    public delegate void UpdateHordeBar(float actualSecond, float time);
+    public static event UpdateHordeBar UpdateBarHorde;
+
     public enum Stage {
         Preparing,
         Attack
@@ -24,6 +28,7 @@ public class GameplayManager : MonoBehaviour
     void Start() {
         if (UIStateUpdate != null)
             UIStateUpdate(Stage.Preparing);
+
         StartCoroutine(LateStart());
     }
 
@@ -44,8 +49,16 @@ public class GameplayManager : MonoBehaviour
 
     IEnumerator AttackPhase() {
         if (UIStateUpdate != null)
-            UIStateUpdate(Stage.Attack); 
-        yield return new WaitForSeconds(timeInAttack);
+            UIStateUpdate(Stage.Attack);
+
+        float t = 0;
+        while(t < timeInAttack) {
+            t += Time.deltaTime;
+            if (UpdateBarHorde != null)
+                UpdateBarHorde(t, timeInAttack);
+            yield return null;
+        }
+
         StopCoroutine(AttackPhase());
         StartCoroutine(PreparePhase());
         if (endEnemyAttack != null)
@@ -55,7 +68,15 @@ public class GameplayManager : MonoBehaviour
     IEnumerator PreparePhase() {
         if (UIStateUpdate != null)
             UIStateUpdate(Stage.Preparing);
-        yield return new WaitForSeconds(timeInPrepare);
+
+        float t = 0;
+        while (t < timeInPrepare) {
+            t += Time.deltaTime;
+            if (UpdateBarHorde != null)
+                UpdateBarHorde(t, timeInPrepare);
+            yield return null;
+        }
+
         StopCoroutine(PreparePhase());
         StartCoroutine(AttackPhase());
         if (startEnemyAttack != null)

@@ -6,6 +6,7 @@ public class BuildingCreator : MonoBehaviour {
     [SerializeField] GameObject buildingsUI;
     [SerializeField] GameObject buildingInformationUI;
     [SerializeField] Build[] structures;
+    [SerializeField] UnitAlly[] unitsPrefab;
     [SerializeField] Vector3 upset;
     [SerializeField] Transform towerParent;
 
@@ -27,6 +28,7 @@ public class BuildingCreator : MonoBehaviour {
     [SerializeField] int goldPerKill;
 
     [SerializeField] List<Build> builds;
+    [SerializeField] List<UnitAlly> units;
     [SerializeField] List<Enemy> enemies;
 
     public delegate void GoldChanged(int gold);
@@ -97,6 +99,9 @@ public class BuildingCreator : MonoBehaviour {
                             BuildClicked(b, mousePos);
                     }
                 }
+                //else if (hit.transform.CompareTag("Road")) {
+                //    //Meter menu de spawn de unidades aliadas
+                //}
             }
         }
 
@@ -131,7 +136,12 @@ public class BuildingCreator : MonoBehaviour {
     void EnemyCreated(Enemy e) {
         enemies.Add(e);
         for (int i = 0; i < builds.Count; i++)
-            builds[i].SetEnemyList(enemies);
+            if (builds[i] != null)
+                builds[i].SetEnemyList(enemies);
+   
+        for (int i = 0; i < units.Count; i++)
+            if (units[i] != null)
+                units[i].SetEnemyList(enemies);
     }
 
     void EnemyKilled(Enemy e) {
@@ -142,7 +152,12 @@ public class BuildingCreator : MonoBehaviour {
 
         enemies.Remove(e);
         for (int i = 0; i < builds.Count; i++)
-            builds[i].SetEnemyList(enemies);
+            if (builds[i] != null)
+                builds[i].SetEnemyList(enemies);
+
+        for (int i = 0; i < units.Count; i++)
+            if (units[i] != null)
+                units[i].SetEnemyList(enemies);
     }
     public void UseGold(int g) {
         gold -= g;
