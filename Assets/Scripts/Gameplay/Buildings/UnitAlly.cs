@@ -10,7 +10,7 @@ public class UnitAlly : MonoBehaviour {
     [SerializeField] float timeToAttack;
     [SerializeField] int damage;
     [SerializeField] float speed;
-
+    float timeToCheckForEnemies = 0.10f;
     int enemyIndex = 0;
 
     public enum State {
@@ -25,27 +25,35 @@ public class UnitAlly : MonoBehaviour {
     void Start() {
         unitState = State.None;
         initialPos = transform.position;
+        StartCoroutine(TimerCheck());
     }
 
-    private void Update() {
-        if (unitState == State.None)
-            Debug.Log("Coco");
-        //if (CheckIfEnemyIsNear()) {
-        //    StopAllCoroutines();
-        //    StartCoroutine(GoingToAttack());
-        //}
-
+    IEnumerator TimerCheck() {
+        unitState = State.None;
+        yield return new WaitForSeconds(timeToCheckForEnemies);
+        if (CheckIfEnemyIsNear())
+            StartCoroutine(GoingToAttack());
+        else
+            ResetTimerCheck();
+        
+        yield return null;
     }
+
+    void ResetTimerCheck() {
+        StopCoroutine(TimerCheck());
+        StartCoroutine(TimerCheck());
+    }
+
 
     IEnumerator GoingToAttack() {
         unitState = State.GoingToAttack;
-        if (enemies[enemyIndex] != null) {
-            while (Vector3.Distance(transform.position, enemies[enemyIndex].transform.position) < distanceToAttack) {
-                transform.position = Vector3.MoveTowards(transform.position, enemies[enemyIndex].transform.position, speed * Time.deltaTime);
-                yield return null;
-            }
-            StartCoroutine(Attack(enemyIndex));
+
+        while (enemies[enemyIndex] != null && Vector3.Distance(transform.position, enemies[enemyIndex].transform.position) < distanceToAttack) {
+            transform.position = Vector3.MoveTowards(transform.position, enemies[enemyIndex].transform.position, speed * Time.deltaTime);
+            yield return null;
         }
+        StartCoroutine(Attack(enemyIndex));
+
         StopCoroutine(GoingToAttack());
         yield return null;
     }
@@ -76,9 +84,9 @@ public class UnitAlly : MonoBehaviour {
         }
         unitState = State.None;
         StopCoroutine(GoToOriginalPos());
+        StartCoroutine(TimerCheck());
     }
     bool CheckIfEnemyIsNear() {
-        //bool CheckIfEnemyIsNear() {
         float nearest = 999999;
         for (int i = 0; i < enemies.Count; i++) {
             if (enemies[i] != null) {

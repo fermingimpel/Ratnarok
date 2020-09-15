@@ -538,12 +538,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies: []
-  goldCost: 70
-  baseTimeToAttack: 1.33
-  timeToAttack: 1.33
+  cheeseCost: 70
+  baseTimeToAttack: 1
+  timeToAttack: 1
   distanceToAttack: 5
   health: 300
-  damage: 25
+  damage: 30
   defending: 0
   inFury: 0
   knives:

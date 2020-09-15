@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies: []
-  goldCost: 70
+  cheeseCost: 70
   baseTimeToAttack: 0.4
   timeToAttack: 0.4
   distanceToAttack: 8

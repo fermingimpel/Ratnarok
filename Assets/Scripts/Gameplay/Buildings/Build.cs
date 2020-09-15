@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Build : MonoBehaviour {
     [SerializeField] protected List<Enemy> enemies;
-    [SerializeField] protected int goldCost;
+    [SerializeField] protected int cheeseCost;
     [SerializeField] protected float baseTimeToAttack;
     [SerializeField] protected float timeToAttack;
     [SerializeField] protected float distanceToAttack;
@@ -58,20 +58,20 @@ public class Build : MonoBehaviour {
     }
 
     public void RepairBuild() {
-        float goldToUse = 0;
+        float cheeseToUse = 0;
         if (buildCreator != null) {
-            goldToUse = goldCost - ((health / maxHealth) * goldCost);
-            if(buildCreator.GetGold() >= goldToUse) {
+            cheeseToUse = cheeseCost - ((health / maxHealth) * cheeseCost);
+            if(buildCreator.GetCheese() >= cheeseToUse) {
                 health = maxHealth;
-                buildCreator.UseGold((int)goldToUse);
+                buildCreator.UseCheese((int)cheeseToUse);
             }
         }
     }
 
     public void DestroyBuild() {
         if (buildCreator != null) {
-            int goldToReturn = goldCost / 2;
-            buildCreator.AddGold(goldToReturn);
+            int goldToReturn = cheeseCost / 2;
+            buildCreator.AddCheese(goldToReturn);
             if (DestroyedBuild != null)
                 DestroyedBuild(this);
             Destroy(this.gameObject);
@@ -84,8 +84,8 @@ public class Build : MonoBehaviour {
     public virtual void SetEnemyList(List<Enemy> list) {
         enemies = list;
     }
-    public virtual int GetGoldCost() {
-        return goldCost;
+    public virtual int GetCheeseCost() {
+        return cheeseCost;
     }
     public virtual float GetAttackSpeed() {
         return timeToAttack;

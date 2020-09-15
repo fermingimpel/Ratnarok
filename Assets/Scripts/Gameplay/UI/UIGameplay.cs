@@ -6,25 +6,24 @@ using UnityEngine.UI;
 
 public class UIGameplay : MonoBehaviour {
     [SerializeField] TextMeshProUGUI goldText;
-    [SerializeField] TextMeshProUGUI stateText;
     [SerializeField] TextMeshProUGUI progressText;
     [SerializeField] Image hpBar;
     [SerializeField] Image hordeBar;
     void Start() {
-        BuildingCreator.ChangedGold += ChangeGold;
+        BuildingCreator.ChangedCheese += ChangeCheese;
         GameplayManager.UIStateUpdate += ChangeState;
         GameplayManager.UpdateBarHorde += ChangeHordeBar;
         Town.ChangedHP += ChangeHealth;
     }
 
     private void OnDisable() {
-        BuildingCreator.ChangedGold -= ChangeGold;
+        BuildingCreator.ChangedCheese -= ChangeCheese;
         GameplayManager.UIStateUpdate -= ChangeState;
         GameplayManager.UpdateBarHorde -= ChangeHordeBar;
         Town.ChangedHP -= ChangeHealth;
     }
-    void ChangeGold(int gold) {
-        goldText.text = "Gold: " + gold;
+    void ChangeCheese(int c) {
+        goldText.text = "Cheese: " + c;
     }
     void ChangeHealth(float health, float maxHealth) {
         hpBar.fillAmount = health / maxHealth;

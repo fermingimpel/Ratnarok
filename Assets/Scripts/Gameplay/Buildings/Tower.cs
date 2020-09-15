@@ -14,9 +14,6 @@ public class Tower : Build {
         StartCoroutine(PrepareAttack());
     }
 
-    public override int GetGoldCost() {
-        return goldCost;
-    }
     IEnumerator PrepareAttack() {
         yield return new WaitForSeconds(timeToAttack);
         int index = 0;

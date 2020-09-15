@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class BuildingCreator : MonoBehaviour {
     [SerializeField] GameObject buildingsUI;
@@ -24,15 +25,15 @@ public class BuildingCreator : MonoBehaviour {
 
     Camera cam;
 
-    [SerializeField] int gold;
-    [SerializeField] int goldPerKill;
+    [SerializeField] int cheese;
+    [SerializeField] int cheesePerKill;
 
     [SerializeField] List<Build> builds;
     [SerializeField] List<UnitAlly> units;
     [SerializeField] List<Enemy> enemies;
 
-    public delegate void GoldChanged(int gold);
-    public static event GoldChanged ChangedGold;
+    public delegate void CheeseChanged(int c);
+    public static event CheeseChanged ChangedCheese;
 
     public delegate void BuildsChanged(List<Build> b);
     public static event BuildsChanged ChangedBuilds;
@@ -43,8 +44,8 @@ public class BuildingCreator : MonoBehaviour {
     void Start() {
         buildingsUI.SetActive(false);
 
-        if (ChangedGold != null)
-            ChangedGold(gold);
+        if (ChangedCheese != null)
+            ChangedCheese(cheese);
 
         builds = new List<Build>();
         builds.Clear();
@@ -82,6 +83,10 @@ public class BuildingCreator : MonoBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 200)) {
             if (Input.GetMouseButtonDown(0)) {
+
+                if (EventSystem.current.IsPointerOverGameObject())
+                    return;
+
                 if (hit.transform.CompareTag("Base")) {
                     posSelected = new Vector3((int)hit.transform.position.x, hit.point.y + upset.y, (int)hit.transform.position.z);
                     if (!buildingsUI.activeSelf)
@@ -116,14 +121,14 @@ public class BuildingCreator : MonoBehaviour {
     void SelectTypeOfStructure(UIBuildings.TypeOfBuilds tob) {
         buildToCreate = (int)tob;
         if (structures[buildToCreate] != null) {
-            if (structures[buildToCreate].GetGoldCost() <= gold) {
+            if (structures[buildToCreate].GetCheeseCost() <= cheese) {
                 Build go = Instantiate(structures[buildToCreate], posSelected, Quaternion.identity, towerParent);
                 builds.Add(go);
                 go.SetEnemyList(enemies);
                 go.SetBuildCreator(this);
-                gold -= structures[buildToCreate].GetGoldCost();
-                if (ChangedGold != null)
-                    ChangedGold(gold);
+                cheese -= structures[buildToCreate].GetCheeseCost();
+                if (ChangedCheese != null)
+                    ChangedCheese(cheese);
 
                 if (ChangedBuilds != null)
                     ChangedBuilds(builds);
@@ -145,10 +150,10 @@ public class BuildingCreator : MonoBehaviour {
     }
 
     void EnemyKilled(Enemy e) {
-        gold += goldPerKill;
+        cheese += cheesePerKill;
 
-        if (ChangedGold != null)
-            ChangedGold(gold);
+        if (ChangedCheese != null)
+            ChangedCheese(cheese);
 
         enemies.Remove(e);
         for (int i = 0; i < builds.Count; i++)
@@ -159,17 +164,17 @@ public class BuildingCreator : MonoBehaviour {
             if (units[i] != null)
                 units[i].SetEnemyList(enemies);
     }
-    public void UseGold(int g) {
-        gold -= g;
-        if (ChangedGold != null) 
-            ChangedGold(gold);
+    public void UseCheese(int c) {
+        cheese -= c;
+        if (ChangedCheese != null)
+            ChangedCheese(cheese);
     }
-    public int GetGold() {
-        return gold;
+    public int GetCheese() {
+        return cheese;
     }
-    public void AddGold(int g) {
-        gold += g;
-        if (ChangedGold != null)
-            ChangedGold(gold);
+    public void AddCheese(int c) {
+        cheese += c;
+        if (ChangedCheese != null)
+            ChangedCheese(cheese);
     }
 }
