@@ -7,31 +7,22 @@ public class Shoot : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] Enemy enemy;
     [SerializeField] int damage;
+    float minX = -6f;
 
     private void Start() {
         Destroy(this.gameObject, 1f);
     }
 
     void Update() {
-        if (enemy == null)
+        transform.position += Vector3.left * speed * Time.deltaTime;
+        if (transform.position.y < minX)
             Destroy(this.gameObject);
-
-        if (enemy != null)
-            transform.position = Vector3.MoveTowards(transform.position, enemy.transform.position, speed * Time.deltaTime);
     }
-
+        
     private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "Enemy") {
+        if (other.gameObject.CompareTag("Enemy")) {
             other.GetComponent<Enemy>().ReceiveDamage(damage);
             Destroy(this.gameObject);
         }
-    }
-
-    public void SetObjective(Enemy e) {
-        enemy = e;
-    }
-
-    public void SetDamage(int d) {
-        damage = d;
     }
 }

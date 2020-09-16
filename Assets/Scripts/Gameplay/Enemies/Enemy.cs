@@ -4,103 +4,29 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour {
-    [SerializeField] protected Town town;
-    [SerializeField] protected List<Build> builds;
-    [SerializeField] protected NavMeshAgent agent;
     [SerializeField] protected int health;
-    [SerializeField] protected int damage;
     [SerializeField] protected int speed;
-    [SerializeField] protected int maxDistanceToAttack;
-    [SerializeField] protected int maxDistanceToSelect;
     [SerializeField] protected float timeToAttack;
-    [SerializeField] protected bool freezed;
-
-    bool goingToTown;
-    bool attacking=false;
     int index;
 
     public delegate void EnemyDead(Enemy e);
     public static event EnemyDead Dead;
 
     protected virtual void Start() {
-        attacking = false;
         //GameplayManager.endEnemyAttack += OnDie;
-        BuildingCreator.ChangedBuilds += SetBuildsList;
-        Build.DestroyedBuild += RemoveBuildInList;
         Town.DestroyedTown += OnDie;
         StartCoroutine(LateStart());
     }
     IEnumerator LateStart() {
         yield return new WaitForEndOfFrame();
-        SetNewObjective();
         StopCoroutine(LateStart());
         yield return null;
     }
     private void OnDisable() {
         //GameplayManager.endEnemyAttack -= OnDie;
-        BuildingCreator.ChangedBuilds -= SetBuildsList;
-        Build.DestroyedBuild -= RemoveBuildInList;
         Town.DestroyedTown -= OnDie;
     }
-    private void Update() {
-        if(freezed)
-            return;
-
-        if (town == null)
-            Destroy(this.gameObject);
-        if (Vector3.Distance(transform.position, agent.destination) < maxDistanceToAttack) {
-            if (!attacking)
-                StartCoroutine(AttackObjective());
-        }
-    }
-    public void SetNewObjective() {
-        float nearest = 999999;
-        for (int i = 0; i < builds.Count; i++) {
-            if (builds[i] != null) {
-                if (Vector3.Distance(transform.position, builds[i].transform.position) < nearest) {
-                    nearest = Vector3.Distance(transform.position, builds[i].transform.position);
-                    index = i;
-                }
-            }
-        }
-
-        if (nearest > maxDistanceToSelect || builds[index] == null) {
-            if (town != null) {
-                if (nearest > Vector3.Distance(transform.position, town.transform.position)) {
-                    agent.destination = town.transform.position;
-                    goingToTown = true;
-                    return;
-                }
-            }
-        }
-
-        if (builds[index] != null) {
-            agent.destination = builds[index].transform.position;
-            goingToTown = false;
-            return;
-        }
-    }
-    public void SetBuildsList(List<Build> b) {
-        builds = b;
-        SetNewObjective();
-    }
-    public void SetTown(Town t) {
-        town = t;
-        SetNewObjective();
-    }
-    void RemoveBuildInList(Build b) {
-        int ind = builds.IndexOf(b);
-        builds.Remove(b);
-        if (ind == index)
-            SetNewObjective();
-    }
-    public void SetFreeze(bool f) {
-        freezed = f;
-        if (f) 
-            agent.speed = 0;
-        else
-            agent.speed = speed;
-    }
+ 
     public virtual void ReceiveDamage(int d) {
         health -= d;
         if (health <= 0) {
@@ -114,21 +40,6 @@ public class Enemy : MonoBehaviour {
         Destroy(this.gameObject);
     }
     protected IEnumerator AttackObjective() {
-        attacking = true;
-        yield return new WaitForSeconds(timeToAttack);
-        if (goingToTown ) {
-            if (town != null) {
-                if (Vector3.Distance(transform.position, town.transform.position) < maxDistanceToAttack) {
-                    Debug.Log("Coco");
-                    town.ReceiveDamage(damage);
-                    Destroy(this.gameObject);
-                }
-            }
-        }
-        else if (builds[index] != null) {
-            builds[index].HitBuild(damage);    
-        }
-        attacking = false;
         StopCoroutine(AttackObjective());
         yield return null;
     }

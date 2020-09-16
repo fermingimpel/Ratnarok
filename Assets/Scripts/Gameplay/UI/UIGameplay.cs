@@ -10,20 +10,20 @@ public class UIGameplay : MonoBehaviour {
     [SerializeField] Image hpBar;
     [SerializeField] Image hordeBar;
     void Start() {
-        BuildingCreator.ChangedCheese += ChangeCheese;
+        BuildingCreator.ChangedTools += ChangeTools;
         GameplayManager.UIStateUpdate += ChangeState;
         GameplayManager.UpdateBarHorde += ChangeHordeBar;
         Town.ChangedHP += ChangeHealth;
     }
 
     private void OnDisable() {
-        BuildingCreator.ChangedCheese -= ChangeCheese;
+        BuildingCreator.ChangedTools -= ChangeTools;
         GameplayManager.UIStateUpdate -= ChangeState;
         GameplayManager.UpdateBarHorde -= ChangeHordeBar;
         Town.ChangedHP -= ChangeHealth;
     }
-    void ChangeCheese(int c) {
-        goldText.text = "Cheese: " + c;
+    void ChangeTools(int t) {
+        goldText.text = "Tools: " + t;
     }
     void ChangeHealth(float health, float maxHealth) {
         hpBar.fillAmount = health / maxHealth;

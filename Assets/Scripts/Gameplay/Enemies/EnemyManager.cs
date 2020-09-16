@@ -22,7 +22,6 @@ public class EnemyManager : MonoBehaviour {
     void Start() {
         StopCoroutine(PrepareEnemy());
         StopCoroutine(CreateEnemies()); 
-        BuildingCreator.ChangedBuilds += SetBuildsList;
         GameplayManager.startEnemyAttack += StartSpawning;
         GameplayManager.endEnemyAttack += StopSpawning;
         Town.DestroyedTown += DestroyedTown;
@@ -32,7 +31,6 @@ public class EnemyManager : MonoBehaviour {
     private void OnDisable() {
         GameplayManager.startEnemyAttack -= StartSpawning;
         GameplayManager.endEnemyAttack -= StopSpawning;
-        BuildingCreator.ChangedBuilds -= SetBuildsList;
         Town.DestroyedTown -= DestroyedTown;
         Build.DestroyedBuild -= DestroyedBuild;
     }
@@ -82,10 +80,7 @@ public class EnemyManager : MonoBehaviour {
         for (int i = 0; i < hordes; i++) {
             for (int j = 0; j < spawnerPoints.Length; j++) {
                 Enemy go = Instantiate(enemies[Random.Range(0, enemies.Length)], spawnerPoints[j].transform.position, Quaternion.identity, enemyParent);
-                if (town != null)
-                    go.SetTown(town);
 
-                go.SetBuildsList(builds);
                 if (CreatedEnemy != null)
                     CreatedEnemy(go);
             }
