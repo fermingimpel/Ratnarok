@@ -8,6 +8,9 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] float timeInAttack;
     [SerializeField] float timeInPrepare;
 
+    public delegate void EndOfAttack();
+    public static event EndOfAttack EndEnemyAttack;
+
     public delegate void StartOfAttack();
     public static event StartOfAttack StartEnemyAttack;
 
@@ -42,21 +45,30 @@ public class GameplayManager : MonoBehaviour
     }
 
     IEnumerator PreparePhase() {
+        if (EndEnemyAttack != null)
+            EndEnemyAttack();
+
         if (UIStateUpdate != null)
             UIStateUpdate(Stage.Preparing);
-        if (UpdateBarHorde != null)
-            UpdateBarHorde(0f, 1f);
 
-        yield return new WaitForSeconds(timeInPrepare);
+        float t = 0;
+        while (t < timeInPrepare) {
+            t += Time.deltaTime;
+            if (UpdateBarHorde != null)
+                UpdateBarHorde(t, timeInPrepare);
+            yield return null;
+        }
+
         StopCoroutine(PreparePhase());
         StartCoroutine(AttackPhase());
-        if (StartEnemyAttack != null)
-            StartEnemyAttack();
 
         yield return null;
     }
 
     IEnumerator AttackPhase() {
+        if (StartEnemyAttack != null)
+            StartEnemyAttack();
+
         if (UIStateUpdate != null)
             UIStateUpdate(Stage.Attack);
 
