@@ -15,8 +15,6 @@ public class UIBuildings : MonoBehaviour {
     public static event UIBuildingButtonPressed BuildingButtonPressed;
 
     public void PressButtonStructure(int button) {
-        Debug.Log(button);
-        Debug.Log((TypeOfBuilds)(button));
         if (BuildingButtonPressed != null) 
             BuildingButtonPressed((TypeOfBuilds)(button));
     }

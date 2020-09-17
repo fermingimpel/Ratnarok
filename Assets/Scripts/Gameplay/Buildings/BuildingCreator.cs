@@ -19,7 +19,7 @@ public class BuildingCreator : MonoBehaviour {
 
     int buildToCreate = (int)TypeOfBuilds.None;
 
-    int tools = 0;
+    int tools = 50;
     
     Camera cam;
 
@@ -85,11 +85,12 @@ public class BuildingCreator : MonoBehaviour {
                     distance = collisionHit - tiles[i].transform.position;
                     if (distance.magnitude < 1 && !tileUsed[i]) {
                         if (structures[buildToCreate] != null)
-                        Debug.Log(structures[buildToCreate].transform.name);
                             if (structures[buildToCreate].GetToolsCost() <= tools) {
                                 Build go = Instantiate(structures[buildToCreate], tiles[i].transform.position, structures[buildToCreate].transform.rotation, structuresParent);
                                 tileUsed[i] = true;
                                 tools -= structures[buildToCreate].GetToolsCost();
+                                if (ChangedTools != null)
+                                    ChangedTools(tools);
                             }
                         i = tiles.Count;
                         buildToCreate = (int)TypeOfBuilds.None;
@@ -102,8 +103,6 @@ public class BuildingCreator : MonoBehaviour {
 
     void SelectTypeOfStructure(UIBuildings.TypeOfBuilds tob) {
         buildToCreate = (int)tob;
-        Debug.Log(tob);
-        Debug.Log(buildToCreate);
     }
 
     void EnemyCreated(Enemy e) {

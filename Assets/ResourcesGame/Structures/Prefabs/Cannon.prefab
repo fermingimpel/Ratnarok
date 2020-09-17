@@ -562,9 +562,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b3ba6a1d3bba341813cc4ccbdfc7fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolsCost: 0
+  toolsCost: 100
   preparationTime: 1.5
-  health: 0
+  cooldownToCreate: 7
+  health: 10
   damage: 1
   index: 0
   shoot: {fileID: 2710839702630804571, guid: fecdaa57c18899243a762eca16832f21, type: 3}

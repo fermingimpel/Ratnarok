@@ -7,6 +7,7 @@ public class GameplayManager : MonoBehaviour
 {
     [SerializeField] float timeInAttack;
     [SerializeField] float timeInPrepare;
+    [SerializeField] float timeInFirstPrepare;
 
     public delegate void EndOfAttack();
     public static event EndOfAttack EndEnemyAttack;
@@ -40,7 +41,27 @@ public class GameplayManager : MonoBehaviour
 
     IEnumerator LateStart() {
         yield return new WaitForSeconds(0.05f);
-        StartCoroutine(PreparePhase());
+        StartCoroutine(FirstPreparePhase());
+        yield return null;
+    }
+
+    IEnumerator FirstPreparePhase() {
+        if (EndEnemyAttack != null)
+            EndEnemyAttack();
+
+        if (UIStateUpdate != null)
+            UIStateUpdate(Stage.Preparing);
+
+        float t = 0;
+        while (t < timeInFirstPrepare) {
+            t += Time.deltaTime;
+            if (UpdateBarHorde != null)
+                UpdateBarHorde(t, timeInFirstPrepare);
+            yield return null;
+        }
+
+        StopCoroutine(FirstPreparePhase());
+        StartCoroutine(AttackPhase());
         yield return null;
     }
 

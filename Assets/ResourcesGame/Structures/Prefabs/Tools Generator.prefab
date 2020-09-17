@@ -127,13 +127,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2d1e8c3f1e1724eb76abdc2a210059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolsCost: 0
-  preparationTime: 0
-  health: 0
+  toolsCost: 50
+  preparationTime: 5
+  cooldownToCreate: 7
+  health: 8
   damage: 0
   index: 0
   building: {fileID: 0}
-  toolsToAdd: 0
+  toolsToAdd: 25
 --- !u!65 &6170392649880373122
 BoxCollider:
   m_ObjectHideFlags: 0

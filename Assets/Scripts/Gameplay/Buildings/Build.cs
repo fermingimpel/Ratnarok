@@ -5,6 +5,7 @@ using UnityEngine;
 public class Build : MonoBehaviour {
     [SerializeField] protected int toolsCost;
     [SerializeField] protected float preparationTime;
+    [SerializeField] protected float cooldownToCreate;
     [SerializeField] protected int health;
     [SerializeField] protected int damage;
     [SerializeField] int index;
