@@ -569,7 +569,7 @@ MonoBehaviour:
   damage: 1
   index: 0
   shoot: {fileID: 2710839702630804571, guid: fecdaa57c18899243a762eca16832f21, type: 3}
-  upset: {x: 0, y: 0, z: 0}
+  upset: {x: 0, y: 1.5, z: 0}
 --- !u!65 &3267920380603093571
 BoxCollider:
   m_ObjectHideFlags: 0

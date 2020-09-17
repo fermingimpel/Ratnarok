@@ -19,7 +19,7 @@ public class BuildingCreator : MonoBehaviour {
 
     int buildToCreate = (int)TypeOfBuilds.None;
 
-    int tools = 50;
+    [SerializeField] int tools = 50;
     
     Camera cam;
 

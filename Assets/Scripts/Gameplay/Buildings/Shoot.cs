@@ -5,13 +5,8 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     [SerializeField] float speed;
-    [SerializeField] Enemy enemy;
     [SerializeField] int damage;
     float minX = -6f;
-
-    private void Start() {
-        Destroy(this.gameObject, 1f);
-    }
 
     void Update() {
         transform.position += Vector3.left * speed * Time.deltaTime;
