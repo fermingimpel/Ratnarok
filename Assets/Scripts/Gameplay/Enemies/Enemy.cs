@@ -13,20 +13,17 @@ public class Enemy : MonoBehaviour {
     public static event EnemyDead Dead;
 
     protected virtual void Start() {
-        //GameplayManager.endEnemyAttack += OnDie;
         Town.DestroyedTown += OnDie;
-        StartCoroutine(LateStart());
-    }
-    IEnumerator LateStart() {
-        yield return new WaitForEndOfFrame();
-        StopCoroutine(LateStart());
-        yield return null;
+        transform.LookAt(transform.position + Vector3.right);
     }
     private void OnDisable() {
-        //GameplayManager.endEnemyAttack -= OnDie;
         Town.DestroyedTown -= OnDie;
     }
- 
+
+    private void Update() {
+        transform.position += transform.forward * speed * Time.deltaTime;
+    }
+
     public virtual void ReceiveDamage(int d) {
         health -= d;
         if (health <= 0) {
@@ -39,8 +36,5 @@ public class Enemy : MonoBehaviour {
 
         Destroy(this.gameObject);
     }
-    protected IEnumerator AttackObjective() {
-        StopCoroutine(AttackObjective());
-        yield return null;
-    }
+
 }

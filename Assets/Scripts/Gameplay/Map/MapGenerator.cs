@@ -9,8 +9,6 @@ public class MapGenerator : MonoBehaviour {
     [SerializeField] int height;
     [SerializeField] Vector3 offset;
 
-
-
     void Start() {
         for(int i=0;i<width;i++)
             for(int j = 0; j < height; j++) {

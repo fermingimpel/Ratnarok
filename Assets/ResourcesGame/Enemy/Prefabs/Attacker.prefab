@@ -45,8 +45,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.5, z: 1}
-  m_Center: {x: 0, y: -0.15, z: 0}
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &-3156021865077513048
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -75,16 +75,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3576fd3109110ef4faaa392f4adbd154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  town: {fileID: 0}
-  builds: []
-  agent: {fileID: 0}
-  health: 50
-  damage: 25
-  speed: 5
-  maxDistanceToAttack: 5
-  maxDistanceToSelect: 8
+  health: 8
+  speed: 2
   timeToAttack: 1
-  freezed: 0
 --- !u!1001 &5509778908001842141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -92,6 +85,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3815504036818428860}
     m_Modifications:
+    - target: {fileID: 7204057626645857748, guid: 97d0506a29f70474f97f8f4901d0eda2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7204057626645857748, guid: 97d0506a29f70474f97f8f4901d0eda2,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7204057626645857748, guid: 97d0506a29f70474f97f8f4901d0eda2,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7204057626645857748, guid: 97d0506a29f70474f97f8f4901d0eda2,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7204057626645857748, guid: 97d0506a29f70474f97f8f4901d0eda2,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8336964327767834299, guid: 97d0506a29f70474f97f8f4901d0eda2,
         type: 3}
       propertyPath: m_LocalPosition.x

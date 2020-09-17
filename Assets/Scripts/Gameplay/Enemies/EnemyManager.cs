@@ -3,98 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour {
-    [SerializeField] List<Build> builds;
     [SerializeField] GameObject[] spawnerPoints;
     [SerializeField] Enemy[] enemies;
     [SerializeField] Transform enemyParent;
     [SerializeField] Vector3 upset;
-    bool attacking = true;
 
-    [SerializeField] int hordes;
+    [SerializeField] int enemiesToCreate;
     [SerializeField] float timeToSpawn;
-    [SerializeField] float timeToHorde;
-
-    [SerializeField] Town town;
 
     public delegate void EnemyCreated(Enemy enemy);
     public static event EnemyCreated CreatedEnemy;
 
     void Start() {
-        StopCoroutine(PrepareEnemy());
-        StopCoroutine(CreateEnemies()); 
-        GameplayManager.startEnemyAttack += StartSpawning;
-        GameplayManager.endEnemyAttack += StopSpawning;
-        Town.DestroyedTown += DestroyedTown;
-        Build.DestroyedBuild -= DestroyedBuild;
+        GameplayManager.StartEnemyAttack += StartAttack;
     }
 
     private void OnDisable() {
-        GameplayManager.startEnemyAttack -= StartSpawning;
-        GameplayManager.endEnemyAttack -= StopSpawning;
-        Town.DestroyedTown -= DestroyedTown;
-        Build.DestroyedBuild -= DestroyedBuild;
+        GameplayManager.StartEnemyAttack -= StartAttack;
     }
 
-    void SetBuildsList(List<Build> b) {
-        builds = b;
-    }
-
-    void StartSpawning() {
-        attacking = true;
+    void StartAttack() {
         StartCoroutine(CreateEnemies());
     }
-    void StopSpawning() {
-        attacking = false;
-        StopCoroutine(PrepareEnemy());
-        StopCoroutine(CreateEnemies());
-    }
 
-    void DestroyedTown() {
-        town = null;
-        attacking = false;
-        this.enabled = false;
-        StopCoroutine(PrepareEnemy());
-        StopCoroutine(CreateEnemies());
-    }
-
-    void DestroyedBuild(Build b) {
-        builds.Remove(b);
-    }
-
-    IEnumerator PrepareEnemy() {
-        yield return new WaitForSeconds(timeToHorde);
-        if (attacking) {
-            StopCoroutine(PrepareEnemy());
-            StartCoroutine(CreateEnemies());
-        }
-        else
-            StopCoroutine(PrepareEnemy());
-        yield return null;
-    }
     IEnumerator CreateEnemies() {
-        if (!attacking) {
-            StopCoroutine(CreateEnemies());
-            yield return null;
-        }
-
-        for (int i = 0; i < hordes; i++) {
-            for (int j = 0; j < spawnerPoints.Length; j++) {
-                Enemy go = Instantiate(enemies[Random.Range(0, enemies.Length)], spawnerPoints[j].transform.position, Quaternion.identity, enemyParent);
-
-                if (CreatedEnemy != null)
-                    CreatedEnemy(go);
-            }
+        for (int i = 0; i < enemiesToCreate; i++) {
+            Enemy go = Instantiate(enemies[Random.Range(0, enemies.Length)], spawnerPoints[Random.Range(0, spawnerPoints.Length)].transform.position + upset, Quaternion.identity, enemyParent);
             yield return new WaitForSeconds(timeToSpawn);
         }
 
-        if (attacking) {
-            StopCoroutine(CreateEnemies());
-            StartCoroutine(PrepareEnemy());
-        }
-        else {
-            StopCoroutine(PrepareEnemy());
-            StopCoroutine(CreateEnemies());
-        }
         yield return null;
     }
 }

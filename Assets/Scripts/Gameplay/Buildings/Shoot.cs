@@ -15,7 +15,7 @@ public class Shoot : MonoBehaviour
 
     void Update() {
         transform.position += Vector3.left * speed * Time.deltaTime;
-        if (transform.position.y < minX)
+        if (transform.position.x < minX)
             Destroy(this.gameObject);
     }
         
