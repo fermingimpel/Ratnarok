@@ -5,22 +5,20 @@ using UnityEngine;
 public class UIBuildings : MonoBehaviour {
 
     public enum TypeOfBuilds {
-        None,
-        Tower,
-        KnivesSpinner
+        Cannon,
+        ToolsGenerator,
+        Fence,
+        None
     }
 
     public delegate void UIBuildingButtonPressed(TypeOfBuilds tob);
     public static event UIBuildingButtonPressed BuildingButtonPressed;
 
-    public void TowerButton() {
-        if (BuildingButtonPressed != null)
-            BuildingButtonPressed(TypeOfBuilds.Tower);
-    }
-
-    public void KnivesSpinnerButton() {
-        if (BuildingButtonPressed != null)
-            BuildingButtonPressed(TypeOfBuilds.KnivesSpinner);
+    public void PressButtonStructure(int button) {
+        Debug.Log(button);
+        Debug.Log((TypeOfBuilds)(button));
+        if (BuildingButtonPressed != null) 
+            BuildingButtonPressed((TypeOfBuilds)(button));
     }
 
 }

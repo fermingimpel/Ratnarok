@@ -42,6 +42,12 @@ public class GameplayManager : MonoBehaviour
     }
 
     IEnumerator PreparePhase() {
+        if (UIStateUpdate != null)
+            UIStateUpdate(Stage.Preparing);
+        if (UpdateBarHorde != null)
+            UpdateBarHorde(0f, 1f);
+
+        yield return new WaitForSeconds(timeInPrepare);
         StopCoroutine(PreparePhase());
         StartCoroutine(AttackPhase());
         if (StartEnemyAttack != null)

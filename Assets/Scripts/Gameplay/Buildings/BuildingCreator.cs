@@ -9,13 +9,15 @@ public class BuildingCreator : MonoBehaviour {
     [SerializeField] Vector3 upset;
     [SerializeField] Transform structuresParent;
 
-    int buildToCreate = 1;
 
     public enum TypeOfBuilds {
-        None,
-        Tower,
-        KnivesSpinner
+        Cannon,
+        ToolsGenerator,
+        Fence,
+        None
     }
+
+    int buildToCreate = (int)TypeOfBuilds.None;
 
     int tools = 0;
     
@@ -57,7 +59,21 @@ public class BuildingCreator : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.anyKeyDown) {
+            switch (Input.inputString) {
+                case "1":
+                    buildToCreate = (int)TypeOfBuilds.Cannon;
+                    break;
+                case "2":
+                    buildToCreate = (int)TypeOfBuilds.ToolsGenerator;
+                    break;
+                case "3":
+                    buildToCreate = (int)TypeOfBuilds.Fence;
+                    break;
+            }
+        }
+
+        if (Input.GetMouseButtonDown(0) && buildToCreate != (int)TypeOfBuilds.None) {
             Vector3 mousePos = Input.mousePosition;
             Ray ray = cam.ScreenPointToRay(mousePos);
             RaycastHit hit;
@@ -69,12 +85,14 @@ public class BuildingCreator : MonoBehaviour {
                     distance = collisionHit - tiles[i].transform.position;
                     if (distance.magnitude < 1 && !tileUsed[i]) {
                         if (structures[buildToCreate] != null)
+                        Debug.Log(structures[buildToCreate].transform.name);
                             if (structures[buildToCreate].GetToolsCost() <= tools) {
                                 Build go = Instantiate(structures[buildToCreate], tiles[i].transform.position, structures[buildToCreate].transform.rotation, structuresParent);
                                 tileUsed[i] = true;
                                 tools -= structures[buildToCreate].GetToolsCost();
                             }
                         i = tiles.Count;
+                        buildToCreate = (int)TypeOfBuilds.None;
                     }
                 }
 
@@ -84,6 +102,8 @@ public class BuildingCreator : MonoBehaviour {
 
     void SelectTypeOfStructure(UIBuildings.TypeOfBuilds tob) {
         buildToCreate = (int)tob;
+        Debug.Log(tob);
+        Debug.Log(buildToCreate);
     }
 
     void EnemyCreated(Enemy e) {
