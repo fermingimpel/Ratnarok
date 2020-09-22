@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cannon : Build {
+public class Catapult : Build {
+
     [SerializeField] Shoot shoot;
-    [SerializeField] Vector3 upset;
+    [SerializeField] Vector3 offset;
+
+    private void Start() {
+        StartCoroutine(PrepareAttack());
+    }
 
     protected override void StopDefend() {
         StopCoroutine(PrepareAttack());
@@ -21,9 +26,8 @@ public class Cannon : Build {
         yield return null;
     }
     protected override void Attack() {
-        Shoot s = Instantiate(shoot, transform.position + upset, Quaternion.identity);
+        Debug.Log("ASD");
+        Shoot s = Instantiate(shoot, transform.position + offset, shoot.transform.rotation);
         StartCoroutine(PrepareAttack());
     }
-
-
 }

@@ -25,11 +25,15 @@ public class Build : MonoBehaviour {
     }
 
     protected virtual void StopDefend() {
-        Debug.Log("Yeah");
+        Debug.Log("Stop Defend");
     }
 
     protected virtual void StartDefend() {
-        Debug.Log("Yeah");
+        Debug.Log("Start Defend");
+    }
+
+    protected virtual void Attack() {
+        Debug.Log("Attack");
     }
 
     public virtual void HitBuild(int d) {

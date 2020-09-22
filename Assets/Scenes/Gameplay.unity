@@ -2748,7 +2748,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 243.5, y: 0}
+  m_AnchoredPosition: {x: 244, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 1}
 --- !u!1 &315083727
@@ -5492,7 +5492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &604421522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8888,6 +8888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedCamera: 45
   speedZoom: 3000
+  town: {fileID: 0}
 --- !u!1 &963441077
 GameObject:
   m_ObjectHideFlags: 0
@@ -10677,7 +10678,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1127702952
 MonoBehaviour:
   m_ObjectHideFlags: 0
