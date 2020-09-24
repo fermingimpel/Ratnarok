@@ -8,6 +8,8 @@ public class UIBuildings : MonoBehaviour {
         Cannon,
         ToolsGenerator,
         Fence,
+        Catapult,
+        Flamethrower,
         None
     }
 

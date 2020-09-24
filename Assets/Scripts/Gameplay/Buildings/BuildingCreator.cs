@@ -14,6 +14,8 @@ public class BuildingCreator : MonoBehaviour {
         Cannon,
         ToolsGenerator,
         Fence,
+        Catapult,
+        Flamethrower,
         None
     }
 
@@ -69,6 +71,12 @@ public class BuildingCreator : MonoBehaviour {
                     break;
                 case "3":
                     buildToCreate = (int)TypeOfBuilds.Fence;
+                    break;
+                case "4":
+                    buildToCreate = (int)TypeOfBuilds.Catapult;
+                    break;
+                case "5":
+                    buildToCreate = (int)TypeOfBuilds.Flamethrower;
                     break;
             }
         }

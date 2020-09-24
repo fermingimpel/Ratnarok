@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 801261212631854467}
   - component: {fileID: 3934173153483602342}
+  - component: {fileID: 7352969111540256073}
   m_Layer: 0
   m_Name: Catapult
   m_TagString: Untagged
@@ -24,15 +25,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24055662019884857}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8611935698904040364}
   - {fileID: 7563162798266528656}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &3934173153483602342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53,6 +54,19 @@ MonoBehaviour:
   index: 0
   shoot: {fileID: 7725327777904427297, guid: 463de70085845a64ba028e0c3d7140de, type: 3}
   offset: {x: 0, y: 0, z: 0}
+--- !u!65 &7352969111540256073
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24055662019884857}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.5, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &267305615226229346
 GameObject:
   m_ObjectHideFlags: 0
