@@ -15,6 +15,9 @@ public class Enemy : MonoBehaviour {
 
     Build buildToAttack;
     bool attackingBuild = false;
+
+    GameObject town;
+
     protected virtual void Start() {
         Town.DestroyedTown += OnDie;
         transform.LookAt(transform.position + Vector3.right);
@@ -28,6 +31,7 @@ public class Enemy : MonoBehaviour {
             return;
 
         transform.position += transform.forward * speed * Time.deltaTime;
+        transform.LookAt(town.transform.position);
     }
 
     public virtual void ReceiveDamage(int d) {
@@ -59,6 +63,10 @@ public class Enemy : MonoBehaviour {
         StopCoroutine(Attack());
         ResetAttack();
         yield return null;
+    }
+
+    public void SetTown(GameObject t) {
+        town = t;
     }
 
     void ResetAttack() {
