@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour {
     [SerializeField] protected int health;
@@ -18,6 +17,8 @@ public class Enemy : MonoBehaviour {
 
     GameObject town;
 
+    [SerializeField] List<Transform> path;
+    [SerializeField] int actualPath = 0;
     protected virtual void Start() {
         Town.DestroyedTown += OnDie;
         transform.LookAt(transform.position + Vector3.right);
@@ -30,8 +31,13 @@ public class Enemy : MonoBehaviour {
         if (attackingBuild)
             return;
 
-        transform.position += transform.forward * speed * Time.deltaTime;
-        transform.LookAt(town.transform.position);
+        if (path[actualPath] != null) {
+            transform.position = Vector3.MoveTowards(transform.position, path[actualPath].transform.position, speed * Time.deltaTime);
+            transform.LookAt(path[actualPath].transform.position);
+            if (transform.position == path[actualPath].transform.position) {
+                actualPath++;
+            }
+        }
     }
 
     public virtual void ReceiveDamage(int d) {
@@ -46,7 +52,9 @@ public class Enemy : MonoBehaviour {
 
         Destroy(this.gameObject);
     }
-
+    public void SetPath(List<Transform> p) {
+        path = p;
+    }
     IEnumerator Attack() {
         attackingBuild = true;
 

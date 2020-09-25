@@ -1,9 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour {
     [SerializeField] GameObject[] spawnerPoints;
+
+    [Serializable]
+    public class Paths {
+        public List<Transform> pos;
+    }
+
+    [SerializeField] List<Paths> paths;
+
     [SerializeField] Enemy[] enemies;
     [SerializeField] Transform enemyParent;
     [SerializeField] Vector3 upset;
@@ -11,17 +20,7 @@ public class EnemyManager : MonoBehaviour {
     [SerializeField] int enemiesToCreate;
     [SerializeField] float timeToSpawn;
     [SerializeField] GameObject town;
-    bool attacking ;
-
- //public enum Direction {
- //    Right,
- //    Left,
- //    Forward,
- //    Back,
- //    None
- //}
- //
- //public Direction dir;
+    bool attacking;
 
     public delegate void EnemyCreated(Enemy enemy);
     public static event EnemyCreated CreatedEnemy;
@@ -48,9 +47,11 @@ public class EnemyManager : MonoBehaviour {
 
     IEnumerator CreateEnemies() {
         int enemiesCreated = 0;
-        while(attacking && enemiesCreated < enemiesToCreate) { 
-            Enemy go = Instantiate(enemies[Random.Range(0, enemies.Length)], spawnerPoints[Random.Range(0, spawnerPoints.Length)].transform.position + upset, Quaternion.identity, enemyParent);
+        while(attacking && enemiesCreated < enemiesToCreate) {
+            int spawn = UnityEngine.Random.Range(0, spawnerPoints.Length);
+            Enemy go = Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Length)], spawnerPoints[spawn].transform.position + upset, Quaternion.identity, enemyParent);
             go.SetTown(town);
+            go.SetPath(paths[spawn].pos);
             yield return new WaitForSeconds(timeToSpawn);
         }
 
