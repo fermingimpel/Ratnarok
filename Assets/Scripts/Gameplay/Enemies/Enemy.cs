@@ -19,9 +19,10 @@ public class Enemy : MonoBehaviour {
 
     [SerializeField] List<Transform> path;
     [SerializeField] int actualPath = 0;
+    Vector3 posY;
     protected virtual void Start() {
         Town.DestroyedTown += OnDie;
-        transform.LookAt(transform.position + Vector3.right);
+        posY = new Vector3(0f, transform.position.y, 0f);
     }
     private void OnDisable() {
         Town.DestroyedTown -= OnDie;
@@ -32,9 +33,9 @@ public class Enemy : MonoBehaviour {
             return;
 
         if (path[actualPath] != null) {
-            transform.position = Vector3.MoveTowards(transform.position, path[actualPath].transform.position, speed * Time.deltaTime);
-            transform.LookAt(path[actualPath].transform.position);
-            if (transform.position == path[actualPath].transform.position) {
+            transform.position = Vector3.MoveTowards(transform.position, path[actualPath].transform.position + posY, speed * Time.deltaTime);
+            transform.LookAt(path[actualPath].transform.position + posY);
+            if (transform.position == path[actualPath].transform.position + posY) {
                 actualPath++;
             }
         }

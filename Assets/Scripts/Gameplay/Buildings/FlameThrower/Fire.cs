@@ -18,12 +18,10 @@ public class Fire : Shoot {
 
     IEnumerator WaitToAttack() {
         actualTicks = 0;
-            Debug.Log(actualTicks);
         while (actualTicks < maxTicks) {
             yield return new WaitForSeconds(timeBetweenTicks);
             Attack();
             actualTicks++;
-            Debug.Log(actualTicks);
         }
 
         StopCoroutine(WaitToAttack());
@@ -35,7 +33,6 @@ public class Fire : Shoot {
     }
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("XD");
         if (other.gameObject.CompareTag("Enemy")) {
             other.GetComponent<Enemy>().ReceiveDamage(damage);
         }

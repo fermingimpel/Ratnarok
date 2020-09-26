@@ -18,7 +18,6 @@ public class ShootCannon : Shoot {
             transform.position = Vector3.MoveTowards(transform.position, direction, speed * Time.deltaTime);
             yield return null;
         }
-        Debug.Log("XD");
         Destroy(this.gameObject);
         StopCoroutine(Move());
         yield return null;

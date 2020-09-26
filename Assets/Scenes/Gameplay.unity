@@ -2732,7 +2732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &604421522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2749,7 +2749,6 @@ MonoBehaviour:
   - {fileID: 555649956}
   - {fileID: 1235073510}
   - {fileID: 749764576}
-  - {fileID: 0}
   - {fileID: 2074287292}
   paths:
   - pos:
@@ -2783,7 +2782,7 @@ MonoBehaviour:
   - {fileID: -4978217721689628138, guid: 4105afa5bf527af4c9cd65c131a1f14e, type: 3}
   - {fileID: 2727385409866046656, guid: 422ffd736c23d1141931fe50c0384616, type: 3}
   enemyParent: {fileID: 1057995235}
-  upset: {x: 0, y: 0.5, z: 0}
+  upset: {x: 0, y: 0.6, z: 0}
   enemiesToCreate: 50
   timeToSpawn: 1
   town: {fileID: 919132148606980174}
