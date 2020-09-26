@@ -22,6 +22,7 @@ public class Cannon : Build {
     }
     protected override void Attack() {
         Shoot s = Instantiate(shoot, transform.position + upset, Quaternion.identity);
+        s.SetDirection(lookPos + upset);
         StartCoroutine(PrepareAttack());
     }
 

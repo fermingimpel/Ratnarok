@@ -569,8 +569,9 @@ MonoBehaviour:
   damage: 1
   index: 0
   path: []
+  lookPos: {x: 0, y: 0, z: 0}
   shoot: {fileID: 142972629410484654, guid: fecdaa57c18899243a762eca16832f21, type: 3}
-  upset: {x: 0, y: 1.5, z: 0}
+  upset: {x: 0, y: 2.045, z: 0}
 --- !u!65 &3267920380603093571
 BoxCollider:
   m_ObjectHideFlags: 0

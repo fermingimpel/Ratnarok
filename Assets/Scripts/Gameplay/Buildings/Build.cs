@@ -14,7 +14,7 @@ public class Build : MonoBehaviour {
     public static event BuildDestroyed DestroyedBuild;
 
     [SerializeField] List<Transform> path;
-    [SerializeField] 
+    [SerializeField] protected Vector3 lookPos;
     void Start() {
        // GameplayManager.startEnemyAttack += StartDefend;
        // GameplayManager.endEnemyAttack += StopDefend;
@@ -61,7 +61,9 @@ public class Build : MonoBehaviour {
         path = p;
     }
     public void SetLookAt(int la) {
-        if (path[la] != null)
+        if (path[la] != null) {
             transform.LookAt(new Vector3(path[la].position.x, transform.position.y, path[la].position.z));
+            lookPos = new Vector3(path[la].position.x, transform.position.y, path[la].position.z);
+        }
     }
 }

@@ -3,13 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShootCannon : Shoot {
-    void Start() {
-
+    private void Start() {
+        StartCoroutine(LateStart());
     }
-    protected void Update() {
-        transform.position += Vector3.left * speed * Time.deltaTime;
-        if (transform.position.x < minX)
-            Destroy(this.gameObject);
+    IEnumerator LateStart() {
+        yield return new WaitForEndOfFrame();
+        StartCoroutine(Move());
+        StopCoroutine(LateStart());
+        yield return null;
+    }
+
+    IEnumerator Move() {
+        while (transform.position != direction) {
+            transform.position = Vector3.MoveTowards(transform.position, direction, speed * Time.deltaTime);
+            yield return null;
+        }
+        Debug.Log("XD");
+        Destroy(this.gameObject);
+        StopCoroutine(Move());
+        yield return null;
     }
 
     private void OnTriggerEnter(Collider other) {

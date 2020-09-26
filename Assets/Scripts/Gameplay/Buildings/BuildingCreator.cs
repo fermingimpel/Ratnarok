@@ -91,7 +91,9 @@ public class BuildingCreator : MonoBehaviour {
                             if (ChangedTools != null)
                                 ChangedTools(tools);
                             buildToCreate = (int)TypeOfBuilds.None;
+                            Debug.Log("XD");
                             go.SetPath( paths[hit.transform.gameObject.GetComponent<Tile>().GetPathIndex()].pos);
+                            Debug.Log("XD2");
                             go.SetLookAt(hit.transform.gameObject.GetComponent<Tile>().GetLookAt());
                         }
                 }
