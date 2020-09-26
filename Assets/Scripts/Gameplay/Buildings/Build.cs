@@ -13,6 +13,8 @@ public class Build : MonoBehaviour {
     public delegate void BuildDestroyed(Build b);
     public static event BuildDestroyed DestroyedBuild;
 
+    [SerializeField] List<Transform> path;
+    [SerializeField] 
     void Start() {
        // GameplayManager.startEnemyAttack += StartDefend;
        // GameplayManager.endEnemyAttack += StopDefend;
@@ -23,7 +25,9 @@ public class Build : MonoBehaviour {
         //GameplayManager.startEnemyAttack -= StartDefend;
         //GameplayManager.endEnemyAttack -= StopDefend;
     }
-
+    private void Update() {
+       
+    }
     protected virtual void StopDefend() {
         Debug.Log("Stop Defend");
     }
@@ -35,7 +39,7 @@ public class Build : MonoBehaviour {
     protected virtual void Attack() {
         Debug.Log("Attack");
     }
-
+ 
     public virtual void HitBuild(int d) {
         health -= d;
         if (health <= 0) {
@@ -52,5 +56,12 @@ public class Build : MonoBehaviour {
     }
     public virtual int GetDamage() {
         return damage;
+    }
+    public void SetPath(List<Transform> p) {
+        path = p;
+    }
+    public void SetLookAt(int la) {
+        if (path[la] != null)
+            transform.LookAt(new Vector3(path[la].position.x, transform.position.y, path[la].position.z));
     }
 }
