@@ -9,7 +9,7 @@ public class ShootCatapult : Shoot {
     float t = 0;
     void Start() {
         initPos = transform.position;
-        finalPos = new Vector3(Random.Range(minX, transform.position.x), transform.position.y, transform.position.z);
+        finalPos = direction;
         midPos = Vector3.Lerp(initPos, finalPos, 0.33f) + (Vector3.up * 0.75f);
 
         StartCoroutine(Move());

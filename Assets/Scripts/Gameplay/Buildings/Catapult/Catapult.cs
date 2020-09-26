@@ -26,8 +26,8 @@ public class Catapult : Build {
         yield return null;
     }
     protected override void Attack() {
-        Debug.Log("ASD");
         Shoot s = Instantiate(shoot, transform.position + offset, shoot.transform.rotation);
+        s.SetDirection(lookPos + offset);
         StartCoroutine(PrepareAttack());
     }
 }
