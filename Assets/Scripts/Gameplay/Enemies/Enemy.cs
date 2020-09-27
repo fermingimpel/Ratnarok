@@ -21,10 +21,12 @@ public class Enemy : MonoBehaviour {
     [SerializeField] int actualPath = 0;
     Vector3 posY;
     protected virtual void Start() {
+        GameplayManager.EndEnemyAttack += OnDie;
         Town.DestroyedTown += OnDie;
         posY = new Vector3(0f, transform.position.y, 0f);
     }
     private void OnDisable() {
+        GameplayManager.EndEnemyAttack -= OnDie;
         Town.DestroyedTown -= OnDie;
     }
 

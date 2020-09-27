@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class GameplayManager : MonoBehaviour
 {
     [SerializeField] float timeInAttack;
-    [SerializeField] float timeInPrepare;
     [SerializeField] float timeInFirstPrepare;
 
     public delegate void EndOfAttack();
@@ -63,25 +62,6 @@ public class GameplayManager : MonoBehaviour
         yield return null;
     }
 
-    IEnumerator PreparePhase() {
-        if (EndEnemyAttack != null)
-            EndEnemyAttack();
-
-        if (UIStateUpdate != null)
-            UIStateUpdate(Stage.Preparing);
-
-        float t = 0;
-        while (t < timeInPrepare) {
-            t += Time.deltaTime;
-            yield return null;
-        }
-
-        StopCoroutine(PreparePhase());
-        StartCoroutine(AttackPhase());
-
-        yield return null;
-    }
-
     IEnumerator AttackPhase() {
         if (StartEnemyAttack != null)
             StartEnemyAttack();
@@ -97,11 +77,9 @@ public class GameplayManager : MonoBehaviour
             yield return null;
         }
 
-        if (UpdateBarHorde != null)
-            UpdateBarHorde(0, timeInAttack);
-
+        if (EndEnemyAttack != null)
+            EndEnemyAttack();
         StopCoroutine(AttackPhase());
-        StartCoroutine(PreparePhase());
         yield return null;
     }
    

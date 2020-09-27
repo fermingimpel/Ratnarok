@@ -24,7 +24,7 @@ public class UIGameplay : MonoBehaviour {
         Town.ChangedHP -= ChangeHP;
     }
     void ChangeTools(int t) {
-        goldText.text = "Tools: " + t;
+        goldText.text = t.ToString();
     }
     void ChangeHP(float hp, float maxHP) {
         hpBar1.fillAmount = hp / maxHP;
