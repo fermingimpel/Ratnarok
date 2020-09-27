@@ -55,8 +55,6 @@ public class GameplayManager : MonoBehaviour
         float t = 0;
         while (t < timeInFirstPrepare) {
             t += Time.deltaTime;
-            if (UpdateBarHorde != null)
-                UpdateBarHorde(t, timeInFirstPrepare);
             yield return null;
         }
 
@@ -75,8 +73,6 @@ public class GameplayManager : MonoBehaviour
         float t = 0;
         while (t < timeInPrepare) {
             t += Time.deltaTime;
-            if (UpdateBarHorde != null)
-                UpdateBarHorde(t, timeInPrepare);
             yield return null;
         }
 
@@ -100,6 +96,9 @@ public class GameplayManager : MonoBehaviour
                 UpdateBarHorde(t, timeInAttack);
             yield return null;
         }
+
+        if (UpdateBarHorde != null)
+            UpdateBarHorde(0, timeInAttack);
 
         StopCoroutine(AttackPhase());
         StartCoroutine(PreparePhase());

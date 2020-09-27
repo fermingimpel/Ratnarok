@@ -6,35 +6,31 @@ using UnityEngine.UI;
 
 public class UIGameplay : MonoBehaviour {
     [SerializeField] TextMeshProUGUI goldText;
-    [SerializeField] TextMeshProUGUI progressText;
-    [SerializeField] Image hordeBar;
+    [SerializeField] Image hordeRat;
+    [SerializeField] Image hpBar1;
+    [SerializeField] Image hpBar2;
+
+    [SerializeField] GameObject go1;
+    [SerializeField] GameObject go2;
+
     void Start() {
         BuildingCreator.ChangedTools += ChangeTools;
-        GameplayManager.UIStateUpdate += ChangeState;
         GameplayManager.UpdateBarHorde += ChangeHordeBar;
+        Town.ChangedHP += ChangeHP;
     }
-
     private void OnDisable() {
         BuildingCreator.ChangedTools -= ChangeTools;
-        GameplayManager.UIStateUpdate -= ChangeState;
         GameplayManager.UpdateBarHorde -= ChangeHordeBar;
+        Town.ChangedHP -= ChangeHP;
     }
     void ChangeTools(int t) {
         goldText.text = "Tools: " + t;
     }
-    void ChangeHordeBar(float timeInHorde, float maxTimeInHorde) {
-        hordeBar.fillAmount = timeInHorde / maxTimeInHorde;
+    void ChangeHP(float hp, float maxHP) {
+        hpBar1.fillAmount = hp / maxHP;
+        hpBar2.fillAmount = hp / maxHP;
     }
-    void ChangeState(GameplayManager.Stage s) {
-        switch (s) {
-            case GameplayManager.Stage.Attack:
-                progressText.text = "DEFENDING...";
-                break;
-            case GameplayManager.Stage.Preparing:
-                progressText.text = "PREPARING...";
-                break;
-            default:
-                break;
-        }
+    void ChangeHordeBar(float timeInHorde, float maxTimeInHorde) {
+        hordeRat.transform.position = Vector3.Lerp(go1.transform.position, go2.transform.position, timeInHorde / maxTimeInHorde);
     }
 }

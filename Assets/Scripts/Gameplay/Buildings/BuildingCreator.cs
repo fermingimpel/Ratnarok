@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class BuildingCreator : MonoBehaviour {
     [SerializeField] Build[] structures;
@@ -36,6 +37,12 @@ public class BuildingCreator : MonoBehaviour {
     public delegate void ToolsChanged(int t);
     public static event ToolsChanged ChangedTools;
 
+    public delegate void BaseClicked();
+    public static event BaseClicked ClickedBase;
+
+    Vector3 posSelected;
+    GameObject goSelected;
+
     void Start() {
         builds = new List<Build>();
         builds.Clear();
@@ -48,59 +55,85 @@ public class BuildingCreator : MonoBehaviour {
 
         EnemyManager.CreatedEnemy += EnemyCreated;
         Enemy.Dead += EnemyKilled;
-        UIBuildings.BuildingButtonPressed += SelectTypeOfStructure;
+        UIBuildings.BuildingButtonPressed += CreateStructure;
     }
 
     private void OnDisable() {
         EnemyManager.CreatedEnemy -= EnemyCreated;
         Enemy.Dead -= EnemyKilled;
-        UIBuildings.BuildingButtonPressed -= SelectTypeOfStructure;
+        UIBuildings.BuildingButtonPressed -= CreateStructure;
     }
 
     void Update() {
-        if (Input.anyKeyDown) {
-            switch (Input.inputString) {
-                case "1":
-                    buildToCreate = (int)TypeOfBuilds.Cannon;
-                    break;
-                case "2":
-                    buildToCreate = (int)TypeOfBuilds.ToolsGenerator;
-                    break;
-                case "3":
-                    buildToCreate = (int)TypeOfBuilds.Fence;
-                    break;
-                case "4":
-                    buildToCreate = (int)TypeOfBuilds.Catapult;
-                    break;
-                case "5":
-                    buildToCreate = (int)TypeOfBuilds.Flamethrower;
-                    break;
-            }
-        }
+        //if (Input.anyKeyDown) {
+        //    switch (Input.inputString) {
+        //        case "1":
+        //            buildToCreate = (int)TypeOfBuilds.Cannon;
+        //            break;
+        //        case "2":
+        //            buildToCreate = (int)TypeOfBuilds.ToolsGenerator;
+        //            break;
+        //        case "3":
+        //            buildToCreate = (int)TypeOfBuilds.Fence;
+        //            break;
+        //        case "4":
+        //            buildToCreate = (int)TypeOfBuilds.Catapult;
+        //            break;
+        //        case "5":
+        //            buildToCreate = (int)TypeOfBuilds.Flamethrower;
+        //            break;
+        //    }
+        //}
+        //
+        //if (Input.GetMouseButtonDown(0) && buildToCreate != (int)TypeOfBuilds.None) {
+        //    Vector3 mousePos = Input.mousePosition;
+        //    Ray ray = cam.ScreenPointToRay(mousePos);
+        //    RaycastHit hit;
+        //    if (Physics.Raycast(ray, out hit, 200)) {
+        //        if (hit.transform.CompareTag("Base")) {
+        //            if (structures[buildToCreate] != null)
+        //                if (structures[buildToCreate].GetToolsCost() <= tools) {
+        //                    Build go = Instantiate(structures[buildToCreate], hit.transform.position, structures[buildToCreate].transform.rotation, structuresParent);
+        //                    tools -= structures[buildToCreate].GetToolsCost();
+        //                    if (ChangedTools != null)
+        //                        ChangedTools(tools);
+        //                    buildToCreate = (int)TypeOfBuilds.None;
+        //                    go.SetPath( paths[hit.transform.gameObject.GetComponent<Tile>().GetPathIndex()].pos);
+        //                    go.SetLookAt(hit.transform.gameObject.GetComponent<Tile>().GetLookAt());
+        //                }
+        //        }
+        //    }
+        //}
 
-        if (Input.GetMouseButtonDown(0) && buildToCreate != (int)TypeOfBuilds.None) {
+        if (Input.GetMouseButtonDown(0)) {
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+
             Vector3 mousePos = Input.mousePosition;
             Ray ray = cam.ScreenPointToRay(mousePos);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 200)) {
+            if(Physics.Raycast(ray, out hit, 200)) {
                 if (hit.transform.CompareTag("Base")) {
-                    if (structures[buildToCreate] != null)
-                        if (structures[buildToCreate].GetToolsCost() <= tools) {
-                            Build go = Instantiate(structures[buildToCreate], hit.transform.position, structures[buildToCreate].transform.rotation, structuresParent);
-                            tools -= structures[buildToCreate].GetToolsCost();
-                            if (ChangedTools != null)
-                                ChangedTools(tools);
-                            buildToCreate = (int)TypeOfBuilds.None;
-                            go.SetPath( paths[hit.transform.gameObject.GetComponent<Tile>().GetPathIndex()].pos);
-                            go.SetLookAt(hit.transform.gameObject.GetComponent<Tile>().GetLookAt());
-                        }
+                    posSelected = hit.transform.position;
+                    goSelected = hit.transform.gameObject;
+                    if (ClickedBase != null)
+                        ClickedBase();
                 }
             }
         }
     }
 
-    void SelectTypeOfStructure(UIBuildings.TypeOfBuilds tob) {
+    void CreateStructure(UIBuildings.TypeOfBuilds tob) {
         buildToCreate = (int)tob;
+        if (structures[buildToCreate].GetToolsCost() <= tools) {
+            Build go = Instantiate(structures[buildToCreate], posSelected, structures[buildToCreate].transform.rotation, structuresParent);
+            tools -= structures[buildToCreate].GetToolsCost();
+            if (ChangedTools != null)
+                ChangedTools(tools);
+            buildToCreate = (int)TypeOfBuilds.None;
+            go.SetPath(paths[goSelected.GetComponent<Tile>().GetPathIndex()].pos);
+            go.SetLookAt(goSelected.GetComponent<Tile>().GetLookAt());
+        }
     }
 
     void EnemyCreated(Enemy e) {
