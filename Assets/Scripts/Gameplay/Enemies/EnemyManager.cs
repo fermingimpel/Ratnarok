@@ -19,7 +19,7 @@ public class EnemyManager : MonoBehaviour {
 
     [SerializeField] int enemiesToCreate;
     [SerializeField] float timeToSpawn;
-    [SerializeField] GameObject town;
+    [SerializeField] Town town;
     bool attacking;
 
     public delegate void EnemyCreated(Enemy enemy);
@@ -28,11 +28,13 @@ public class EnemyManager : MonoBehaviour {
     void Start() {
         GameplayManager.StartEnemyAttack += StartAttack;
         GameplayManager.EndEnemyAttack += StopAttack;
+        Town.DestroyedTown += StopAttack;
     }
 
     private void OnDisable() {
         GameplayManager.StartEnemyAttack -= StartAttack;
         GameplayManager.EndEnemyAttack -= StopAttack;
+        Town.DestroyedTown -= StopAttack;
     }
 
     void StartAttack() {
@@ -50,8 +52,8 @@ public class EnemyManager : MonoBehaviour {
         while(attacking && enemiesCreated < enemiesToCreate) {
             int spawn = UnityEngine.Random.Range(0, spawnerPoints.Length);
             Enemy go = Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Length)], spawnerPoints[spawn].transform.position + upset, Quaternion.identity, enemyParent);
-            go.SetTown(town);
             go.SetPath(paths[spawn].pos);
+            go.SetTown(town);
             yield return new WaitForSeconds(timeToSpawn);
         }
 

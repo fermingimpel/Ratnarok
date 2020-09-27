@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour {
     Build buildToAttack;
     bool attackingBuild = false;
 
-    GameObject town;
+    [SerializeField] Town town;
 
     [SerializeField] List<Transform> path;
     [SerializeField] int actualPath = 0;
@@ -34,12 +34,17 @@ public class Enemy : MonoBehaviour {
         if (attackingBuild)
             return;
 
-        if (path[actualPath] != null) {
+        if (path[actualPath] != null) {  
             transform.position = Vector3.MoveTowards(transform.position, path[actualPath].transform.position + posY, speed * Time.deltaTime);
             transform.LookAt(path[actualPath].transform.position + posY);
             if (transform.position == path[actualPath].transform.position + posY) {
                 actualPath++;
+                if (actualPath == path.Count - 1)
+                    AttackTown();
             }
+
+            Debug.Log("Path count: " + path.Count);
+            Debug.Log("Actual Path: " + actualPath);
         }
     }
 
@@ -76,7 +81,7 @@ public class Enemy : MonoBehaviour {
         yield return null;
     }
 
-    public void SetTown(GameObject t) {
+    public void SetTown(Town t) {
         town = t;
     }
 
@@ -87,11 +92,18 @@ public class Enemy : MonoBehaviour {
             attackingBuild = false;
     }
 
+    void AttackTown() {
+        if (town != null)
+            town.ReceiveDamage(damage);
+        Destroy(this.gameObject);
+    }
+
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Build")) {
             buildToAttack = other.GetComponent<Build>();
             if (!attackingBuild)
                 StartCoroutine(Attack());
+            return;
         }
     }
 

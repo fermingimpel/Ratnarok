@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 15
-  speed: 4
+  speed: 5
   timeToAttack: 1.75
   damage: 1
   path: []
