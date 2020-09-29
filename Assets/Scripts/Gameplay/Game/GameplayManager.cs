@@ -23,6 +23,8 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] GameObject winScreenUI;
     [SerializeField] GameObject loseScreenUI;
 
+    [SerializeField] CameraController cc;
+
     public enum Stage {
         Preparing,
         Attack
@@ -37,6 +39,12 @@ public class GameplayManager : MonoBehaviour
             UIStateUpdate(Stage.Preparing);
 
         StartCoroutine(LateStart());
+
+        Town.DestroyedTown += LoseGame;
+    }
+
+    private void OnDisable() {
+        Town.DestroyedTown -= LoseGame;
     }
 
     private void Update() {
@@ -47,10 +55,12 @@ public class GameplayManager : MonoBehaviour
 
     void WinGame() {
         winScreenUI.SetActive(true);
+        cc.enabled = false;
     }
        
     void LoseGame() {
         loseScreenUI.SetActive(true);
+        cc.enabled = false;
     }
 
     IEnumerator LateStart() {
