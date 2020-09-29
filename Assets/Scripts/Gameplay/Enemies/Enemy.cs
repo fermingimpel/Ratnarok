@@ -42,9 +42,6 @@ public class Enemy : MonoBehaviour {
                 if (actualPath == path.Count - 1)
                     AttackTown();
             }
-
-            Debug.Log("Path count: " + path.Count);
-            Debug.Log("Actual Path: " + actualPath);
         }
     }
 
