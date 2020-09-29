@@ -20,12 +20,18 @@ public class GameplayManager : MonoBehaviour
     public delegate void UpdateHordeBar(float actualSecond, float time);
     public static event UpdateHordeBar UpdateBarHorde;
 
+    [SerializeField] GameObject winScreenUI;
+    [SerializeField] GameObject loseScreenUI;
+
     public enum Stage {
         Preparing,
         Attack
     }
 
     void Start() {
+        winScreenUI.SetActive(false);
+        loseScreenUI.SetActive(false);
+
         Time.timeScale = 1.0f;
         if (UIStateUpdate != null)
             UIStateUpdate(Stage.Preparing);
@@ -37,6 +43,14 @@ public class GameplayManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R)) {
             SceneManager.LoadScene("Gameplay");
         }
+    }
+
+    void WinGame() {
+        winScreenUI.SetActive(true);
+    }
+       
+    void LoseGame() {
+        loseScreenUI.SetActive(true);
     }
 
     IEnumerator LateStart() {
@@ -81,6 +95,7 @@ public class GameplayManager : MonoBehaviour
         if (EndEnemyAttack != null)
             EndEnemyAttack();
         StopCoroutine(AttackPhase());
+        WinGame();
         yield return null;
     }
    
