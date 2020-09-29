@@ -26,6 +26,7 @@ public class GameplayManager : MonoBehaviour
     }
 
     void Start() {
+        Time.timeScale = 1.0f;
         if (UIStateUpdate != null)
             UIStateUpdate(Stage.Preparing);
 
