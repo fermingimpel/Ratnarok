@@ -7,8 +7,7 @@ using UnityEngine.UI;
 public class UIGameplay : MonoBehaviour {
     [SerializeField] TextMeshProUGUI goldText;
     [SerializeField] Image hordeRat;
-    [SerializeField] Image hpBar1;
-    [SerializeField] Image hpBar2;
+    [SerializeField] Image hpBar;
 
     [SerializeField] GameObject go1;
     [SerializeField] GameObject go2;
@@ -27,8 +26,9 @@ public class UIGameplay : MonoBehaviour {
         goldText.text = t.ToString();
     }
     void ChangeHP(float hp, float maxHP) {
-        hpBar1.fillAmount = hp / maxHP;
-        hpBar2.fillAmount = hp / maxHP;
+        Debug.Log(hp);
+        Debug.Log(hp / maxHP);
+        hpBar.fillAmount = hp / maxHP;
     }
     void ChangeHordeBar(float timeInHorde, float maxTimeInHorde) {
         hordeRat.transform.position = Vector3.Lerp(go1.transform.position, go2.transform.position, timeInHorde / maxTimeInHorde);
