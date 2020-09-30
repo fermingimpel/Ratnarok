@@ -967,7 +967,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 749, y: 30}
+  m_SizeDelta: {x: 756, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &70401674
 MonoBehaviour:
@@ -3689,9 +3689,10 @@ MonoBehaviour:
   - {fileID: 2727385409866046656, guid: 422ffd736c23d1141931fe50c0384616, type: 3}
   enemyParent: {fileID: 1057995235}
   upset: {x: 0, y: 0.6, z: 0}
-  enemiesToCreate: 50
-  timeToSpawn: 1
+  timeToSpawn: 0.5
   town: {fileID: 919132148606980176}
+  enemiesInHorde: 60
+  timeToSpawnEnemiesInHorde: 0.25
 --- !u!4 &604421523
 Transform:
   m_ObjectHideFlags: 0
@@ -5064,7 +5065,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 49, y: 8}
-  m_SizeDelta: {x: 756, y: 26}
+  m_SizeDelta: {x: 756, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &815460628
 MonoBehaviour:
@@ -6889,7 +6890,7 @@ MonoBehaviour:
   - {fileID: 6702283095275087050, guid: ca4eb8ace075369488d75afffbd86abd, type: 3}
   upset: {x: 0, y: 0, z: 0}
   structuresParent: {fileID: 467386180}
-  tools: 99999
+  tools: 1000
   builds: []
   enemies: []
   paths:
@@ -9326,8 +9327,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f4b13713c523c46b319ff0064925eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeInAttack: 25
-  timeInFirstPrepare: 5
+  timeInAttack: 120
+  timeInFirstPrepare: 25
   winScreenUI: {fileID: 2068326047}
   loseScreenUI: {fileID: 37871742}
   cc: {fileID: 1633801450}

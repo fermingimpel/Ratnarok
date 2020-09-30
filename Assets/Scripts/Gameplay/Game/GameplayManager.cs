@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameplayManager : MonoBehaviour
-{
+public class GameplayManager : MonoBehaviour {
     [SerializeField] float timeInAttack;
     [SerializeField] float timeInFirstPrepare;
 
@@ -19,6 +18,9 @@ public class GameplayManager : MonoBehaviour
 
     public delegate void UpdateHordeBar(float actualSecond, float time);
     public static event UpdateHordeBar UpdateBarHorde;
+
+    public delegate void StarHordeAttack();
+    public static event StarHordeAttack StartAttackHorde;
 
     [SerializeField] GameObject winScreenUI;
     [SerializeField] GameObject loseScreenUI;
@@ -54,7 +56,7 @@ public class GameplayManager : MonoBehaviour
         winScreenUI.SetActive(true);
         cc.enabled = false;
     }
-       
+
     void LoseGame() {
         attackPhase = false;
         StopCoroutine(AttackPhase());
@@ -95,9 +97,27 @@ public class GameplayManager : MonoBehaviour
         if (UIStateUpdate != null)
             UIStateUpdate(Stage.Attack);
 
+        bool firstHorde = false;
+        bool secondHorde = false;
+
+        float timeToFirstHorde = (33f * timeInAttack) / 100f;
+        float timeToSecondtHorde = (66 * timeInAttack) / 100f;
+
         float t = 0;
-        while(t < timeInAttack && attackPhase) {
+        while (t < timeInAttack && attackPhase) {
             t += Time.deltaTime;
+
+            if((int)t == (int)timeToFirstHorde && !firstHorde) {
+                firstHorde = true;
+                if (StartAttackHorde != null)
+                    StartAttackHorde();
+            }
+            if( (int)t == (int)timeToSecondtHorde && !secondHorde) {
+                secondHorde = true;
+                if (StartAttackHorde != null)
+                    StartAttackHorde();
+            }
+
             if (UpdateBarHorde != null)
                 UpdateBarHorde(t, timeInAttack);
             yield return null;
@@ -109,5 +129,5 @@ public class GameplayManager : MonoBehaviour
         WinGame();
         yield return null;
     }
-   
+
 }

@@ -65,46 +65,6 @@ public class BuildingCreator : MonoBehaviour {
     }
 
     void Update() {
-        //if (Input.anyKeyDown) {
-        //    switch (Input.inputString) {
-        //        case "1":
-        //            buildToCreate = (int)TypeOfBuilds.Cannon;
-        //            break;
-        //        case "2":
-        //            buildToCreate = (int)TypeOfBuilds.ToolsGenerator;
-        //            break;
-        //        case "3":
-        //            buildToCreate = (int)TypeOfBuilds.Fence;
-        //            break;
-        //        case "4":
-        //            buildToCreate = (int)TypeOfBuilds.Catapult;
-        //            break;
-        //        case "5":
-        //            buildToCreate = (int)TypeOfBuilds.Flamethrower;
-        //            break;
-        //    }
-        //}
-        //
-        //if (Input.GetMouseButtonDown(0) && buildToCreate != (int)TypeOfBuilds.None) {
-        //    Vector3 mousePos = Input.mousePosition;
-        //    Ray ray = cam.ScreenPointToRay(mousePos);
-        //    RaycastHit hit;
-        //    if (Physics.Raycast(ray, out hit, 200)) {
-        //        if (hit.transform.CompareTag("Base")) {
-        //            if (structures[buildToCreate] != null)
-        //                if (structures[buildToCreate].GetToolsCost() <= tools) {
-        //                    Build go = Instantiate(structures[buildToCreate], hit.transform.position, structures[buildToCreate].transform.rotation, structuresParent);
-        //                    tools -= structures[buildToCreate].GetToolsCost();
-        //                    if (ChangedTools != null)
-        //                        ChangedTools(tools);
-        //                    buildToCreate = (int)TypeOfBuilds.None;
-        //                    go.SetPath( paths[hit.transform.gameObject.GetComponent<Tile>().GetPathIndex()].pos);
-        //                    go.SetLookAt(hit.transform.gameObject.GetComponent<Tile>().GetLookAt());
-        //                }
-        //        }
-        //    }
-        //}
-
         if (Input.GetMouseButtonDown(0)) {
             if (EventSystem.current.IsPointerOverGameObject())
                 return;
@@ -142,6 +102,9 @@ public class BuildingCreator : MonoBehaviour {
 
     void EnemyKilled(Enemy e) {
         enemies.Remove(e);
+        tools += 25;
+        if (ChangedTools != null)
+            ChangedTools(tools);
     }
 
     public void UseTools(int t) {

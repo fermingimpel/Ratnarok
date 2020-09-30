@@ -79,8 +79,12 @@ MonoBehaviour:
   speed: 5
   timeToAttack: 1
   damage: 2
+  town: {fileID: 0}
   path: []
   actualPath: 0
+  rend: {fileID: 3427061778247857673}
+  normalColor: {r: 1, g: 1, b: 1, a: 0}
+  hittedColor: {r: 1, g: 0.6273585, b: 0.6273585, a: 1}
 --- !u!1001 &5509778908001842141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -178,6 +182,12 @@ PrefabInstance:
 --- !u!4 &4594923255123922278 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8336964327767834299, guid: 97d0506a29f70474f97f8f4901d0eda2,
+    type: 3}
+  m_PrefabInstance: {fileID: 5509778908001842141}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &3427061778247857673 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7204057626645857748, guid: 97d0506a29f70474f97f8f4901d0eda2,
     type: 3}
   m_PrefabInstance: {fileID: 5509778908001842141}
   m_PrefabAsset: {fileID: 0}

@@ -17,10 +17,12 @@ public class EnemyManager : MonoBehaviour {
     [SerializeField] Transform enemyParent;
     [SerializeField] Vector3 upset;
 
-    [SerializeField] int enemiesToCreate;
     [SerializeField] float timeToSpawn;
     [SerializeField] Town town;
     bool attacking;
+
+    [SerializeField] int enemiesInHorde;
+    [SerializeField] float timeToSpawnEnemiesInHorde;
 
     public delegate void EnemyCreated(Enemy enemy);
     public static event EnemyCreated CreatedEnemy;
@@ -28,12 +30,14 @@ public class EnemyManager : MonoBehaviour {
     void Start() {
         GameplayManager.StartEnemyAttack += StartAttack;
         GameplayManager.EndEnemyAttack += StopAttack;
+        GameplayManager.StartAttackHorde += StartHorde;
         Town.DestroyedTown += StopAttack;
     }
 
     private void OnDisable() {
         GameplayManager.StartEnemyAttack -= StartAttack;
         GameplayManager.EndEnemyAttack -= StopAttack;
+        GameplayManager.StartAttackHorde -= StartHorde;
         Town.DestroyedTown -= StopAttack;
     }
 
@@ -47,16 +51,33 @@ public class EnemyManager : MonoBehaviour {
         StopCoroutine(CreateEnemies());
     }
 
-    IEnumerator CreateEnemies() {
+    void StartHorde() {
+        StartCoroutine(Horde());
+    }
+    IEnumerator Horde() {
         int enemiesCreated = 0;
-        while(attacking && enemiesCreated < enemiesToCreate) {
-            int spawn = UnityEngine.Random.Range(0, spawnerPoints.Length);
-            Enemy go = Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Length)], spawnerPoints[spawn].transform.position + upset, Quaternion.identity, enemyParent);
-            go.SetPath(paths[spawn].pos);
-            go.SetTown(town);
+        while(enemiesCreated < enemiesInHorde) {
+            SpawnEnemy();
+            enemiesCreated++;
+            yield return new WaitForSeconds(timeToSpawnEnemiesInHorde);
+        }
+
+        StopCoroutine(Horde());
+        yield return null;
+    }
+    IEnumerator CreateEnemies() {
+        while(attacking) {
+            SpawnEnemy();
             yield return new WaitForSeconds(timeToSpawn);
         }
 
         yield return null;
+    }
+
+    void SpawnEnemy() {
+        int spawn = UnityEngine.Random.Range(0, spawnerPoints.Length);
+        Enemy go = Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Length)], spawnerPoints[spawn].transform.position + upset, Quaternion.identity, enemyParent);
+        go.SetPath(paths[spawn].pos);
+        go.SetTown(town);
     }
 }

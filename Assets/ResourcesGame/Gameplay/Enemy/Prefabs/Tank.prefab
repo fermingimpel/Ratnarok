@@ -158,5 +158,9 @@ MonoBehaviour:
   speed: 5
   timeToAttack: 1.75
   damage: 1
+  town: {fileID: 0}
   path: []
   actualPath: 0
+  rend: {fileID: 1772408795893221869}
+  normalColor: {r: 1, g: 1, b: 1, a: 0}
+  hittedColor: {r: 1, g: 0.6650944, b: 0.6650944, a: 0}

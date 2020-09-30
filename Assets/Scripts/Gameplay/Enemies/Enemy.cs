@@ -20,6 +20,11 @@ public class Enemy : MonoBehaviour {
     [SerializeField] List<Transform> path;
     [SerializeField] int actualPath = 0;
     Vector3 posY;
+
+    [SerializeField] Renderer rend;
+    [SerializeField] Color normalColor;
+    [SerializeField] Color hittedColor;
+    bool hitted = false;
     protected virtual void Start() {
         GameplayManager.EndEnemyAttack += OnDie;
         Town.DestroyedTown += OnDie;
@@ -47,9 +52,20 @@ public class Enemy : MonoBehaviour {
 
     public virtual void ReceiveDamage(int d) {
         health -= d;
+        if(!hitted)
+        StartCoroutine(Hit());
         if (health <= 0) {
             OnDie();
         }
+    }
+    IEnumerator Hit() {
+        hitted = true;
+        rend.material.color = hittedColor;
+        yield return new WaitForSeconds(0.15f);
+        rend.material.color = normalColor;
+        StopCoroutine(Hit());
+        hitted = false;
+        yield return null;
     }
     protected void OnDie() {
         if (Dead != null)
