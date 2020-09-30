@@ -23,6 +23,8 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] GameObject winScreenUI;
     [SerializeField] GameObject loseScreenUI;
 
+    bool attackPhase = false;
+
     [SerializeField] CameraController cc;
 
     public enum Stage {
@@ -46,19 +48,16 @@ public class GameplayManager : MonoBehaviour
     private void OnDisable() {
         Town.DestroyedTown -= LoseGame;
     }
-
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.R)) {
-            SceneManager.LoadScene("Gameplay");
-        }
-    }
-
     void WinGame() {
+        attackPhase = false;
+        StopCoroutine(AttackPhase());
         winScreenUI.SetActive(true);
         cc.enabled = false;
     }
        
     void LoseGame() {
+        attackPhase = false;
+        StopCoroutine(AttackPhase());
         loseScreenUI.SetActive(true);
         cc.enabled = false;
     }
@@ -82,12 +81,14 @@ public class GameplayManager : MonoBehaviour
             yield return null;
         }
 
+
         StopCoroutine(FirstPreparePhase());
         StartCoroutine(AttackPhase());
         yield return null;
     }
 
     IEnumerator AttackPhase() {
+        attackPhase = true;
         if (StartEnemyAttack != null)
             StartEnemyAttack();
 
@@ -95,7 +96,7 @@ public class GameplayManager : MonoBehaviour
             UIStateUpdate(Stage.Attack);
 
         float t = 0;
-        while(t < timeInAttack) {
+        while(t < timeInAttack && attackPhase) {
             t += Time.deltaTime;
             if (UpdateBarHorde != null)
                 UpdateBarHorde(t, timeInAttack);
