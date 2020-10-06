@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4654793529021173381}
   - component: {fileID: -3156021865077513048}
   - component: {fileID: -4978217721689628138}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Attacker
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3000821009540762047}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.33, z: 0}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 4594923255123922278}
   m_Father: {fileID: 0}
@@ -45,8 +45,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Size: {x: 2, y: 4, z: 2}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!54 &-3156021865077513048
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -76,14 +76,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 8
-  speed: 5
+  speed: 3
   timeToAttack: 1
   damage: 2
   town: {fileID: 0}
   path: []
   actualPath: 0
+  posY: {x: 0, y: 0.4, z: 0}
   rend: {fileID: 3427061778247857673}
-  normalColor: {r: 1, g: 1, b: 1, a: 0}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   hittedColor: {r: 1, g: 0.6273585, b: 0.6273585, a: 1}
 --- !u!1001 &5509778908001842141
 PrefabInstance:
@@ -176,6 +177,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy Rat 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717007685238924289, guid: 97d0506a29f70474f97f8f4901d0eda2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97d0506a29f70474f97f8f4901d0eda2, type: 3}

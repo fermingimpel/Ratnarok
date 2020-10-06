@@ -15,6 +15,7 @@ TagManager:
   - Build
   - Spell
   - Button
+  - Structure
   layers:
   - Default
   - TransparentFX

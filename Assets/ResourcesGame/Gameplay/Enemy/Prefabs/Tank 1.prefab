@@ -90,9 +90,8 @@ GameObject:
   - component: {fileID: 3815504036818428860}
   - component: {fileID: 4654793529021173381}
   - component: {fileID: -3156021865077513048}
-  - component: {fileID: 2727385409866046656}
   m_Layer: 2
-  m_Name: Tank
+  m_Name: Tank 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,26 +141,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!114 &2727385409866046656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3000821009540762047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76ba04fe6bf2baa4f96d7fc1ad19f83f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 15
-  speed: 2
-  timeToAttack: 1.75
-  damage: 1
-  town: {fileID: 0}
-  path: []
-  actualPath: 0
-  posY: {x: 0, y: 0.4, z: 0}
-  rend: {fileID: 1772408795893221869}
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
-  hittedColor: {r: 1, g: 0.6650944, b: 0.6650944, a: 1}

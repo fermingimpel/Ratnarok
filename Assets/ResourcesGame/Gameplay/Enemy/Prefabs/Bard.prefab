@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: caa67509383428544b4b7e3bcb1d605a, type: 2}
+  - {fileID: 2100000, guid: a1a0d5d9bbbcf6c4d83aafef133b0bce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -90,9 +90,9 @@ GameObject:
   - component: {fileID: 3815504036818428860}
   - component: {fileID: 4654793529021173381}
   - component: {fileID: -3156021865077513048}
-  - component: {fileID: 2727385409866046656}
+  - component: {fileID: 5991283422458094255}
   m_Layer: 2
-  m_Name: Tank
+  m_Name: Bard
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,6 +110,7 @@ Transform:
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 636116630151213698}
+  - {fileID: 8871146006225450102}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -142,7 +143,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!114 &2727385409866046656
+--- !u!114 &5991283422458094255
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,17 +152,65 @@ MonoBehaviour:
   m_GameObject: {fileID: 3000821009540762047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76ba04fe6bf2baa4f96d7fc1ad19f83f, type: 3}
+  m_Script: {fileID: 11500000, guid: 880ab6a2834090e49b38925ae49bb203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
+  health: 7
   speed: 2
-  timeToAttack: 1.75
-  damage: 1
+  timeToAttack: 1
+  damage: 0
   town: {fileID: 0}
   path: []
   actualPath: 0
   posY: {x: 0, y: 0.4, z: 0}
   rend: {fileID: 1772408795893221869}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  hittedColor: {r: 1, g: 0.6650944, b: 0.6650944, a: 1}
+  hittedColor: {r: 1, g: 0.627451, b: 0.627451, a: 1}
+  timeToHeal: 1
+  heal: 2
+  rangeToHeal: 3
+  allies: []
+  em: {fileID: 0}
+--- !u!1 &4870836166173146063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8871146006225450102}
+  - component: {fileID: 2327728908172012521}
+  m_Layer: 2
+  m_Name: Halo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8871146006225450102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4870836166173146063}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3815504036818428860}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!122 &2327728908172012521
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4870836166173146063}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4292083967
+  m_Size: 0.25

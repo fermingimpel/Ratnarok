@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fence : Build {
+public class Fence : Building {
    
     void Start() {
 

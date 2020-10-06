@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cannon : Build {
+public class Cannon : Building {
     [SerializeField] Shoot shoot;
     [SerializeField] Vector3 upset;
 

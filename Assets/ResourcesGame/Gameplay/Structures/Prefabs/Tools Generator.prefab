@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 6170392649880373122}
   m_Layer: 0
   m_Name: Tools Generator
-  m_TagString: Build
+  m_TagString: Structure
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,6 +133,8 @@ MonoBehaviour:
   health: 8
   damage: 0
   index: 0
+  path: []
+  lookPos: {x: 0, y: 0, z: 0}
   building: {fileID: 0}
   toolsToAdd: 25
 --- !u!65 &6170392649880373122

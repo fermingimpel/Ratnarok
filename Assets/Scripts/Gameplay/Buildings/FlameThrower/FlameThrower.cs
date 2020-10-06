@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlameThrower : Build
-{
+public class FlameThrower : Building{
     [SerializeField] GameObject fire;
     [SerializeField] float timeAttacking;
     protected override void StopDefend() {
         StopCoroutine(PrepareAttack());
+        StopCoroutine(Attack());
     }
 
     protected override void StartDefend() {

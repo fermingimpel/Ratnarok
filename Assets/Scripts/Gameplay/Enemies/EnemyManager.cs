@@ -27,11 +27,14 @@ public class EnemyManager : MonoBehaviour {
     public delegate void EnemyCreated(Enemy enemy);
     public static event EnemyCreated CreatedEnemy;
 
+    [SerializeField] List<Enemy> enemiesCreated;
+
     void Start() {
         GameplayManager.StartEnemyAttack += StartAttack;
         GameplayManager.EndEnemyAttack += StopAttack;
         GameplayManager.StartAttackHorde += StartHorde;
         Town.DestroyedTown += StopAttack;
+        Enemy.Dead += RemoveEnemy;
     }
 
     private void OnDisable() {
@@ -39,6 +42,7 @@ public class EnemyManager : MonoBehaviour {
         GameplayManager.EndEnemyAttack -= StopAttack;
         GameplayManager.StartAttackHorde -= StartHorde;
         Town.DestroyedTown -= StopAttack;
+        Enemy.Dead -= RemoveEnemy;
     }
 
     void StartAttack() {
@@ -79,5 +83,15 @@ public class EnemyManager : MonoBehaviour {
         Enemy go = Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Length)], spawnerPoints[spawn].transform.position + upset, Quaternion.identity, enemyParent);
         go.SetPath(paths[spawn].pos);
         go.SetTown(town);
+        enemiesCreated.Add(go);
     }
+
+    void RemoveEnemy(Enemy e) {
+        enemiesCreated.Remove(e);
+    }
+
+    public List<Enemy> GetEnemies() {
+        return enemiesCreated;
+    }
+
 }

@@ -212,7 +212,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (1)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -395,7 +395,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (7)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -503,7 +503,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (2)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -766,7 +766,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (5)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1067,7 +1067,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (3)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1175,7 +1175,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (8)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1358,7 +1358,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (4)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1619,7 +1619,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (2)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1801,7 +1801,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (7)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1983,7 +1983,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2225,7 +2225,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (1)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2482,7 +2482,7 @@ RectTransform:
   - {fileID: 1088982357}
   - {fileID: 1354391199}
   m_Father: {fileID: 887333350}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2505,7 +2505,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (13)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2613,7 +2613,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (2)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2802,7 +2802,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (8)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2910,7 +2910,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (10)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3018,7 +3018,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (13)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3222,7 +3222,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467386179}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.1395707, y: -3.9022808, z: 19.162449}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1318743485}
@@ -3453,7 +3453,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (6)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3691,7 +3691,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (10)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3848,12 +3848,14 @@ MonoBehaviour:
   enemies:
   - {fileID: -4978217721689628138, guid: 4105afa5bf527af4c9cd65c131a1f14e, type: 3}
   - {fileID: 2727385409866046656, guid: 422ffd736c23d1141931fe50c0384616, type: 3}
+  - {fileID: 5991283422458094255, guid: 026055342ed8e6249acf50833d03349a, type: 3}
   enemyParent: {fileID: 1057995235}
   upset: {x: 0, y: 0.6, z: 0}
   timeToSpawn: 0.5
   town: {fileID: 919132148606980176}
   enemiesInHorde: 60
   timeToSpawnEnemiesInHorde: 0.25
+  enemiesCreated: []
 --- !u!4 &604421523
 Transform:
   m_ObjectHideFlags: 0
@@ -4019,7 +4021,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (1)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4257,7 +4259,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (11)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4365,7 +4367,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (9)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4626,7 +4628,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (11)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4882,7 +4884,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (4)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4990,7 +4992,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (1)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5098,7 +5100,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (6)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5531,8 +5533,8 @@ RectTransform:
   - {fileID: 389775326}
   - {fileID: 2068326048}
   - {fileID: 37871743}
-  - {fileID: 1144368370}
   - {fileID: 365590395}
+  - {fileID: 1144368370}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5734,7 +5736,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (4)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6393,7 +6395,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (7)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6501,7 +6503,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (3)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6813,7 +6815,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (9)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -7587,7 +7589,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 887333350}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7721,7 +7723,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (8)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -8153,7 +8155,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (8)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -8340,7 +8342,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (5)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -8448,7 +8450,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (3)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -8641,7 +8643,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (5)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -8998,7 +9000,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (9)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -9106,7 +9108,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (6)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -9214,7 +9216,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -9452,7 +9454,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (3)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -9560,7 +9562,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (7)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -9668,7 +9670,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (6)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -9920,7 +9922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeInAttack: 120
-  timeInFirstPrepare: 25
+  timeInFirstPrepare: 5
   winScreenUI: {fileID: 2068326047}
   loseScreenUI: {fileID: 37871742}
   cc: {fileID: 1633801450}
@@ -9954,7 +9956,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (12)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10160,8 +10162,8 @@ MonoBehaviour:
   speedCameraPos: 25
   cam: {fileID: 963194225}
   town: {fileID: 919132148606980174}
-  minY: -8
-  maxY: 20
+  minY: -3
+  maxY: 10
 --- !u!1 &1639634357
 GameObject:
   m_ObjectHideFlags: 0
@@ -10683,7 +10685,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (10)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10791,7 +10793,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (14)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -11367,7 +11369,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -11475,7 +11477,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (4)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -11701,7 +11703,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (9)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -12013,7 +12015,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (2)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -12201,7 +12203,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (12)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -12388,7 +12390,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (5)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -12496,7 +12498,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (16)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -12604,7 +12606,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone) (11)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -13310,7 +13312,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -15255,7 +15257,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -16613,7 +16615,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5258211478783618115}
-  - component: {fileID: 5258211478783618114}
   m_Layer: 0
   m_Name: Map Tiles 1
   m_TagString: Map
@@ -16621,23 +16622,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5258211478783618114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5258211478783618113}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad114749bcbeb0440a12ac6e077dc783, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tile: {fileID: 0}
-  parent: {fileID: 5258211478783618115}
-  width: 6
-  height: 4
-  offset: {x: 3, y: 0, z: 3}
 --- !u!4 &5258211478783618115
 Transform:
   m_ObjectHideFlags: 0
@@ -16876,7 +16860,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -17545,7 +17529,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -19076,7 +19060,7 @@ GameObject:
   m_Layer: 0
   m_Name: Tile(Clone)(Clone)
   m_TagString: Base
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

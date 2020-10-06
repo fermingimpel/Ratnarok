@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Build : MonoBehaviour {
+public class Building : MonoBehaviour {
     [SerializeField] protected int toolsCost;
     [SerializeField] protected float preparationTime;
     [SerializeField] protected float cooldownToCreate;
@@ -10,20 +10,22 @@ public class Build : MonoBehaviour {
     [SerializeField] protected int damage;
     [SerializeField] int index;
 
-    public delegate void BuildDestroyed(Build b);
+    bool attacking = false;
+
+    public delegate void BuildDestroyed(Building b);
     public static event BuildDestroyed DestroyedBuild;
 
     [SerializeField] List<Transform> path;
     [SerializeField] protected Vector3 lookPos;
     void Start() {
        // GameplayManager.startEnemyAttack += StartDefend;
-       // GameplayManager.endEnemyAttack += StopDefend;
+        GameplayManager.EndEnemyAttack += StopDefend;
         StartDefend();
     }
 
     private void OnDisable() {
         //GameplayManager.startEnemyAttack -= StartDefend;
-        //GameplayManager.endEnemyAttack -= StopDefend;
+        GameplayManager.EndEnemyAttack -= StopDefend;
     }
     private void Update() {
        

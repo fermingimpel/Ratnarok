@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class BuildingCreator : MonoBehaviour {
-    [SerializeField] Build[] structures;
+    [SerializeField] Building[] structures;
     [SerializeField] Vector3 upset;
     [SerializeField] Transform structuresParent;
 
@@ -24,7 +24,7 @@ public class BuildingCreator : MonoBehaviour {
 
     Camera cam;
 
-    [SerializeField] List<Build> builds;
+    [SerializeField] List<Building> builds;
     [SerializeField] List<Enemy> enemies;
 
     [Serializable]
@@ -44,7 +44,7 @@ public class BuildingCreator : MonoBehaviour {
     GameObject goSelected;
 
     void Start() {
-        builds = new List<Build>();
+        builds = new List<Building>();
         builds.Clear();
 
         enemies = new List<Enemy>();
@@ -86,7 +86,7 @@ public class BuildingCreator : MonoBehaviour {
     void CreateStructure(UIBuildings.TypeOfBuilds tob) {
         buildToCreate = (int)tob;
         if (structures[buildToCreate].GetToolsCost() <= tools) {
-            Build go = Instantiate(structures[buildToCreate], posSelected, structures[buildToCreate].transform.rotation, structuresParent);
+            Building go = Instantiate(structures[buildToCreate], posSelected, structures[buildToCreate].transform.rotation, structuresParent);
             tools -= structures[buildToCreate].GetToolsCost();
             if (ChangedTools != null)
                 ChangedTools(tools);

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToolsGenerator : Build {
+public class ToolsGenerator : Building {
     [SerializeField] BuildingCreator building;
     [SerializeField] int toolsToAdd;
     private void Start() {

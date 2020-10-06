@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Catapult : Build {
-
+public class Catapult : Building {
     [SerializeField] Shoot shoot;
     [SerializeField] Vector3 offset;
 

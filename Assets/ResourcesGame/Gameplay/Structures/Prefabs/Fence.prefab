@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4372653115093227400}
   m_Layer: 0
   m_Name: Fence
-  m_TagString: Build
+  m_TagString: Structure
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,6 +52,7 @@ MonoBehaviour:
   damage: 0
   index: 0
   path: []
+  lookPos: {x: 0, y: 0, z: 0}
 --- !u!65 &4372653115093227400
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 6702283095275087050}
   m_Layer: 0
   m_Name: Flamethrower
-  m_TagString: Build
+  m_TagString: Structure
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -26,8 +26,6 @@ public class UIGameplay : MonoBehaviour {
         goldText.text = t.ToString();
     }
     void ChangeHP(float hp, float maxHP) {
-        Debug.Log(hp);
-        Debug.Log(hp / maxHP);
         hpBar.fillAmount = hp / maxHP;
     }
     void ChangeHordeBar(float timeInHorde, float maxTimeInHorde) {
