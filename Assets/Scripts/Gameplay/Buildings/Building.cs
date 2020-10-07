@@ -17,7 +17,7 @@ public class Building : MonoBehaviour {
 
     [SerializeField] List<Transform> path;
     [SerializeField] protected Vector3 lookPos;
-    void Start() {
+    protected virtual void Start() {
        // GameplayManager.startEnemyAttack += StartDefend;
         GameplayManager.EndEnemyAttack += StopDefend;
         StartDefend();

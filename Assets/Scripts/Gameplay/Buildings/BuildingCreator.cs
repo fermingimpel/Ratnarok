@@ -15,6 +15,7 @@ public class BuildingCreator : MonoBehaviour {
         Fence,
         Catapult,
         Flamethrower,
+        Crossbow,
         None
     }
 
@@ -82,7 +83,6 @@ public class BuildingCreator : MonoBehaviour {
             }
         }
         else if (Input.GetMouseButtonDown(1)) {
-            Debug.Log("XD");
             if (EventSystem.current.IsPointerOverGameObject())
                 return;
 

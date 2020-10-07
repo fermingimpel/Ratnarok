@@ -10,6 +10,7 @@ public class UIBuildings : MonoBehaviour {
         Fence,
         Catapult,
         Flamethrower,
+        Crossbow,
         None
     }
 
