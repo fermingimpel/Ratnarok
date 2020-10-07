@@ -81,6 +81,20 @@ public class BuildingCreator : MonoBehaviour {
                 }
             }
         }
+        else if (Input.GetMouseButtonDown(1)) {
+            Debug.Log("XD");
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+
+            Vector3 mousePos = Input.mousePosition;
+            Ray ray = cam.ScreenPointToRay(mousePos);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 200)) {
+                if (hit.transform.CompareTag("Structure")) {
+                    Destroy(hit.transform.gameObject);
+                }
+            }
+        }
     }
 
     void CreateStructure(UIBuildings.TypeOfBuilds tob) {

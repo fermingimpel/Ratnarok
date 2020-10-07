@@ -20,7 +20,6 @@ public class BomberRat : Enemy {
     IEnumerator MoveUp() {
         Vector3 newPos = body.transform.localPosition + Vector3.up;
         while(body.transform.localPosition != newPos) {
-            Debug.Log("UP");
             body.transform.localPosition = Vector3.MoveTowards(body.transform.localPosition, newPos, speedUpDown * Time.deltaTime);
             yield return null;
         }
@@ -32,7 +31,6 @@ public class BomberRat : Enemy {
     IEnumerator MoveDown() {
         Vector3 newPos = body.transform.localPosition + Vector3.down;
         while (body.transform.localPosition != newPos) {
-            Debug.Log("DOWN");
             body.transform.localPosition = Vector3.MoveTowards(body.transform.localPosition, newPos, speedUpDown * Time.deltaTime);
             yield return null;
         }

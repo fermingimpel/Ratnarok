@@ -27,6 +27,9 @@ public class Building : MonoBehaviour {
         //GameplayManager.startEnemyAttack -= StartDefend;
         GameplayManager.EndEnemyAttack -= StopDefend;
     }
+    private void OnDestroy() {
+        GameplayManager.EndEnemyAttack -= StopDefend;
+    }
     private void Update() {
        
     }
