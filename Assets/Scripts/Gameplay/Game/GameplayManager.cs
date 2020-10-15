@@ -130,4 +130,12 @@ public class GameplayManager : MonoBehaviour {
         yield return null;
     }
 
+    public void StartHorde() {
+        if (StartAttackHorde != null)
+            StartAttackHorde();
+    }
+    public void StopTimeCount() {
+        timeInAttack = 999999;
+    }
+
 }

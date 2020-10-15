@@ -17,6 +17,19 @@ public class Building : MonoBehaviour {
 
     [SerializeField] List<Transform> path;
     [SerializeField] protected Vector3 lookPos;
+
+    [HideInInspector] public bool cheatsChangedHP = false;
+
+    public enum Type {
+        Cannon,
+        ToolsGenerator,
+        Fence,
+        Catapult,
+        Flamethrower,
+        Crossbow,
+        None
+    }
+    public Type type;
     protected virtual void Start() {
        // GameplayManager.startEnemyAttack += StartDefend;
         GameplayManager.EndEnemyAttack += StopDefend;
@@ -29,6 +42,8 @@ public class Building : MonoBehaviour {
     }
     private void OnDestroy() {
         GameplayManager.EndEnemyAttack -= StopDefend;
+        if (DestroyedBuild != null)
+            DestroyedBuild(this);
     }
     private void Update() {
        
@@ -53,14 +68,36 @@ public class Building : MonoBehaviour {
             Destroy(this.gameObject);
         }
     }
-    public virtual int GetToolsCost() {
+    public void SetToolsCost(int tc) {
+        toolsCost = tc;
+    }
+    public int GetToolsCost() {
         return toolsCost;
     }
-    public virtual int GetHP() {
+    public void SetHP(int hp) {
+        cheatsChangedHP = true;
+        health = hp;
+    }
+    public int GetHP() {
         return health;
     }
-    public virtual int GetDamage() {
+    public void SetDamage(int d) {
+        damage = d;
+    }
+    public int GetDamage() {
         return damage;
+    }
+    public void SetPreparationTime(float t) {
+        preparationTime = t;
+    }
+    public float GetPreparationTime() {
+        return preparationTime;
+    }
+    public void SetType(Type t) {
+        type = t;
+    }
+    public Type GetTypeOfBuild() {
+        return type;
     }
     public void SetPath(List<Transform> p) {
         path = p;
@@ -71,4 +108,9 @@ public class Building : MonoBehaviour {
             lookPos = new Vector3(path[la].position.x, transform.position.y, path[la].position.z);
         }
     }
+
+
+
+
+
 }

@@ -80,9 +80,11 @@ public class EnemyManager : MonoBehaviour {
 
     void SpawnEnemy() {
         int spawn = UnityEngine.Random.Range(0, spawnerPoints.Length);
-        Enemy go = Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Length)], spawnerPoints[spawn].transform.position + upset, Quaternion.identity, enemyParent);
+        int type = UnityEngine.Random.Range(0, enemies.Length);
+        Enemy go = Instantiate(enemies[type], spawnerPoints[spawn].transform.position + upset, Quaternion.identity, enemyParent);
         go.SetPath(paths[spawn].pos);
         go.SetTown(town);
+        go.SetTypeOfEnemy((Enemy.Type)type);
         enemiesCreated.Add(go);
     }
 

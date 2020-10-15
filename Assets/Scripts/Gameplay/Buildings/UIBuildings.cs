@@ -6,11 +6,7 @@ public class UIBuildings : MonoBehaviour {
 
     public enum TypeOfBuilds {
         Cannon,
-        ToolsGenerator,
         Fence,
-        Catapult,
-        Flamethrower,
-        Crossbow,
         None
     }
 

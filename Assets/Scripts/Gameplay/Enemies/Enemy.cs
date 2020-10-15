@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
     [SerializeField] protected int health;
-    int maxHealth;
+    [SerializeField] protected int maxHealth;
     [SerializeField] protected int speed;
     [SerializeField] protected float timeToAttack;
     [SerializeField] protected int damage;
@@ -27,10 +27,21 @@ public class Enemy : MonoBehaviour {
     [SerializeField] Color hittedColor;
     bool hitted = false;
 
+    [HideInInspector] public bool cheatsChangedHP = false;
+
+    public enum Type {
+        Attacker,
+        Tank,
+        Bard,
+        Bomberrat,
+        None
+    }
+
+    public Type type;
+
     protected bool attackBuilds = true;
 
     protected virtual void Start() {
-        maxHealth = health;
         GameplayManager.EndEnemyAttack += OnDie;
         Town.DestroyedTown += OnDie;
     }
@@ -38,14 +49,11 @@ public class Enemy : MonoBehaviour {
         GameplayManager.EndEnemyAttack -= OnDie;
         Town.DestroyedTown -= OnDie;
     }
-    private void OnDestroy() {
-        OnDie();
-    }
     protected virtual void Update() {
         if (attackingBuild)
             return;
 
-        if (path[actualPath] != null) {  
+        if (path[actualPath] != null) {
             transform.position = Vector3.MoveTowards(transform.position, path[actualPath].transform.position + posY, speed * Time.deltaTime);
             transform.LookAt(path[actualPath].transform.position + posY);
             if (transform.position == path[actualPath].transform.position + posY) {
@@ -58,8 +66,8 @@ public class Enemy : MonoBehaviour {
 
     public virtual void ReceiveDamage(int d) {
         health -= d;
-        if(!hitted)
-        StartCoroutine(Hit());
+        if (!hitted)
+            StartCoroutine(Hit());
         if (health <= 0) {
             OnDie();
         }
@@ -99,8 +107,8 @@ public class Enemy : MonoBehaviour {
                 yield return null;
             }
 
-        if (buildToAttack != null) 
-                buildToAttack.HitBuild(damage);
+        if (buildToAttack != null)
+            buildToAttack.HitBuild(damage);
 
         StopCoroutine(Attack());
         ResetAttack();
@@ -121,7 +129,7 @@ public class Enemy : MonoBehaviour {
     void AttackTown() {
         if (town != null)
             town.ReceiveDamage(damage);
-        Destroy(this.gameObject);
+        OnDie();
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -146,4 +154,48 @@ public class Enemy : MonoBehaviour {
         }
     }
 
+    public void SetTypeOfEnemy(Type t) {
+        type = t;
+    }
+    public Type GetTypeOfEnemy() {
+        return type;
+    }
+
+    // [SerializeField] protected int health;
+    // int maxHealth;
+    // [SerializeField] protected int speed;
+    // [SerializeField] protected float timeToAttack;
+    // [SerializeField] protected int damage;
+
+    public void SetDamage(int d) {
+        damage = d;
+    }
+    public int GetDamage() {
+        return damage;
+    }
+
+    public void SetMaxHealth(int mh) {
+        cheatsChangedHP = true;
+        health = mh;
+        maxHealth = mh;
+    }
+    public int GetMaxHealth() {
+        return maxHealth;
+    }
+
+    public void SetSpeed(int s) {
+        speed = s;
+    }
+    public int GetSpeed() {
+        return speed;
+    }
+
+    public void SetTimeToAttack(float tta) {
+        timeToAttack = tta;
+    }
+    public float GetTimeToAttack() {
+        return timeToAttack;
+    }
+
 }
+

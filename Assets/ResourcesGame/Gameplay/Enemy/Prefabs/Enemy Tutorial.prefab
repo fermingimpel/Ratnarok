@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3815504036818428860}
   - component: {fileID: 4654793529021173381}
   - component: {fileID: -3156021865077513048}
-  - component: {fileID: -4978217721689628138}
+  - component: {fileID: 3472883280393469313}
   m_Layer: 2
-  m_Name: Attacker
+  m_Name: Enemy Tutorial
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!114 &-4978217721689628138
+--- !u!114 &3472883280393469313
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,21 +72,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 3000821009540762047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3576fd3109110ef4faaa392f4adbd154, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e61fb4f4038dc84c85bc463024af303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 8
-  maxHealth: 8
+  health: 4
+  maxHealth: 4
   speed: 3
   timeToAttack: 1
-  damage: 5
+  damage: 2
   town: {fileID: 0}
   path: []
   actualPath: 0
   posY: {x: 0, y: 0.4, z: 0}
   rend: {fileID: 3427061778247857673}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  hittedColor: {r: 1, g: 0.6273585, b: 0.6273585, a: 1}
+  hittedColor: {r: 1, g: 0.627451, b: 0.627451, a: 1}
   cheatsChangedHP: 0
   type: 0
 --- !u!1001 &5509778908001842141

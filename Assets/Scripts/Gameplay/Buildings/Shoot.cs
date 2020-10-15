@@ -11,4 +11,7 @@ public class Shoot : MonoBehaviour {
     public void SetDirection(Vector3 dir) {
         direction = dir;
     }
+    public void SetDamage(int d) {
+        damage = d;
+    }
 }

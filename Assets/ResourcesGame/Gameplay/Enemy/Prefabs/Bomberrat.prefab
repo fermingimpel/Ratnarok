@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 4
+  maxHealth: 4
   speed: 3
   timeToAttack: 1
   damage: 5
@@ -165,5 +166,7 @@ MonoBehaviour:
   rend: {fileID: 1772408795893221869}
   normalColor: {r: 1, g: 1, b: 1, a: 0}
   hittedColor: {r: 1, g: 0.6666667, b: 0.6666667, a: 0}
+  cheatsChangedHP: 0
+  type: 0
   body: {fileID: 258992270140893240}
   speedUpDown: 1

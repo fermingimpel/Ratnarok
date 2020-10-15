@@ -21,6 +21,13 @@ public class Bard : Enemy {
         base.Update();
     }
 
+    public void SetHeal(int h) {
+        heal = h;
+    }
+    public int GetHeal() {
+        return heal;
+    }
+
     IEnumerator PrepareHeal() {
         yield return new WaitForSeconds(timeToHeal);
         HealAllies();

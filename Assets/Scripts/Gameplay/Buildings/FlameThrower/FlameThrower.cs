@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FlameThrower : Building{
-    [SerializeField] GameObject fire;
+    [SerializeField] Fire fire;
     [SerializeField] float timeAttacking;
     protected override void StopDefend() {
         StopCoroutine(PrepareAttack());
@@ -22,10 +22,11 @@ public class FlameThrower : Building{
     }
 
     IEnumerator Attack() {
-        fire.SetActive(true);
+        fire.gameObject.SetActive(true);
+        fire.SetDamage(damage);
         yield return new WaitForSeconds(timeAttacking);
 
-        fire.SetActive(false);
+        fire.gameObject.SetActive(false);
         StopCoroutine(Attack());
         StartCoroutine(PrepareAttack());
         yield return null;

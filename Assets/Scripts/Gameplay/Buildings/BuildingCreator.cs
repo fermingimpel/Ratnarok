@@ -8,7 +8,6 @@ public class BuildingCreator : MonoBehaviour {
     [SerializeField] Vector3 upset;
     [SerializeField] Transform structuresParent;
 
-
     public enum TypeOfBuilds {
         Cannon,
         ToolsGenerator,
@@ -56,12 +55,14 @@ public class BuildingCreator : MonoBehaviour {
 
         EnemyManager.CreatedEnemy += EnemyCreated;
         Enemy.Dead += EnemyKilled;
+        Building.DestroyedBuild += DestroyedBuild;
         UIBuildings.BuildingButtonPressed += CreateStructure;
     }
 
     private void OnDisable() {
         EnemyManager.CreatedEnemy -= EnemyCreated;
         Enemy.Dead -= EnemyKilled;
+        Building.DestroyedBuild -= DestroyedBuild;
         UIBuildings.BuildingButtonPressed -= CreateStructure;
     }
 
@@ -104,7 +105,9 @@ public class BuildingCreator : MonoBehaviour {
             tools -= structures[buildToCreate].GetToolsCost();
             if (ChangedTools != null)
                 ChangedTools(tools);
+            go.SetType((Building.Type)buildToCreate);
             buildToCreate = (int)TypeOfBuilds.None;
+            builds.Add(go);
             go.SetPath(paths[goSelected.GetComponent<Tile>().GetPathIndex()].pos);
             go.SetLookAt(goSelected.GetComponent<Tile>().GetLookAt());
         }
@@ -121,6 +124,10 @@ public class BuildingCreator : MonoBehaviour {
             ChangedTools(tools);
     }
 
+    void DestroyedBuild(Building b) {
+        builds.Remove(b);
+    }
+
     public void UseTools(int t) {
         tools -= t;
         if (ChangedTools != null)
@@ -133,5 +140,9 @@ public class BuildingCreator : MonoBehaviour {
         tools += t;
         if (ChangedTools != null)
             ChangedTools(tools);
+    }
+
+    public List<Building> GetBuilds() {
+        return builds;
     }
 }
