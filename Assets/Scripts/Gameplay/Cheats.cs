@@ -280,8 +280,8 @@ public class Cheats : MonoBehaviour {
                         enemies[i].SetSpeed(speedBomberrat);
                         break;
                     case Enemy.Type.Bard:
-                        enemies[i].SetMaxHealth(hpBard);
                         if (!enemies[i].cheatsChangedHP)
+                        enemies[i].SetMaxHealth(hpBard);
                             enemies[i].SetSpeed(speedBard);
                         enemies[i].GetComponent<Bard>().SetHeal(healBard);
                         break;

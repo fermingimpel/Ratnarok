@@ -84,7 +84,7 @@ MonoBehaviour:
   path: []
   actualPath: 0
   posY: {x: 0, y: 0.4, z: 0}
-  rend: {fileID: 0}
+  rend: {fileID: 4967971859201878256}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hittedColor: {r: 1, g: 0.6650944, b: 0.6650944, a: 1}
   cheatsChangedHP: 0
@@ -171,6 +171,12 @@ PrefabInstance:
 --- !u!4 &7947967613403520856 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6ca6bc6cb2536a7439a26390b268081e,
+    type: 3}
+  m_PrefabInstance: {fileID: 7621888349766465715}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &4967971859201878256 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -5965111130776285117, guid: 6ca6bc6cb2536a7439a26390b268081e,
     type: 3}
   m_PrefabInstance: {fileID: 7621888349766465715}
   m_PrefabAsset: {fileID: 0}
