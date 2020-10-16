@@ -413,7 +413,9 @@ MonoBehaviour:
   index: 0
   path: []
   lookPos: {x: 0, y: 0, z: 0}
-  fire: {fileID: 6665745077158796706}
+  cheatsChangedHP: 0
+  type: 0
+  fire: {fileID: 6665745077158796709}
   timeAttacking: 3
 --- !u!1 &6837473045703344531
 GameObject:

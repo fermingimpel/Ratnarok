@@ -78,8 +78,8 @@ MonoBehaviour:
   health: 2
   maxHealth: 2
   speed: 3
-  timeToAttack: 1
-  damage: 2
+  timeToAttack: 2
+  damage: 1
   town: {fileID: 0}
   path: []
   actualPath: 0
