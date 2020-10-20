@@ -14,6 +14,7 @@ public class UIBuildings : MonoBehaviour {
     public static event UIBuildingButtonPressed BuildingButtonPressed;
 
     [SerializeField] GameObject UIWheel;
+    [SerializeField] GameObject backButton;
    
     private void Start() {
         BuildingCreator.ClickedBase += ClickedBase;
@@ -23,18 +24,25 @@ public class UIBuildings : MonoBehaviour {
     }
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)) {
             UIWheel.SetActive(false);
+        backButton.SetActive(false);
+        }
     }
 
     void ClickedBase() {
         UIWheel.SetActive(true);
+        backButton.SetActive(true);
     }
-
+    public void ClickBackButton() {
+        UIWheel.SetActive(false);
+        backButton.SetActive(false);
+    }
     public void PressButtonStructure(int button) {
         if (BuildingButtonPressed != null) 
             BuildingButtonPressed((TypeOfBuilds)(button));
         UIWheel.SetActive(false);
+        backButton.SetActive(false);
     }
 
 }
