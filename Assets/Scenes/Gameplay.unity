@@ -5715,7 +5715,7 @@ MonoBehaviour:
   - {fileID: 5991283422458094255, guid: 026055342ed8e6249acf50833d03349a, type: 3}
   - {fileID: -7846457014608077067, guid: 3a5c946d9ce29534eba96e7bc21f3794, type: 3}
   enemyParent: {fileID: 1057995235}
-  upset: {x: 0, y: 0, z: 0}
+  upset: {x: 0, y: 0.4, z: 0}
   timeToSpawn: 5
   town: {fileID: 919132148606980176}
   enemiesInHorde: 60

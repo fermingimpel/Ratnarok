@@ -135,6 +135,11 @@ MonoBehaviour:
   index: 0
   path: []
   lookPos: {x: 0, y: 0, z: 0}
+  rend: {fileID: 0}
+  hittedColor: {r: 1, g: 1, b: 1, a: 0}
+  normalColor: {r: 1, g: 0.627451, b: 0.627451, a: 1}
+  cheatsChangedHP: 0
+  type: 0
   building: {fileID: 0}
   toolsToAdd: 25
 --- !u!65 &6170392649880373122

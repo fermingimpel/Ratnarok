@@ -147,7 +147,7 @@ public class Cheats : MonoBehaviour {
 
     void Update() {
         if (!cheatsActivated) {
-            if (Input.GetKey(KeyCode.Backspace)) {
+            if (Input.GetKeyDown(KeyCode.Backspace)) {
                 cheatsActivated = true;
                 UICheats.SetActive(true);
             }

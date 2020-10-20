@@ -53,6 +53,13 @@ MonoBehaviour:
   index: 0
   path: []
   lookPos: {x: 0, y: 0, z: 0}
+  rends:
+  - {fileID: 6533571123214374404}
+  - {fileID: 6533571122523697386}
+  hittedColor: {r: 1, g: 0.627451, b: 0.627451, a: 1}
+  normalColor: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 1}
+  cheatsChangedHP: 0
+  type: 0
   shoot: {fileID: 1134107875337626521, guid: d41434e24b8c7ba4bae1e65bcbf89c89, type: 3}
   upset: {x: 0, y: 0.355, z: 0}
 --- !u!65 &1546387539671894437
@@ -126,7 +133,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 24c83a5bbffcabb45851c5ac7442766b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -237,7 +244,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 24c83a5bbffcabb45851c5ac7442766b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

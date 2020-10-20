@@ -413,6 +413,15 @@ MonoBehaviour:
   index: 0
   path: []
   lookPos: {x: 0, y: 0, z: 0}
+  rends:
+  - {fileID: 6146026889438893398}
+  - {fileID: 3725040648536353}
+  - {fileID: 8600551919899652186}
+  - {fileID: 7140162444441948685}
+  - {fileID: 7652251408602538938}
+  - {fileID: 111426064847663966}
+  hittedColor: {r: 1, g: 0.627451, b: 0.627451, a: 1}
+  normalColor: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 1}
   cheatsChangedHP: 0
   type: 0
   fire: {fileID: 6665745077158796709}

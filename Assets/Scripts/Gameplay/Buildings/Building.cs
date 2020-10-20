@@ -18,6 +18,10 @@ public class Building : MonoBehaviour {
     [SerializeField] List<Transform> path;
     [SerializeField] protected Vector3 lookPos;
 
+    [SerializeField] List<Renderer> rends;
+    bool hitted = false;
+    [SerializeField] Color hittedColor;
+    [SerializeField] Color normalColor;
     [HideInInspector] public bool cheatsChangedHP = false;
 
     public enum Type {
@@ -31,7 +35,7 @@ public class Building : MonoBehaviour {
     }
     public Type type;
     protected virtual void Start() {
-       // GameplayManager.startEnemyAttack += StartDefend;
+        // GameplayManager.startEnemyAttack += StartDefend;
         GameplayManager.EndEnemyAttack += StopDefend;
         StartDefend();
     }
@@ -62,12 +66,29 @@ public class Building : MonoBehaviour {
  
     public virtual void HitBuild(int d) {
         health -= d;
+        if (!hitted)
+            StartCoroutine(Hit());
         if (health <= 0) {
             if (DestroyedBuild != null)
                 DestroyedBuild(this);
             Destroy(this.gameObject);
         }
     }
+
+    IEnumerator Hit() {
+        hitted = true;
+        for(int i=0;i<rends.Count;i++)
+            if(rends[i]!=null)
+                rends[i].material.color = hittedColor;
+        yield return new WaitForSeconds(0.15f);
+        for (int i = 0; i < rends.Count; i++)
+            if (rends[i] != null)
+                rends[i].material.color = normalColor;
+        StopCoroutine(Hit());
+        hitted = false;
+        yield return null;
+    }
+
     public void SetToolsCost(int tc) {
         toolsCost = tc;
     }

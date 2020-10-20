@@ -717,6 +717,19 @@ MonoBehaviour:
   index: 0
   path: []
   lookPos: {x: 0, y: 0, z: 0}
+  rends:
+  - {fileID: 8112015594466694903}
+  - {fileID: 1088487241861545183}
+  - {fileID: 3985720477553232566}
+  - {fileID: 8719222552273939336}
+  - {fileID: 5093628017949683423}
+  - {fileID: 194020232822564418}
+  - {fileID: 2515602937850611761}
+  - {fileID: 3752802238435373793}
+  - {fileID: 4263776963347381820}
+  - {fileID: 1025271307278523013}
+  hittedColor: {r: 1, g: 0.627451, b: 0.627451, a: 1}
+  normalColor: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 1}
   cheatsChangedHP: 0
   type: 0
   shoot: {fileID: 142972629410484654, guid: fecdaa57c18899243a762eca16832f21, type: 3}
