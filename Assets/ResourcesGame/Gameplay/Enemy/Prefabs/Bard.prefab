@@ -169,6 +169,7 @@ MonoBehaviour:
   hittedColor: {r: 1, g: 0.627451, b: 0.627451, a: 1}
   cheatsChangedHP: 0
   type: 0
+  model: {fileID: 258992270140893240}
   timeToHeal: 1
   heal: 2
   rangeToHeal: 3

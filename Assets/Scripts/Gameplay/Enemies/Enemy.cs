@@ -41,7 +41,13 @@ public class Enemy : MonoBehaviour {
 
     protected bool attackBuilds = true;
 
+    [SerializeField] GameObject model;
+
     protected virtual void Start() {
+
+        model.transform.position += new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f));
+        model.transform.LookAt(path[0].transform.position + posY);
+
         GameplayManager.EndEnemyAttack += OnDie;
         Town.DestroyedTown += OnDie;
     }
@@ -55,11 +61,12 @@ public class Enemy : MonoBehaviour {
 
         if (path[actualPath] != null) {
             transform.position = Vector3.MoveTowards(transform.position, path[actualPath].transform.position + posY, speed * Time.deltaTime);
-            transform.LookAt(path[actualPath].transform.position + posY);
             if (transform.position == path[actualPath].transform.position + posY) {
                 actualPath++;
                 if (actualPath == path.Count - 1)
                     AttackTown();
+                else
+                    model.transform.LookAt(path[actualPath].transform.position + posY);
             }
         }
     }

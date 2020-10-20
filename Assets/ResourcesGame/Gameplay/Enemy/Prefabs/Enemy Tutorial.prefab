@@ -89,6 +89,7 @@ MonoBehaviour:
   hittedColor: {r: 1, g: 0.627451, b: 0.627451, a: 1}
   cheatsChangedHP: 0
   type: 0
+  model: {fileID: 8851918930837289353}
 --- !u!1001 &8509899559413056728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -188,6 +189,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 30bbd26379d45bd49834afdb098bed92, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81c498670ed1ee3459f442bfa7695fb2, type: 3}
+--- !u!1 &8851918930837289353 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 81c498670ed1ee3459f442bfa7695fb2,
+    type: 3}
+  m_PrefabInstance: {fileID: 8509899559413056728}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8184032225104028467 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 81c498670ed1ee3459f442bfa7695fb2,
