@@ -13,6 +13,9 @@ public class GameplayManager : MonoBehaviour {
     public delegate void StartOfAttack();
     public static event StartOfAttack StartEnemyAttack;
 
+    public delegate void StartPreAttack();
+    public static event StartPreAttack StartPreAtk;
+
     public delegate void UpdateUIState(Stage s);
     public static event UpdateUIState UIStateUpdate;
 
@@ -77,12 +80,10 @@ public class GameplayManager : MonoBehaviour {
         if (UIStateUpdate != null)
             UIStateUpdate(Stage.Preparing);
 
-        float t = 0;
-        while (t < timeInFirstPrepare) {
-            t += Time.deltaTime;
-            yield return null;
-        }
-
+        yield return new WaitForSeconds(timeInFirstPrepare - 2.0f);
+        if (StartPreAtk != null)
+            StartPreAtk();
+        yield return new WaitForSeconds(2.0f);
 
         StopCoroutine(FirstPreparePhase());
         StartCoroutine(AttackPhase());

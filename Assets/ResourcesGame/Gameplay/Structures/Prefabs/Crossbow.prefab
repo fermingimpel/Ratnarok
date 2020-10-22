@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolsCost: 250
-  preparationTime: 4
+  preparationTime: 3
   cooldownToCreate: 18
   health: 6
   damage: 8
