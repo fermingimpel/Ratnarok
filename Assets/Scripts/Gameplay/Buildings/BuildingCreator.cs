@@ -40,6 +40,9 @@ public class BuildingCreator : MonoBehaviour {
     public delegate void BaseClicked();
     public static event BaseClicked ClickedBase;
 
+    public delegate void BaseSelected(Vector3 pos);
+    public static event BaseSelected BSelected;
+
     Vector3 posSelected;
     GameObject goSelected;
 
@@ -78,6 +81,8 @@ public class BuildingCreator : MonoBehaviour {
                 if (hit.transform.CompareTag("Base")) {
                     posSelected = hit.transform.position;
                     goSelected = hit.transform.gameObject;
+                    if (BSelected != null)
+                        BSelected(posSelected);
                     if (ClickedBase != null)
                         ClickedBase();
                 }

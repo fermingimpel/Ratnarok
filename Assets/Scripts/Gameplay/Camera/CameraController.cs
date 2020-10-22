@@ -11,10 +11,21 @@ public class CameraController : MonoBehaviour {
     [SerializeField] float minY;
     [SerializeField] float maxY;
 
+    bool canMoveCamera = true;
+
     private void Start() {
+        BuildingCreator.ClickedBase += ClickedBase;
+        UIBuildings.UIButtonPressed += UnClickedBase;
+    }
+    private void OnDisable() {
+        BuildingCreator.ClickedBase -= ClickedBase;
+        UIBuildings.UIButtonPressed += UnClickedBase;
     }
 
     void Update() {
+        if (!canMoveCamera)
+            return;
+
         if (Input.GetKey(KeyCode.W) && transform.position.y < maxY)
             transform.position += Vector3.up * speedCameraPos * Time.deltaTime;
         else if (Input.GetKey(KeyCode.S) && transform.position.y > minY)
@@ -27,4 +38,12 @@ public class CameraController : MonoBehaviour {
 
         cam.transform.LookAt(town.transform.position);
     }
+
+    void ClickedBase() {
+        canMoveCamera = false;
+    }
+    void UnClickedBase() {
+        canMoveCamera = true;
+    }
+
 }
