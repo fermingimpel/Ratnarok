@@ -9,8 +9,9 @@ public class ShootCatapult : Shoot {
     float t = 0;
     void Start() {
         initPos = transform.position;
-        finalPos = direction;
-        midPos = Vector3.Lerp(initPos, finalPos, 0.33f) + (Vector3.up * 0.75f);
+        finalPos = direction * 20 + initPos;
+        Debug.Log(finalPos);
+        midPos = Vector3.Lerp(initPos, finalPos, 0.33f) + (Vector3.up * 1.5f);
 
         StartCoroutine(Move());
     }
@@ -34,6 +35,7 @@ public class ShootCatapult : Shoot {
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Enemy")) {
             other.GetComponent<Enemy>().ReceiveDamage(damage);
+            Destroy(this.gameObject, 0.05f);
         }
     }
 }

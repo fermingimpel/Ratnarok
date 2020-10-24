@@ -126,8 +126,7 @@ public class Building : MonoBehaviour {
     public void SetLookAt(int la) {
         if (path[la] != null) {
             transform.LookAt(new Vector3(path[la].position.x, transform.position.y, path[la].position.z));
-            lookPos = new Vector3(path[la].position.x, transform.position.y, path[la].position.z);
-        }
+            lookPos = new Vector3(path[la].position.x, transform.position.y, path[la].position.z);        }
     }
 
 

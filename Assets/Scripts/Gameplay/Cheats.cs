@@ -218,7 +218,7 @@ public class Cheats : MonoBehaviour {
             else if (Input.GetKeyDown(KeyCode.M)) speedTank++;
             else if (Input.GetKeyDown(KeyCode.J)) speedTank--;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha9)) {
+        if (Input.GetKey(KeyCode.Alpha9)) {
             if (Input.GetKeyDown(KeyCode.Z)) damageBomberrat++;
             else if (Input.GetKeyDown(KeyCode.X)) damageBomberrat--;
             else if (Input.GetKeyDown(KeyCode.B)) {

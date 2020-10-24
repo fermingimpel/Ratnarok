@@ -26,7 +26,7 @@ public class Catapult : Building {
     }
     protected override void Attack() {
         Shoot s = Instantiate(shoot, transform.position + offset, shoot.transform.rotation);
-        s.SetDirection(lookPos + offset);
+        s.SetDirection(transform.forward + offset);
         s.SetDamage(damage);
         StartCoroutine(PrepareAttack());
     }
