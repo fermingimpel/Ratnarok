@@ -10,7 +10,6 @@ public class ShootCatapult : Shoot {
     void Start() {
         initPos = transform.position;
         finalPos = direction * 20 + initPos;
-        Debug.Log(finalPos);
         midPos = Vector3.Lerp(initPos, finalPos, 0.33f) + (Vector3.up * 1.5f);
 
         StartCoroutine(Move());

@@ -29,12 +29,15 @@ public class EnemyManager : MonoBehaviour {
 
     [SerializeField] List<Enemy> enemiesCreated;
 
+    bool canCreateRandomEnemies = true;
+    int type = 0;
     void Start() {
         GameplayManager.StartEnemyAttack += StartAttack;
         GameplayManager.EndEnemyAttack += StopAttack;
         GameplayManager.StartAttackHorde += StartHorde;
         Town.DestroyedTown += StopAttack;
         Enemy.Dead += RemoveEnemy;
+        canCreateRandomEnemies = true;
     }
 
     private void OnDisable() {
@@ -80,14 +83,21 @@ public class EnemyManager : MonoBehaviour {
 
     void SpawnEnemy() {
         int spawn = UnityEngine.Random.Range(0, spawnerPoints.Length);
-        int type = UnityEngine.Random.Range(0, enemies.Length);
+        if(canCreateRandomEnemies)
+            type = UnityEngine.Random.Range(0, enemies.Length);
         Enemy go = Instantiate(enemies[type], spawnerPoints[spawn].transform.position + upset, Quaternion.identity, enemyParent);
         go.SetPath(paths[spawn].pos);
         go.SetTown(town);
         go.SetTypeOfEnemy((Enemy.Type)type);
         enemiesCreated.Add(go);
     }
-
+    public void SetOnlyOneEnemyToCreate(int t) {
+        type = t;
+        canCreateRandomEnemies = false;
+    }
+    public void SetCreateRandomEnemies() {
+        canCreateRandomEnemies = true;
+    }
     void RemoveEnemy(Enemy e) {
         enemiesCreated.Remove(e);
     }

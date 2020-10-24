@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class UIGameplay : MonoBehaviour {
     [SerializeField] TextMeshProUGUI goldText;
     [SerializeField] Image hordeRat;
+    [SerializeField] Image hordeBar;
     [SerializeField] GameObject hordeGO;
     [SerializeField] Image hpBar;
     [SerializeField] GameObject hpGO;
@@ -59,5 +60,6 @@ public class UIGameplay : MonoBehaviour {
     }
     void ChangeHordeBar(float timeInHorde, float maxTimeInHorde) {
         hordeRat.transform.position = Vector3.Lerp(go1.transform.position, go2.transform.position, timeInHorde / maxTimeInHorde);
+        hordeBar.fillAmount = timeInHorde / maxTimeInHorde;
     }
 }

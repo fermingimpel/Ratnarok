@@ -432,6 +432,20 @@ public class Cheats : MonoBehaviour {
                         break;
                 }
         }
+
+        if (Input.GetKey(KeyCode.LeftShift)) {
+            if (Input.GetKeyDown(KeyCode.Alpha7))
+                em.SetOnlyOneEnemyToCreate(0);
+            else if (Input.GetKeyDown(KeyCode.Alpha8))
+                em.SetOnlyOneEnemyToCreate(1);
+            else if (Input.GetKeyDown(KeyCode.Alpha9))
+                em.SetOnlyOneEnemyToCreate(2);
+            else if (Input.GetKeyDown(KeyCode.Alpha0))
+                em.SetOnlyOneEnemyToCreate(3);
+            else if (Input.GetKeyDown(KeyCode.Alpha1))
+                em.SetCreateRandomEnemies();
+        }
+
     }
 
     private void FixedUpdate() {
