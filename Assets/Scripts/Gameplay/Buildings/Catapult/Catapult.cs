@@ -5,11 +5,9 @@ using UnityEngine;
 public class Catapult : Building {
     [SerializeField] Shoot shoot;
     [SerializeField] Vector3 offset;
-
-    private void Start() {
-        StartCoroutine(PrepareAttack());
+    protected override void Start() {
+        base.Start();
     }
-
     protected override void StopDefend() {
         StopCoroutine(PrepareAttack());
     }

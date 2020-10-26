@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Building : MonoBehaviour {
     [SerializeField] protected int toolsCost;
@@ -9,6 +10,7 @@ public class Building : MonoBehaviour {
     [SerializeField] protected int health;
     [SerializeField] protected int damage;
     [SerializeField] int index;
+    int maxHealth;
 
     bool attacking = false;
 
@@ -24,6 +26,9 @@ public class Building : MonoBehaviour {
     [SerializeField] Color normalColor;
     [HideInInspector] public bool cheatsChangedHP = false;
 
+    [SerializeField] GameObject canvas;
+    [SerializeField] Image hpBar;
+
     public enum Type {
         Cannon,
         ToolsGenerator,
@@ -34,24 +39,31 @@ public class Building : MonoBehaviour {
         None
     }
     public Type type;
-    protected virtual void Start() {
-        // GameplayManager.startEnemyAttack += StartDefend;
-        GameplayManager.EndEnemyAttack += StopDefend;
-        StartDefend();
-    }
-
-    private void OnDisable() {
-        //GameplayManager.startEnemyAttack -= StartDefend;
-        GameplayManager.EndEnemyAttack -= StopDefend;
-    }
+   protected virtual void Start() {
+       health = 100;
+       maxHealth = health;
+       // GameplayManager.startEnemyAttack += StartDefend;
+       GameplayManager.EndEnemyAttack += StopDefend;
+       StartDefend();
+   }
+   
+   private void OnDisable() {
+       //GameplayManager.startEnemyAttack -= StartDefend;
+       GameplayManager.EndEnemyAttack -= StopDefend;
+   }
     private void OnDestroy() {
         GameplayManager.EndEnemyAttack -= StopDefend;
         if (DestroyedBuild != null)
             DestroyedBuild(this);
     }
-    private void Update() {
-       
+
+    private void LateUpdate() {
+        if (canvas != null) {
+            canvas.transform.LookAt(Camera.main.transform);
+            canvas.transform.Rotate(0f, 180f, 0f);
+        }
     }
+
     protected virtual void StopDefend() {
         Debug.Log("Stop Defend");
     }
@@ -66,6 +78,12 @@ public class Building : MonoBehaviour {
  
     public virtual void HitBuild(int d) {
         health -= d;
+        if (hpBar != null) {
+            float h = health;
+            float mh = maxHealth;
+            Debug.Log(h / mh);
+            hpBar.fillAmount = h/mh;
+        }
         if (!hitted)
             StartCoroutine(Hit());
         if (health <= 0) {
