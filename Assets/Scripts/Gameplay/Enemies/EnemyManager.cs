@@ -31,6 +31,19 @@ public class EnemyManager : MonoBehaviour {
 
     bool canCreateRandomEnemies = true;
     int type = 0;
+
+    [Serializable]
+    public class HordeManager {
+        public enum Order {
+            Attacker, Tank, Bard, Bomberrat
+        }
+        public Order[] order;
+        [Space]
+        public int[] cantOfEnemiesToCreateOfTypeInOrder;
+
+    }
+    [SerializeField] List<HordeManager> hordes;
+
     void Start() {
         GameplayManager.StartEnemyAttack += StartAttack;
         GameplayManager.EndEnemyAttack += StopAttack;
@@ -58,18 +71,28 @@ public class EnemyManager : MonoBehaviour {
         StopCoroutine(CreateEnemies());
     }
 
-    void StartHorde() {
-        StartCoroutine(Horde());
+    void StartHorde(int h) {
+        StartCoroutine(Horde(h));
     }
-    IEnumerator Horde() {
-        int enemiesCreated = 0;
-        while(enemiesCreated < enemiesInHorde) {
-            SpawnEnemy();
-            enemiesCreated++;
-            yield return new WaitForSeconds(timeToSpawnEnemiesInHorde);
-        }
+    IEnumerator Horde(int h) {
+        attacking = false;
+        for(int i = 0; i < hordes[h].order.Length; i++) {
+            for (int j = 0; j < hordes[h].cantOfEnemiesToCreateOfTypeInOrder[i]; j++) {
+                for (int k = 0; k < spawnerPoints.Length; k++) {
+                    Enemy e = Instantiate(enemies[(int)hordes[h].order[i]], spawnerPoints[k].transform.position + upset, Quaternion.identity, enemyParent);
+                    e.SetPath(paths[k].pos);
+                    e.SetTown(town);
+                    e.SetTypeOfEnemy((Enemy.Type)hordes[h].order[i]);
+                    enemiesCreated.Add(e);
+                }
+                yield return new WaitForSeconds(timeToSpawnEnemiesInHorde);
+            }
 
-        StopCoroutine(Horde());
+           // yield return new WaitForSeconds(timeToSpawnEnemiesInHorde);
+        }
+        attacking = true;
+        StartCoroutine(CreateEnemies());
+        StopCoroutine(Horde(h));
         yield return null;
     }
     IEnumerator CreateEnemies() {

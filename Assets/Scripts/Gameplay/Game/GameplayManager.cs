@@ -22,7 +22,7 @@ public class GameplayManager : MonoBehaviour {
     public delegate void UpdateHordeBar(float actualSecond, float time);
     public static event UpdateHordeBar UpdateBarHorde;
 
-    public delegate void StarHordeAttack();
+    public delegate void StarHordeAttack(int horde);
     public static event StarHordeAttack StartAttackHorde;
 
     [SerializeField] GameObject winScreenUI;
@@ -108,15 +108,15 @@ public class GameplayManager : MonoBehaviour {
         while (t < timeInAttack && attackPhase) {
             t += Time.deltaTime;
 
-            if((int)t == (int)timeToFirstHorde && !firstHorde) {
+           if((int)t == 5 && !firstHorde) {
                 firstHorde = true;
                 if (StartAttackHorde != null)
-                    StartAttackHorde();
+                    StartAttackHorde(0);
             }
             if( (int)t == (int)timeToSecondtHorde && !secondHorde) {
                 secondHorde = true;
                 if (StartAttackHorde != null)
-                    StartAttackHorde();
+                    StartAttackHorde(1);
             }
 
             if (UpdateBarHorde != null)
@@ -133,7 +133,7 @@ public class GameplayManager : MonoBehaviour {
 
     public void StartHorde() {
         if (StartAttackHorde != null)
-            StartAttackHorde();
+            StartAttackHorde(0);
     }
     public void StopTimeCount() {
         timeInAttack = 999999;

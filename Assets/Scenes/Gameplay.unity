@@ -5989,11 +5989,16 @@ MonoBehaviour:
   - {fileID: -7846457014608077067, guid: 3a5c946d9ce29534eba96e7bc21f3794, type: 3}
   enemyParent: {fileID: 1057995235}
   upset: {x: 0, y: 0.4, z: 0}
-  timeToSpawn: 5
+  timeToSpawn: 1.5
   town: {fileID: 919132148606980176}
   enemiesInHorde: 60
-  timeToSpawnEnemiesInHorde: 0.25
+  timeToSpawnEnemiesInHorde: 2
   enemiesCreated: []
+  hordes:
+  - order: 01000000020000000000000003000000
+    cantOfEnemiesToCreateOfTypeInOrder: 04000000020000000300000001000000
+  - order: 01000000020000000000000003000000
+    cantOfEnemiesToCreateOfTypeInOrder: 04000000050000000100000000000000
 --- !u!4 &604421523
 Transform:
   m_ObjectHideFlags: 0
@@ -14425,8 +14430,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f4b13713c523c46b319ff0064925eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeInAttack: 120
-  timeInFirstPrepare: 15
+  timeInAttack: 60
+  timeInFirstPrepare: 5
   winScreenUI: {fileID: 2068326047}
   loseScreenUI: {fileID: 37871742}
   cc: {fileID: 1633801450}
