@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c22f0ce9c05345429493110e6eeaacd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolsCost: 250
+  toolsCost: 200
   preparationTime: 3
   cooldownToCreate: 18
   health: 6

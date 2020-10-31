@@ -40,7 +40,6 @@ public class Building : MonoBehaviour {
     }
     public Type type;
    protected virtual void Start() {
-       health = 100;
        maxHealth = health;
        // GameplayManager.startEnemyAttack += StartDefend;
        GameplayManager.EndEnemyAttack += StopDefend;
@@ -81,7 +80,6 @@ public class Building : MonoBehaviour {
         if (hpBar != null) {
             float h = health;
             float mh = maxHealth;
-            Debug.Log(h / mh);
             hpBar.fillAmount = h/mh;
         }
         if (!hitted)

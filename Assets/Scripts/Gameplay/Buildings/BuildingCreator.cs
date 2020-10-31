@@ -124,7 +124,8 @@ public class BuildingCreator : MonoBehaviour {
 
     void EnemyKilled(Enemy e) {
         enemies.Remove(e);
-        tools += 25;
+        if (!e.GetTownAttacked())
+            tools += 25;
         if (ChangedTools != null)
             ChangedTools(tools);
     }

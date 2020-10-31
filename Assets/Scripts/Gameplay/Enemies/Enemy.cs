@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour {
     public Type type;
 
     protected bool attackBuilds = true;
+    bool townAttacked = false;
 
     [SerializeField] GameObject model;
 
@@ -101,6 +102,9 @@ public class Enemy : MonoBehaviour {
 
         Destroy(this.gameObject);
     }
+    public bool GetTownAttacked() {
+        return townAttacked;
+    }
     public void SetPath(List<Transform> p) {
         path = p;
     }
@@ -136,6 +140,7 @@ public class Enemy : MonoBehaviour {
     void AttackTown() {
         if (town != null)
             town.ReceiveDamage(damage);
+        townAttacked = true;
         OnDie();
     }
 
