@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6170392648877123007
 Transform:
@@ -95,7 +95,7 @@ GameObject:
   m_TagString: Structure
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6170392649880373121
 Transform:
@@ -135,10 +135,12 @@ MonoBehaviour:
   index: 0
   path: []
   lookPos: {x: 0, y: 0, z: 0}
-  rend: {fileID: 0}
+  rends: []
   hittedColor: {r: 1, g: 1, b: 1, a: 0}
   normalColor: {r: 1, g: 0.627451, b: 0.627451, a: 1}
   cheatsChangedHP: 0
+  canvas: {fileID: 0}
+  hpBar: {fileID: 0}
   type: 0
   building: {fileID: 0}
   toolsToAdd: 25
@@ -171,7 +173,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6170392650459032655
 Transform:
@@ -250,7 +252,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6170392650804753474
 Transform:
@@ -329,7 +331,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6170392650853218882
 Transform:
