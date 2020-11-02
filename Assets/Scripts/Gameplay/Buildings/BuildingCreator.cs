@@ -46,6 +46,8 @@ public class BuildingCreator : MonoBehaviour {
     Vector3 posSelected;
     GameObject goSelected;
 
+    [SerializeField] GameObject tileSelected;
+
     void Start() {
         builds = new List<Building>();
         builds.Clear();
@@ -70,15 +72,23 @@ public class BuildingCreator : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.GetMouseButtonDown(0)) {
-            if (EventSystem.current.IsPointerOverGameObject())
-                return;
 
-            Vector3 mousePos = Input.mousePosition;
-            Ray ray = cam.ScreenPointToRay(mousePos);
-            RaycastHit hit;
-            if(Physics.Raycast(ray, out hit, 200)) {
-                if (hit.transform.CompareTag("Base")) {
+
+        Vector3 mousePos = Input.mousePosition;
+        Ray ray = cam.ScreenPointToRay(mousePos);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 200)) {
+            if (hit.transform.CompareTag("Base")) {
+                if (!tileSelected.activeSelf)
+                    tileSelected.SetActive(true);
+
+                tileSelected.transform.position = hit.transform.position;
+
+                if (Input.GetMouseButtonDown(0)) {
+                    if (EventSystem.current.IsPointerOverGameObject())
+                        return;
+
                     posSelected = hit.transform.position;
                     goSelected = hit.transform.gameObject;
                     if (BSelected != null)
@@ -87,14 +97,15 @@ public class BuildingCreator : MonoBehaviour {
                         ClickedBase();
                 }
             }
+
         }
-        else if (Input.GetMouseButtonDown(1)) {
+        else
+            tileSelected.SetActive(false);
+
+        if (Input.GetMouseButtonDown(1)) {
             if (EventSystem.current.IsPointerOverGameObject())
                 return;
 
-            Vector3 mousePos = Input.mousePosition;
-            Ray ray = cam.ScreenPointToRay(mousePos);
-            RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 200)) {
                 if (hit.transform.CompareTag("Structure")) {
                     Destroy(hit.transform.gameObject);

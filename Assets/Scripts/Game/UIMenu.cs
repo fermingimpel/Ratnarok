@@ -30,7 +30,6 @@ public class UIMenu : MonoBehaviour {
                     configOpen[i].SetActive(false);
                 else
                     configOpen[i].SetActive(true);
-                    
             }
     }
 }
