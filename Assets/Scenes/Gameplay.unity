@@ -16833,8 +16833,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f4b13713c523c46b319ff0064925eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeInAttack: 1
-  timeInFirstPrepare: 1
+  timeInAttack: 120
+  timeInFirstPrepare: 10
   winScreenUI: {fileID: 2068326047}
   loseScreenUI: {fileID: 37871742}
   cc: {fileID: 1633801450}
