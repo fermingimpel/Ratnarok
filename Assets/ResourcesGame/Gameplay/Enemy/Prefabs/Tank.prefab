@@ -88,7 +88,7 @@ MonoBehaviour:
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hittedColor: {r: 1, g: 0.6650944, b: 0.6650944, a: 1}
   cheatsChangedHP: 0
-  type: 0
+  type: 1
   model: {fileID: 7279799158281176546}
 --- !u!1001 &7621888349766465715
 PrefabInstance:

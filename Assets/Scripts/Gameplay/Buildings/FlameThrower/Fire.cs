@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fire : Shoot {
-    [SerializeField] int maxTicks;
-    [SerializeField] float timeBetweenTicks;
-    int actualTicks = 0;
+public class Fire : Bullet {
+    [SerializeField] int maxHits;
+    [SerializeField] float timeBetweenHits;
+    int actualHits = 0;
     [SerializeField] BoxCollider bc;
 
     private void OnEnable() {
@@ -17,14 +17,12 @@ public class Fire : Shoot {
     }
 
     IEnumerator WaitToAttack() {
-        actualTicks = 0;
-        while (actualTicks < maxTicks) {
-            yield return new WaitForSeconds(timeBetweenTicks);
+        actualHits = 0;
+        while (actualHits < maxHits) {
+            yield return new WaitForSeconds(timeBetweenHits);
             Attack();
-            actualTicks++;
+            actualHits++;
         }
-
-        StopCoroutine(WaitToAttack());
     }
 
     void Attack() {

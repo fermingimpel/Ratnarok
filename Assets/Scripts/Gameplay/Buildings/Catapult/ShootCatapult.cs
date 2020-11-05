@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootCatapult : Shoot {
+public class ShootCatapult : Bullet {
     [SerializeField] Vector3 initPos;
     [SerializeField] Vector3 finalPos;
     [SerializeField] Vector3 midPos;

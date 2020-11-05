@@ -17,23 +17,23 @@ public class Cheats : MonoBehaviour {
     [SerializeField] BomberRat bomberrat;
     [SerializeField] Bard bard;
 
-    [SerializeField] int damageAttacker;
-    [SerializeField] int damageTank;
-    [SerializeField] int damageBomberrat;
+    [SerializeField] float damageAttacker;
+    [SerializeField] float damageTank;
+    [SerializeField] float damageBomberrat;
 
     [SerializeField] float attackSpeedAttacker;
     [SerializeField] float attackSpeedTank;
 
-    [SerializeField] int hpAttacker;
-    [SerializeField] int hpTank;
-    [SerializeField] int hpBomberrat;
-    [SerializeField] int hpBard;
+    [SerializeField] float hpAttacker;
+    [SerializeField] float hpTank;
+    [SerializeField] float hpBomberrat;
+    [SerializeField] float hpBard;
 
-    [SerializeField] int speedAttacker;
-    [SerializeField] int speedTank;
-    [SerializeField] int speedBomberrat;
-    [SerializeField] int speedBard;
-    [SerializeField] int healBard;
+    [SerializeField] float speedAttacker;
+    [SerializeField] float speedTank;
+    [SerializeField] float speedBomberrat;
+    [SerializeField] float speedBard;
+    [SerializeField] float healBard;
     #endregion
 
     #region structures
@@ -43,33 +43,33 @@ public class Cheats : MonoBehaviour {
     [SerializeField] Fence fence;
     [SerializeField] FlameThrower flamethrower;
 
-    [SerializeField] int damageCannon;
-    [SerializeField] int damageCatapult;
-    [SerializeField] int damageCrossbow;
-    [SerializeField] int damageFlameThrower;
+    [SerializeField] float damageCannon;
+    [SerializeField] float damageCatapult;
+    [SerializeField] float damageCrossbow;
+    [SerializeField] float damageFlameThrower;
 
     [SerializeField] float preparationTimeCannon;
     [SerializeField] float preparationTimeCatapult;
     [SerializeField] float preparationTimeCrossbow;
     [SerializeField] float preparationTimeFlameThrower;
 
-    [SerializeField] int healthCannon;
-    [SerializeField] int healthCatapult;
-    [SerializeField] int healthCrossbow;
-    [SerializeField] int healthFence;
-    [SerializeField] int healthFlameThrower;
-
-    [SerializeField] int toolsCostCannon;
-    [SerializeField] int toolsCostCatapult;
-    [SerializeField] int toolsCostCrossbow;
-    [SerializeField] int toolsCostFence;
-    [SerializeField] int toolsCostFlameThrower;
-
-    [SerializeField] int initialToolsCostCannon;
-    [SerializeField] int initialToolsCostCatapult;
-    [SerializeField] int initialToolsCostCrossbow;
-    [SerializeField] int initialToolsCostFence;
-    [SerializeField] int initialToolsCostFlameThrower;
+    [SerializeField] float healthCannon;
+    [SerializeField] float healthCatapult;
+    [SerializeField] float healthCrossbow;
+    [SerializeField] float healthFence;
+    [SerializeField] float healthFlameThrower;
+                     
+    [SerializeField] float toolsCostCannon;
+    [SerializeField] float toolsCostCatapult;
+    [SerializeField] float toolsCostCrossbow;
+    [SerializeField] float toolsCostFence;
+    [SerializeField] float toolsCostFlameThrower;
+                     
+    [SerializeField] float initialToolsCostCannon;
+    [SerializeField] float initialToolsCostCatapult;
+    [SerializeField] float initialToolsCostCrossbow;
+    [SerializeField] float initialToolsCostFence;
+    [SerializeField] float initialToolsCostFlameThrower;
 
     #endregion
 

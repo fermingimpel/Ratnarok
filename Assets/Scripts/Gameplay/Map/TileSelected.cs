@@ -7,12 +7,12 @@ public class TileSelected : MonoBehaviour
     [SerializeField] float rotationSpeed;
     private void Start() {
         BuildingCreator.BSelected += ClickedBase;
-        UIBuildings.UIButtonPressed += UnSelectedBase;
+        UIBuildingsDisc.UIButtonPressed += UnSelectedBase;
         this.gameObject.SetActive(false);
     }
     private void OnDestroy() {
         BuildingCreator.BSelected -= ClickedBase;
-        UIBuildings.UIButtonPressed -= UnSelectedBase;
+        UIBuildingsDisc.UIButtonPressed -= UnSelectedBase;
     }
     void Update() {
         transform.Rotate(Vector3.back * rotationSpeed * Time.deltaTime);

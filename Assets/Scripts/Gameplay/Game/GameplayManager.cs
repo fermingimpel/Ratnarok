@@ -101,19 +101,19 @@ public class GameplayManager : MonoBehaviour {
         bool firstHorde = false;
         bool secondHorde = false;
 
-        float timeToFirstHorde = (33f * timeInAttack)  / 100f;
-        float timeToSecondtHorde = (66 * timeInAttack) / 100f;
+        float timeToFirstHorde = timeInAttack* 0.33f;
+        float timeToSecondtHorde = timeInAttack * 0.67f;
 
         float t = 0;
         while (t < timeInAttack && attackPhase) {
             t += Time.deltaTime;
 
-           if((int)t == (int)timeToFirstHorde && !firstHorde) {
+           if(t >= timeToFirstHorde && !firstHorde) {
                 firstHorde = true;
                 if (StartAttackHorde != null)
                     StartAttackHorde(0);
             }
-            if( (int)t == (int)timeToSecondtHorde && !secondHorde) {
+            if( t >= timeToSecondtHorde && !secondHorde) {
                 secondHorde = true;
                 if (StartAttackHorde != null)
                     StartAttackHorde(1);

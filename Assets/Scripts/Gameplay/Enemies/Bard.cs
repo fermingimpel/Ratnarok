@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bard : Enemy {
     [SerializeField] float timeToHeal;
-    [SerializeField] int heal;
+    [SerializeField] float heal;
     [SerializeField] float rangeToHeal;
 
 
@@ -21,10 +21,10 @@ public class Bard : Enemy {
         base.Update();
     }
 
-    public void SetHeal(int h) {
+    public void SetHeal(float h) {
         heal = h;
     }
-    public int GetHeal() {
+    public float GetHeal() {
         return heal;
     }
 

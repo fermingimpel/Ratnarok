@@ -80,7 +80,7 @@ MonoBehaviour:
   cheatsChangedHP: 0
   canvas: {fileID: 2233576051836531946}
   hpBar: {fileID: 4293674274300241500}
-  type: 0
+  type: 2
 --- !u!65 &4372653115093227400
 BoxCollider:
   m_ObjectHideFlags: 0

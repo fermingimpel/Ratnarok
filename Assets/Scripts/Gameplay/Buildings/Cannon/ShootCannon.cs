@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootCannon : Shoot {
+public class ShootCannon : Bullet {
     private void Start() {
         StartCoroutine(LateStart());
     }

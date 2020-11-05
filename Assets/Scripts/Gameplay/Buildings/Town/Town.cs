@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Town : MonoBehaviour {
 
-    [SerializeField] int maxHealth;
-    [SerializeField] int health;
+    [SerializeField] float maxHealth;
+    [SerializeField] float health;
     
     public delegate void HPChanged(float hp, float maxHp);
     public static event HPChanged ChangedHP;
@@ -16,10 +16,10 @@ public class Town : MonoBehaviour {
     void Start() {
         health = maxHealth;
         if (ChangedHP != null)
-            ChangedHP((float)health, (float)maxHealth);
+            ChangedHP(health, maxHealth);
     }
 
-    public void ReceiveDamage(int d) {
+    public void ReceiveDamage(float d) {
         if (this != null) {
             health -= d;
             if (health <= 0) {
@@ -30,7 +30,7 @@ public class Town : MonoBehaviour {
             }
 
             if (ChangedHP != null)
-                ChangedHP((float)health, (float)maxHealth);
+                ChangedHP(health, maxHealth);
         }
     }
 }

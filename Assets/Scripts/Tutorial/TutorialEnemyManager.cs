@@ -25,7 +25,7 @@ public class TutorialEnemyManager : MonoBehaviour {
 
     void ChangedPhase(int p) {
         phase = p;
-        if (p == 5) {
+        if (p == 7) {
             StartCoroutine(PrepareEnemyFirstPath());
         }
     }
@@ -35,7 +35,7 @@ public class TutorialEnemyManager : MonoBehaviour {
         go.SetPath(path);
         go.SetTown(town);
         enemiesCreated++;
-        if (phase == 5 && enemiesCreated < 5)
+        if (phase == 7 && enemiesCreated < 3)
             StartCoroutine(PrepareEnemyFirstPath());
     }
 

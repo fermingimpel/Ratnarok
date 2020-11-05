@@ -1,0 +1,58 @@
+CORRECCIÓN DEL DIÁLOGO
+
+Welcome! 
+I'm wilfred
+I'll be your instructor in this tutorial
+
+We’ve been at war for the 
+cheese in this house 
+for a while now. 
+
+We’ve lost many but with 
+YOU on our side 
+I’m certain that we’ll win!
+So here’s the deal... 
+
+First, click on a tile to open the Strucuture Wheel!
+And pick the structure you’d like to place on the map
+
+Well done! 
+You are getting the hang of it.
+
+Every time you place a structure you spend gold. 
+You get gold by eleminiating an enemy on the battlefield!
+
+You can see how much gold you’ve got on the left side of your screen.
+
+Careful! 
+A horde of enemies has appeared. Protect the cheese from those rats!!
+
+Nicely done!
+I think you get the basics
+
+If you ever need some extra information you can always check out the Ratary
+
+Rotate Camera
+
+Eliminate Tower
+
+For now though get to work! We need to get this cheese back to base.
+
+Meanwhile I’ll get back to eating some cheese
+See ya later champ! 
+
+ORDEN DE IMAGENES
+-
+Welcome! - Hi and bye
+We ve been at war - Explaining
+We ve lost many - You
+First - Explaining
+Well done! - Thumbs up
+Every time - Explaining
+You can see - Explaining Pointing left
+Careful! - Protect
+Nicely done - Thumbs up
+If you ever - Explaining o Explaining Pointing Ratary
+For now though - You
+Meanwhile - Hi and bye
+

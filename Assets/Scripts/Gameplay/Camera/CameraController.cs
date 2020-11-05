@@ -15,11 +15,11 @@ public class CameraController : MonoBehaviour {
 
     private void Start() {
         BuildingCreator.ClickedBase += ClickedBase;
-        UIBuildings.UIButtonPressed += UnClickedBase;
+        UIBuildingsDisc.UIButtonPressed += UnClickedBase;
     }
     private void OnDisable() {
         BuildingCreator.ClickedBase -= ClickedBase;
-        UIBuildings.UIButtonPressed += UnClickedBase;
+        UIBuildingsDisc.UIButtonPressed += UnClickedBase;
     }
 
     void Update() {

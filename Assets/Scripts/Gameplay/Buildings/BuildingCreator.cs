@@ -20,7 +20,7 @@ public class BuildingCreator : MonoBehaviour {
 
     int buildToCreate = (int)TypeOfBuilds.None;
 
-    [SerializeField] int tools = 50;
+    [SerializeField] float tools;
 
     Camera cam;
 
@@ -34,7 +34,7 @@ public class BuildingCreator : MonoBehaviour {
 
     [SerializeField] List<Paths> paths;
 
-    public delegate void ToolsChanged(int t);
+    public delegate void ToolsChanged(float t);
     public static event ToolsChanged ChangedTools;
 
     public delegate void BaseClicked();
@@ -61,14 +61,14 @@ public class BuildingCreator : MonoBehaviour {
         EnemyManager.CreatedEnemy += EnemyCreated;
         Enemy.Dead += EnemyKilled;
         Building.DestroyedBuild += DestroyedBuild;
-        UIBuildings.BuildingButtonPressed += CreateStructure;
+        UIBuildingsDisc.BuildingButtonPressed += CreateStructure;
     }
 
     private void OnDisable() {
         EnemyManager.CreatedEnemy -= EnemyCreated;
         Enemy.Dead -= EnemyKilled;
         Building.DestroyedBuild -= DestroyedBuild;
-        UIBuildings.BuildingButtonPressed -= CreateStructure;
+        UIBuildingsDisc.BuildingButtonPressed -= CreateStructure;
     }
 
     void Update() {
@@ -114,7 +114,7 @@ public class BuildingCreator : MonoBehaviour {
         }
     }
 
-    void CreateStructure(UIBuildings.TypeOfBuilds tob) {
+    void CreateStructure(UIBuildingsDisc.TypeOfBuilds tob) {
         buildToCreate = (int)tob;
         if (structures[buildToCreate].GetToolsCost() <= tools) {
             Building go = Instantiate(structures[buildToCreate], posSelected, structures[buildToCreate].transform.rotation, structuresParent);
@@ -150,7 +150,7 @@ public class BuildingCreator : MonoBehaviour {
         if (ChangedTools != null)
             ChangedTools(tools);
     }
-    public int GetTools() {
+    public float GetTools() {
         return tools;
     }
     public void AddTools(int t) {

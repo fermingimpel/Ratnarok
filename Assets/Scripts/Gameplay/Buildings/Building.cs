@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Building : MonoBehaviour {
-    [SerializeField] protected int toolsCost;
+    [SerializeField] protected float toolsCost;
     [SerializeField] protected float preparationTime;
     [SerializeField] protected float cooldownToCreate;
-    [SerializeField] protected int health;
-    [SerializeField] protected int damage;
+    [SerializeField] protected float health;
+    [SerializeField] protected float damage;
     [SerializeField] int index;
-    int maxHealth;
+    float maxHealth;
 
     bool attacking = false;
 
@@ -75,12 +75,10 @@ public class Building : MonoBehaviour {
         Debug.Log("Attack");
     }
  
-    public virtual void HitBuild(int d) {
+    public virtual void HitBuild(float d) {
         health -= d;
         if (hpBar != null) {
-            float h = health;
-            float mh = maxHealth;
-            hpBar.fillAmount = h/mh;
+            hpBar.fillAmount = health/maxHealth;
         }
         if (!hitted)
             StartCoroutine(Hit());
@@ -105,23 +103,23 @@ public class Building : MonoBehaviour {
         yield return null;
     }
 
-    public void SetToolsCost(int tc) {
+    public void SetToolsCost(float tc) {
         toolsCost = tc;
     }
-    public int GetToolsCost() {
+    public float GetToolsCost() {
         return toolsCost;
     }
-    public void SetHP(int hp) {
+    public void SetHP(float hp) {
         cheatsChangedHP = true;
         health = hp;
     }
-    public int GetHP() {
+    public float GetHP() {
         return health;
     }
-    public void SetDamage(int d) {
+    public void SetDamage(float d) {
         damage = d;
     }
-    public int GetDamage() {
+    public float GetDamage() {
         return damage;
     }
     public void SetPreparationTime(float t) {

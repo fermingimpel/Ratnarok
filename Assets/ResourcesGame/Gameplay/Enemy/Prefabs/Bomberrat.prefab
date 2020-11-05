@@ -315,7 +315,7 @@ MonoBehaviour:
   normalColor: {r: 1, g: 1, b: 1, a: 0}
   hittedColor: {r: 1, g: 0.6666667, b: 0.6666667, a: 0}
   cheatsChangedHP: 0
-  type: 0
+  type: 3
   model: {fileID: 6692352586757818361}
   body: {fileID: 6692352586757818361}
   speedUpDown: 1

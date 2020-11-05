@@ -9,7 +9,7 @@ public class BuildCreatorTutorial : MonoBehaviour {
     [SerializeField] Vector3 upset;
     [SerializeField] Transform cannonParent;
 
-    [SerializeField] int tools = 200;
+    [SerializeField] float tools;
 
     Camera cam;
 
@@ -21,7 +21,7 @@ public class BuildCreatorTutorial : MonoBehaviour {
     [SerializeField] List<Paths> paths;
 
 
-    public delegate void ToolsChanged(int t);
+    public delegate void ToolsChanged(float t);
     public static event ToolsChanged ChangedTools;
 
 
@@ -30,6 +30,8 @@ public class BuildCreatorTutorial : MonoBehaviour {
 
     Vector3 posSelected;
     GameObject goSelected;
+
+    [SerializeField] GameObject tileSelected;
 
     int actualPhase = 0;
 
@@ -46,18 +48,37 @@ public class BuildCreatorTutorial : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.GetMouseButtonDown(0)) {
-            if (EventSystem.current.IsPointerOverGameObject())
-                return;
-            Vector3 mousePos = Input.mousePosition;
-            Ray ray = cam.ScreenPointToRay(mousePos);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 200)) {
-                if (hit.transform.CompareTag("Base")) {
+        Vector3 mousePos = Input.mousePosition;
+        Ray ray = cam.ScreenPointToRay(mousePos);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 200)) {
+            if (hit.transform.CompareTag("Base")) {
+                if (!tileSelected.activeSelf)
+                    tileSelected.SetActive(true);
+
+                tileSelected.transform.position = hit.transform.position;
+                if (Input.GetMouseButtonDown(0)) {
+                    if (EventSystem.current.IsPointerOverGameObject())
+                        return;
+
                     posSelected = hit.transform.position;
                     goSelected = hit.transform.gameObject;
                     if (ClickedBase != null)
                         ClickedBase();
+                }
+            }
+        }
+        else {
+            if (tileSelected.activeSelf)
+                tileSelected.SetActive(false);
+        }
+
+        if (Input.GetMouseButtonDown(1)) {
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+            if (Physics.Raycast(ray, out hit, 200)) {
+                if (hit.transform.CompareTag("Structure")) {
+                    Destroy(hit.transform.gameObject);
                 }
             }
         }

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
-    [SerializeField] protected int health;
-    [SerializeField] protected int maxHealth;
-    [SerializeField] protected int speed;
+    [SerializeField] protected float health;
+    [SerializeField] protected float maxHealth;
+    [SerializeField] protected float speed;
     [SerializeField] protected float timeToAttack;
-    [SerializeField] protected int damage;
+    [SerializeField] protected float damage;
     int index;
 
     public delegate void EnemyDead(Enemy e);
@@ -72,7 +72,7 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-    public virtual void ReceiveDamage(int d) {
+    public virtual void ReceiveDamage(float d) {
         health -= d;
         if (!hitted)
             StartCoroutine(Hit());
@@ -81,7 +81,7 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-    public virtual void Heal(int h) {
+    public virtual void Heal(float h) {
         health += h;
         if (health >= maxHealth)
             health = maxHealth;
@@ -179,26 +179,26 @@ public class Enemy : MonoBehaviour {
     // [SerializeField] protected float timeToAttack;
     // [SerializeField] protected int damage;
 
-    public void SetDamage(int d) {
+    public void SetDamage(float d) {
         damage = d;
     }
-    public int GetDamage() {
+    public float GetDamage() {
         return damage;
     }
 
-    public void SetMaxHealth(int mh) {
+    public void SetMaxHealth(float mh) {
         cheatsChangedHP = true;
         health = mh;
         maxHealth = mh;
     }
-    public int GetMaxHealth() {
+    public float GetMaxHealth() {
         return maxHealth;
     }
 
-    public void SetSpeed(int s) {
+    public void SetSpeed(float s) {
         speed = s;
     }
-    public int GetSpeed() {
+    public float GetSpeed() {
         return speed;
     }
 

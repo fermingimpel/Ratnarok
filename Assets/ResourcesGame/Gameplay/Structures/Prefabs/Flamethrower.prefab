@@ -765,10 +765,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  damage: 3
+  damage: 1
   direction: {x: 0, y: 0, z: 0}
-  maxTicks: 4
-  timeBetweenTicks: 0.6
+  maxHits: 4
+  timeBetweenHits: 0.6
   bc: {fileID: 6665745077158796708}
 --- !u!33 &6665745077158796711
 MeshFilter:
@@ -897,7 +897,7 @@ MonoBehaviour:
   cheatsChangedHP: 0
   canvas: {fileID: 4498882111860750509}
   hpBar: {fileID: 4816887199738637427}
-  type: 0
+  type: 4
   fire: {fileID: 6665745077158796709}
   timeAttacking: 3
 --- !u!1 &7432334676907669419

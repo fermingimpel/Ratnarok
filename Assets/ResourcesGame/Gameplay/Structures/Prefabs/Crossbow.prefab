@@ -210,7 +210,7 @@ MonoBehaviour:
   cheatsChangedHP: 0
   canvas: {fileID: 7467220490376225582}
   hpBar: {fileID: 1606923257310004453}
-  type: 0
+  type: 5
   shoot: {fileID: 1134107875337626521, guid: d41434e24b8c7ba4bae1e65bcbf89c89, type: 3}
   upset: {x: 0, y: 0.355, z: 0}
 --- !u!65 &1546387539671894437

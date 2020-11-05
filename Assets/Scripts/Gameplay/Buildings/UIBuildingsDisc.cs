@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIBuildings : MonoBehaviour {
+public class UIBuildingsDisc : MonoBehaviour {
 
     public enum TypeOfBuilds {
         Cannon,
@@ -39,17 +39,22 @@ public class UIBuildings : MonoBehaviour {
         backButton.SetActive(true);
 
         Vector3 mousePos = Input.mousePosition;
-        if (mousePos.y > Screen.height - (UIWheel.GetComponent<Image>().sprite.rect.height * canvas.scaleFactor) * 0.5f) 
-            mousePos = new Vector3(mousePos.x, Screen.height - (UIWheel.GetComponent<Image>().sprite.rect.height * canvas.scaleFactor) * 0.5f, mousePos.z);
-        else if (mousePos.y < UIWheel.GetComponent<Image>().sprite.rect.height * canvas.scaleFactor * 0.5f) 
-            mousePos = new Vector3(mousePos.x, UIWheel.GetComponent<Image>().sprite.rect.height * canvas.scaleFactor * 0.5f, mousePos.z);
-       
-        if (mousePos.x < UIWheel.GetComponent<Image>().sprite.rect.width * canvas.scaleFactor * 0.5f) 
-            mousePos = new Vector3(UIWheel.GetComponent<Image>().sprite.rect.width * canvas.scaleFactor * 0.5f, mousePos.y, mousePos.z);
-        else if (mousePos.x > Screen.width - (UIWheel.GetComponent<Image>().sprite.rect.height * canvas.scaleFactor) * 0.5f) 
-            mousePos = new Vector3(Screen.width - (UIWheel.GetComponent<Image>().sprite.rect.width * canvas.scaleFactor) * 0.5f, mousePos.y, mousePos.z);
         
-        UIWheel.transform.position = mousePos;
+        UIWheel.transform.position = CheckScreenLimits(mousePos);
+    }
+    Vector3 CheckScreenLimits(Vector3 actualPos) {
+        Image wheelImage = UIWheel.GetComponent<Image>();
+        if (actualPos.y > Screen.height - (wheelImage.sprite.rect.height * canvas.scaleFactor) * 0.5f)
+            actualPos = new Vector3(actualPos.x, Screen.height - (wheelImage.sprite.rect.height * canvas.scaleFactor) * 0.5f, actualPos.z);
+        else if (actualPos.y < wheelImage.sprite.rect.height * canvas.scaleFactor * 0.5f)
+            actualPos = new Vector3(actualPos.x, wheelImage.sprite.rect.height * canvas.scaleFactor * 0.5f, actualPos.z);
+       
+        if (actualPos.x < wheelImage.sprite.rect.width * canvas.scaleFactor * 0.5f)
+            actualPos = new Vector3(wheelImage.sprite.rect.width * canvas.scaleFactor * 0.5f, actualPos.y, actualPos.z);
+        else if (actualPos.x > Screen.width - (wheelImage.sprite.rect.height * canvas.scaleFactor) * 0.5f)
+            actualPos = new Vector3(Screen.width - (wheelImage.sprite.rect.width * canvas.scaleFactor) * 0.5f, actualPos.y, actualPos.z);
+
+        return actualPos;
     }
     public void ClickBackButton() {
         UIWheel.SetActive(false);

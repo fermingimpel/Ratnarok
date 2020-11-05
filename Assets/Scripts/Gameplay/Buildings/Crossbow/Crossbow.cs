@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Crossbow : Building {
-    [SerializeField] Shoot shoot;
+    [SerializeField] Bullet shoot;
     [SerializeField] Vector3 upset;
 
     protected override void Start() {
@@ -27,7 +27,7 @@ public class Crossbow : Building {
     }
 
     protected override void Attack() {
-        Shoot s = Instantiate(shoot, transform.position + upset, Quaternion.identity);
+        Bullet s = Instantiate(shoot, transform.position + upset, Quaternion.identity);
         s.SetDirection(lookPos + upset);
         s.SetDamage(damage);
         StartCoroutine(PrepareAttack());

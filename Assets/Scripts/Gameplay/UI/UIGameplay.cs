@@ -18,6 +18,12 @@ public class UIGameplay : MonoBehaviour {
     [SerializeField] GameObject go1;
     [SerializeField] GameObject go2;
 
+    [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject rataryMenu;
+    [SerializeField] GameObject configMenu;
+    [SerializeField] GameObject[] configOpen;
+    bool configDisplayed = true;
+
     void Start() {
         hordeGO.SetActive(false);
         hpGO.SetActive(false);
@@ -52,7 +58,7 @@ public class UIGameplay : MonoBehaviour {
 
     }
 
-    void ChangeTools(int t) {
+    void ChangeTools(float t) {
         goldText.text = t.ToString();
     }
     void ChangeHP(float hp, float maxHP) {
@@ -62,4 +68,43 @@ public class UIGameplay : MonoBehaviour {
         hordeRat.transform.position = Vector3.Lerp(go1.transform.position, go2.transform.position, timeInHorde / maxTimeInHorde);
         hordeBar.fillAmount = timeInHorde / maxTimeInHorde;
     }
+
+    public void ClickedPauseButton() {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0.0f;
+    }
+    public void ClickedResumeButton() {
+        pauseMenu.SetActive(false);
+        rataryMenu.SetActive(false);
+        Time.timeScale = 1.0f;
+    }
+
+    public void ClickedRatary() {
+        rataryMenu.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void ClickedOptions() {
+        configDisplayed = !configDisplayed;
+        if (!configDisplayed) {
+            pauseMenu.SetActive(false);
+            configMenu.SetActive(true);
+            return;
+        }
+
+        pauseMenu.SetActive(true);
+        configMenu.SetActive(false);
+        return;
+    }
+
+    public void ClickedToggleScreenType() {
+        for (int i = 0; i < configOpen.Length; i++)
+            if (configOpen[i] != null) {
+                if (configOpen[i].activeSelf)
+                    configOpen[i].SetActive(false);
+                else
+                    configOpen[i].SetActive(true);
+            }
+    }
+
 }
