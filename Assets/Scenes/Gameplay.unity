@@ -1944,7 +1944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 0
   m_OnCullStateChanged:
@@ -12407,7 +12407,7 @@ RectTransform:
   m_GameObject: {fileID: 1032048547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_LocalScale: {x: 1, y: 1, z: 0.75}
   m_Children:
   - {fileID: 1541881300}
   - {fileID: 1001718879}
@@ -14851,6 +14851,32 @@ MonoBehaviour:
   UIWheel: {fileID: 1032048547}
   backButton: {fileID: 1995208302}
   canvas: {fileID: 887333349}
+  structureSprites:
+  - sprites:
+    - {fileID: 1541881301}
+    - {fileID: 106495654}
+  - sprites:
+    - {fileID: 1001718880}
+    - {fileID: 1058514263}
+  - sprites:
+    - {fileID: 1731967814}
+    - {fileID: 1771948470}
+  - sprites:
+    - {fileID: 519118957}
+    - {fileID: 3431102}
+  - sprites:
+    - {fileID: 500079001}
+    - {fileID: 1395687664}
+  normalPaperColor: {r: 1, g: 1, b: 1, a: 1}
+  noGoldPaperColor: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
+  buildings:
+  - {fileID: 9003888803886990785, guid: dbaf4b234aa58614a92a5f73a326e4ba, type: 3}
+  - {fileID: 3934173153483602342, guid: a7c8994a1fe0e504aa05ec20ca35ee12, type: 3}
+  - {fileID: 6702283095275087050, guid: ca4eb8ace075369488d75afffbd86abd, type: 3}
+  - {fileID: 7050128910926942241, guid: d5627b10ddd059044a377c92346480dc, type: 3}
+  - {fileID: 6533571121771974828, guid: 1831daaa8d98acd44a4be1d9d3bac047, type: 3}
+  buildingsValues: []
+  gold: 0
 --- !u!1 &1316217863
 GameObject:
   m_ObjectHideFlags: 0
@@ -15477,7 +15503,7 @@ GameObject:
   - component: {fileID: 1395687665}
   - component: {fileID: 1395687664}
   m_Layer: 5
-  m_Name: Walll
+  m_Name: Crossbow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16713,7 +16739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:

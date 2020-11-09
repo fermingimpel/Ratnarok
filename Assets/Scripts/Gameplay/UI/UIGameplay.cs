@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -23,6 +24,9 @@ public class UIGameplay : MonoBehaviour {
     [SerializeField] GameObject configMenu;
     [SerializeField] GameObject[] configOpen;
     bool configDisplayed = true;
+
+    public static Action ClickedPause;
+    public static Action ClickedResume;
 
     void Start() {
         hordeGO.SetActive(false);
@@ -70,16 +74,22 @@ public class UIGameplay : MonoBehaviour {
     }
 
     public void ClickedPauseButton() {
+        if (ClickedPause != null)
+            ClickedPause();
         pauseMenu.SetActive(true);
         Time.timeScale = 0.0f;
     }
     public void ClickedResumeButton() {
+        if (ClickedResume != null)
+            ClickedResume();
         pauseMenu.SetActive(false);
         rataryMenu.SetActive(false);
         Time.timeScale = 1.0f;
     }
 
     public void ClickedRatary() {
+        if (ClickedPause != null)
+            ClickedPause();
         rataryMenu.SetActive(true);
         Time.timeScale = 0f;
     }

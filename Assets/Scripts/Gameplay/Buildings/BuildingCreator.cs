@@ -47,7 +47,7 @@ public class BuildingCreator : MonoBehaviour {
     GameObject goSelected;
 
     [SerializeField] GameObject tileSelected;
-
+    bool canSelectTile = false;
     void Start() {
         builds = new List<Building>();
         builds.Clear();
@@ -55,13 +55,16 @@ public class BuildingCreator : MonoBehaviour {
         enemies = new List<Enemy>();
         enemies.Clear();
         enemies.Add(null);
-
+        canSelectTile = true;
         cam = Camera.main;
 
         EnemyManager.CreatedEnemy += EnemyCreated;
         Enemy.Dead += EnemyKilled;
         Building.DestroyedBuild += DestroyedBuild;
         UIBuildingsDisc.BuildingButtonPressed += CreateStructure;
+        UIBuildingsDisc.UIButtonPressed += CanSelectTile;
+        UIGameplay.ClickedPause += CantSelectTile;
+        UIGameplay.ClickedResume += CanSelectTile;
     }
 
     private void OnDisable() {
@@ -69,19 +72,22 @@ public class BuildingCreator : MonoBehaviour {
         Enemy.Dead -= EnemyKilled;
         Building.DestroyedBuild -= DestroyedBuild;
         UIBuildingsDisc.BuildingButtonPressed -= CreateStructure;
+        UIBuildingsDisc.UIButtonPressed -= CanSelectTile;
+        UIGameplay.ClickedPause -= CantSelectTile;
+        UIGameplay.ClickedResume -= CanSelectTile;
     }
 
     void Update() {
-
-
         Vector3 mousePos = Input.mousePosition;
         Ray ray = cam.ScreenPointToRay(mousePos);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, 200)) {
             if (hit.transform.CompareTag("Base")) {
-                if (!tileSelected.activeSelf)
+                if (!tileSelected.activeSelf && canSelectTile)
                     tileSelected.SetActive(true);
+                else if (!canSelectTile)
+                    tileSelected.SetActive(false);
 
                 tileSelected.transform.position = hit.transform.position;
 
@@ -89,6 +95,8 @@ public class BuildingCreator : MonoBehaviour {
                     if (EventSystem.current.IsPointerOverGameObject())
                         return;
 
+                    canSelectTile = false;
+                    tileSelected.SetActive(false);
                     posSelected = hit.transform.position;
                     goSelected = hit.transform.gameObject;
                     if (BSelected != null)
@@ -127,8 +135,14 @@ public class BuildingCreator : MonoBehaviour {
             go.SetPath(paths[goSelected.GetComponent<Tile>().GetPathIndex()].pos);
             go.SetLookAt(goSelected.GetComponent<Tile>().GetLookAt());
         }
+        CanSelectTile();
     }
-
+    void CantSelectTile() {
+        canSelectTile = false;
+    }
+    void CanSelectTile() {
+        canSelectTile = true;
+    }
     void EnemyCreated(Enemy e) {
         enemies.Add(e);
     }
