@@ -60,14 +60,15 @@ public class EnemyManager : MonoBehaviour {
     public static event UpdateHorde HordeUpdate;
 
     bool allHordesCompleted = false;
-    void Start() {
+    private void Awake() {
         GameplayManager.StartEnemyAttack += StartAttack;
         GameplayManager.EndEnemyAttack += StopAttack;
         Town.DestroyedTown += StopAttack;
         Enemy.Dead += RemoveEnemy;
+    }
+    void Start() {
         canCreateRandomEnemies = true;
         allHordesCompleted = false;
-        
     }
 
     private void OnDisable() {

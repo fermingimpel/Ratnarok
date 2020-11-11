@@ -5,14 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UIBuildingsDisc : MonoBehaviour {
-
-    public enum TypeOfBuilds {
-        Cannon,
-        Fence,
-        None
-    }
-
-    public delegate void UIBuildingButtonPressed(TypeOfBuilds tob);
+    public delegate void UIBuildingButtonPressed(int tob);
     public static event UIBuildingButtonPressed BuildingButtonPressed;
     public delegate void UIPressedButton();
     public static event UIPressedButton UIButtonPressed;
@@ -36,25 +29,25 @@ public class UIBuildingsDisc : MonoBehaviour {
     private void Start() {
         BuildingCreator bc = FindObjectOfType<BuildingCreator>();
         if(bc)
-            gold = bc.GetTools();
+            gold = bc.GetGold();
 
         buildingsValues = new List<float>();
         buildingsValues.Clear();
         for (int i = 0; i < buildings.Count; i++)
             buildingsValues.Add(buildings[i].GetToolsCost());
         BuildingCreator.ClickedBase += ClickedBase;
-        BuildingCreator.ChangedTools += ChangedTools;
+        BuildingCreator.ChangedGold += ChangedGold;
         BuildCreatorTutorial.ClickedBase += ClickedBase;
-        BuildCreatorTutorial.ChangedTools += ChangedTools;
+        BuildCreatorTutorial.ChangedTools += ChangedGold;
     }
     private void OnDestroy() {
         BuildingCreator.ClickedBase -= ClickedBase;
-        BuildingCreator.ChangedTools -= ChangedTools;
-        BuildCreatorTutorial.ChangedTools -= ChangedTools;
+        BuildingCreator.ChangedGold -= ChangedGold;
+        BuildCreatorTutorial.ChangedTools -= ChangedGold;
         BuildCreatorTutorial.ClickedBase -= ClickedBase;
     }
-    void ChangedTools(float t) {
-        gold = t;
+    void ChangedGold(float g) {
+        gold = g;
     }
     void ClickedBase() {
         UIWheel.SetActive(true);
@@ -94,7 +87,7 @@ public class UIBuildingsDisc : MonoBehaviour {
     }
     public void PressButtonStructure(int button) {
         if (BuildingButtonPressed != null)
-            BuildingButtonPressed((TypeOfBuilds)(button));
+            BuildingButtonPressed(button);
         if (UIButtonPressed != null)
             UIButtonPressed();
         UIWheel.SetActive(false);

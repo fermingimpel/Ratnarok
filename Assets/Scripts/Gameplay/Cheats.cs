@@ -158,7 +158,7 @@ public class Cheats : MonoBehaviour {
             cheatsActivated = false;
             UICheats.SetActive(false);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2)) bc.AddTools(10000);
+        if (Input.GetKeyDown(KeyCode.Alpha2)) bc.AddGold(10000);
 
         if (Input.GetKeyDown(KeyCode.Alpha3)) {
             enemies = em.GetEnemies();
@@ -173,8 +173,6 @@ public class Cheats : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Alpha4)) tn.ReceiveDamage(-99999);
 
         if (Input.GetKeyDown(KeyCode.Alpha5)) gm.StartHorde();
-
-        if (Input.GetKeyDown(KeyCode.Alpha6)) gm.StopTimeCount();
 
         if (Input.GetKey(KeyCode.Alpha7)) {
             if (Input.GetKeyDown(KeyCode.Z)) damageAttacker++;

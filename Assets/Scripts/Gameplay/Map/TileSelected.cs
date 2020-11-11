@@ -5,9 +5,11 @@ using UnityEngine;
 public class TileSelected : MonoBehaviour
 {
     [SerializeField] float rotationSpeed;
-    private void Start() {
+    private void Awake() {
         BuildingCreator.BSelected += ClickedBase;
         UIBuildingsDisc.UIButtonPressed += UnSelectedBase;
+    }
+    private void Start() {
         this.gameObject.SetActive(false);
     }
     private void OnDestroy() {

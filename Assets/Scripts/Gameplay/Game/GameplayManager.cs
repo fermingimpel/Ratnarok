@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameplayManager : MonoBehaviour {
-    [SerializeField] float timeInAttack;
     [SerializeField] float timeInFirstPrepare;
 
     public delegate void EndOfAttack();
@@ -25,10 +24,9 @@ public class GameplayManager : MonoBehaviour {
     [SerializeField] GameObject winScreenUI;
     [SerializeField] GameObject loseScreenUI;
 
-    bool attackPhase = false;
-
     [SerializeField] CameraController cc;
     [SerializeField] EnemyManager em;
+
     public enum Stage {
         Preparing,
         Attack
@@ -51,14 +49,12 @@ public class GameplayManager : MonoBehaviour {
         Town.DestroyedTown -= LoseGame;
     }
     void WinGame() {
-        attackPhase = false;
         StopCoroutine(AttackPhase());
         winScreenUI.SetActive(true);
         cc.enabled = false;
     }
 
     void LoseGame() {
-        attackPhase = false;
         StopCoroutine(AttackPhase());
         loseScreenUI.SetActive(true);
         cc.enabled = false;
@@ -87,7 +83,6 @@ public class GameplayManager : MonoBehaviour {
     }
 
     IEnumerator AttackPhase() {
-        attackPhase = true;
         if (StartEnemyAttack != null)
             StartEnemyAttack();
 
@@ -109,8 +104,4 @@ public class GameplayManager : MonoBehaviour {
         if (StartAttackHorde != null)
             StartAttackHorde(0);
     }
-    public void StopTimeCount() {
-        timeInAttack = 999999;
-    }
-
 }

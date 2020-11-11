@@ -20,7 +20,7 @@ public class BuildingCreator : MonoBehaviour {
 
     int buildToCreate = (int)TypeOfBuilds.None;
 
-    [SerializeField] float tools;
+    [SerializeField] float gold;
 
     Camera cam;
 
@@ -34,8 +34,8 @@ public class BuildingCreator : MonoBehaviour {
 
     [SerializeField] List<Paths> paths;
 
-    public delegate void ToolsChanged(float t);
-    public static event ToolsChanged ChangedTools;
+    public delegate void GoldChanged(float g);
+    public static event  GoldChanged ChangedGold;
 
     public delegate void BaseClicked();
     public static event BaseClicked ClickedBase;
@@ -48,6 +48,15 @@ public class BuildingCreator : MonoBehaviour {
 
     [SerializeField] GameObject tileSelected;
     bool canSelectTile = false;
+    private void Awake() {
+        EnemyManager.CreatedEnemy += EnemyCreated;
+        Enemy.Dead += EnemyKilled;
+        Building.DestroyedBuild += DestroyedBuild;
+        UIBuildingsDisc.BuildingButtonPressed += CreateStructure;
+        UIBuildingsDisc.UIButtonPressed += CanSelectTile;
+        UIGameplay.ClickedPause += CantSelectTile;
+        UIGameplay.ClickedResume += CanSelectTile;
+    }
     void Start() {
         builds = new List<Building>();
         builds.Clear();
@@ -58,13 +67,8 @@ public class BuildingCreator : MonoBehaviour {
         canSelectTile = true;
         cam = Camera.main;
 
-        EnemyManager.CreatedEnemy += EnemyCreated;
-        Enemy.Dead += EnemyKilled;
-        Building.DestroyedBuild += DestroyedBuild;
-        UIBuildingsDisc.BuildingButtonPressed += CreateStructure;
-        UIBuildingsDisc.UIButtonPressed += CanSelectTile;
-        UIGameplay.ClickedPause += CantSelectTile;
-        UIGameplay.ClickedResume += CanSelectTile;
+        if (ChangedGold != null)
+            ChangedGold(gold);
     }
 
     private void OnDisable() {
@@ -81,7 +85,7 @@ public class BuildingCreator : MonoBehaviour {
         Vector3 mousePos = Input.mousePosition;
         Ray ray = cam.ScreenPointToRay(mousePos);
         RaycastHit hit;
-        Debug.Log("Can Select Tile: " + canSelectTile);
+
         if (Physics.Raycast(ray, out hit, 200)) {
             if (hit.transform.CompareTag("Base")) {
                 if (!tileSelected.activeSelf && canSelectTile) 
@@ -122,13 +126,13 @@ public class BuildingCreator : MonoBehaviour {
         }
     }
 
-    void CreateStructure(UIBuildingsDisc.TypeOfBuilds tob) {
-        buildToCreate = (int)tob;
-        if (structures[buildToCreate].GetToolsCost() <= tools) {
+    void CreateStructure(int tob) {
+        buildToCreate = tob;
+        if (structures[buildToCreate].GetToolsCost() <= gold) {
             Building go = Instantiate(structures[buildToCreate], posSelected, structures[buildToCreate].transform.rotation, structuresParent);
-            tools -= structures[buildToCreate].GetToolsCost();
-            if (ChangedTools != null)
-                ChangedTools(tools);
+            gold -= structures[buildToCreate].GetToolsCost();
+            if (ChangedGold != null)
+                ChangedGold(gold);
             go.SetType((Building.Type)buildToCreate);
             buildToCreate = (int)TypeOfBuilds.None;
             builds.Add(go);
@@ -142,7 +146,6 @@ public class BuildingCreator : MonoBehaviour {
         tileSelected.SetActive(false);
     }
     void CanSelectTile() {
-        Debug.Log("PEROLAPUTAMADRE");
         canSelectTile = true;
     }
     void EnemyCreated(Enemy e) {
@@ -152,27 +155,27 @@ public class BuildingCreator : MonoBehaviour {
     void EnemyKilled(Enemy e) {
         enemies.Remove(e);
         if (!e.GetTownAttacked())
-            tools += 25;
-        if (ChangedTools != null)
-            ChangedTools(tools);
+            gold += 25;
+        if (ChangedGold != null)
+            ChangedGold(gold);
     }
 
     void DestroyedBuild(Building b) {
         builds.Remove(b);
     }
 
-    public void UseTools(int t) {
-        tools -= t;
-        if (ChangedTools != null)
-            ChangedTools(tools);
+    public void UseGold(int g) {
+        gold -= g;
+        if (ChangedGold != null)
+            ChangedGold(gold);
     }
-    public float GetTools() {
-        return tools;
+    public float GetGold() {
+        return gold;
     }
-    public void AddTools(int t) {
-        tools += t;
-        if (ChangedTools != null)
-            ChangedTools(tools);
+    public void AddGold(int g) {
+        gold += g;
+        if (ChangedGold != null)
+            ChangedGold(gold);
     }
 
     public List<Building> GetBuilds() {

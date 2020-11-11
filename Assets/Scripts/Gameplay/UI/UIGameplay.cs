@@ -24,12 +24,12 @@ public class UIGameplay : MonoBehaviour {
     public static Action ClickedPause;
     public static Action ClickedResume;
     bool gamePaused = false;
-    void Start() {
+    void Awake() {
         hpGO.SetActive(false);
         startText.SetActive(false);
         GameplayManager.StartEnemyAttack += StartGame;
         GameplayManager.StartPreAtk += PreStart;
-        BuildingCreator.ChangedTools += ChangeTools;
+        BuildingCreator.ChangedGold += ChangedGold;
         EnemyManager.HordeUpdate += ChangeHordeBar;
         Town.ChangedHP += ChangeHP;
         gamePaused = false;
@@ -37,7 +37,7 @@ public class UIGameplay : MonoBehaviour {
     private void OnDisable() {
         GameplayManager.StartEnemyAttack -= StartGame;
         GameplayManager.StartPreAtk -= PreStart;
-        BuildingCreator.ChangedTools -= ChangeTools;
+        BuildingCreator.ChangedGold -= ChangedGold;
         EnemyManager.HordeUpdate -= ChangeHordeBar;
         Town.ChangedHP -= ChangeHP;
     }
@@ -64,8 +64,8 @@ public class UIGameplay : MonoBehaviour {
                 ClickedResumeButton();
         }
     }
-    void ChangeTools(float t) {
-        goldText.text = t.ToString();
+    void ChangedGold(float g) {
+        goldText.text = g.ToString();
     }
     void ChangeHP(float hp, float maxHP) {
         hpBar.fillAmount = hp / maxHP;

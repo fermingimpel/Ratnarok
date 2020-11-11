@@ -44,6 +44,7 @@ public class Enemy : MonoBehaviour {
 
     [SerializeField] GameObject model;
 
+
     protected virtual void Start() {
 
         model.transform.position += new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f));
