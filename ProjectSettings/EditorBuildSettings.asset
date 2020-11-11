@@ -22,5 +22,8 @@ EditorBuildSettings:
     guid: 56af3629228e96c4da5a80965b1b8f5f
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
-    guid: 54c64760434b7b3478e2c11c522ad8d1
+    guid: 980144cf84b8e9249bb953348e5069f3
+  - enabled: 1
+    path: Assets/Scenes/Gameplay Pruebas.unity
+    guid: ce53c1de507a8504e815ced713e0809f
   m_configObjects: {}
