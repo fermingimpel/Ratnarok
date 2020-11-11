@@ -67,6 +67,7 @@ public class EnemyManager : MonoBehaviour {
         Enemy.Dead += RemoveEnemy;
         canCreateRandomEnemies = true;
         allHordesCompleted = false;
+        
     }
 
     private void OnDisable() {
@@ -79,6 +80,8 @@ public class EnemyManager : MonoBehaviour {
     void StartAttack() {
         attacking = true;
         StartCoroutine(Horde());
+        if (HordeUpdate != null)
+            HordeUpdate(actualHorde + 1, hordes.Count);
     }
 
     void StopAttack() {

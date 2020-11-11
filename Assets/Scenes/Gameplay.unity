@@ -527,7 +527,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 2
   lookAt: 2
-  tileSelected: {fileID: 0}
 --- !u!4 &15083137 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7078169331945846498, guid: 23a91a26f8b482c4392f203f480d78c1,
@@ -717,7 +716,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 0
   lookAt: 2
-  tileSelected: {fileID: 0}
 --- !u!1 &35390973
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,7 +824,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 3
   lookAt: 1
-  tileSelected: {fileID: 0}
 --- !u!1 &37871742
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,7 +1349,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 1
   lookAt: 2
-  tileSelected: {fileID: 0}
 --- !u!1 &81165638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,7 +1576,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 3
   lookAt: 1
-  tileSelected: {fileID: 0}
 --- !u!1 &87581072
 GameObject:
   m_ObjectHideFlags: 0
@@ -1689,7 +1684,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 0
   lookAt: 3
-  tileSelected: {fileID: 0}
 --- !u!1 &92938348
 GameObject:
   m_ObjectHideFlags: 0
@@ -2283,7 +2277,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 1
   lookAt: 2
-  tileSelected: {fileID: 0}
 --- !u!1 &136798522
 GameObject:
   m_ObjectHideFlags: 0
@@ -2831,7 +2824,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 2
   lookAt: 2
-  tileSelected: {fileID: 0}
 --- !u!1 &213540254
 GameObject:
   m_ObjectHideFlags: 0
@@ -3014,7 +3006,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 1
   lookAt: 3
-  tileSelected: {fileID: 0}
 --- !u!1 &226975493
 GameObject:
   m_ObjectHideFlags: 0
@@ -3216,7 +3207,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 0
   lookAt: 1
-  tileSelected: {fileID: 0}
 --- !u!1 &274022515
 GameObject:
   m_ObjectHideFlags: 0
@@ -3950,7 +3940,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 1
   lookAt: 1
-  tileSelected: {fileID: 0}
 --- !u!1 &330056076
 GameObject:
   m_ObjectHideFlags: 0
@@ -4406,7 +4395,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 0
   lookAt: 4
-  tileSelected: {fileID: 0}
 --- !u!1 &368160412
 GameObject:
   m_ObjectHideFlags: 0
@@ -4648,7 +4636,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 0
   lookAt: 1
-  tileSelected: {fileID: 0}
 --- !u!1 &380526937
 GameObject:
   m_ObjectHideFlags: 0
@@ -5157,7 +5144,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 3
   lookAt: 4
-  tileSelected: {fileID: 0}
 --- !u!1 &419454268
 GameObject:
   m_ObjectHideFlags: 0
@@ -5359,7 +5345,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 1
   lookAt: 4
-  tileSelected: {fileID: 0}
 --- !u!1 &437933500
 GameObject:
   m_ObjectHideFlags: 0
@@ -5468,7 +5453,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 1
   lookAt: 5
-  tileSelected: {fileID: 0}
 --- !u!1 &454158646
 GameObject:
   m_ObjectHideFlags: 0
@@ -6722,7 +6706,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 2
   lookAt: 4
-  tileSelected: {fileID: 0}
 --- !u!1 &590956120
 GameObject:
   m_ObjectHideFlags: 0
@@ -7054,7 +7037,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 3
   lookAt: 5
-  tileSelected: {fileID: 0}
 --- !u!1 &600986800
 GameObject:
   m_ObjectHideFlags: 0
@@ -7259,14 +7241,16 @@ MonoBehaviour:
   upset: {x: 0, y: 0.4, z: 0}
   timeToSpawn: 1.5
   town: {fileID: 919132148606980176}
-  enemiesInHorde: 60
-  timeToSpawnEnemiesInHorde: 2
   enemiesCreated: []
   hordes:
   - order: 01000000020000000000000003000000
     cantOfEnemiesToCreateOfTypeInOrder: 04000000020000000300000001000000
+    timeBetweenEveryEnemy: []
   - order: 01000000020000000000000003000000
     cantOfEnemiesToCreateOfTypeInOrder: 04000000050000000100000000000000
+    timeBetweenEveryEnemy: []
+  timeBetweenHordes: 0
+  actualHorde: 0
 --- !u!4 &604421523
 Transform:
   m_ObjectHideFlags: 0
@@ -7524,7 +7508,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 0
   lookAt: 1
-  tileSelected: {fileID: 0}
 --- !u!1 &669228739
 GameObject:
   m_ObjectHideFlags: 0
@@ -7763,7 +7746,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 0
   lookAt: 4
-  tileSelected: {fileID: 0}
 --- !u!1 &676980311
 GameObject:
   m_ObjectHideFlags: 0
@@ -7946,7 +7928,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 1
   lookAt: 4
-  tileSelected: {fileID: 0}
 --- !u!1 &715397048
 GameObject:
   m_ObjectHideFlags: 0
@@ -8548,7 +8529,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 1
   lookAt: 4
-  tileSelected: {fileID: 0}
 --- !u!1 &763950251
 GameObject:
   m_ObjectHideFlags: 0
@@ -9071,7 +9051,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 0
   lookAt: 1
-  tileSelected: {fileID: 0}
 --- !u!1 &788301155
 GameObject:
   m_ObjectHideFlags: 0
@@ -9328,7 +9307,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 3
   lookAt: 1
-  tileSelected: {fileID: 0}
 --- !u!1 &804694658
 GameObject:
   m_ObjectHideFlags: 0
@@ -9437,7 +9415,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 0
   lookAt: 2
-  tileSelected: {fileID: 0}
 --- !u!1 &815460626
 GameObject:
   m_ObjectHideFlags: 0
@@ -10393,9 +10370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goldText: {fileID: 627291831}
-  hordeRat: {fileID: 773364807}
-  hordeBar: {fileID: 751170059}
-  hordeGO: {fileID: 888312690}
+  hordeText: {fileID: 0}
   hpBar: {fileID: 815460628}
   hpGO: {fileID: 1763469582}
   startText: {fileID: 1610847974}
@@ -10950,7 +10925,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 3
   lookAt: 1
-  tileSelected: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -10961,8 +10935,9 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
+  - component: {fileID: 963194226}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -10970,14 +10945,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
+--- !u!114 &963194226
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8419ed265b099a6468404c3ca9fad74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDefaultListener: 1
+  listenerId: 0
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -11095,6 +11076,28 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 165150d4c831a3b46a30f1b2738e3e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 0
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &963660405
 GameObject:
   m_ObjectHideFlags: 0
@@ -11823,7 +11826,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 3
   lookAt: 3
-  tileSelected: {fileID: 0}
 --- !u!65 &990499339
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11992,7 +11994,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 1
   lookAt: 1
-  tileSelected: {fileID: 0}
 --- !u!1 &995557814
 GameObject:
   m_ObjectHideFlags: 0
@@ -12379,7 +12380,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 2
   lookAt: 5
-  tileSelected: {fileID: 0}
 --- !u!1 &1032048547
 GameObject:
   m_ObjectHideFlags: 0
@@ -12592,6 +12592,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1054429672}
   m_CullTransparentMesh: 0
+--- !u!1 &1056898583
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1056898585}
+  - component: {fileID: 1056898584}
+  m_Layer: 0
+  m_Name: WwiseGlobal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1056898584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056898583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c6c3572f021ad44fa9d6e2bf53f0fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationSettings: {fileID: 11400000, guid: 7097517421f303f4a981597b9b790e8b,
+    type: 2}
+  basePath: 
+  language: 
+  defaultPoolSize: 0
+  lowerPoolSize: 0
+  streamingPoolSize: 0
+  memoryCutoffThreshold: 0
+  monitorPoolSize: 0
+  monitorQueuePoolSize: 0
+  callbackManagerBufferSize: 0
+  spatialAudioPoolSize: 0
+  maxSoundPropagationDepth: 0
+  diffractionFlags: 11
+  engineLogging: 0
+--- !u!4 &1056898585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056898583}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1057995234
 GameObject:
   m_ObjectHideFlags: 0
@@ -13897,7 +13955,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 2
   lookAt: 5
-  tileSelected: {fileID: 0}
 --- !u!1 &1184172622
 GameObject:
   m_ObjectHideFlags: 0
@@ -14330,7 +14387,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 1
   lookAt: 3
-  tileSelected: {fileID: 0}
 --- !u!1 &1234537369
 GameObject:
   m_ObjectHideFlags: 0
@@ -14614,7 +14670,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 2
   lookAt: 4
-  tileSelected: {fileID: 0}
 --- !u!1 &1268537886
 GameObject:
   m_ObjectHideFlags: 0
@@ -14797,7 +14852,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 0
   lookAt: 1
-  tileSelected: {fileID: 0}
 --- !u!1 &1311579524
 GameObject:
   m_ObjectHideFlags: 0
@@ -15191,7 +15245,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 3
   lookAt: 2
-  tileSelected: {fileID: 0}
 --- !u!1 &1344712218
 GameObject:
   m_ObjectHideFlags: 0
@@ -15674,7 +15727,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 0
   lookAt: 3
-  tileSelected: {fileID: 0}
 --- !u!1 &1415440026
 GameObject:
   m_ObjectHideFlags: 0
@@ -15875,7 +15927,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 1
   lookAt: 2
-  tileSelected: {fileID: 0}
 --- !u!1 &1418578020
 GameObject:
   m_ObjectHideFlags: 0
@@ -15984,7 +16035,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 3
   lookAt: 1
-  tileSelected: {fileID: 0}
 --- !u!1 &1430498815
 GameObject:
   m_ObjectHideFlags: 0
@@ -16223,7 +16273,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 2
   lookAt: 3
-  tileSelected: {fileID: 0}
 --- !u!1 &1460121574
 GameObject:
   m_ObjectHideFlags: 0
@@ -16367,7 +16416,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 2
   lookAt: 4
-  tileSelected: {fileID: 0}
 --- !u!1 &1478745577
 GameObject:
   m_ObjectHideFlags: 0
@@ -16594,7 +16642,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 3
   lookAt: 3
-  tileSelected: {fileID: 0}
 --- !u!1 &1507756580
 GameObject:
   m_ObjectHideFlags: 0
@@ -16851,6 +16898,7 @@ MonoBehaviour:
   winScreenUI: {fileID: 2068326047}
   loseScreenUI: {fileID: 37871742}
   cc: {fileID: 1633801450}
+  em: {fileID: 0}
 --- !u!4 &1554486484
 Transform:
   m_ObjectHideFlags: 0
@@ -17012,7 +17060,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 1
   lookAt: 5
-  tileSelected: {fileID: 0}
 --- !u!1 &1584300781
 GameObject:
   m_ObjectHideFlags: 0
@@ -18606,7 +18653,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 0
   lookAt: 3
-  tileSelected: {fileID: 0}
 --- !u!1 &1820745011
 GameObject:
   m_ObjectHideFlags: 0
@@ -18715,7 +18761,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 3
   lookAt: 5
-  tileSelected: {fileID: 0}
 --- !u!1 &1821253337
 GameObject:
   m_ObjectHideFlags: 0
@@ -19744,7 +19789,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 1
   lookAt: 1
-  tileSelected: {fileID: 0}
 --- !u!1 &1969901616
 GameObject:
   m_ObjectHideFlags: 0
@@ -20061,7 +20105,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 2
   lookAt: 3
-  tileSelected: {fileID: 0}
 --- !u!1 &1995208302
 GameObject:
   m_ObjectHideFlags: 0
@@ -20358,7 +20401,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 3
   lookAt: 4
-  tileSelected: {fileID: 0}
 --- !u!65 &2006834152
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20864,7 +20906,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 1
   lookAt: 1
-  tileSelected: {fileID: 0}
 --- !u!1 &2068326047
 GameObject:
   m_ObjectHideFlags: 0
@@ -21052,7 +21093,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 0
   lookAt: 4
-  tileSelected: {fileID: 0}
 --- !u!1 &2074287292
 GameObject:
   m_ObjectHideFlags: 0
@@ -21270,7 +21310,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 0
   lookAt: 2
-  tileSelected: {fileID: 0}
 --- !u!1 &2134113971
 GameObject:
   m_ObjectHideFlags: 0
@@ -21379,7 +21418,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 3
   lookAt: 5
-  tileSelected: {fileID: 0}
 --- !u!1 &2135976193
 GameObject:
   m_ObjectHideFlags: 0
@@ -21428,7 +21466,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 3
   lookAt: 2
-  tileSelected: {fileID: 0}
 --- !u!65 &2135976196
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22059,7 +22096,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 2
   lookAt: 2
-  tileSelected: {fileID: 0}
 --- !u!23 &667080929250495158
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24287,7 +24323,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 2
   lookAt: 1
-  tileSelected: {fileID: 0}
 --- !u!4 &3420441990828517055
 Transform:
   m_ObjectHideFlags: 0
@@ -25862,7 +25897,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 2
   lookAt: 1
-  tileSelected: {fileID: 0}
 --- !u!33 &5696433619862725600
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -26190,7 +26224,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 2
   lookAt: 1
-  tileSelected: {fileID: 0}
 --- !u!4 &6291673471757604078
 Transform:
   m_ObjectHideFlags: 0
@@ -27493,7 +27526,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIndex: 2
   lookAt: 1
-  tileSelected: {fileID: 0}
 --- !u!1 &8150295584933383689
 GameObject:
   m_ObjectHideFlags: 0

@@ -42,7 +42,6 @@ public class UIBuildingsDisc : MonoBehaviour {
         buildingsValues.Clear();
         for (int i = 0; i < buildings.Count; i++)
             buildingsValues.Add(buildings[i].GetToolsCost());
-
         BuildingCreator.ClickedBase += ClickedBase;
         BuildingCreator.ChangedTools += ChangedTools;
         BuildCreatorTutorial.ClickedBase += ClickedBase;
@@ -53,16 +52,6 @@ public class UIBuildingsDisc : MonoBehaviour {
         BuildingCreator.ChangedTools -= ChangedTools;
         BuildCreatorTutorial.ChangedTools -= ChangedTools;
         BuildCreatorTutorial.ClickedBase -= ClickedBase;
-    }
-
-
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            UIWheel.SetActive(false);
-            backButton.SetActive(false);
-            if (UIButtonPressed != null)
-                UIButtonPressed();
-        }
     }
     void ChangedTools(float t) {
         gold = t;

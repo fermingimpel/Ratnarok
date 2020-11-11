@@ -82,7 +82,6 @@ public class GameplayManager : MonoBehaviour {
             StartPreAtk();
         yield return new WaitForSeconds(2.0f);
 
-        StopCoroutine(FirstPreparePhase());
         StartCoroutine(AttackPhase());
         yield return null;
     }

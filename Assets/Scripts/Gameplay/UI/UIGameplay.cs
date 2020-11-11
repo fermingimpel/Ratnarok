@@ -8,14 +8,12 @@ using UnityEngine.UI;
 public class UIGameplay : MonoBehaviour {
     [SerializeField] TextMeshProUGUI goldText;
     [SerializeField] TextMeshProUGUI hordeText;
+    [SerializeField] GameObject hordeGO;
     [SerializeField] Image hpBar;
     [SerializeField] GameObject hpGO;
 
     [SerializeField] GameObject startText;
     [SerializeField] GameObject prepareText;
-
-    [SerializeField] GameObject go1;
-    [SerializeField] GameObject go2;
 
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject rataryMenu;
@@ -54,7 +52,7 @@ public class UIGameplay : MonoBehaviour {
         startText.SetActive(true);
         yield return new WaitForSeconds(2.0f);
         startText.SetActive(false);
-        StopCoroutine(PreStartGame());
+        hordeGO.SetActive(true);
         yield return null;
 
     }

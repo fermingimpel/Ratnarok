@@ -81,14 +81,14 @@ public class BuildingCreator : MonoBehaviour {
         Vector3 mousePos = Input.mousePosition;
         Ray ray = cam.ScreenPointToRay(mousePos);
         RaycastHit hit;
-
+        Debug.Log("Can Select Tile: " + canSelectTile);
         if (Physics.Raycast(ray, out hit, 200)) {
             if (hit.transform.CompareTag("Base")) {
-                if (!tileSelected.activeSelf && canSelectTile)
+                if (!tileSelected.activeSelf && canSelectTile) 
                     tileSelected.SetActive(true);
-                else if (!canSelectTile)
+                else if (!canSelectTile) 
                     tileSelected.SetActive(false);
-
+                
                 tileSelected.transform.position = hit.transform.position;
 
                 if (Input.GetMouseButtonDown(0)) {
@@ -139,8 +139,10 @@ public class BuildingCreator : MonoBehaviour {
     }
     void CantSelectTile() {
         canSelectTile = false;
+        tileSelected.SetActive(false);
     }
     void CanSelectTile() {
+        Debug.Log("PEROLAPUTAMADRE");
         canSelectTile = true;
     }
     void EnemyCreated(Enemy e) {
