@@ -27,7 +27,6 @@ public class TutorialManager : MonoBehaviour {
     }
 
     void Update() {
-
         if (Input.GetKeyDown(KeyCode.Return))
             for (int i = 0; i < phasesEnter.Length; i++)
                 if (actualPhase == phasesEnter[i]) {

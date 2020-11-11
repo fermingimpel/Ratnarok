@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour {
     [SerializeField] int pathIndex;
-    [SerializeField] int lookAt;
-    [SerializeField] GameObject tileSelected;
- 
+    [SerializeField] int lookAt; 
     public int GetPathIndex() {
         return pathIndex;
     }

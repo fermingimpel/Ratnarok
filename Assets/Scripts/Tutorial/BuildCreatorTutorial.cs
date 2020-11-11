@@ -32,19 +32,27 @@ public class BuildCreatorTutorial : MonoBehaviour {
     GameObject goSelected;
 
     [SerializeField] GameObject tileSelected;
-
+    bool canSelectTile = true;
     int actualPhase = 0;
 
     void Start() {
+        canSelectTile = true;
+
         cam = Camera.main;
         UITutorial.BuildTutorialPressed += CreateTurret;
         Enemy.Dead += EnemyKilled;
         TutorialManager.TutorialPhaseChanged += ChangePhase;
+        UIBuildingsDisc.UIButtonPressed += CanSelectTile;
+        UITutorial.ClickedPause += CantSelectTile;
+        UITutorial.ClickedResume += CanSelectTile;
     }
     private void OnDisable() {
         UITutorial.BuildTutorialPressed -= CreateTurret;
         Enemy.Dead -= EnemyKilled;
         TutorialManager.TutorialPhaseChanged -= ChangePhase;
+        UIBuildingsDisc.UIButtonPressed -= CanSelectTile;
+        UITutorial.ClickedPause -= CantSelectTile;
+        UITutorial.ClickedResume -= CanSelectTile;
     }
 
     void Update() {
@@ -53,14 +61,17 @@ public class BuildCreatorTutorial : MonoBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 200)) {
             if (hit.transform.CompareTag("Base")) {
-                if (!tileSelected.activeSelf)
+                if (!tileSelected.activeSelf && canSelectTile)
                     tileSelected.SetActive(true);
+                else if (!canSelectTile)
+                    tileSelected.SetActive(false);
 
                 tileSelected.transform.position = hit.transform.position;
                 if (Input.GetMouseButtonDown(0)) {
                     if (EventSystem.current.IsPointerOverGameObject())
                         return;
-
+                    canSelectTile = false;
+                    tileSelected.SetActive(false);
                     posSelected = hit.transform.position;
                     goSelected = hit.transform.gameObject;
                     if (ClickedBase != null)
@@ -84,6 +95,8 @@ public class BuildCreatorTutorial : MonoBehaviour {
         }
     }
 
+
+
     void ChangePhase(int p) {
         actualPhase = p;
     }
@@ -97,7 +110,15 @@ public class BuildCreatorTutorial : MonoBehaviour {
             go.SetPath(paths[goSelected.GetComponent<Tile>().GetPathIndex()].pos);
             go.SetLookAt(goSelected.GetComponent<Tile>().GetLookAt());
         }
+        CanSelectTile();
     }
+    void CantSelectTile() {
+        canSelectTile = false;
+    }
+    void CanSelectTile() {
+        canSelectTile = true;
+    }
+
     void EnemyKilled(Enemy e) {
         tools += 25;
         if (ChangedTools != null)

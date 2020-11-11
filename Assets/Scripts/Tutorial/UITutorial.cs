@@ -24,6 +24,12 @@ public class UITutorial : MonoBehaviour {
 
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject rataryMenu;
+    [SerializeField] GameObject configMenu;
+    [SerializeField] GameObject[] configOpen;
+    bool configDisplayed = true;
+
+    public static Action ClickedPause;
+    public static Action ClickedResume;
 
     private void Start() {
         Time.timeScale = 1.0f;
@@ -41,13 +47,17 @@ public class UITutorial : MonoBehaviour {
         TutorialManager.TutorialPhaseChanged -= CheckTutorialPhase;
     }
 
-    public void ClickedPause() {
+    public void ClickPause() {
         pauseMenu.SetActive(true);
         Time.timeScale = 0.0f;
+        if (ClickedPause != null)
+            ClickedPause();
     }
     public void ClickRatary() {
         rataryMenu.SetActive(true);
         Time.timeScale = 0f;
+        if (ClickedPause != null)
+            ClickedPause();
         if (ClickedRatary != null)
             ClickedRatary();
     }
@@ -55,6 +65,8 @@ public class UITutorial : MonoBehaviour {
         pauseMenu.SetActive(false);
         rataryMenu.SetActive(false);
         Time.timeScale = 1.0f;
+        if (ClickedResume != null)
+            ClickedResume();
     }
     void ClickedBase() {
         backgroundUIWheel.SetActive(true);
@@ -75,9 +87,22 @@ public class UITutorial : MonoBehaviour {
 
         return actualPos;
     }
-    void ClickedBGWheel() {
+    public void ClickedBGWheel() {
         UIWheel.SetActive(false);
         backgroundUIWheel.SetActive(false);
+    }
+
+    public void ClickedOptions() {
+        configDisplayed = !configDisplayed;
+        if (!configDisplayed) {
+            pauseMenu.SetActive(false);
+            configMenu.SetActive(true);
+            return;
+        }
+
+        pauseMenu.SetActive(true);
+        configMenu.SetActive(false);
+        return;
     }
 
     public void PressButtonTurret() {
@@ -101,5 +126,14 @@ public class UITutorial : MonoBehaviour {
         wilfredText.SetNativeSize();
         wilfredImage.sprite = wilfredImagesOrder[ind];
         wilfredImage.SetNativeSize();
+    }
+    public void ClickedToggleScreenType() {
+        for (int i = 0; i < configOpen.Length; i++)
+            if (configOpen[i] != null) {
+                if (configOpen[i].activeSelf)
+                    configOpen[i].SetActive(false);
+                else
+                    configOpen[i].SetActive(true);
+            }
     }
 }

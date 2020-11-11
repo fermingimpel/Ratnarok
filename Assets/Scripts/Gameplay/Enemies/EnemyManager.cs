@@ -21,13 +21,11 @@ public class EnemyManager : MonoBehaviour {
     [SerializeField] Town town;
     bool attacking;
 
-    [SerializeField] int enemiesInHorde;
-    [SerializeField] float timeToSpawnEnemiesInHorde;
-
     public delegate void EnemyCreated(Enemy enemy);
     public static event EnemyCreated CreatedEnemy;
 
     [SerializeField] List<Enemy> enemiesCreated;
+
 
     bool canCreateRandomEnemies = true;
     int type = 0;
@@ -40,80 +38,93 @@ public class EnemyManager : MonoBehaviour {
         public Order[] order;
         [Space]
         public int[] cantOfEnemiesToCreateOfTypeInOrder;
-
+        [Space]
+        public float[] timeBetweenEveryEnemy;
     }
+
+    [Space]
+    [Space]
+    [Space]
+    [Space]
+    [Space]
+    [Space]
+    [Space]
+    [Space]
+
     [SerializeField] List<HordeManager> hordes;
 
+    [SerializeField] float timeBetweenHordes;
+    [SerializeField] int actualHorde;
+
+    public delegate void UpdateHorde(int actualHorde, int maxHordes);
+    public static event UpdateHorde HordeUpdate;
+
+    bool allHordesCompleted = false;
     void Start() {
         GameplayManager.StartEnemyAttack += StartAttack;
         GameplayManager.EndEnemyAttack += StopAttack;
-        GameplayManager.StartAttackHorde += StartHorde;
         Town.DestroyedTown += StopAttack;
         Enemy.Dead += RemoveEnemy;
         canCreateRandomEnemies = true;
+        allHordesCompleted = false;
     }
 
     private void OnDisable() {
         GameplayManager.StartEnemyAttack -= StartAttack;
         GameplayManager.EndEnemyAttack -= StopAttack;
-        GameplayManager.StartAttackHorde -= StartHorde;
         Town.DestroyedTown -= StopAttack;
         Enemy.Dead -= RemoveEnemy;
     }
 
     void StartAttack() {
         attacking = true;
-        StartCoroutine(CreateEnemies());
+        StartCoroutine(Horde());
     }
 
     void StopAttack() {
         attacking = false;
-        StopCoroutine(CreateEnemies());
     }
 
-    void StartHorde(int h) {
-        StartCoroutine(Horde(h));
-    }
-    IEnumerator Horde(int h) {
-        attacking = false;
-        for(int i = 0; i < hordes[h].order.Length; i++) {
-            for (int j = 0; j < hordes[h].cantOfEnemiesToCreateOfTypeInOrder[i]; j++) {
-                for (int k = 0; k < spawnerPoints.Length; k++) {
-                    Enemy e = Instantiate(enemies[(int)hordes[h].order[i]], spawnerPoints[k].transform.position + upset, Quaternion.identity, enemyParent);
-                    e.SetPath(paths[k].pos);
-                    e.SetTown(town);
-                    e.SetTypeOfEnemy((Enemy.Type)hordes[h].order[i]);
-                    enemiesCreated.Add(e);
+    IEnumerator Horde() {
+        for (int l = 0; l < hordes.Count; l++) {
+            actualHorde = l;
+            if (HordeUpdate != null)
+                HordeUpdate(actualHorde+1, hordes.Count);
+
+            for (int i = 0; i < hordes[l].order.Length; i++) {
+                for (int j = 0; j < hordes[l].cantOfEnemiesToCreateOfTypeInOrder[i]; j++) {
+                    if (attacking) {
+                        int spawn = UnityEngine.Random.Range(0, spawnerPoints.Length);
+                        Enemy e = Instantiate(enemies[(int)hordes[l].order[i]], spawnerPoints[spawn].transform.position + upset, Quaternion.identity, enemyParent);
+                        e.SetPath(paths[spawn].pos);
+                        e.SetTown(town);
+                        e.SetTypeOfEnemy((Enemy.Type)hordes[l].order[i]);
+                        enemiesCreated.Add(e);
+
+                        yield return new WaitForSeconds(hordes[l].timeBetweenEveryEnemy[i]);
+                    }
                 }
-                yield return new WaitForSeconds(timeToSpawnEnemiesInHorde);
             }
+            if (attacking)
+                yield return new WaitForSeconds(timeBetweenHordes);
+            else
+                l = hordes.Count;
 
-           // yield return new WaitForSeconds(timeToSpawnEnemiesInHorde);
         }
-        attacking = true;
-        StartCoroutine(CreateEnemies());
-        StopCoroutine(Horde(h));
-        yield return null;
-    }
-    IEnumerator CreateEnemies() {
-        while(attacking) {
-            SpawnEnemy();
-            yield return new WaitForSeconds(timeToSpawn);
-        }
+
+        if (attacking)
+            allHordesCompleted = true;
 
         yield return null;
     }
 
-    void SpawnEnemy() {
-        int spawn = UnityEngine.Random.Range(0, spawnerPoints.Length);
-        if(canCreateRandomEnemies)
-            type = UnityEngine.Random.Range(0, enemies.Length);
-        Enemy go = Instantiate(enemies[type], spawnerPoints[spawn].transform.position + upset, Quaternion.identity, enemyParent);
-        go.SetPath(paths[spawn].pos);
-        go.SetTown(town);
-        go.SetTypeOfEnemy((Enemy.Type)type);
-        enemiesCreated.Add(go);
+    public bool GetAllHordesCompleted() {
+        if (allHordesCompleted && enemiesCreated.Count <= 0)         
+            return true;
+        
+        return false;
     }
+
     public void SetOnlyOneEnemyToCreate(int t) {
         type = t;
         canCreateRandomEnemies = false;

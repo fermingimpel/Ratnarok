@@ -7,9 +7,7 @@ using UnityEngine.UI;
 
 public class UIGameplay : MonoBehaviour {
     [SerializeField] TextMeshProUGUI goldText;
-    [SerializeField] Image hordeRat;
-    [SerializeField] Image hordeBar;
-    [SerializeField] GameObject hordeGO;
+    [SerializeField] TextMeshProUGUI hordeText;
     [SerializeField] Image hpBar;
     [SerializeField] GameObject hpGO;
 
@@ -27,27 +25,26 @@ public class UIGameplay : MonoBehaviour {
 
     public static Action ClickedPause;
     public static Action ClickedResume;
-
+    bool gamePaused = false;
     void Start() {
-        hordeGO.SetActive(false);
         hpGO.SetActive(false);
         startText.SetActive(false);
         GameplayManager.StartEnemyAttack += StartGame;
         GameplayManager.StartPreAtk += PreStart;
         BuildingCreator.ChangedTools += ChangeTools;
-        GameplayManager.UpdateBarHorde += ChangeHordeBar;
+        EnemyManager.HordeUpdate += ChangeHordeBar;
         Town.ChangedHP += ChangeHP;
+        gamePaused = false;
     }
     private void OnDisable() {
         GameplayManager.StartEnemyAttack -= StartGame;
         GameplayManager.StartPreAtk -= PreStart;
         BuildingCreator.ChangedTools -= ChangeTools;
-        GameplayManager.UpdateBarHorde -= ChangeHordeBar;
+        EnemyManager.HordeUpdate -= ChangeHordeBar;
         Town.ChangedHP -= ChangeHP;
     }
     void StartGame() {
         hpGO.SetActive(true);
-        hordeGO.SetActive(true);
     }
     void PreStart() {
         StartCoroutine(PreStartGame());
@@ -61,27 +58,35 @@ public class UIGameplay : MonoBehaviour {
         yield return null;
 
     }
-
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (!gamePaused)
+                ClickedPauseButton();
+            else
+                ClickedResumeButton();
+        }
+    }
     void ChangeTools(float t) {
         goldText.text = t.ToString();
     }
     void ChangeHP(float hp, float maxHP) {
         hpBar.fillAmount = hp / maxHP;
     }
-    void ChangeHordeBar(float timeInHorde, float maxTimeInHorde) {
-        hordeRat.transform.position = Vector3.Lerp(go1.transform.position, go2.transform.position, timeInHorde / maxTimeInHorde);
-        hordeBar.fillAmount = timeInHorde / maxTimeInHorde;
+    void ChangeHordeBar(int actualHorde, int maxHorde) {
+        hordeText.text = "HORDE: " + actualHorde + " | " + maxHorde;
     }
 
     public void ClickedPauseButton() {
         if (ClickedPause != null)
             ClickedPause();
+        gamePaused = true;
         pauseMenu.SetActive(true);
         Time.timeScale = 0.0f;
     }
     public void ClickedResumeButton() {
         if (ClickedResume != null)
             ClickedResume();
+        gamePaused = false;
         pauseMenu.SetActive(false);
         rataryMenu.SetActive(false);
         Time.timeScale = 1.0f;

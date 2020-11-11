@@ -34,7 +34,9 @@ public class UIBuildingsDisc : MonoBehaviour {
     [SerializeField] float gold;
 
     private void Start() {
-        gold = FindObjectOfType<BuildingCreator>().GetTools();
+        BuildingCreator bc = FindObjectOfType<BuildingCreator>();
+        if(bc)
+            gold = bc.GetTools();
 
         buildingsValues = new List<float>();
         buildingsValues.Clear();
@@ -43,11 +45,16 @@ public class UIBuildingsDisc : MonoBehaviour {
 
         BuildingCreator.ClickedBase += ClickedBase;
         BuildingCreator.ChangedTools += ChangedTools;
+        BuildCreatorTutorial.ClickedBase += ClickedBase;
+        BuildCreatorTutorial.ChangedTools += ChangedTools;
     }
     private void OnDestroy() {
         BuildingCreator.ClickedBase -= ClickedBase;
         BuildingCreator.ChangedTools -= ChangedTools;
+        BuildCreatorTutorial.ChangedTools -= ChangedTools;
+        BuildCreatorTutorial.ClickedBase -= ClickedBase;
     }
+
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Escape)) {

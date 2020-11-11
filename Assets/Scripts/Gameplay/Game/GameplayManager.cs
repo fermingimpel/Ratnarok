@@ -19,9 +19,6 @@ public class GameplayManager : MonoBehaviour {
     public delegate void UpdateUIState(Stage s);
     public static event UpdateUIState UIStateUpdate;
 
-    public delegate void UpdateHordeBar(float actualSecond, float time);
-    public static event UpdateHordeBar UpdateBarHorde;
-
     public delegate void StarHordeAttack(int horde);
     public static event StarHordeAttack StartAttackHorde;
 
@@ -31,7 +28,7 @@ public class GameplayManager : MonoBehaviour {
     bool attackPhase = false;
 
     [SerializeField] CameraController cc;
-
+    [SerializeField] EnemyManager em;
     public enum Stage {
         Preparing,
         Attack
@@ -98,37 +95,15 @@ public class GameplayManager : MonoBehaviour {
         if (UIStateUpdate != null)
             UIStateUpdate(Stage.Attack);
 
-        bool firstHorde = false;
-        bool secondHorde = false;
-
-        float timeToFirstHorde = timeInAttack* 0.33f;
-        float timeToSecondtHorde = timeInAttack * 0.67f;
-
-        float t = 0;
-        while (t < timeInAttack && attackPhase) {
-            t += Time.deltaTime;
-
-           if(t >= timeToFirstHorde && !firstHorde) {
-                firstHorde = true;
-                if (StartAttackHorde != null)
-                    StartAttackHorde(0);
-            }
-            if( t >= timeToSecondtHorde && !secondHorde) {
-                secondHorde = true;
-                if (StartAttackHorde != null)
-                    StartAttackHorde(1);
-            }
-
-            if (UpdateBarHorde != null)
-                UpdateBarHorde(t, timeInAttack);
-            yield return null;
+        while (!em.GetAllHordesCompleted()) {
+            yield return new WaitForSeconds(0.5f);
         }
 
         if (EndEnemyAttack != null)
             EndEnemyAttack();
-        StopCoroutine(AttackPhase());
         WinGame();
-        yield return null;
+
+        yield return new WaitForSeconds(3.0f);
     }
 
     public void StartHorde() {
