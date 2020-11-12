@@ -522,16 +522,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3406351669442008357}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.274}
   m_LocalScale: {x: 0.0105, y: 0.03, z: 1}
   m_Children: []
   m_Father: {fileID: 4682132061634012523}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 3}
+  m_AnchoredPosition: {x: -0.021, y: 3.22}
   m_SizeDelta: {x: 150, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &856589849689052362
@@ -675,16 +675,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4282883881524520733}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.274}
   m_LocalScale: {x: 0.01, y: 0.02, z: 1}
   m_Children: []
   m_Father: {fileID: 4682132061634012523}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 3}
+  m_AnchoredPosition: {x: -0.021, y: 3.22}
   m_SizeDelta: {x: 150, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7766457742632986944
@@ -721,7 +721,7 @@ MonoBehaviour:
   m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5352678975117007372
@@ -793,7 +793,9 @@ MonoBehaviour:
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   cheatsChangedHP: 0
   canvas: {fileID: 9062639860176818659}
-  hpBar: {fileID: 4038980828619997377}
+  hpBars:
+  - {fileID: 4038980828619997377}
+  - {fileID: 1186400751455289914}
   type: 0
   shoot: {fileID: 142972629410484654, guid: fecdaa57c18899243a762eca16832f21, type: 3}
   upset: {x: 0, y: 2.045, z: 0}

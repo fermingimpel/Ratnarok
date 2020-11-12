@@ -27,7 +27,7 @@ public class Building : MonoBehaviour {
     [HideInInspector] public bool cheatsChangedHP = false;
 
     [SerializeField] GameObject canvas;
-    [SerializeField] Image hpBar;
+    [SerializeField] Image[] hpBars;
 
     public enum Type {
         Cannon,
@@ -57,10 +57,10 @@ public class Building : MonoBehaviour {
     }
 
     private void LateUpdate() {
-        if (canvas != null) {
-            canvas.transform.LookAt(Camera.main.transform);
-            canvas.transform.Rotate(0f, 180f, 0f);
-        }
+        for (int i = 0; i < hpBars.Length; i++)
+            if (hpBars[i] != null)
+                hpBars[i].transform.LookAt(Camera.main.transform);
+
     }
 
     protected virtual void StopDefend() {
@@ -77,8 +77,8 @@ public class Building : MonoBehaviour {
  
     public virtual void HitBuild(float d) {
         health -= d;
-        if (hpBar != null) {
-            hpBar.fillAmount = health/maxHealth;
+        if (hpBars[0] != null) {
+            hpBars[0].fillAmount = health/maxHealth;
         }
         if (!hitted)
             StartCoroutine(Hit());
