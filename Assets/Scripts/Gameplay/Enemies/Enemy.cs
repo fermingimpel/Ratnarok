@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour {
     bool townAttacked = false;
 
     [SerializeField] GameObject model;
-
+    [SerializeField] BoxCollider bc;
 
     protected virtual void Start() {
 
@@ -122,7 +122,6 @@ public class Enemy : MonoBehaviour {
         if (buildToAttack != null)
             buildToAttack.HitBuild(damage);
 
-        StopCoroutine(Attack());
         ResetAttack();
         yield return null;
     }
@@ -134,8 +133,11 @@ public class Enemy : MonoBehaviour {
     void ResetAttack() {
         if (attackingBuild && buildToAttack != null)
             StartCoroutine(Attack());
-        else
+        else {
+            bc.enabled = false;
             attackingBuild = false;
+            bc.enabled = true;
+        }
     }
 
     void AttackTown() {

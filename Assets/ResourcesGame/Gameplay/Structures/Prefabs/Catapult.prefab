@@ -50,7 +50,7 @@ MonoBehaviour:
   preparationTime: 3
   cooldownToCreate: 18
   health: 11
-  damage: 5
+  damage: 7
   index: 0
   path: []
   lookPos: {x: 0, y: 0, z: 0}

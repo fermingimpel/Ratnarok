@@ -77,7 +77,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   maxHealth: 2
-  speed: 3
+  speed: 2
   timeToAttack: 2
   damage: 1
   town: {fileID: 0}
@@ -90,6 +90,7 @@ MonoBehaviour:
   cheatsChangedHP: 0
   type: 0
   model: {fileID: 8851918930837289353}
+  bc: {fileID: 4654793529021173381}
 --- !u!1001 &8509899559413056728
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -767,7 +767,7 @@ MonoBehaviour:
   speed: 0
   damage: 1
   direction: {x: 0, y: 0, z: 0}
-  maxHits: 4
+  maxHits: 3
   timeBetweenHits: 0.6
   bc: {fileID: 6665745077158796708}
 --- !u!33 &6665745077158796711
@@ -881,7 +881,7 @@ MonoBehaviour:
   preparationTime: 2
   cooldownToCreate: 18
   health: 14
-  damage: 4
+  damage: 3
   index: 0
   path: []
   lookPos: {x: 0, y: 0, z: 0}

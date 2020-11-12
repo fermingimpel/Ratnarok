@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShootCannon : Bullet {
+    bool hitSomething = false;
     private void Start() {
         StartCoroutine(LateStart());
     }
@@ -25,8 +26,11 @@ public class ShootCannon : Bullet {
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Enemy")) {
-            other.GetComponent<Enemy>().ReceiveDamage(damage);
-            Destroy(this.gameObject);
+            if (!hitSomething) {
+                other.GetComponent<Enemy>().ReceiveDamage(damage);
+                Destroy(this.gameObject);
+                hitSomething = true;
+            }
         }
     }
 }

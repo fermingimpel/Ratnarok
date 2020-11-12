@@ -77,8 +77,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 8
   maxHealth: 8
-  speed: 3
-  timeToAttack: 1
+  speed: 2
+  timeToAttack: 1.25
   damage: 3
   town: {fileID: 0}
   path: []
@@ -90,6 +90,7 @@ MonoBehaviour:
   cheatsChangedHP: 0
   type: 0
   model: {fileID: 1611930905460078050}
+  bc: {fileID: 4654793529021173381}
 --- !u!1001 &1918484306203166899
 PrefabInstance:
   m_ObjectHideFlags: 0

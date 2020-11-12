@@ -306,7 +306,7 @@ MonoBehaviour:
   maxHealth: 4
   speed: 3
   timeToAttack: 1
-  damage: 5
+  damage: 6
   town: {fileID: 0}
   path: []
   actualPath: 0
@@ -317,6 +317,7 @@ MonoBehaviour:
   cheatsChangedHP: 0
   type: 3
   model: {fileID: 6692352586757818361}
+  bc: {fileID: 4654793529021173381}
   body: {fileID: 6692352586757818361}
   speedUpDown: 1
 --- !u!1 &3790280952818251755

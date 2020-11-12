@@ -26,6 +26,7 @@ public class GameplayManager : MonoBehaviour {
 
     [SerializeField] CameraController cc;
     [SerializeField] EnemyManager em;
+    [SerializeField] LoaderManager lm;
 
     public enum Stage {
         Preparing,
@@ -49,15 +50,19 @@ public class GameplayManager : MonoBehaviour {
         Town.DestroyedTown -= LoseGame;
     }
     void WinGame() {
-        StopCoroutine(AttackPhase());
-        winScreenUI.SetActive(true);
-        cc.enabled = false;
+        if (!lm.GetChangingLevel()) {
+            StopCoroutine(AttackPhase());
+            winScreenUI.SetActive(true);
+            cc.enabled = false;
+        }
     }
 
     void LoseGame() {
-        StopCoroutine(AttackPhase());
-        loseScreenUI.SetActive(true);
-        cc.enabled = false;
+        if (!lm.GetChangingLevel()) {
+            StopCoroutine(AttackPhase());
+            loseScreenUI.SetActive(true);
+            cc.enabled = false;
+        }
     }
 
     IEnumerator LateStart() {

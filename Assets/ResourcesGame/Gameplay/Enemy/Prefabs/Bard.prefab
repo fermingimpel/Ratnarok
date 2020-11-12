@@ -170,6 +170,7 @@ MonoBehaviour:
   cheatsChangedHP: 0
   type: 2
   model: {fileID: 258992270140893240}
+  bc: {fileID: 4654793529021173381}
   timeToHeal: 2
   heal: 2
   rangeToHeal: 3

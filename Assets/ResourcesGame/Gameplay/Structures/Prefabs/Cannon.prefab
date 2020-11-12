@@ -771,9 +771,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolsCost: 100
-  preparationTime: 1.5
+  preparationTime: 1.33
   cooldownToCreate: 7
-  health: 10
+  health: 12
   damage: 2
   index: 0
   path: []
