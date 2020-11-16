@@ -27,7 +27,8 @@ public class UITutorial : MonoBehaviour {
     [SerializeField] GameObject configMenu;
     [SerializeField] GameObject[] configOpen;
     bool configDisplayed = true;
-
+    [SerializeField] GameObject textClickEnter;
+    [SerializeField] GameObject buttonContinue;
     public static Action ClickedPause;
     public static Action ClickedResume;
 
@@ -119,7 +120,18 @@ public class UITutorial : MonoBehaviour {
         goldText.text = g.ToString();
     }
     void CheckTutorialPhase(int p) {
-
+        int[] phasesEnter = new int[] { 0, 1, 2, 4, 5, 6, 8, 10, 11, 12, 13 };
+        for (int i = 0; i < phasesEnter.Length; i++) {
+            if (p == phasesEnter[i]) {
+                textClickEnter.SetActive(true);
+                buttonContinue.SetActive(true);
+                i = phasesEnter.Length;
+            }
+            else {
+                textClickEnter.SetActive(false);
+                buttonContinue.SetActive(false);
+            }
+        }
     }
     void ChangeWilfredText(int ind) {
         wilfredText.sprite = wilfredTextsOrder[ind];

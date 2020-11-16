@@ -115,10 +115,10 @@ public class EnemyManager : MonoBehaviour {
         }
 
         for (int i = 0; i < hordes[actualHorde].order.Length; i++)
-            if (enemiesOfOrderCreated[i] < hordes[actualHorde].cantOfEnemiesToCreateOfTypeInOrder[i])
+            if (enemiesOfOrderCreated[i] < hordes[actualHorde].cantOfEnemiesToCreateOfTypeInOrder[i] || enemiesCreated.Count > 0)
                 return;
 
-        ChangeHorde();
+        StartCoroutine(ChangeHorde());
     }
 
     void SpawnEnemy(int horde, int order) {
@@ -130,23 +130,27 @@ public class EnemyManager : MonoBehaviour {
         enemiesCreated.Add(e);
     }
 
-    void ChangeHorde() {
-        Debug.Log("BRUH");
+    IEnumerator ChangeHorde() {
+        attacking = false;
         actualHorde++;
         if (actualHorde >= hordes.Count) {
             allHordesCompleted = true;
             attacking = false;
-            Debug.Log("YEAH");
-            return;
         }
-        Debug.Log("PEROLAPUTAMADRE");
-        enemiesSpawnTimers.Clear();
-        enemiesOfOrderCreated.Clear();
+        else {
+            yield return new WaitForSeconds(timeBetweenHordes);
+            enemiesSpawnTimers.Clear();
+            enemiesOfOrderCreated.Clear();
 
-        for (int i = 0; i < hordes[actualHorde].order.Length; i++) {
-            enemiesSpawnTimers.Add(0f);
-            enemiesOfOrderCreated.Add(0);
+            for (int i = 0; i < hordes[actualHorde].order.Length; i++) {
+                enemiesSpawnTimers.Add(0f);
+                enemiesOfOrderCreated.Add(0);
+            }
+            attacking = true;
+            if (HordeUpdate != null)
+                HordeUpdate(actualHorde + 1, hordes.Count);
         }
+        yield return null;
     }
     IEnumerator Horde() {
 

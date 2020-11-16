@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour {
     public delegate void TutorialChangedPhase(int phase);
@@ -15,6 +17,7 @@ public class TutorialManager : MonoBehaviour {
     [SerializeField] GameObject[] objectsToUnable;
     int[] phasesEnter = new int[] { 0, 1, 2, 4, 5, 6, 8, 10, 11, 12, 13 };
     int maxPhases = 14;
+
     private void Start() {
         UITutorial.BuildTutorialPressed += ClickedTurretUI;
         UITutorial.ClickedRatary += ClickedRatary;
@@ -27,7 +30,7 @@ public class TutorialManager : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return)) {
             for (int i = 0; i < phasesEnter.Length; i++)
                 if (actualPhase == phasesEnter[i]) {
                     actualPhase++;
@@ -41,8 +44,23 @@ public class TutorialManager : MonoBehaviour {
                     }
 
                 }
+        }
     }
+    public void ClickToContinue() {
+        for (int i = 0; i < phasesEnter.Length; i++)
+            if (actualPhase == phasesEnter[i]) {
+                actualPhase++;
+                i = 999;
+                if (actualPhase < maxPhases) {
+                    if (TutorialPhaseChanged != null)
+                        TutorialPhaseChanged(actualPhase);
+                }
+                else {
+                    StartCoroutine(EndTutorial());
+                }
 
+            }
+    }
     void ClickedTurretUI() {
         if(actualPhase == 3) {
             actualPhase++;

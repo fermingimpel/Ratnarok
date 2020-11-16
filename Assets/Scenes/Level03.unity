@@ -11697,6 +11697,7 @@ MonoBehaviour:
     - {fileID: 1761117101}
     - {fileID: 1646334432}
   tileSelected: {fileID: 2023641221}
+  defending: 0
 --- !u!4 &993014029
 Transform:
   m_ObjectHideFlags: 0

@@ -20328,6 +20328,16 @@ MonoBehaviour:
     timeBetweenEveryEnemy:
     - 3
     - 2.5
+  - order: 0000000000000000
+    cantOfEnemiesToCreateOfTypeInOrder: 0600000005000000
+    timeBetweenEveryEnemy:
+    - 3
+    - 2.5
+  - order: 0000000000000000
+    cantOfEnemiesToCreateOfTypeInOrder: 0600000005000000
+    timeBetweenEveryEnemy:
+    - 3
+    - 2.5
   timeBetweenHordes: 10
   actualHorde: 0
 --- !u!4 &1835602219

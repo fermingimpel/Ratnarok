@@ -34,7 +34,6 @@ public class BuildCreatorTutorial : MonoBehaviour {
     [SerializeField] GameObject tileSelected;
     bool canSelectTile = true;
     int actualPhase = 0;
-
     void Start() {
         canSelectTile = true;
 
@@ -109,6 +108,7 @@ public class BuildCreatorTutorial : MonoBehaviour {
                 ChangedTools(tools);
             go.SetPath(paths[goSelected.GetComponent<Tile>().GetPathIndex()].pos);
             go.SetLookAt(goSelected.GetComponent<Tile>().GetLookAt());
+            go.SetDefending(true);
         }
         CanSelectTile();
     }
