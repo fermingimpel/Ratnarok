@@ -18,9 +18,6 @@ public class GameplayManager : MonoBehaviour {
     public delegate void UpdateUIState(Stage s);
     public static event UpdateUIState UIStateUpdate;
 
-    public delegate void StarHordeAttack(int horde);
-    public static event StarHordeAttack StartAttackHorde;
-
     [SerializeField] GameObject winScreenUI;
     [SerializeField] GameObject loseScreenUI;
 
@@ -51,7 +48,6 @@ public class GameplayManager : MonoBehaviour {
     }
     void WinGame() {
         if (!lm.GetChangingLevel()) {
-            StopCoroutine(AttackPhase());
             winScreenUI.SetActive(true);
             cc.enabled = false;
         }
@@ -59,7 +55,6 @@ public class GameplayManager : MonoBehaviour {
 
     void LoseGame() {
         if (!lm.GetChangingLevel()) {
-            StopCoroutine(AttackPhase());
             loseScreenUI.SetActive(true);
             cc.enabled = false;
         }
@@ -72,9 +67,6 @@ public class GameplayManager : MonoBehaviour {
     }
 
     IEnumerator FirstPreparePhase() {
-        if (EndEnemyAttack != null)
-            EndEnemyAttack();
-
         if (UIStateUpdate != null)
             UIStateUpdate(Stage.Preparing);
 
@@ -100,13 +92,9 @@ public class GameplayManager : MonoBehaviour {
 
         if (EndEnemyAttack != null)
             EndEnemyAttack();
-        WinGame();
 
         yield return new WaitForSeconds(3.0f);
-    }
-
-    public void StartHorde() {
-        if (StartAttackHorde != null)
-            StartAttackHorde(0);
+       
+        WinGame();
     }
 }

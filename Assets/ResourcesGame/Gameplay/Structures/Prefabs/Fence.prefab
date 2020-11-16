@@ -65,16 +65,16 @@ MonoBehaviour:
   - {fileID: 0}
   lookPos: {x: 0, y: 0, z: 0}
   rends:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7002080552236732230}
+  - {fileID: 8841177523228330370}
+  - {fileID: 6836064766732507020}
+  - {fileID: 2361551466731005502}
+  - {fileID: 1223507545209583561}
+  - {fileID: 246480695818181964}
+  - {fileID: 2403721720393541521}
+  - {fileID: 7370585176595682967}
+  - {fileID: 4470161618085602155}
+  - {fileID: 2126005208201574117}
   hittedColor: {r: 1, g: 0.627451, b: 0.627451, a: 1}
   normalColor: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 1}
   cheatsChangedHP: 0

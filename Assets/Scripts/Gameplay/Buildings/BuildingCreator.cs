@@ -48,6 +48,8 @@ public class BuildingCreator : MonoBehaviour {
 
     [SerializeField] GameObject tileSelected;
     bool canSelectTile = false;
+
+    [SerializeField] bool defending = false;
     private void Awake() {
         EnemyManager.CreatedEnemy += EnemyCreated;
         Enemy.Dead += EnemyKilled;
@@ -56,6 +58,8 @@ public class BuildingCreator : MonoBehaviour {
         UIBuildingsDisc.UIButtonPressed += CanSelectTile;
         UIGameplay.ClickedPause += CantSelectTile;
         UIGameplay.ClickedResume += CanSelectTile;
+        GameplayManager.StartEnemyAttack += StartDefend;
+        GameplayManager.EndEnemyAttack += StopDefend;
     }
     void Start() {
         builds = new List<Building>();
@@ -69,6 +73,7 @@ public class BuildingCreator : MonoBehaviour {
 
         if (ChangedGold != null)
             ChangedGold(gold);
+        defending = false;
     }
 
     private void OnDisable() {
@@ -79,6 +84,8 @@ public class BuildingCreator : MonoBehaviour {
         UIBuildingsDisc.UIButtonPressed -= CanSelectTile;
         UIGameplay.ClickedPause -= CantSelectTile;
         UIGameplay.ClickedResume -= CanSelectTile;
+        GameplayManager.StartEnemyAttack -= StartDefend;
+        GameplayManager.EndEnemyAttack -= StopDefend;
     }
 
     void Update() {
@@ -120,7 +127,9 @@ public class BuildingCreator : MonoBehaviour {
 
             if (Physics.Raycast(ray, out hit, 200)) {
                 if (hit.transform.CompareTag("Structure")) {
-                    Destroy(hit.transform.gameObject);
+                    Building b = hit.transform.GetComponent<Building>();
+                    if (b)
+                        DeleteStructure(b);
                 }
             }
         }
@@ -138,8 +147,15 @@ public class BuildingCreator : MonoBehaviour {
             builds.Add(go);
             go.SetPath(paths[goSelected.GetComponent<Tile>().GetPathIndex()].pos);
             go.SetLookAt(goSelected.GetComponent<Tile>().GetLookAt());
+            go.SetDefending(defending);
         }
         CanSelectTile();
+    }
+    void DeleteStructure(Building b) {
+        gold += (b.GetHP() / b.GetMaxHP()) * b.GetToolsCost();
+        if (ChangedGold != null)
+            ChangedGold(gold);
+        Destroy(b.transform.gameObject);
     }
     void CantSelectTile() {
         canSelectTile = false;
@@ -147,6 +163,12 @@ public class BuildingCreator : MonoBehaviour {
     }
     void CanSelectTile() {
         canSelectTile = true;
+    }
+    void StartDefend() {
+        defending = true;
+    }
+    void StopDefend() {
+        defending = false;
     }
     void EnemyCreated(Enemy e) {
         enemies.Add(e);

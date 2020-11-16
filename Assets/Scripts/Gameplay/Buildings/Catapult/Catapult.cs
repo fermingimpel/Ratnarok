@@ -10,10 +10,12 @@ public class Catapult : Building {
     }
     protected override void StopDefend() {
         StopCoroutine(PrepareAttack());
+        defending = false;
     }
 
     protected override void StartDefend() {
         StartCoroutine(PrepareAttack());
+        defending = true;
     }
 
     IEnumerator PrepareAttack() {
@@ -23,6 +25,9 @@ public class Catapult : Building {
         yield return null;
     }
     protected override void Attack() {
+        if (!defending)
+            return;
+
         Bullet s = Instantiate(shoot, transform.position + offset, shoot.transform.rotation);
         s.SetDirection(transform.forward + offset);
         s.SetDamage(damage);

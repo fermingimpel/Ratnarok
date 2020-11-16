@@ -9412,7 +9412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f4b13713c523c46b319ff0064925eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeInFirstPrepare: 5
+  timeInFirstPrepare: 8
   winScreenUI: {fileID: 889467510}
   loseScreenUI: {fileID: 1927827122}
   cc: {fileID: 672363709}
@@ -10786,7 +10786,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Gameplay Pruebas
+          m_StringArgument: Level01
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &965598913
@@ -11674,7 +11674,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Gameplay Pruebas
+          m_StringArgument: Level01
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1025400878
@@ -16293,6 +16293,7 @@ MonoBehaviour:
     - {fileID: 1577566492}
     - {fileID: 1577566492}
   tileSelected: {fileID: 420812585}
+  defending: 0
 --- !u!4 &1468725832
 Transform:
   m_ObjectHideFlags: 0
@@ -20322,28 +20323,11 @@ MonoBehaviour:
   town: {fileID: 159124124}
   enemiesCreated: []
   hordes:
-  - order: 00000000
-    cantOfEnemiesToCreateOfTypeInOrder: 08000000
+  - order: 0000000000000000
+    cantOfEnemiesToCreateOfTypeInOrder: 0600000005000000
     timeBetweenEveryEnemy:
-    - 1
-  - order: 00000000
-    cantOfEnemiesToCreateOfTypeInOrder: 0c000000
-    timeBetweenEveryEnemy:
-    - 1
-  - order: 00000000
-    cantOfEnemiesToCreateOfTypeInOrder: 0f000000
-    timeBetweenEveryEnemy:
-    - 1
-  - order: 0100000000000000
-    cantOfEnemiesToCreateOfTypeInOrder: 060000000b000000
-    timeBetweenEveryEnemy:
-    - 0.5
-    - 1
-  - order: 0100000000000000
-    cantOfEnemiesToCreateOfTypeInOrder: 060000000e000000
-    timeBetweenEveryEnemy:
-    - 0.5
-    - 1
+    - 3
+    - 2.5
   timeBetweenHordes: 10
   actualHorde: 0
 --- !u!4 &1835602219
@@ -23422,7 +23406,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Gameplay
+          m_StringArgument: Level02
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2091368922

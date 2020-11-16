@@ -172,8 +172,6 @@ public class Cheats : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Alpha4)) tn.ReceiveDamage(-99999);
 
-        if (Input.GetKeyDown(KeyCode.Alpha5)) gm.StartHorde();
-
         if (Input.GetKey(KeyCode.Alpha7)) {
             if (Input.GetKeyDown(KeyCode.Z)) damageAttacker++;
             else if (Input.GetKeyDown(KeyCode.X)) damageAttacker--;

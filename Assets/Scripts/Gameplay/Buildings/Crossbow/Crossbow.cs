@@ -13,10 +13,12 @@ public class Crossbow : Building {
 
     protected override void StopDefend() {
         StopCoroutine(PrepareAttack());
+        defending = false;
     }
 
     protected override void StartDefend() {
         StartCoroutine(PrepareAttack());
+        defending = true;
     }
 
     IEnumerator PrepareAttack() {
@@ -27,6 +29,9 @@ public class Crossbow : Building {
     }
 
     protected override void Attack() {
+        if (!defending)
+            return;
+
         Bullet s = Instantiate(shoot, transform.position + upset, Quaternion.identity);
         s.SetDirection(lookPos + upset);
         s.SetDamage(damage);

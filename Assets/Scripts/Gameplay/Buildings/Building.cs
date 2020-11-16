@@ -10,6 +10,7 @@ public class Building : MonoBehaviour {
     [SerializeField] protected float health;
     [SerializeField] protected float damage;
     [SerializeField] int index;
+    [SerializeField] protected bool defending = false;
     float maxHealth;
 
     bool attacking = false;
@@ -39,19 +40,19 @@ public class Building : MonoBehaviour {
         None
     }
     public Type type;
-   protected virtual void Start() {
-       maxHealth = health;
-       // GameplayManager.startEnemyAttack += StartDefend;
-       GameplayManager.EndEnemyAttack += StopDefend;
-       StartDefend();
-   }
+    protected virtual void Start() {
+        maxHealth = health;
+        GameplayManager.StartEnemyAttack += StartDefend;
+        GameplayManager.EndEnemyAttack += StopDefend;
+    }
    
    private void OnDisable() {
-       //GameplayManager.startEnemyAttack -= StartDefend;
        GameplayManager.EndEnemyAttack -= StopDefend;
-   }
+        GameplayManager.StartEnemyAttack -= StartDefend;
+    }
     private void OnDestroy() {
         GameplayManager.EndEnemyAttack -= StopDefend;
+        GameplayManager.StartEnemyAttack -= StartDefend;
         if (DestroyedBuild != null)
             DestroyedBuild(this);
     }
@@ -60,7 +61,6 @@ public class Building : MonoBehaviour {
         for (int i = 0; i < hpBars.Length; i++)
             if (hpBars[i] != null)
                 hpBars[i].transform.LookAt(Camera.main.transform);
-
     }
 
     protected virtual void StopDefend() {
@@ -102,7 +102,11 @@ public class Building : MonoBehaviour {
         hitted = false;
         yield return null;
     }
-
+    public void SetDefending(bool d) {
+        defending = d;
+        if (d)
+            StartDefend();
+    }
     public void SetToolsCost(float tc) {
         toolsCost = tc;
     }
@@ -115,6 +119,9 @@ public class Building : MonoBehaviour {
     }
     public float GetHP() {
         return health;
+    }
+    public float GetMaxHP() {
+        return maxHealth;
     }
     public void SetDamage(float d) {
         damage = d;

@@ -65,7 +65,7 @@ public class UIGameplay : MonoBehaviour {
         }
     }
     void ChangedGold(float g) {
-        goldText.text = g.ToString();
+        goldText.text = ((int)g).ToString();
     }
     void ChangeHP(float hp, float maxHP) {
         hpBar.fillAmount = hp / maxHP;
