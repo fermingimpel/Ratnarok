@@ -49,6 +49,7 @@ public class BuildingCreator : MonoBehaviour {
     [SerializeField] GameObject tileSelected;
     bool canSelectTile = false;
 
+    [SerializeField] float goldPerKill;
     [SerializeField] bool defending = false;
     private void Awake() {
         EnemyManager.CreatedEnemy += EnemyCreated;
@@ -177,7 +178,7 @@ public class BuildingCreator : MonoBehaviour {
     void EnemyKilled(Enemy e) {
         enemies.Remove(e);
         if (!e.GetTownAttacked())
-            gold += 25;
+            gold += goldPerKill;
         if (ChangedGold != null)
             ChangedGold(gold);
     }

@@ -16331,7 +16331,7 @@ MonoBehaviour:
   - {fileID: 3934173153483602342, guid: a7c8994a1fe0e504aa05ec20ca35ee12, type: 3}
   upset: {x: 0, y: 0, z: 0}
   structuresParent: {fileID: 1112229667}
-  gold: 450
+  gold: 150
   builds: []
   enemies: []
   paths:
@@ -16351,6 +16351,7 @@ MonoBehaviour:
     - {fileID: 1577566492}
     - {fileID: 1577566492}
   tileSelected: {fileID: 420812585}
+  goldPerKill: 50
   defending: 0
 --- !u!4 &1468725832
 Transform:
@@ -20381,22 +20382,17 @@ MonoBehaviour:
   town: {fileID: 159124124}
   enemiesCreated: []
   hordes:
-  - order: 0000000003000000
-    cantOfEnemiesToCreateOfTypeInOrder: 0600000005000000
-    timeBetweenEveryEnemy:
-    - 3
-    - 2.5
-  - order: 0000000002000000
-    cantOfEnemiesToCreateOfTypeInOrder: 0600000005000000
-    timeBetweenEveryEnemy:
-    - 3
-    - 2.5
   - order: 0000000000000000
-    cantOfEnemiesToCreateOfTypeInOrder: 0600000005000000
+    cantOfEnemiesToCreateOfTypeInOrder: 0f00000009000000
     timeBetweenEveryEnemy:
-    - 3
-    - 2.5
-  timeBetweenHordes: 10
+    - 7
+    - 12
+  - order: 0000000001000000
+    cantOfEnemiesToCreateOfTypeInOrder: 0a00000006000000
+    timeBetweenEveryEnemy:
+    - 5
+    - 8
+  timeBetweenHordes: 6
   actualHorde: 0
 --- !u!4 &1835602219
 Transform:
