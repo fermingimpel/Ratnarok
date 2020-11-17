@@ -28,6 +28,8 @@ public class Catapult : Building {
         if (!defending)
             return;
 
+        animator.Play("Shoot");
+
         Bullet s = Instantiate(shoot, transform.position + offset, shoot.transform.rotation);
         s.SetDirection(transform.forward + offset);
         s.SetDamage(damage);

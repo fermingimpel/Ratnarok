@@ -15,17 +15,16 @@ public class Cannon : Building {
         StartCoroutine(PrepareAttack());
         defending = true;
     }
-
     IEnumerator PrepareAttack() {
         yield return new WaitForSeconds(preparationTime);
-        StopCoroutine(PrepareAttack());
         Attack();
         yield return null;
     }
     protected override void Attack() {
         if (!defending) 
             return;
-        
+
+        animator.Play("Shoot");
 
         Bullet s = Instantiate(shoot, transform.position + upset, Quaternion.identity);
         s.SetDirection(lookPos + upset);

@@ -33,7 +33,7 @@ public class EnemyManager : MonoBehaviour {
     [Serializable]
     public class HordeManager {
         public enum Order {
-            Attacker, Tank, Bard, Bomberrat
+            Attacker, Tank, Bomberrat, Bard
         }
         public Order[] order;
         [Space]
@@ -89,9 +89,9 @@ public class EnemyManager : MonoBehaviour {
     }
 
     void StartAttack() {
+        //AkSoundEngine.PostEvent("level_music",this.gameObject);
         attacking = true;
         allHordesCompleted = false;
-        //StartCoroutine(Horde());
         if (HordeUpdate != null)
             HordeUpdate(actualHorde + 1, hordes.Count);
     }

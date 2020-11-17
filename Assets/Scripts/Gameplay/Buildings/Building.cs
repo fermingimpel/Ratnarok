@@ -30,6 +30,9 @@ public class Building : MonoBehaviour {
     [SerializeField] GameObject canvas;
     [SerializeField] Image[] hpBars;
 
+    [SerializeField] protected Animation animation;
+    [SerializeField] protected Animator animator;
+
     public enum Type {
         Cannon,
         ToolsGenerator,

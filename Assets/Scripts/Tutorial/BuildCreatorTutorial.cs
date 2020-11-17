@@ -67,8 +67,8 @@ public class BuildCreatorTutorial : MonoBehaviour {
 
                 tileSelected.transform.position = hit.transform.position;
                 if (Input.GetMouseButtonDown(0)) {
-                    if (EventSystem.current.IsPointerOverGameObject())
-                        return;
+                 //   if (EventSystem.current.IsPointerOverGameObject())
+                 //       return;
                     canSelectTile = false;
                     tileSelected.SetActive(false);
                     posSelected = hit.transform.position;
@@ -84,17 +84,24 @@ public class BuildCreatorTutorial : MonoBehaviour {
         }
 
         if (Input.GetMouseButtonDown(1)) {
-            if (EventSystem.current.IsPointerOverGameObject())
-                return;
+            //if (EventSystem.current.IsPointerOverGameObject())
+            //    return;
             if (Physics.Raycast(ray, out hit, 200)) {
                 if (hit.transform.CompareTag("Structure")) {
-                    Destroy(hit.transform.gameObject);
+                    Building b = hit.transform.GetComponent<Building>();
+                    if (b)
+                        DeleteStructure(b);
                 }
             }
         }
     }
 
-
+    void DeleteStructure(Building b) {
+        tools += (b.GetHP() / b.GetMaxHP()) * b.GetToolsCost();
+        if (ChangedTools != null)
+            ChangedTools(tools);
+        Destroy(b.transform.gameObject);
+    }
 
     void ChangePhase(int p) {
         actualPhase = p;

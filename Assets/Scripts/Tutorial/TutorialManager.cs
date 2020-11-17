@@ -30,27 +30,15 @@ public class TutorialManager : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Return)) {
-            for (int i = 0; i < phasesEnter.Length; i++)
-                if (actualPhase == phasesEnter[i]) {
-                    actualPhase++;
-                    i = 999;
-                    if (actualPhase < maxPhases) {
-                        if (TutorialPhaseChanged != null)
-                            TutorialPhaseChanged(actualPhase);
-                    }
-                    else {
-                        StartCoroutine(EndTutorial());
-                    }
-
-                }
-        }
+        if (Input.GetKeyDown(KeyCode.Return))
+            CheckChangePhase();
     }
-    public void ClickToContinue() {
+    void CheckChangePhase() {
         for (int i = 0; i < phasesEnter.Length; i++)
             if (actualPhase == phasesEnter[i]) {
                 actualPhase++;
                 i = 999;
+                EventSystem.current.SetSelectedGameObject(null);
                 if (actualPhase < maxPhases) {
                     if (TutorialPhaseChanged != null)
                         TutorialPhaseChanged(actualPhase);
@@ -60,6 +48,10 @@ public class TutorialManager : MonoBehaviour {
                 }
 
             }
+
+    }
+    public void ClickToContinue() {
+        CheckChangePhase();
     }
     void ClickedTurretUI() {
         if(actualPhase == 3) {

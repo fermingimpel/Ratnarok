@@ -48,6 +48,7 @@ public class GameplayManager : MonoBehaviour {
     }
     void WinGame() {
         if (!lm.GetChangingLevel()) {
+            //AkSoundEngine.PostEvent("level_win", this.gameObject);
             winScreenUI.SetActive(true);
             cc.enabled = false;
         }
@@ -55,6 +56,7 @@ public class GameplayManager : MonoBehaviour {
 
     void LoseGame() {
         if (!lm.GetChangingLevel()) {
+            //AkSoundEngine.PostEvent("level_lose", this.gameObject);
             loseScreenUI.SetActive(true);
             cc.enabled = false;
         }
