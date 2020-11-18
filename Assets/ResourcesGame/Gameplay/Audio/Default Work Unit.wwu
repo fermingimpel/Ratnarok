@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{12AD51BC-7B89-4D6E-A538-752C3E792C22}" SchemaVersion="97">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{12AD51BC-7B89-4D6E-A538-752C3E792C22}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="GeneralSoundBank" ID="{A904C1D3-FB4A-4761-917D-6038EB1D65D3}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Music" ID="{4DFDD36A-F97F-40D4-ABB9-1BAF00842671}" WorkUnitID="{4DFDD36A-F97F-40D4-ABB9-1BAF00842671}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="General" ID="{83C90651-C30C-410B-B2A6-8E92A9F3119D}" WorkUnitID="{4DFDD36A-F97F-40D4-ABB9-1BAF00842671}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="enemy_hit" ID="{69EA3F0B-8143-4564-9404-1B659D0BEC97}" WorkUnitID="{650E708F-B7D0-4C8C-9158-A18D50466077}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="enemy_attack" ID="{733BF8DB-11FC-4B12-A33B-58D5170338DC}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="game_start" ID="{69305A0C-9907-4EEF-930D-910D50B10EB4}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour {
     bool hitted = false;
 
     [HideInInspector] public bool cheatsChangedHP = false;
-
+    [SerializeField] Animator animator;
     public enum Type {
         Attacker,
         Tank,
@@ -113,6 +113,8 @@ public class Enemy : MonoBehaviour {
         attackingBuild = true;
 
         float t = 0;
+        if(animator!=null && buildToAttack != null)
+            animator.Play("Attack");
         if (buildToAttack != null)
             while (t < timeToAttack && buildToAttack != null) {
                 t += Time.deltaTime;

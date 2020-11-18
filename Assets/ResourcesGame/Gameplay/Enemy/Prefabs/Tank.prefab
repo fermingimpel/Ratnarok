@@ -88,6 +88,7 @@ MonoBehaviour:
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hittedColor: {r: 1, g: 0.6650944, b: 0.6650944, a: 1}
   cheatsChangedHP: 0
+  animator: {fileID: 0}
   type: 1
   model: {fileID: 7279799158281176546}
   bc: {fileID: 4654793529021173381}

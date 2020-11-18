@@ -16,6 +16,8 @@ public class CameraController : MonoBehaviour {
     private void Start() {
         BuildingCreator.ClickedBase += ClickedBase;
         UIBuildingsDisc.UIButtonPressed += UnClickedBase;
+
+        //AkSoundEngine.PostEvent("level_music", cam);
     }
     private void OnDisable() {
         BuildingCreator.ClickedBase -= ClickedBase;
