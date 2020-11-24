@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{B4AE9A98-2652-4D43-82FF-DF855C1DD027}" SchemaVersion="97">
+<WwiseDocument Type="WorkUnit" ID="{C8C5706F-C75F-4F9C-B645-B4A5FD1DC957}" SchemaVersion="97">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{B4AE9A98-2652-4D43-82FF-DF855C1DD027}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{C8C5706F-C75F-4F9C-B645-B4A5FD1DC957}" PersistMode="Standalone">
+			<ChildrenList>
+				<ActorMixer Name="GeneralSFX" ID="{B407530D-72BF-487E-8546-EA754E0B2236}" ShortID="253065335">
+					<PropertyList>
+						<Property Name="MakeUpGain" Type="Real64">
+							<RTPCList>
+								<RTPC Name="" ID="{01D90B11-155E-474E-A322-CC163FAB6727}" ShortID="779407769">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="sfx_option" ID="{086672CD-C00B-406B-A0CE-3ACF8D71DBD5}" WorkUnitID="{93120F39-8D7E-4C04-9B99-15DF423C4258}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{5350B7CD-7815-4E5E-9F55-6E94DBB3FBA4}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="3"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>-96</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>100</XPos>
+												<YPos>0</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<WorkUnit Name="FactoryEnemy" ID="{650E708F-B7D0-4C8C-9158-A18D50466077}" PersistMode="Reference"/>
+						<WorkUnit Name="FactoryTorrets" ID="{7961E230-2249-4E91-A439-9F2806FA19BB}" PersistMode="Reference"/>
+						<WorkUnit Name="GeneralMenu" ID="{1B1CCF24-71AA-44D0-8AB2-C270C805CA78}" PersistMode="Reference"/>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>

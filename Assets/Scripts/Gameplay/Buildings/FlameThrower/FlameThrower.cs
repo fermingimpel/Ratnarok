@@ -15,11 +15,9 @@ public class FlameThrower : Building{
     protected override void StartDefend() {
         defending = true;
         StartCoroutine(PrepareAttack());
-        Debug.Log("QAAASD");
     }
 
     IEnumerator PrepareAttack() {
-        Debug.Log("AAAAA");
         if (defending) {
             yield return new WaitForSeconds(preparationTime);
             StopCoroutine(PrepareAttack());
@@ -32,13 +30,12 @@ public class FlameThrower : Building{
     IEnumerator Attack() {
         if (defending) {
             ps.Play();
-            Debug.Log("XD");
+            AkSoundEngine.PostEvent("torret_fire", this.gameObject);
             fire.gameObject.SetActive(true);
             fire.SetDamage(damage);
             yield return new WaitForSeconds(timeAttacking);
 
             fire.gameObject.SetActive(false);
-            Debug.Log("BRUH");
             ps.Stop();
             StopCoroutine(Attack());
             StartCoroutine(PrepareAttack());

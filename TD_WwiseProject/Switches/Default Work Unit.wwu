@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{8AAE0E5D-152C-42BE-B688-DBCB4DFCF3F7}" SchemaVersion="97">
+<WwiseDocument Type="WorkUnit" ID="{4F17BE76-8674-44C4-B8E5-AD499A4D654F}" SchemaVersion="97">
 	<Switches>
-		<WorkUnit Name="Default Work Unit" ID="{8AAE0E5D-152C-42BE-B688-DBCB4DFCF3F7}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{4F17BE76-8674-44C4-B8E5-AD499A4D654F}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="Menu" ID="{BAE03956-DC07-4C7A-968C-AC9E8B2CA5DA}">
+					<ChildrenList>
+						<Switch Name="menu" ID="{20151CA6-91F3-4D9A-BDB3-B99D77EEFED0}"/>
+						<Switch Name="credits" ID="{FB2651B9-DD32-474E-BE15-E6AB91AD2724}"/>
+						<Switch Name="tutorial" ID="{5189BA5D-1262-4348-B4BE-ED39912DFDB4}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="General_music" ID="{48E60DD9-89EE-48BE-A220-69896BCD4DE6}">
+					<ChildrenList>
+						<Switch Name="menu_general" ID="{BD543E5E-D711-4A71-9FA7-40E31F8A10FB}"/>
+						<Switch Name="level_general" ID="{B5519A27-A3CF-4EAC-9C39-EAE20BC07A3E}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</Switches>
 </WwiseDocument>

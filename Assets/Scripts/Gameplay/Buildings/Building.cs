@@ -80,6 +80,7 @@ public class Building : MonoBehaviour {
  
     public virtual void HitBuild(float d) {
         health -= d;
+        
         if (hpBars[0] != null) {
             hpBars[0].fillAmount = health/maxHealth;
         }
@@ -87,7 +88,7 @@ public class Building : MonoBehaviour {
             StartCoroutine(Hit());
         if (health <= 0) {
             if (DestroyedBuild != null)
-                DestroyedBuild(this);
+                DestroyedBuild(this);       
             Destroy(this.gameObject);
         }
     }

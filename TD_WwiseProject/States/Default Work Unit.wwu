@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{24E3FDAA-743C-4C65-A01E-5D6C953820ED}" SchemaVersion="97">
+<WwiseDocument Type="WorkUnit" ID="{25AF5698-2832-40F6-847A-3834E453939B}" SchemaVersion="97">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{24E3FDAA-743C-4C65-A01E-5D6C953820ED}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{25AF5698-2832-40F6-847A-3834E453939B}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="GeneralGame" ID="{96ED6632-9ED1-4E25-A93A-4237F06BDFDF}" ShortID="240742990">
+					<ChildrenList>
+						<StateGroup Name="menu_scene" ID="{C1BD1C7F-E101-4E96-9791-461463EE1EA1}">
+							<ChildrenList>
+								<State Name="None" ID="{D28B14E7-9A31-42D4-834A-8342D2B2C93C}"/>
+								<State Name="credits" ID="{ED6C0CCF-DACA-46D0-B8C3-6F7480269F16}"/>
+								<State Name="menu" ID="{21A13281-66AD-41DC-A2D7-4142EDE925AA}"/>
+								<State Name="map" ID="{712581A6-9791-45B5-8E72-1036B9382B98}"/>
+								<State Name="tut" ID="{501CE23B-53FA-4BB6-B092-B01D78AEADF7}"/>
+								<State Name="level" ID="{F97281DF-7445-4B72-A49A-893DE69F4EF4}"/>
+							</ChildrenList>
+						</StateGroup>
+						<StateGroup Name="ratary_open" ID="{CD59765C-8410-47E4-BC24-6C3C4F9C0D1C}">
+							<ChildrenList>
+								<State Name="None" ID="{E0B24A83-7344-4BBC-9C2B-EEF5D27C6E98}"/>
+							</ChildrenList>
+						</StateGroup>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Level" ID="{C00E6D51-2BF1-4B93-8B9E-6FF0F8E946A4}" ShortID="1035826261">
+					<ChildrenList>
+						<StateGroup Name="level_tutorial" ID="{2F8A01E9-C5C2-4BC9-B472-B9D4C9D059B9}">
+							<ChildrenList>
+								<State Name="None" ID="{D29CAAAB-C7A2-432B-95F2-FC59512D43D8}"/>
+								<State Name="WinT_state" ID="{A709B7C9-D710-42B0-A5F2-6FA26F252524}"/>
+								<State Name="LevelT_state_alive" ID="{67F884FA-824F-43F3-ABD8-78DF49240B89}"/>
+							</ChildrenList>
+						</StateGroup>
+						<StateGroup Name="level_state" ID="{87562DFF-695D-42F9-B13A-458905DC3CF4}">
+							<ChildrenList>
+								<State Name="None" ID="{47AF38EC-78B8-4C12-96D0-65276622D29E}"/>
+								<State Name="Level_state_alive" ID="{F1750007-D457-4C33-A2DA-80AD2CE9A8B3}"/>
+								<State Name="Win_state" ID="{A04193BA-DD84-47D8-851C-6C1CE5B55887}"/>
+							</ChildrenList>
+						</StateGroup>
+						<StateGroup Name="player_state" ID="{C2AB4CB1-1A35-4F69-9FAD-40CB09CD257C}">
+							<ChildrenList>
+								<State Name="None" ID="{5AB0C7C0-DA26-4790-9A37-E543C6F5910E}"/>
+								<State Name="alive_state" ID="{8CC146C8-178D-47A2-A789-052373811008}"/>
+								<State Name="dead_state" ID="{3D461FE8-020F-4440-9B58-470C417099FA}"/>
+							</ChildrenList>
+						</StateGroup>
+					</ChildrenList>
+				</Folder>
+				<StateGroup Name="music_state" ID="{BA4BA28E-7F87-452B-BA5F-5F636FA476E9}">
+					<ChildrenList>
+						<State Name="None" ID="{742BA0B9-4448-4A7D-8FAB-62783755F34C}"/>
+						<State Name="pausa" ID="{57962353-9CAC-42E2-9B3B-555AC2B3F5EA}"/>
+						<State Name="play" ID="{41BF252C-93C5-4D2E-87AC-1632FDA039F9}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>

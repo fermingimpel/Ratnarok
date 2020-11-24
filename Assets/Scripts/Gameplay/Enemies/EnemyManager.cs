@@ -201,8 +201,10 @@ public class EnemyManager : MonoBehaviour {
         canCreateRandomEnemies = true;
     }
     void RemoveEnemy(Enemy e) {
+        AkSoundEngine.PostEvent("enemy_death", this.gameObject);
         enemiesCreated.Remove(e);
     }
+
 
     public List<Enemy> GetEnemies() {
         return enemiesCreated;

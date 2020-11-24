@@ -1,0 +1,3 @@
+El Pin aparece al lado del boton en el que este arriba. En el Layout por ejemplo Achivements seria donde esta el cursor arriba.
+Estaría bueno que tambien se pueda seleccionar con el teclado con las flechas, wasd y enter. Tipo subir y bajar con w y s
+Y tener que apretar Enter para seleccionar. El pin serviria para comunicarle al jugador en que opcion esta

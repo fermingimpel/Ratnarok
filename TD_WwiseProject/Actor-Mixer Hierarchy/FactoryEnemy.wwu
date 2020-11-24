@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{650E708F-B7D0-4C8C-9158-A18D50466077}" SchemaVersion="97" RootDocumentID="{C8C5706F-C75F-4F9C-B645-B4A5FD1DC957}">
+	<AudioObjects>
+		<WorkUnit Name="FactoryEnemy" ID="{650E708F-B7D0-4C8C-9158-A18D50466077}" OwnerID="{B407530D-72BF-487E-8546-EA754E0B2236}" PersistMode="Nested">
+			<ChildrenList>
+				<RandomSequenceContainer Name="enemy_hit" ID="{69EA3F0B-8143-4564-9404-1B659D0BEC97}" ShortID="1068877790">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{0E2C01EE-B044-4609-BF57-001899F36B1E}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="1137"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="enemyHit-001" ID="{21795EAE-1DA3-496F-9A20-10A1929ED7F6}" ShortID="831862587">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{10A5EC53-8B54-4D33-A172-6A4E6A6D0F2E}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemyHit-001" ID="{9CC53670-E715-4DB0-9D98-5AA31DB5AF59}">
+									<Language>SFX</Language>
+									<AudioFile>enemyHit-001.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="507979991"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemyHit-001" ID="{9CC53670-E715-4DB0-9D98-5AA31DB5AF59}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemyHit-002" ID="{4EBD95AA-4CB1-473C-9878-BFD02DFB1376}" ShortID="365018777">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{A4E253B1-44EF-449A-AC17-A5CF5062737D}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemyHit-002" ID="{E7C559EE-E2C6-4AC9-B0A5-C172BD2B34DD}">
+									<Language>SFX</Language>
+									<AudioFile>enemyHit-002.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="350999598"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemyHit-002" ID="{E7C559EE-E2C6-4AC9-B0A5-C172BD2B34DD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemyHit-003" ID="{2D2DCA4F-F750-40D5-8546-8D2A58EDA368}" ShortID="107514520">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{B1A28825-CFFE-4096-874F-CEAE3250774B}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemyHit-003" ID="{9877453D-827C-4441-96D4-534D5E53D1BD}">
+									<Language>SFX</Language>
+									<AudioFile>enemyHit-003.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="115798230"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemyHit-003" ID="{9877453D-827C-4441-96D4-534D5E53D1BD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

@@ -29,6 +29,7 @@ public class Catapult : Building {
             return;
 
         animator.Play("Shoot");
+        AkSoundEngine.PostEvent("torret_catapult", this.gameObject);
 
         Bullet s = Instantiate(shoot, transform.position + offset, shoot.transform.rotation);
         s.SetDirection(transform.forward + offset);

@@ -121,9 +121,10 @@ public class Enemy : MonoBehaviour {
                 yield return null;
             }
 
-        if (buildToAttack != null)
+        if (buildToAttack != null) {
+            AkSoundEngine.PostEvent("enemy_attack", this.gameObject);
             buildToAttack.HitBuild(damage);
-
+        }
         ResetAttack();
         yield return null;
     }
@@ -144,7 +145,7 @@ public class Enemy : MonoBehaviour {
 
     void AttackTown() {
         if (town != null)
-            town.ReceiveDamage(damage);
+            town.ReceiveDamage(damage*2f);
         townAttacked = true;
         OnDie();
     }

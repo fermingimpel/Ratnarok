@@ -22,6 +22,7 @@ public class Town : MonoBehaviour {
     public void ReceiveDamage(float d) {
         if (this != null) {
             health -= d;
+            AkSoundEngine.PostEvent("Hit_Cheese", this.gameObject);
             if (health <= 0) {
                 health = 0;
                 if (DestroyedTown != null)

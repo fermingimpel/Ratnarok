@@ -1,0 +1,82 @@
+Event	ID	Name			Wwise Object Path	Notes
+	46674184	torret_catapult			\Default Work Unit\Torrets\torret_catapult	
+	358534189	rat_sounds			\Default Work Unit\Generics\rat_sounds	
+	733168346	game_start			\Default Work Unit\Generics\game_start	
+	1003524675	level_lose			\Default Work Unit\Level\level_lose	
+	1205999388	enemy_death			\Default Work Unit\Enemy\enemy_death	
+	1301445487	button_generic			\Default Work Unit\Click\button_generic	
+	1568618364	torret_fire			\Default Work Unit\Torrets\torret_fire	
+	1631762940	click_torret_menu			\Default Work Unit\Click\click_torret_menu	
+	1695855716	torret_crossbow			\Default Work Unit\Torrets\torret_crossbow	
+	1781417190	enemy_attack			\Default Work Unit\Enemy\enemy_attack	
+	2074856192	hit_cheese			\Default Work Unit\Enemy\hit_cheese	
+	2457774286	game_close			\Default Work Unit\Generics\game_close	
+	2902583908	click_credits			\Default Work Unit\Click\click_credits	
+	2908556826	level_win			\Default Work Unit\Level\level_win	
+	2941738795	coin_get			\Default Work Unit\Click\coin_get	
+	2943011873	bite_cheese			\Default Work Unit\Generics\bite_cheese	
+	3104903294	click_torret_construction			\Default Work Unit\Click\click_torret_construction	
+	3143536294	torret_stuff			\Default Work Unit\Torrets\torret_stuff	
+	3228713348	button_start			\Default Work Unit\Click\button_start	
+	3717628084	torret_destruction			\Default Work Unit\Torrets\torret_destruction	
+	3824902441	level_prep			\Default Work Unit\Level\level_prep	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	1620872583	General_music			\Default Work Unit\General_music	
+	2607556080	Menu			\Default Work Unit\Menu	
+
+Switch	ID	Name	Switch Group			Notes
+	116707640	level_general	General_music			
+	3451125089	menu_general	General_music			
+	2201105581	credits	Menu			
+	2607556080	menu	Menu			
+	3762955427	tutorial	Menu			
+
+State Group	ID	Name			Wwise Object Path	Notes
+	453242039	level_state			\Default Work Unit\Level\level_state	
+	3826569560	music_state			\Default Work Unit\music_state	
+	4071417932	player_state			\Default Work Unit\Level\player_state	
+	4094426505	menu_scene			\Default Work Unit\GeneralGame\menu_scene	
+
+State	ID	Name	State Group			Notes
+	748895195	None	level_state			
+	1221014415	Win_state	level_state			
+	1353407533	Level_state_alive	level_state			
+	748895195	None	music_state			
+	1256202815	play	music_state			
+	3092587489	pausa	music_state			
+	42241658	alive_state	player_state			
+	748895195	None	player_state			
+	3563746397	dead_state	player_state			
+	644653880	tut	menu_scene			
+	748895195	None	menu_scene			
+	1048449605	map	menu_scene			
+	2201105581	credits	menu_scene			
+	2607556080	menu	menu_scene			
+	2782712965	level	menu_scene			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	7757473	pausa	music_state	\Interactive Music Hierarchy\Music\General\Level\Menú		
+	168097531	pausa	music_state	\Interactive Music Hierarchy\Music\General\Menu_general\Tutorial		
+	561328417	pausa	music_state	\Interactive Music Hierarchy\Music\General\Menu_general\Menu		
+	673912797	pausa	music_state	\Interactive Music Hierarchy\Music\General\Menu_general\Credits		
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	1109521862	music_option			\Default Work Unit\Options\music_option	
+	4175053134	sfx_option			\Default Work Unit\Options\sfx_option	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	115798230	enemyHit-003	C:\Users\Eze\Downloads\Ratnarok-master\TD_WwiseProject\.cache\Windows\SFX\enemyHit-003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GeneralSFX\FactoryEnemy\enemy_hit\enemyHit-003		207948
+	154176183	Menú	C:\Users\Eze\Downloads\Ratnarok-master\TD_WwiseProject\.cache\Windows\SFX\Menú_D79FB2B7.wem		\Interactive Music Hierarchy\Music\General\Level\Menú\Menú		16226608
+	307528027	Menú2	C:\Users\Eze\Downloads\Ratnarok-master\TD_WwiseProject\.cache\Windows\SFX\Menú2_D79FB2B7.wem		\Interactive Music Hierarchy\Music\General\Menu_general\Menu\Menú2		15180972
+	350999598	enemyHit-002	C:\Users\Eze\Downloads\Ratnarok-master\TD_WwiseProject\.cache\Windows\SFX\enemyHit-002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GeneralSFX\FactoryEnemy\enemy_hit\enemyHit-002		207948
+	369906034	Win_SFX	C:\Users\Eze\Downloads\Ratnarok-master\TD_WwiseProject\.cache\Windows\SFX\Win_SFX_D79FB2B7.wem		\Interactive Music Hierarchy\Music\General\Level\level_win_music\Win_SFX		2698188
+	507979991	enemyHit-001	C:\Users\Eze\Downloads\Ratnarok-master\TD_WwiseProject\.cache\Windows\SFX\enemyHit-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GeneralSFX\FactoryEnemy\enemy_hit\enemyHit-001		207948
+	653121419	torret_construct	C:\Users\Eze\Downloads\Ratnarok-master\TD_WwiseProject\.cache\Windows\SFX\torret_construct_B7F9EFD8.wem		\Actor-Mixer Hierarchy\Default Work Unit\GeneralSFX\FactoryTorrets\torret_construct		227040
+	657505009	Begin_Level	C:\Users\Eze\Downloads\Ratnarok-master\TD_WwiseProject\.cache\Windows\SFX\Begin_Level_D79FB2B7.wem		\Interactive Music Hierarchy\Music\General\Level\level_start_music\Begin_Level		458172
+	764667585	torret_fire	C:\Users\Eze\Downloads\Ratnarok-master\TD_WwiseProject\.cache\Windows\SFX\torret_fire_40529CA0.wem		\Actor-Mixer Hierarchy\Default Work Unit\GeneralSFX\FactoryTorrets\torret_fire		525700
+	823775830	Game_Over_Sfx	C:\Users\Eze\Downloads\Ratnarok-master\TD_WwiseProject\.cache\Windows\SFX\Game_Over_Sfx_D79FB2B7.wem		\Interactive Music Hierarchy\Music\General\Level\level_lose_music\Game_Over_Sfx		801132
+	837105462	Menu_Sfx	C:\Users\Eze\Downloads\Ratnarok-master\TD_WwiseProject\.cache\Windows\SFX\Menu_Sfx_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GeneralSFX\GeneralMenu\Menu_Sfx		239636
+	838363431	tutorial_music	C:\Users\Eze\Downloads\Ratnarok-master\TD_WwiseProject\.cache\Windows\SFX\tutorial_music_D79FB2B7.wem		\Interactive Music Hierarchy\Music\General\Menu_general\Tutorial\tutorial_music		17035936
+	904614063	credits_music	C:\Users\Eze\Downloads\Ratnarok-master\TD_WwiseProject\.cache\Windows\SFX\credits_music_D79FB2B7.wem		\Interactive Music Hierarchy\Music\General\Menu_general\Credits\credits_music		16341120
+

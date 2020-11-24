@@ -25,6 +25,9 @@ public class GameplayManager : MonoBehaviour {
     [SerializeField] EnemyManager em;
     [SerializeField] LoaderManager lm;
 
+    bool lose = false;
+    bool win = false;
+
     public enum Stage {
         Preparing,
         Attack
@@ -41,22 +44,28 @@ public class GameplayManager : MonoBehaviour {
         StartCoroutine(LateStart());
 
         Town.DestroyedTown += LoseGame;
-    }
 
+        lose = false;
+        win = false;
+
+        //AkSoundEngine.PostEvent("game_start", this.gameObject);
+    }
     private void OnDisable() {
         Town.DestroyedTown -= LoseGame;
     }
     void WinGame() {
+        win = true;
         if (!lm.GetChangingLevel()) {
-            //AkSoundEngine.PostEvent("level_win", this.gameObject);
+            AkSoundEngine.PostEvent("level_win", this.gameObject);
             winScreenUI.SetActive(true);
             cc.enabled = false;
         }
     }
 
     void LoseGame() {
-        if (!lm.GetChangingLevel()) {
-            //AkSoundEngine.PostEvent("level_lose", this.gameObject);
+        lose = true;
+        if (!lm.GetChangingLevel() ) {
+            AkSoundEngine.PostEvent("level_lose", this.gameObject);
             loseScreenUI.SetActive(true);
             cc.enabled = false;
         }
@@ -71,10 +80,10 @@ public class GameplayManager : MonoBehaviour {
     IEnumerator FirstPreparePhase() {
         if (UIStateUpdate != null)
             UIStateUpdate(Stage.Preparing);
-
         yield return new WaitForSeconds(timeInFirstPrepare - 2.0f);
         if (StartPreAtk != null)
             StartPreAtk();
+        AkSoundEngine.PostEvent("level_prep", this.gameObject);
         yield return new WaitForSeconds(2.0f);
 
         StartCoroutine(AttackPhase());
@@ -88,6 +97,7 @@ public class GameplayManager : MonoBehaviour {
         if (UIStateUpdate != null)
             UIStateUpdate(Stage.Attack);
 
+
         while (!em.GetAllHordesCompleted()) {
             yield return new WaitForSeconds(0.5f);
         }
@@ -97,6 +107,7 @@ public class GameplayManager : MonoBehaviour {
 
         yield return new WaitForSeconds(3.0f);
        
+        if(!lose)
         WinGame();
     }
 }

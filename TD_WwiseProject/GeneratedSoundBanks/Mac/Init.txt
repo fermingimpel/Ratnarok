@@ -1,4 +1,50 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	453242039	level_state			\Default Work Unit\Level\level_state	
+	565615430	level_tutorial			\Default Work Unit\Level\level_tutorial	
+	1683582579	ratary_open			\Default Work Unit\GeneralGame\ratary_open	
+	3826569560	music_state			\Default Work Unit\music_state	
+	4071417932	player_state			\Default Work Unit\Level\player_state	
+	4094426505	menu_scene			\Default Work Unit\GeneralGame\menu_scene	
+
+State	ID	Name	State Group			Notes
+	748895195	None	level_state			
+	1221014415	Win_state	level_state			
+	1353407533	Level_state_alive	level_state			
+	23814027	LevelT_state_alive	level_tutorial			
+	748895195	None	level_tutorial			
+	3483846669	WinT_state	level_tutorial			
+	748895195	None	ratary_open			
+	748895195	None	music_state			
+	1256202815	play	music_state			
+	3092587489	pausa	music_state			
+	42241658	alive_state	player_state			
+	748895195	None	player_state			
+	3563746397	dead_state	player_state			
+	644653880	tut	menu_scene			
+	748895195	None	menu_scene			
+	1048449605	map	menu_scene			
+	2201105581	credits	menu_scene			
+	2607556080	menu	menu_scene			
+	2782712965	level	menu_scene			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	504532776	Brick			\Factory Reflect Acoustic Textures\Textures\Brick	
+	513139656	Mountain			\Factory Reflect Acoustic Textures\Textures\Mountain	
+	841620460	Concrete			\Factory Reflect Acoustic Textures\Textures\Concrete	
+	1755085759	Wood_Deep			\Factory Reflect Acoustic Textures\Textures\Wood_Deep	
+	1873957695	Anechoic			\Factory Reflect Acoustic Textures\Textures\Anechoic	
+	1970351858	Fabric			\Factory Reflect Acoustic Textures\Textures\Fabric	
+	2058049674	Wood			\Factory Reflect Acoustic Textures\Textures\Wood	
+	2412606308	Carpet			\Factory Reflect Acoustic Textures\Textures\Carpet	
+	2637588553	Tile			\Factory Reflect Acoustic Textures\Textures\Tile	
+	2928161104	Curtains			\Factory Reflect Acoustic Textures\Textures\Curtains	
+	3195498748	Cork_Tiles			\Factory Reflect Acoustic Textures\Textures\Cork_Tiles	
+	3670307564	Drywall			\Factory Reflect Acoustic Textures\Textures\Drywall	
+	4168643977	Acoustic_Banner			\Factory Reflect Acoustic Textures\Textures\Acoustic_Banner	
+	4262522749	Wood_Bright			\Factory Reflect Acoustic Textures\Textures\Wood_Bright	
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
+	985987111	Motion Factory Bus			\Default Work Unit\Motion Factory Bus	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 
 Audio Devices	ID	Name	Type				Notes

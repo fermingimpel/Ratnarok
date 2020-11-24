@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{1B1CCF24-71AA-44D0-8AB2-C270C805CA78}" SchemaVersion="97" RootDocumentID="{C8C5706F-C75F-4F9C-B645-B4A5FD1DC957}">
+	<AudioObjects>
+		<WorkUnit Name="GeneralMenu" ID="{1B1CCF24-71AA-44D0-8AB2-C270C805CA78}" OwnerID="{B407530D-72BF-487E-8546-EA754E0B2236}" PersistMode="Nested">
+			<ChildrenList>
+				<Sound Name="Menu_Sfx" ID="{F36DBAFA-FE97-436C-BE08-A182B1DDA8CC}" ShortID="81978409">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{70A3CD6E-3F43-434D-8C65-6981943688A4}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="682"/>
+											<Property Name="Min" Type="Real64" Value="-379"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Menu_Sfx" ID="{9D8F908A-D466-4873-B9C5-6D7DEF89DDF6}">
+							<Language>SFX</Language>
+							<AudioFile>Menu_Sfx.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="837105462"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Menu_Sfx" ID="{9D8F908A-D466-4873-B9C5-6D7DEF89DDF6}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

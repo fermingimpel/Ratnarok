@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -9394,7 +9394,7 @@ GameObject:
   - component: {fileID: 855169241}
   - component: {fileID: 855169240}
   - component: {fileID: 855169242}
-  - component: {fileID: 855169243}
+  - component: {fileID: 855169244}
   m_Layer: 0
   m_Name: Gameplay Manager
   m_TagString: Untagged
@@ -9414,7 +9414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f4b13713c523c46b319ff0064925eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeInFirstPrepare: 3
+  timeInFirstPrepare: 8
   winScreenUI: {fileID: 889467510}
   loseScreenUI: {fileID: 1927827122}
   cc: {fileID: 672363709}
@@ -9428,7 +9428,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 855169239}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 39.69, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9457,7 +9457,7 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
---- !u!114 &855169243
+--- !u!114 &855169244
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9466,30 +9466,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 855169239}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62b31525ef6203f42804f8674a833636, type: 3}
+  m_Script: {fileID: 11500000, guid: 3552b67867994c64ab523c954647f2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   triggerList: f7e1664c
   useOtherObject: 0
-  actionOnEventType: 0
-  curveInterpolation: 4
-  enableActionOnEvent: 0
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  useCallbacks: 0
-  Callbacks: []
-  playingId: 0
-  soundEmitterObject: {fileID: 0}
-  transitionDuration: 0
-  eventIdInternal: 0
+    WwiseObjectReference: {fileID: 11400000, guid: 3a79246b092932740a7a086afdf021c5,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
   valueGuidInternal: 
-  m_callbackDataInternal: {fileID: 0}
-  MultiPositionType: 1
-  multiPositionTypeLabel: 0
-  LargeModePositions: []
-  multiPositionArray: []
 --- !u!1 &866338135
 GameObject:
   m_ObjectHideFlags: 0

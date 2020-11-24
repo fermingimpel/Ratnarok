@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b037646cf03554796c35028b37f9cd, type: 3}
+  m_Name: BD543E5E-D711-4A71-9FA7-40E31F8A10FB
+  m_EditorClassIdentifier: 
+  objectName: menu_general
+  id: 3451125089
+  guid: BD543E5E-D711-4A71-9FA7-40E31F8A10FB
+  WwiseSwitchGroupReference: {fileID: 11400000, guid: 904f25c0e00113241a9f87444feb389a,
+    type: 2}

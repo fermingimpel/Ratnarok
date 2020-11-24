@@ -106,6 +106,7 @@ public class BuildingCreator : MonoBehaviour {
                 if (Input.GetMouseButtonDown(0)) {
                     if (EventSystem.current.IsPointerOverGameObject())
                         return;
+                    //AkSoundEngine.PostEvent("click_torret_menu", this.gameObject);
 
                     canSelectTile = false;
                     tileSelected.SetActive(false);
@@ -137,6 +138,8 @@ public class BuildingCreator : MonoBehaviour {
     }
 
     void CreateStructure(int tob) {
+        AkSoundEngine.PostEvent("click_torret_construction", this.gameObject);
+
         buildToCreate = tob;
         if (structures[buildToCreate].GetToolsCost() <= gold) {
             Building go = Instantiate(structures[buildToCreate], posSelected, structures[buildToCreate].transform.rotation, structuresParent);
@@ -185,6 +188,7 @@ public class BuildingCreator : MonoBehaviour {
 
     void DestroyedBuild(Building b) {
         builds.Remove(b);
+        AkSoundEngine.PostEvent("torret_destruction", this.gameObject);
     }
 
     public void UseGold(int g) {

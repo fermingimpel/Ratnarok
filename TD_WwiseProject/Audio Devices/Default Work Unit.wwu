@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{1CF001FC-439D-4693-87BA-6B989D7CA32E}" SchemaVersion="97">
+<WwiseDocument Type="WorkUnit" ID="{FA9441CA-6382-4970-81BC-3494217C416D}" SchemaVersion="97">
 	<AudioDevices>
-		<WorkUnit Name="Default Work Unit" ID="{1CF001FC-439D-4693-87BA-6B989D7CA32E}" PersistMode="Standalone">
+		<WorkUnit Name="Default Work Unit" ID="{FA9441CA-6382-4970-81BC-3494217C416D}" PersistMode="Standalone">
 			<ChildrenList>
-				<AudioDevice Name="System" ID="{85B196BF-E9AA-43F4-8CE8-DE4B11E4ECCD}" PluginName="System" CompanyID="0" PluginID="174" PluginType="7"/>
-				<AudioDevice Name="No_Output" ID="{E35CE3A5-F1BB-498D-9CDB-678ECA637F7E}" PluginName="No Output" CompanyID="0" PluginID="181" PluginType="7"/>
+				<AudioDevice Name="System" ID="{B36DFB55-34FC-406A-8C06-8A8ACE31597B}" PluginName="System" CompanyID="0" PluginID="174" PluginType="7"/>
+				<AudioDevice Name="No_Output" ID="{39265989-5D5B-4023-8928-246887F0A00B}" PluginName="No Output" CompanyID="0" PluginID="181" PluginType="7"/>
+				<AudioDevice Name="Default_Motion_Device" ID="{1E2D65E6-65D4-4684-983B-70E721816266}" PluginName="Wwise Motion" CompanyID="0" PluginID="507" PluginType="7"/>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioDevices>

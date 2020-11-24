@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{16C56EF4-6E66-422A-B5E5-1682A02A49E5}" SchemaVersion="97">
+<WwiseDocument Type="WorkUnit" ID="{93120F39-8D7E-4C04-9B99-15DF423C4258}" SchemaVersion="97">
 	<GameParameters>
-		<WorkUnit Name="Default Work Unit" ID="{16C56EF4-6E66-422A-B5E5-1682A02A49E5}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{93120F39-8D7E-4C04-9B99-15DF423C4258}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Options" ID="{2CBB03C8-D7C1-4966-B223-9B7F28F9A268}" ShortID="34326945">
+					<ChildrenList>
+						<GameParameter Name="sfx_option" ID="{086672CD-C00B-406B-A0CE-3ACF8D71DBD5}"/>
+						<GameParameter Name="music_option" ID="{55838968-5809-47FD-B1BE-B823597515EB}"/>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</GameParameters>
 </WwiseDocument>
