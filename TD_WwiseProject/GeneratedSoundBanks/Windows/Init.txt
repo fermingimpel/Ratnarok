@@ -10,6 +10,7 @@ State	ID	Name	State Group			Notes
 	748895195	None	level_state			
 	1221014415	Win_state	level_state			
 	1353407533	Level_state_alive	level_state			
+	3659997959	horde_state	level_state			
 	23814027	LevelT_state_alive	level_tutorial			
 	748895195	None	level_tutorial			
 	3483846669	WinT_state	level_tutorial			

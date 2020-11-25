@@ -5,6 +5,9 @@
 			<ChildrenList>
 				<RandomSequenceContainer Name="enemy_hit" ID="{69EA3F0B-8143-4564-9404-1B659D0BEC97}" ShortID="1068877790">
 					<PropertyList>
+						<Property Name="3DPosition" Type="int16" Value="1"/>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="OverrideEffect" Type="bool" Value="True"/>
 						<Property Name="Pitch" Type="int32">
 							<ModifierList>
 								<ModifierInfo>
@@ -17,10 +20,24 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>7</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="distancia" ID="{15393248-2BE9-4835-A7F7-5C59D79D6EFF}" WorkUnitID="{460E327D-0351-4C05-A164-0AA198343F91}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+							<ObjectRef Name="High_Freq_Cut_7" ID="{D21CF913-1854-4FBB-B96E-6EE1BBA618DE}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
+						<Reference Name="Effect1" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+							<ObjectRef Name="Room_Medium" ID="{F5C06EC1-E4A4-4332-A7D3-A89E2986B74F}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
@@ -121,7 +138,317 @@
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
+					<PositioningInfo>
+						<Position Name="" ID="{018CFD8E-A52F-4650-BDE7-06737501A8EC}"/>
+					</PositioningInfo>
 				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="jugger_hit" ID="{AC0DE5E6-7D07-4461-86A4-86ED2894CEA7}" ShortID="688045406">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>400</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{FEA91DD8-693D-4461-8CB8-53F4C4A9B60E}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="505"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="JuggerHit_01" ID="{ED371B3E-5D57-4C52-B6EF-8C0F086AC477}" ShortID="873406638">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="JuggerHit" ID="{9AF51286-D0E0-4AB7-A7F0-6B7071BF5905}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.30023064020128"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>JuggerHit.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="502617299"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="JuggerHit" ID="{9AF51286-D0E0-4AB7-A7F0-6B7071BF5905}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="JuggerHit_02" ID="{DEA93A9A-52CC-4390-B53D-E31598584CC9}" ShortID="360913099">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="JuggerHit" ID="{84B59B01-EF70-4A61-BC80-94C8FB585849}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="4.47857220513776"/>
+										<Property Name="TrimEnd" Type="Real64" Value="6.08218999471935"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>JuggerHit.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="200127076"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="JuggerHit" ID="{84B59B01-EF70-4A61-BC80-94C8FB585849}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="JuggerHit_03" ID="{F2149345-D2C8-44C6-AA7D-38AC47855FBF}" ShortID="753019985">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="JuggerHit" ID="{67DD5724-B459-4195-9891-A0D852DCBEE7}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="1.95034596030193"/>
+										<Property Name="TrimEnd" Type="Real64" Value="3.29391762184327"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>JuggerHit.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="781140438"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="JuggerHit" ID="{67DD5724-B459-4195-9891-A0D852DCBEE7}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="explotion_hit" ID="{88BEC54F-7133-48A1-B33C-E8FA1C3845E8}" ShortID="548964754">
+					<PropertyList>
+						<Property Name="OverrideEffect" Type="bool" Value="True"/>
+						<Property Name="OverridePositioning" Type="bool" Value="True"/>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>180</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{2AEB58DA-A7B6-4163-8E88-35A19204BB42}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="429"/>
+											<Property Name="Min" Type="Real64" Value="-733"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+							<ObjectRef Name="High_Freq_Cut_8" ID="{D2BED60E-DD7F-4B4C-A331-C1D0E574B7C6}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Explotion_01" ID="{662F1159-1077-459E-96ED-6A136345FD73}" ShortID="1015391197">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{690A6C78-75AF-4964-89E7-6BFFFA8A46CA}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Explotion" ID="{1CC66673-3972-4D62-A192-3BD31234503B}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.491198241853819"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.79458539123412"/>
+										<Property Name="TrimEnd" Type="Real64" Value="2.94718945112292"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Explotion.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="446493913"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Explotion" ID="{1CC66673-3972-4D62-A192-3BD31234503B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Explotion_02" ID="{F8B799F2-3A68-4890-AA77-2DEC0574EA13}" ShortID="604790381">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Explotion" ID="{52177D1E-6277-464A-9137-773B28C7E120}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.751244369894077"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="3.72732783524369"/>
+										<Property Name="TrimEnd" Type="Real64" Value="5.80769685956574"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Explotion.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="802492517"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Explotion" ID="{52177D1E-6277-464A-9137-773B28C7E120}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Explotion_03" ID="{9D9757BE-9FB2-47CB-A440-6208BA9E3EE4}" ShortID="619870137">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Explotion" ID="{CDD7A683-E47C-4F1B-BAEB-7F8220F39C10}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.996843490820987"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="6.68896429347995"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Explotion.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="266061643"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Explotion" ID="{CDD7A683-E47C-4F1B-BAEB-7F8220F39C10}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<Sound Name="bardo_attack" ID="{250DA3D8-BBDA-498A-A2F8-F358D8F722B4}" ShortID="628818821">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-16</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="CAJA _2" ID="{BF3D3FF6-651F-4871-87BE-96EDA8CFBC0C}">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="1.53027537451762"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.21222797164843"/>
+								<Property Name="TrimEnd" Type="Real64" Value="2.73662384494027"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>CAJA _2.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="465017974"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="CAJA _2" ID="{BF3D3FF6-651F-4871-87BE-96EDA8CFBC0C}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="dead_rat" ID="{019B14E7-7A81-4166-9931-19153DE82652}" ShortID="856129358">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="distancia" ID="{15393248-2BE9-4835-A7F7-5C59D79D6EFF}" WorkUnitID="{460E327D-0351-4C05-A164-0AA198343F91}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Dead rat" ID="{F56AC075-3C6E-429D-8D19-80CBF0E5E906}">
+							<Language>SFX</Language>
+							<AudioFile>Dead rat.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="420974254"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<PositioningInfo>
+						<Position Name="" ID="{A3AF264E-688A-4A87-B654-DA011CA8601F}"/>
+					</PositioningInfo>
+					<ActiveSourceList>
+						<ActiveSource Name="Dead rat" ID="{F56AC075-3C6E-429D-8D19-80CBF0E5E906}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

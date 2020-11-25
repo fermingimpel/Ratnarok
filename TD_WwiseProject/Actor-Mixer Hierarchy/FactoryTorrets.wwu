@@ -64,6 +64,364 @@
 						<ActiveSource Name="torret_fire" ID="{702022F1-0FE6-49FD-A4C9-45B3C001EA42}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<RandomSequenceContainer Name="torrets_menu" ID="{8152F3D5-8AD8-415B-916F-36C99B489411}" ShortID="292775666">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{A1D7A34D-535E-4E64-AB44-BAA145FCAF7B}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="354"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="distancia" ID="{15393248-2BE9-4835-A7F7-5C59D79D6EFF}" WorkUnitID="{460E327D-0351-4C05-A164-0AA198343F91}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="open_torrets_menu_01" ID="{66284599-920D-4777-9AB3-D98940308B29}" ShortID="502294479">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="distancia" ID="{15393248-2BE9-4835-A7F7-5C59D79D6EFF}" WorkUnitID="{460E327D-0351-4C05-A164-0AA198343F91}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
+									<ObjectRef Name="Gain" ID="{972593D8-F1FF-4C52-ACFA-1B6ECC46AD6E}" WorkUnitID="{045DDEAE-E84A-4EF4-82E3-58F1BDAE2197}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SFXMenu-001" ID="{2CCE5A70-1D5C-4762-B6DB-3BE6D9512046}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.148985801217039"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.618864097363084"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>SFXMenu-001.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="551410975"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<PositioningInfo>
+								<Position Name="" ID="{CA280A14-4A6E-431B-847B-69991C9A5472}"/>
+							</PositioningInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="SFXMenu-001" ID="{2CCE5A70-1D5C-4762-B6DB-3BE6D9512046}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="open_torrets_menu_02" ID="{F6A1E82B-7425-4D60-8886-EC562DABD39E}" ShortID="810100035">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="distancia" ID="{15393248-2BE9-4835-A7F7-5C59D79D6EFF}" WorkUnitID="{460E327D-0351-4C05-A164-0AA198343F91}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
+									<ObjectRef Name="Gain" ID="{972593D8-F1FF-4C52-ACFA-1B6ECC46AD6E}" WorkUnitID="{045DDEAE-E84A-4EF4-82E3-58F1BDAE2197}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SFXMenu-001" ID="{316D3A6D-4951-40B7-A90A-A94BDB962906}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="1.01997971602434"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.43255578093306"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>SFXMenu-001.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="686111685"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<PositioningInfo>
+								<Position Name="" ID="{AB22CD22-D352-452B-9418-2192FFAB8F96}"/>
+							</PositioningInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="SFXMenu-001" ID="{316D3A6D-4951-40B7-A90A-A94BDB962906}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="open_torrets_menu_03" ID="{4E2A655A-57A9-43D5-8D5B-7BE4C23E27EE}" ShortID="423240601">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="distancia" ID="{15393248-2BE9-4835-A7F7-5C59D79D6EFF}" WorkUnitID="{460E327D-0351-4C05-A164-0AA198343F91}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
+									<ObjectRef Name="Gain" ID="{972593D8-F1FF-4C52-ACFA-1B6ECC46AD6E}" WorkUnitID="{045DDEAE-E84A-4EF4-82E3-58F1BDAE2197}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SFXMenu-001" ID="{1DCD95B8-2840-4C90-A0A6-C732EE77A222}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="2.15456389452333"/>
+										<Property Name="TrimEnd" Type="Real64" Value="2.50983772819472"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>SFXMenu-001.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="474728955"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<PositioningInfo>
+								<Position Name="" ID="{AD63B975-FB14-4C7E-B0A4-43D0AB9AF8FE}"/>
+							</PositioningInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="SFXMenu-001" ID="{1DCD95B8-2840-4C90-A0A6-C732EE77A222}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<PositioningInfo>
+						<Position Name="" ID="{66396826-B671-410E-8728-0BBC9020D329}"/>
+					</PositioningInfo>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="torret_destruction_container" ID="{2C718E1E-832B-42C9-A490-D415D20272E7}" ShortID="666306114">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{474C9DBB-D983-4270-9484-D61752A2A736}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="455"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-2</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="build_destruction_01" ID="{6EC657AB-D237-4EAC-987E-AB61159D6CA0}" ShortID="223303872">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="distancia" ID="{15393248-2BE9-4835-A7F7-5C59D79D6EFF}" WorkUnitID="{460E327D-0351-4C05-A164-0AA198343F91}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="build_destruction" ID="{0DD3E4C4-982C-408E-94C1-7DDA44A9ABF7}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.346551724137931"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.346551724137931"/>
+										<Property Name="TrimEnd" Type="Real64" Value="2.14862068965517"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>build_destruction.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="538129665"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<PositioningInfo>
+								<Position Name="" ID="{76C00576-50A0-45DE-B870-AA31D5E003E8}"/>
+							</PositioningInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="build_destruction" ID="{0DD3E4C4-982C-408E-94C1-7DDA44A9ABF7}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="build_destruction_02" ID="{30176A32-7360-4211-B463-1383F7FC17CA}" ShortID="927656857">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="distancia" ID="{15393248-2BE9-4835-A7F7-5C59D79D6EFF}" WorkUnitID="{460E327D-0351-4C05-A164-0AA198343F91}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="build_destruction" ID="{2870895E-C57F-4A91-A6B6-69B843746E39}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.67"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="2.14862068965517"/>
+										<Property Name="TrimEnd" Type="Real64" Value="3.90448275862069"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>build_destruction.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="768346997"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<PositioningInfo>
+								<Position Name="" ID="{540AB8FE-0057-4432-AAD4-60278DB0A474}"/>
+							</PositioningInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="build_destruction" ID="{2870895E-C57F-4A91-A6B6-69B843746E39}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="build_destruction_03" ID="{37219BF2-BB47-47EA-828A-F6895E304695}" ShortID="749449934">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="distancia" ID="{15393248-2BE9-4835-A7F7-5C59D79D6EFF}" WorkUnitID="{460E327D-0351-4C05-A164-0AA198343F91}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="build_destruction" ID="{B3EBAA3B-3378-45F7-8A36-554ACAE493A8}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.762413793103449"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="3.88137931034483"/>
+										<Property Name="TrimEnd" Type="Real64" Value="5.79896551724138"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>build_destruction.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="382614952"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<PositioningInfo>
+								<Position Name="" ID="{C44901BF-E16E-4542-9A2B-1CE4E39FF3F8}"/>
+							</PositioningInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="build_destruction" ID="{B3EBAA3B-3378-45F7-8A36-554ACAE493A8}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<Sound Name="torret_stuff" ID="{5B38F7FA-4674-4D1B-B2AA-0D0790A9DB8D}" ShortID="112035501">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{0C5C6F01-5027-4580-93F1-331E6F878535}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="808"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-9</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="BOLA FUEGO" ID="{8AF0FE92-FAFB-422F-970C-49BB1B5566E1}">
+							<Language>SFX</Language>
+							<AudioFile>BOLA FUEGO.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="406192755"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="BOLA FUEGO" ID="{8AF0FE92-FAFB-422F-970C-49BB1B5566E1}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="torret_slingshot" ID="{49B1F3AA-2EB4-461B-ABE6-752DCA9EFF9B}" ShortID="892208752">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="resortera_attack" ID="{F7F25B3C-28B4-449C-89D1-AC08B3BE890C}">
+							<Language>SFX</Language>
+							<AudioFile>resortera_attack.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="870205628"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="resortera_attack" ID="{F7F25B3C-28B4-449C-89D1-AC08B3BE890C}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="12" SoundbankVersion="135">
 	<RootPaths>
-		<ProjectRoot>C:\Users\Eze\Downloads\Ratnarok-master\TD_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\Eze\Downloads\Ratnarok-master\TD_WwiseProject\.cache\Mac\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\Eze\Downloads\Ratnarok-master\TD_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ProjectRoot>D:\Documentos\RatnarokRepository\Ratnarok-master\TD_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\Documentos\RatnarokRepository\Ratnarok-master\TD_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Documentos\RatnarokRepository\Ratnarok-master\TD_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\Eze\Downloads\Ratnarok-master\TD_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>D:\Documentos\RatnarokRepository\Ratnarok-master\TD_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="1208377562">
+		<SoundBank Id="1355168291" Language="SFX" Hash="2230028031">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3297747470" Language="SFX" Hash="2049163902">
+		<SoundBank Id="3297747470" Language="SFX" Hash="572207618">
 			<ObjectPath>\SoundBanks\Default Work Unit\GeneralSoundBank</ObjectPath>
 			<ShortName>GeneralSoundBank</ShortName>
 			<Path>GeneralSoundBank.bnk</Path>
 			<IncludedEvents>
+				<Event Id="3885493553" Name="bardo_hit" ObjectPath="\Events\Default Work Unit\bardo_hit" MaxAttenuation="200.000000" DurationType="OneShot" DurationMin="2.524396" DurationMax="2.524396"/>
 				<Event Id="2943011873" Name="bite_cheese" ObjectPath="\Events\Default Work Unit\Generics\bite_cheese" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1301445487" Name="button_generic" ObjectPath="\Events\Default Work Unit\Click\button_generic" DurationType="OneShot" DurationMin="0.915909" DurationMax="1.690491">
+				<Event Id="1301445487" Name="button_generic" ObjectPath="\Events\Default Work Unit\Click\button_generic" MaxAttenuation="200.000000" DurationType="OneShot" DurationMin="0.915909" DurationMax="1.690491">
 					<IncludedMemoryFiles>
 						<File Id="837105462" Language="SFX">
 							<ShortName>Menu_Sfx.wav</ShortName>
@@ -33,13 +34,13 @@
 				<Event Id="3228713348" Name="button_start" ObjectPath="\Events\Default Work Unit\Click\button_start" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2902583908" Name="click_credits" ObjectPath="\Events\Default Work Unit\Click\click_credits" DurationType="Infinite">
 					<IncludedMemoryFiles>
-						<File Id="307528027" Language="SFX">
-							<ShortName>Menú2.wav</ShortName>
-							<Path>SFX\Menú2_D79FB2B7.wem</Path>
+						<File Id="154176183" Language="SFX">
+							<ShortName>Menú.wav</ShortName>
+							<Path>SFX\Menú_D79FB2B7.wem</Path>
 						</File>
-						<File Id="838363431" Language="SFX">
-							<ShortName>tutorial_music.wav</ShortName>
-							<Path>SFX\tutorial_music_D79FB2B7.wem</Path>
+						<File Id="197975385" Language="SFX">
+							<ShortName>CREDITMUSIC.wav</ShortName>
+							<Path>SFX\CREDITMUSIC_D79FB2B7.wem</Path>
 						</File>
 						<File Id="904614063" Language="SFX">
 							<ShortName>credits_music.wav</ShortName>
@@ -60,7 +61,7 @@
 							<Children>
 								<SwitchContainer SwitchValue="{20151CA6-91F3-4D9A-BDB3-B99D77EEFED0}">
 									<Media>
-										<File Id="307528027"/>
+										<File Id="154176183"/>
 									</Media>
 								</SwitchContainer>
 							</Children>
@@ -69,14 +70,14 @@
 							<Children>
 								<SwitchContainer SwitchValue="{5189BA5D-1262-4348-B4BE-ED39912DFDB4}">
 									<Media>
-										<File Id="838363431"/>
+										<File Id="197975385"/>
 									</Media>
 								</SwitchContainer>
 							</Children>
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="3104903294" Name="click_torret_construction" ObjectPath="\Events\Default Work Unit\Click\click_torret_construction" DurationType="OneShot" DurationMin="1.286729" DurationMax="1.286729">
+				<Event Id="3104903294" Name="click_torret_construction" ObjectPath="\Events\Default Work Unit\Click\click_torret_construction" MaxAttenuation="200.000000" DurationType="OneShot" DurationMin="1.286729" DurationMax="1.286729">
 					<IncludedMemoryFiles>
 						<File Id="653121419" Language="SFX">
 							<ShortName>torret_construct.wav</ShortName>
@@ -84,9 +85,23 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1631762940" Name="click_torret_menu" ObjectPath="\Events\Default Work Unit\Click\click_torret_menu" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="2941738795" Name="coin_get" ObjectPath="\Events\Default Work Unit\Click\coin_get" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1781417190" Name="enemy_attack" ObjectPath="\Events\Default Work Unit\Enemy\enemy_attack" DurationType="OneShot" DurationMin="0.611078" DurationMax="1.178481">
+				<Event Id="1631762940" Name="click_torret_menu" ObjectPath="\Events\Default Work Unit\Click\click_torret_menu" MaxAttenuation="200.000000" DurationType="OneShot" DurationMin="0.289574" DurationMax="0.469878">
+					<IncludedMemoryFiles>
+						<File Id="474728955" Language="SFX">
+							<ShortName>SFXMenu-001.wav</ShortName>
+							<Path>SFX\SFXMenu-001_08C3C803.wem</Path>
+						</File>
+						<File Id="551410975" Language="SFX">
+							<ShortName>SFXMenu-001.wav</ShortName>
+							<Path>SFX\SFXMenu-001_4DC17E99.wem</Path>
+						</File>
+						<File Id="686111685" Language="SFX">
+							<ShortName>SFXMenu-001.wav</ShortName>
+							<Path>SFX\SFXMenu-001_6EA1226F.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1781417190" Name="enemy_attack" ObjectPath="\Events\Default Work Unit\Enemy\enemy_attack" MaxAttenuation="200.000000" DurationType="OneShot" DurationMin="0.611078" DurationMax="1.178481">
 					<IncludedMemoryFiles>
 						<File Id="115798230" Language="SFX">
 							<ShortName>enemyHit-003.wav</ShortName>
@@ -102,7 +117,30 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1205999388" Name="enemy_death" ObjectPath="\Events\Default Work Unit\Enemy\enemy_death" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1205999388" Name="enemy_death" ObjectPath="\Events\Default Work Unit\Enemy\enemy_death" MaxAttenuation="200.000000" DurationType="OneShot" DurationMin="1.339660" DurationMax="1.339660">
+					<IncludedMemoryFiles>
+						<File Id="420974254" Language="SFX">
+							<ShortName>Dead rat.wav</ShortName>
+							<Path>SFX\Dead rat_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1523805078" Name="explotion_attack" ObjectPath="\Events\Default Work Unit\explotion_attack" DurationType="OneShot" DurationMin="1.229676" DurationMax="2.962708">
+					<IncludedMemoryFiles>
+						<File Id="266061643" Language="SFX">
+							<ShortName>Explotion.wav</ShortName>
+							<Path>SFX\Explotion_51A160CB.wem</Path>
+						</File>
+						<File Id="446493913" Language="SFX">
+							<ShortName>Explotion.wav</ShortName>
+							<Path>SFX\Explotion_A43A0B69.wem</Path>
+						</File>
+						<File Id="802492517" Language="SFX">
+							<ShortName>Explotion.wav</ShortName>
+							<Path>SFX\Explotion_8A2A7036.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="2457774286" Name="game_close" ObjectPath="\Events\Default Work Unit\Generics\game_close" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="733168346" Name="game_start" ObjectPath="\Events\Default Work Unit\Generics\game_start" DurationType="Infinite">
 					<IncludedMemoryFiles>
@@ -110,21 +148,33 @@
 							<ShortName>Menú.wav</ShortName>
 							<Path>SFX\Menú_D79FB2B7.wem</Path>
 						</File>
-						<File Id="307528027" Language="SFX">
-							<ShortName>Menú2.wav</ShortName>
-							<Path>SFX\Menú2_D79FB2B7.wem</Path>
+						<File Id="197975385" Language="SFX">
+							<ShortName>CREDITMUSIC.wav</ShortName>
+							<Path>SFX\CREDITMUSIC_D79FB2B7.wem</Path>
+						</File>
+						<File Id="253981036" Language="SFX">
+							<ShortName>Nivel.wav</ShortName>
+							<Path>SFX\Nivel_D79FB2B7.wem</Path>
 						</File>
 						<File Id="369906034" Language="SFX">
 							<ShortName>Win_SFX.wav</ShortName>
 							<Path>SFX\Win_SFX_D79FB2B7.wem</Path>
 						</File>
+						<File Id="559386916" Language="SFX">
+							<ShortName>Horda.wav</ShortName>
+							<Path>SFX\Horda_D79FB2B7.wem</Path>
+						</File>
+						<File Id="670125093" Language="SFX">
+							<ShortName>Transición Nivel - Horda.wav</ShortName>
+							<Path>SFX\Transición Nivel - Horda_D79FB2B7.wem</Path>
+						</File>
+						<File Id="719023667" Language="SFX">
+							<ShortName>Transición Horda - Nivel.wav</ShortName>
+							<Path>SFX\Transición Horda - Nivel_D79FB2B7.wem</Path>
+						</File>
 						<File Id="823775830" Language="SFX">
 							<ShortName>Game_Over_Sfx.wav</ShortName>
 							<Path>SFX\Game_Over_Sfx_D79FB2B7.wem</Path>
-						</File>
-						<File Id="838363431" Language="SFX">
-							<ShortName>tutorial_music.wav</ShortName>
-							<Path>SFX\tutorial_music_D79FB2B7.wem</Path>
 						</File>
 						<File Id="904614063" Language="SFX">
 							<ShortName>credits_music.wav</ShortName>
@@ -135,12 +185,16 @@
 						<SwitchContainer SwitchValue="{B5519A27-A3CF-4EAC-9C39-EAE20BC07A3E}">
 							<Children>
 								<SwitchContainer SwitchValue="{20151CA6-91F3-4D9A-BDB3-B99D77EEFED0}">
+									<Media>
+										<File Id="670125093"/>
+										<File Id="719023667"/>
+									</Media>
 									<Children>
 										<SwitchContainer SwitchValue="{8CC146C8-178D-47A2-A789-052373811008}">
 											<Children>
 												<SwitchContainer SwitchValue="{87562DFF-695D-42F9-B13A-458905DC3CF4}">
 													<Media>
-														<File Id="154176183"/>
+														<File Id="253981036"/>
 													</Media>
 												</SwitchContainer>
 											</Children>
@@ -159,6 +213,15 @@
 												<SwitchContainer SwitchValue="{A04193BA-DD84-47D8-851C-6C1CE5B55887}">
 													<Media>
 														<File Id="369906034"/>
+													</Media>
+												</SwitchContainer>
+											</Children>
+										</SwitchContainer>
+										<SwitchContainer SwitchValue="{8CC146C8-178D-47A2-A789-052373811008}">
+											<Children>
+												<SwitchContainer SwitchValue="{F92D55A3-9508-4C54-81B0-5ED536F67C38}">
+													<Media>
+														<File Id="559386916"/>
 													</Media>
 												</SwitchContainer>
 											</Children>
@@ -184,7 +247,7 @@
 											<Children>
 												<SwitchContainer SwitchValue="{20151CA6-91F3-4D9A-BDB3-B99D77EEFED0}">
 													<Media>
-														<File Id="307528027"/>
+														<File Id="154176183"/>
 													</Media>
 												</SwitchContainer>
 											</Children>
@@ -193,7 +256,7 @@
 											<Children>
 												<SwitchContainer SwitchValue="{5189BA5D-1262-4348-B4BE-ED39912DFDB4}">
 													<Media>
-														<File Id="838363431"/>
+														<File Id="197975385"/>
 													</Media>
 												</SwitchContainer>
 											</Children>
@@ -210,9 +273,40 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="2074856192" Name="hit_cheese" ObjectPath="\Events\Default Work Unit\Enemy\hit_cheese" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2074856192" Name="hit_cheese" ObjectPath="\Events\Default Work Unit\Enemy\hit_cheese" MaxAttenuation="200.000000" DurationType="OneShot" DurationMin="1.922653" DurationMax="1.922653">
+					<IncludedMemoryFiles>
+						<File Id="742388690" Language="SFX">
+							<ShortName>Cheese bite.wav</ShortName>
+							<Path>SFX\Cheese bite_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2260791472" Name="jugger_attack" ObjectPath="\Events\Default Work Unit\jugger_attack" MaxAttenuation="200.000000" DurationType="OneShot" DurationMin="0.770892" DurationMax="1.272792">
+					<IncludedMemoryFiles>
+						<File Id="200127076" Language="SFX">
+							<ShortName>JuggerHit.wav</ShortName>
+							<Path>SFX\JuggerHit_7AD19DDA.wem</Path>
+						</File>
+						<File Id="502617299" Language="SFX">
+							<ShortName>JuggerHit.wav</ShortName>
+							<Path>SFX\JuggerHit_7327EE9C.wem</Path>
+						</File>
+						<File Id="781140438" Language="SFX">
+							<ShortName>JuggerHit.wav</ShortName>
+							<Path>SFX\JuggerHit_5256639E.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="1003524675" Name="level_lose" ObjectPath="\Events\Default Work Unit\Level\level_lose" DurationType="OneShot" DurationMin="4.541202" DurationMax="4.541202">
 					<IncludedMemoryFiles>
+						<File Id="670125093" Language="SFX">
+							<ShortName>Transición Nivel - Horda.wav</ShortName>
+							<Path>SFX\Transición Nivel - Horda_D79FB2B7.wem</Path>
+						</File>
+						<File Id="719023667" Language="SFX">
+							<ShortName>Transición Horda - Nivel.wav</ShortName>
+							<Path>SFX\Transición Horda - Nivel_D79FB2B7.wem</Path>
+						</File>
 						<File Id="823775830" Language="SFX">
 							<ShortName>Game_Over_Sfx.wav</ShortName>
 							<Path>SFX\Game_Over_Sfx_D79FB2B7.wem</Path>
@@ -225,6 +319,14 @@
 							<ShortName>Begin_Level.wav</ShortName>
 							<Path>SFX\Begin_Level_D79FB2B7.wem</Path>
 						</File>
+						<File Id="670125093" Language="SFX">
+							<ShortName>Transición Nivel - Horda.wav</ShortName>
+							<Path>SFX\Transición Nivel - Horda_D79FB2B7.wem</Path>
+						</File>
+						<File Id="719023667" Language="SFX">
+							<ShortName>Transición Horda - Nivel.wav</ShortName>
+							<Path>SFX\Transición Horda - Nivel_D79FB2B7.wem</Path>
+						</File>
 					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="2908556826" Name="level_win" ObjectPath="\Events\Default Work Unit\Level\level_win" DurationType="OneShot" DurationMin="15.295487" DurationMax="15.295487">
@@ -233,13 +335,43 @@
 							<ShortName>Win_SFX.wav</ShortName>
 							<Path>SFX\Win_SFX_D79FB2B7.wem</Path>
 						</File>
+						<File Id="670125093" Language="SFX">
+							<ShortName>Transición Nivel - Horda.wav</ShortName>
+							<Path>SFX\Transición Nivel - Horda_D79FB2B7.wem</Path>
+						</File>
+						<File Id="719023667" Language="SFX">
+							<ShortName>Transición Horda - Nivel.wav</ShortName>
+							<Path>SFX\Transición Horda - Nivel_D79FB2B7.wem</Path>
+						</File>
 					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="358534189" Name="rat_sounds" ObjectPath="\Events\Default Work Unit\Generics\rat_sounds" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1145326226" Name="select_level" ObjectPath="\Events\Default Work Unit\select_level" MaxAttenuation="200.000000" DurationType="OneShot" DurationMin="5.027766" DurationMax="5.650000">
+					<IncludedMemoryFiles>
+						<File Id="731146514" Language="SFX">
+							<ShortName>SFXMenu-002.wav</ShortName>
+							<Path>SFX\SFXMenu-002_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="46674184" Name="torret_catapult" ObjectPath="\Events\Default Work Unit\Torrets\torret_catapult" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1695855716" Name="torret_crossbow" ObjectPath="\Events\Default Work Unit\Torrets\torret_crossbow" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="3717628084" Name="torret_destruction" ObjectPath="\Events\Default Work Unit\Torrets\torret_destruction" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1568618364" Name="torret_fire" ObjectPath="\Events\Default Work Unit\Torrets\torret_fire" DurationType="OneShot" DurationMin="2.979795" DurationMax="2.979795">
+				<Event Id="3717628084" Name="torret_destruction" ObjectPath="\Events\Default Work Unit\Torrets\torret_destruction" MaxAttenuation="200.000000" DurationType="OneShot" DurationMin="1.350050" DurationMax="1.917586">
+					<IncludedMemoryFiles>
+						<File Id="382614952" Language="SFX">
+							<ShortName>build_destruction.wav</ShortName>
+							<Path>SFX\build_destruction_67BC280E.wem</Path>
+						</File>
+						<File Id="538129665" Language="SFX">
+							<ShortName>build_destruction.wav</ShortName>
+							<Path>SFX\build_destruction_2D21B715.wem</Path>
+						</File>
+						<File Id="768346997" Language="SFX">
+							<ShortName>build_destruction.wav</ShortName>
+							<Path>SFX\build_destruction_08652374.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1568618364" Name="torret_fire" ObjectPath="\Events\Default Work Unit\Torrets\torret_fire" MaxAttenuation="200.000000" DurationType="OneShot" DurationMin="2.979795" DurationMax="2.979795">
 					<IncludedMemoryFiles>
 						<File Id="764667585" Language="SFX">
 							<ShortName>torret_fire.wav</ShortName>
@@ -247,7 +379,22 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3143536294" Name="torret_stuff" ObjectPath="\Events\Default Work Unit\Torrets\torret_stuff" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2241551251" Name="torret_slingshot" ObjectPath="\Events\Default Work Unit\Torrets\torret_slingshot" MaxAttenuation="200.000000" DurationType="OneShot" DurationMin="11.390000" DurationMax="11.390000">
+					<IncludedMemoryFiles>
+						<File Id="870205628" Language="SFX">
+							<ShortName>resortera_attack.wav</ShortName>
+							<Path>SFX\resortera_attack_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3143536294" Name="torret_stuff" ObjectPath="\Events\Default Work Unit\Torrets\torret_stuff" MaxAttenuation="200.000000" DurationType="OneShot" DurationMin="1.734486" DurationMax="2.766077">
+					<IncludedMemoryFiles>
+						<File Id="406192755" Language="SFX">
+							<ShortName>BOLA FUEGO.wav</ShortName>
+							<Path>SFX\BOLA FUEGO_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="115798230" Language="SFX">
@@ -258,9 +405,21 @@
 					<ShortName>Menú.wav</ShortName>
 					<Path>SFX\Menú_D79FB2B7.wem</Path>
 				</File>
-				<File Id="307528027" Language="SFX">
-					<ShortName>Menú2.wav</ShortName>
-					<Path>SFX\Menú2_D79FB2B7.wem</Path>
+				<File Id="197975385" Language="SFX">
+					<ShortName>CREDITMUSIC.wav</ShortName>
+					<Path>SFX\CREDITMUSIC_D79FB2B7.wem</Path>
+				</File>
+				<File Id="200127076" Language="SFX">
+					<ShortName>JuggerHit.wav</ShortName>
+					<Path>SFX\JuggerHit_7AD19DDA.wem</Path>
+				</File>
+				<File Id="253981036" Language="SFX">
+					<ShortName>Nivel.wav</ShortName>
+					<Path>SFX\Nivel_D79FB2B7.wem</Path>
+				</File>
+				<File Id="266061643" Language="SFX">
+					<ShortName>Explotion.wav</ShortName>
+					<Path>SFX\Explotion_51A160CB.wem</Path>
 				</File>
 				<File Id="350999598" Language="SFX">
 					<ShortName>enemyHit-002.wav</ShortName>
@@ -270,17 +429,89 @@
 					<ShortName>Win_SFX.wav</ShortName>
 					<Path>SFX\Win_SFX_D79FB2B7.wem</Path>
 				</File>
+				<File Id="382614952" Language="SFX">
+					<ShortName>build_destruction.wav</ShortName>
+					<Path>SFX\build_destruction_67BC280E.wem</Path>
+				</File>
+				<File Id="406192755" Language="SFX">
+					<ShortName>BOLA FUEGO.wav</ShortName>
+					<Path>SFX\BOLA FUEGO_10C4C929.wem</Path>
+				</File>
+				<File Id="420974254" Language="SFX">
+					<ShortName>Dead rat.wav</ShortName>
+					<Path>SFX\Dead rat_10C4C929.wem</Path>
+				</File>
+				<File Id="446493913" Language="SFX">
+					<ShortName>Explotion.wav</ShortName>
+					<Path>SFX\Explotion_A43A0B69.wem</Path>
+				</File>
+				<File Id="465017974" Language="SFX">
+					<ShortName>CAJA _2.wav</ShortName>
+					<Path>SFX\CAJA _2_3353CEAD.wem</Path>
+				</File>
+				<File Id="474728955" Language="SFX">
+					<ShortName>SFXMenu-001.wav</ShortName>
+					<Path>SFX\SFXMenu-001_08C3C803.wem</Path>
+				</File>
+				<File Id="502617299" Language="SFX">
+					<ShortName>JuggerHit.wav</ShortName>
+					<Path>SFX\JuggerHit_7327EE9C.wem</Path>
+				</File>
 				<File Id="507979991" Language="SFX">
 					<ShortName>enemyHit-001.wav</ShortName>
 					<Path>SFX\enemyHit-001_10C4C929.wem</Path>
+				</File>
+				<File Id="538129665" Language="SFX">
+					<ShortName>build_destruction.wav</ShortName>
+					<Path>SFX\build_destruction_2D21B715.wem</Path>
+				</File>
+				<File Id="551410975" Language="SFX">
+					<ShortName>SFXMenu-001.wav</ShortName>
+					<Path>SFX\SFXMenu-001_4DC17E99.wem</Path>
+				</File>
+				<File Id="559386916" Language="SFX">
+					<ShortName>Horda.wav</ShortName>
+					<Path>SFX\Horda_D79FB2B7.wem</Path>
 				</File>
 				<File Id="653121419" Language="SFX">
 					<ShortName>torret_construct.wav</ShortName>
 					<Path>SFX\torret_construct_B7F9EFD8.wem</Path>
 				</File>
+				<File Id="670125093" Language="SFX">
+					<ShortName>Transición Nivel - Horda.wav</ShortName>
+					<Path>SFX\Transición Nivel - Horda_D79FB2B7.wem</Path>
+				</File>
+				<File Id="686111685" Language="SFX">
+					<ShortName>SFXMenu-001.wav</ShortName>
+					<Path>SFX\SFXMenu-001_6EA1226F.wem</Path>
+				</File>
+				<File Id="719023667" Language="SFX">
+					<ShortName>Transición Horda - Nivel.wav</ShortName>
+					<Path>SFX\Transición Horda - Nivel_D79FB2B7.wem</Path>
+				</File>
+				<File Id="731146514" Language="SFX">
+					<ShortName>SFXMenu-002.wav</ShortName>
+					<Path>SFX\SFXMenu-002_10C4C929.wem</Path>
+				</File>
+				<File Id="742388690" Language="SFX">
+					<ShortName>Cheese bite.wav</ShortName>
+					<Path>SFX\Cheese bite_10C4C929.wem</Path>
+				</File>
 				<File Id="764667585" Language="SFX">
 					<ShortName>torret_fire.wav</ShortName>
 					<Path>SFX\torret_fire_40529CA0.wem</Path>
+				</File>
+				<File Id="768346997" Language="SFX">
+					<ShortName>build_destruction.wav</ShortName>
+					<Path>SFX\build_destruction_08652374.wem</Path>
+				</File>
+				<File Id="781140438" Language="SFX">
+					<ShortName>JuggerHit.wav</ShortName>
+					<Path>SFX\JuggerHit_5256639E.wem</Path>
+				</File>
+				<File Id="802492517" Language="SFX">
+					<ShortName>Explotion.wav</ShortName>
+					<Path>SFX\Explotion_8A2A7036.wem</Path>
 				</File>
 				<File Id="823775830" Language="SFX">
 					<ShortName>Game_Over_Sfx.wav</ShortName>
@@ -290,9 +521,9 @@
 					<ShortName>Menu_Sfx.wav</ShortName>
 					<Path>SFX\Menu_Sfx_10C4C929.wem</Path>
 				</File>
-				<File Id="838363431" Language="SFX">
-					<ShortName>tutorial_music.wav</ShortName>
-					<Path>SFX\tutorial_music_D79FB2B7.wem</Path>
+				<File Id="870205628" Language="SFX">
+					<ShortName>resortera_attack.wav</ShortName>
+					<Path>SFX\resortera_attack_10C4C929.wem</Path>
 				</File>
 				<File Id="904614063" Language="SFX">
 					<ShortName>credits_music.wav</ShortName>
@@ -309,6 +540,7 @@
 						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\Level\level_state\None"/>
 						<State Id="1353407533" Name="Level_state_alive" ObjectPath="\States\Default Work Unit\Level\level_state\Level_state_alive"/>
 						<State Id="1221014415" Name="Win_state" ObjectPath="\States\Default Work Unit\Level\level_state\Win_state"/>
+						<State Id="3659997959" Name="horde_state" ObjectPath="\States\Default Work Unit\Level\level_state\horde_state"/>
 					</States>
 				</StateGroup>
 				<StateGroup Id="4071417932" Name="player_state" ObjectPath="\States\Default Work Unit\Level\player_state">

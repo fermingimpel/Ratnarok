@@ -97,6 +97,7 @@ public class GameplayManager : MonoBehaviour {
         if (UIStateUpdate != null)
             UIStateUpdate(Stage.Attack);
 
+        //AkSoundEngine.PostEvent("level_horde_music", this.gameObject);
 
         while (!em.GetAllHordesCompleted()) {
             yield return new WaitForSeconds(0.5f);

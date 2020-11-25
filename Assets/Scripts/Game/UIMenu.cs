@@ -40,6 +40,7 @@ public class UIMenu : MonoBehaviour {
     }
     public void ClickedOptions() {
         configDisplayed = !configDisplayed;
+        AkSoundEngine.PostEvent("button_generic", this.gameObject);
         if(configDisplayed) {
             UIConfig.SetActive(true);
             return;

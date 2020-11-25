@@ -106,7 +106,7 @@ public class BuildingCreator : MonoBehaviour {
                 if (Input.GetMouseButtonDown(0)) {
                     if (EventSystem.current.IsPointerOverGameObject())
                         return;
-                    //AkSoundEngine.PostEvent("click_torret_menu", this.gameObject);
+                    AkSoundEngine.PostEvent("click_torret_menu", this.gameObject);
 
                     canSelectTile = false;
                     tileSelected.SetActive(false);

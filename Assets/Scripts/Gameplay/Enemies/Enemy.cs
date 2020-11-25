@@ -100,7 +100,6 @@ public class Enemy : MonoBehaviour {
     protected void OnDie() {
         if (Dead != null)
             Dead(this);
-
         Destroy(this.gameObject);
     }
     public bool GetTownAttacked() {

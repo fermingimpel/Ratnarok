@@ -16,6 +16,12 @@
 						<Switch Name="level_general" ID="{B5519A27-A3CF-4EAC-9C39-EAE20BC07A3E}"/>
 					</ChildrenList>
 				</SwitchGroup>
+				<SwitchGroup Name="Level_music" ID="{CE7C0020-E100-4DD5-B706-3AC9687AC313}">
+					<ChildrenList>
+						<Switch Name="Horde" ID="{DBDA6F7B-D9D9-4820-AC73-1D9212E85961}"/>
+						<Switch Name="Normal" ID="{059E7B13-0579-48EC-9FD4-11D4F0C4B2D4}"/>
+					</ChildrenList>
+				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</Switches>

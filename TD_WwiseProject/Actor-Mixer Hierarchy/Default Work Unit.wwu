@@ -5,6 +5,7 @@
 			<ChildrenList>
 				<ActorMixer Name="GeneralSFX" ID="{B407530D-72BF-487E-8546-EA754E0B2236}" ShortID="253065335">
 					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
 						<Property Name="MakeUpGain" Type="Real64">
 							<RTPCList>
 								<RTPC Name="" ID="{01D90B11-155E-474E-A322-CC163FAB6727}" ShortID="779407769">
@@ -33,8 +34,16 @@
 								</RTPC>
 							</RTPCList>
 						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>12</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="distancia" ID="{15393248-2BE9-4835-A7F7-5C59D79D6EFF}" WorkUnitID="{460E327D-0351-4C05-A164-0AA198343F91}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
 						</Reference>
@@ -47,6 +56,9 @@
 						<WorkUnit Name="FactoryTorrets" ID="{7961E230-2249-4E91-A439-9F2806FA19BB}" PersistMode="Reference"/>
 						<WorkUnit Name="GeneralMenu" ID="{1B1CCF24-71AA-44D0-8AB2-C270C805CA78}" PersistMode="Reference"/>
 					</ChildrenList>
+					<PositioningInfo>
+						<Position Name="" ID="{FCF9FBA4-37FF-4C71-B141-8DFD26505AEA}"/>
+					</PositioningInfo>
 				</ActorMixer>
 			</ChildrenList>
 		</WorkUnit>

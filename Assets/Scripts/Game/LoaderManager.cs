@@ -19,7 +19,7 @@ public class LoaderManager : MonoBehaviour {
         if (!changingLevel) {
             changingLevel = true;
             loadScreen.gameObject.SetActive(true);
-
+            yield return new WaitForSeconds(1.0f);
             SceneManager.LoadScene(stl);
 
             while (!stl.Equals(SceneManager.GetActiveScene().name)) {

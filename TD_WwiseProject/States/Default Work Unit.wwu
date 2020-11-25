@@ -36,6 +36,7 @@
 								<State Name="None" ID="{47AF38EC-78B8-4C12-96D0-65276622D29E}"/>
 								<State Name="Level_state_alive" ID="{F1750007-D457-4C33-A2DA-80AD2CE9A8B3}"/>
 								<State Name="Win_state" ID="{A04193BA-DD84-47D8-851C-6C1CE5B55887}"/>
+								<State Name="horde_state" ID="{F92D55A3-9508-4C54-81B0-5ED536F67C38}"/>
 							</ChildrenList>
 						</StateGroup>
 						<StateGroup Name="player_state" ID="{C2AB4CB1-1A35-4F69-9FAD-40CB09CD257C}">

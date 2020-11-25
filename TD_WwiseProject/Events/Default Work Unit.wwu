@@ -27,15 +27,24 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="click_torret_menu" ID="{C9AD34E2-207C-4AFC-BF82-5AA6F7D5CEE4}"/>
-						<Event Name="coin_get" ID="{8C3AB89E-7CCB-4653-A658-BE5E85D7A6F9}"/>
+						<Event Name="click_torret_menu" ID="{C9AD34E2-207C-4AFC-BF82-5AA6F7D5CEE4}">
+							<ChildrenList>
+								<Action Name="" ID="{3FD8D8CA-FBE5-41DA-B745-CA75676C4B3B}" ShortID="634286241">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="torrets_menu" ID="{8152F3D5-8AD8-415B-916F-36C99B489411}" WorkUnitID="{7961E230-2249-4E91-A439-9F2806FA19BB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 						<Event Name="button_start" ID="{C1F5C75B-D940-4A58-8A56-9E90F91590AD}"/>
 						<Event Name="button_generic" ID="{86A7F1F8-9477-43D4-8783-D54CFFEFCCD1}">
 							<ChildrenList>
 								<Action Name="" ID="{3C6F621B-A8C0-4E4B-8702-57239AF4316F}" ShortID="460335589">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Menu_Sfx" ID="{F36DBAFA-FE97-436C-BE08-A182B1DDA8CC}" WorkUnitID="{1B1CCF24-71AA-44D0-8AB2-C270C805CA78}"/>
+											<ObjectRef Name="menu_select" ID="{F36DBAFA-FE97-436C-BE08-A182B1DDA8CC}" WorkUnitID="{1B1CCF24-71AA-44D0-8AB2-C270C805CA78}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -56,8 +65,28 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="enemy_death" ID="{1A44264D-091F-414B-942F-2717D812FF46}"/>
-						<Event Name="hit_cheese" ID="{FDF05DAC-B654-44D8-B45E-9E90AF76DBB4}"/>
+						<Event Name="enemy_death" ID="{1A44264D-091F-414B-942F-2717D812FF46}">
+							<ChildrenList>
+								<Action Name="" ID="{B66EA081-2831-42D0-ADF6-72B3AB955CB3}" ShortID="314945994">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="dead_rat" ID="{019B14E7-7A81-4166-9931-19153DE82652}" WorkUnitID="{650E708F-B7D0-4C8C-9158-A18D50466077}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="hit_cheese" ID="{FDF05DAC-B654-44D8-B45E-9E90AF76DBB4}">
+							<ChildrenList>
+								<Action Name="" ID="{6BC75691-E942-4F25-BBF8-A6BD57CE7089}" ShortID="908134282">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="cheese bite" ID="{A3F46516-E2D7-4261-B554-05858013529F}" WorkUnitID="{1B1CCF24-71AA-44D0-8AB2-C270C805CA78}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Generics" ID="{78AED676-565B-4C58-BC3F-CF7F0F23B12C}" ShortID="571636939">
@@ -76,20 +105,11 @@
 						</Event>
 						<Event Name="game_close" ID="{15513578-36E1-41AD-8328-884C18526010}">
 							<ChildrenList>
-								<Action Name="" ID="{5D0AA2E2-1FE1-4DE2-9EB2-8D27E9AEC4A1}" ShortID="920766293">
+								<Action Name="" ID="{58D0959D-1316-4820-8EA3-FE04B7230ECD}" ShortID="827936752">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="3"/>
 									</PropertyList>
 									<ReferenceList/>
-									<ChildrenList>
-										<EventActionException Name="" ID="{C95BA3A3-ED7A-405E-97AD-A6B24DE045F2}">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="General" ID="{83C90651-C30C-410B-B2A6-8E92A9F3119D}" WorkUnitID="{4DFDD36A-F97F-40D4-ABB9-1BAF00842671}"/>
-												</Reference>
-											</ReferenceList>
-										</EventActionException>
-									</ChildrenList>
 								</Action>
 							</ChildrenList>
 						</Event>
@@ -99,7 +119,17 @@
 				<Folder Name="Torrets" ID="{ACBDDE06-C25F-4CE9-A968-1AAB0AEAA94D}" ShortID="236539116">
 					<ChildrenList>
 						<Event Name="torret_catapult" ID="{A5D2CEC0-80EE-468A-B6DA-7A4825415072}"/>
-						<Event Name="torret_destruction" ID="{7406909E-78E1-4C12-A013-57FE30A804FB}"/>
+						<Event Name="torret_destruction" ID="{7406909E-78E1-4C12-A013-57FE30A804FB}">
+							<ChildrenList>
+								<Action Name="" ID="{B71140D7-FB02-42D1-A20B-DC2E756E259C}" ShortID="896834789">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="torret_destruction_container" ID="{2C718E1E-832B-42C9-A490-D415D20272E7}" WorkUnitID="{7961E230-2249-4E91-A439-9F2806FA19BB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 						<Event Name="torret_fire" ID="{FE409E40-D8C3-40ED-8701-53C19F7ED76D}">
 							<ChildrenList>
 								<Action Name="" ID="{484535F7-1645-48E8-9D11-2E03E108C43A}" ShortID="306528206">
@@ -111,8 +141,28 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="torret_crossbow" ID="{6748E9A9-4179-46C8-AAF8-D6097FEC939E}"/>
-						<Event Name="torret_stuff" ID="{3EB10D74-34FB-4193-9B30-6164BAFA6B72}"/>
+						<Event Name="torret_slingshot" ID="{6748E9A9-4179-46C8-AAF8-D6097FEC939E}">
+							<ChildrenList>
+								<Action Name="" ID="{F49C6F02-B4DE-4DDE-9D8E-9A01E752A9BA}" ShortID="937669506">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="torret_slingshot" ID="{49B1F3AA-2EB4-461B-ABE6-752DCA9EFF9B}" WorkUnitID="{7961E230-2249-4E91-A439-9F2806FA19BB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="torret_stuff" ID="{3EB10D74-34FB-4193-9B30-6164BAFA6B72}">
+							<ChildrenList>
+								<Action Name="" ID="{048C575C-D09B-477E-B6F6-8DCE71C163B0}" ShortID="64681200">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="torret_stuff" ID="{5B38F7FA-4674-4D1B-B2AA-0D0790A9DB8D}" WorkUnitID="{7961E230-2249-4E91-A439-9F2806FA19BB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Level" ID="{2481B8B2-F6DE-4848-A887-C65F3B5634B1}" ShortID="127709766">
@@ -152,6 +202,61 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Event Name="jugger_attack" ID="{32D7A203-61B6-4674-A27F-128EB379CFD0}">
+					<ChildrenList>
+						<Action Name="" ID="{036757F6-F9F3-47FF-AF75-616E4B4CB341}" ShortID="723786225">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="jugger_hit" ID="{AC0DE5E6-7D07-4461-86A4-86ED2894CEA7}" WorkUnitID="{650E708F-B7D0-4C8C-9158-A18D50466077}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="explotion_attack" ID="{9BBDC911-E611-488C-9F38-02526802165C}">
+					<ChildrenList>
+						<Action Name="" ID="{8F2206BA-0BAC-4578-A745-686EBAB4AF68}" ShortID="181047806">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="explotion_hit" ID="{88BEC54F-7133-48A1-B33C-E8FA1C3845E8}" WorkUnitID="{650E708F-B7D0-4C8C-9158-A18D50466077}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="select_level" ID="{DAB381C3-624C-43B5-8F2E-A1D3A9DAA82F}">
+					<ChildrenList>
+						<Action Name="" ID="{8AABCD6E-3B62-4A54-9EF1-59DB1C448E73}" ShortID="477869700">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="select_level_sound" ID="{5FABA48B-E55D-426F-B6EE-BD1BB3B91262}" WorkUnitID="{1B1CCF24-71AA-44D0-8AB2-C270C805CA78}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="bardo_attack" ID="{2ED2F4EE-DF95-44FB-8242-E44E3A987BC6}">
+					<ChildrenList>
+						<Action Name="" ID="{C7A4EA4D-62CC-4C08-9878-7C549B2B62F6}" ShortID="619811299">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="bardo_attack" ID="{250DA3D8-BBDA-498A-A2F8-F358D8F722B4}" WorkUnitID="{650E708F-B7D0-4C8C-9158-A18D50466077}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="level_music" ID="{08D8C993-B9EA-4CE0-BD8B-88025940E16C}">
+					<ChildrenList>
+						<Action Name="" ID="{AFE3AE4B-CC96-43F0-A01B-F38E7046AA90}" ShortID="22054193">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="level_music" ID="{91C35FD2-BAB7-4B1C-B99E-56700AC0FA7A}" WorkUnitID="{4DFDD36A-F97F-40D4-ABB9-1BAF00842671}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

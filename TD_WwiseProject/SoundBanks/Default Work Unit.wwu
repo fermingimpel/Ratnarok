@@ -14,18 +14,20 @@
 						<ObjectRef Name="torret_stuff" ID="{3EB10D74-34FB-4193-9B30-6164BAFA6B72}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="game_close" ID="{15513578-36E1-41AD-8328-884C18526010}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="level_lose" ID="{68D3806A-D4B8-433C-B379-9338EF33A412}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Menu_Sfx" ID="{F36DBAFA-FE97-436C-BE08-A182B1DDA8CC}" WorkUnitID="{1B1CCF24-71AA-44D0-8AB2-C270C805CA78}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="menu_select" ID="{F36DBAFA-FE97-436C-BE08-A182B1DDA8CC}" WorkUnitID="{1B1CCF24-71AA-44D0-8AB2-C270C805CA78}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="select_level" ID="{DAB381C3-624C-43B5-8F2E-A1D3A9DAA82F}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="button_generic" ID="{86A7F1F8-9477-43D4-8783-D54CFFEFCCD1}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="GeneralMenu" ID="{1B1CCF24-71AA-44D0-8AB2-C270C805CA78}" WorkUnitID="{1B1CCF24-71AA-44D0-8AB2-C270C805CA78}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="hit_cheese" ID="{FDF05DAC-B654-44D8-B45E-9E90AF76DBB4}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="enemy_hit" ID="{69EA3F0B-8143-4564-9404-1B659D0BEC97}" WorkUnitID="{650E708F-B7D0-4C8C-9158-A18D50466077}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="torret_fire" ID="{4113EFC0-8A61-45B0-AA6B-689ED3F8B081}" WorkUnitID="{7961E230-2249-4E91-A439-9F2806FA19BB}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="coin_get" ID="{8C3AB89E-7CCB-4653-A658-BE5E85D7A6F9}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="jugger_attack" ID="{32D7A203-61B6-4674-A27F-128EB379CFD0}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="torret_catapult" ID="{A5D2CEC0-80EE-468A-B6DA-7A4825415072}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="rat_sounds" ID="{F3184B91-D463-468C-AD9E-FB2C76AFE7F2}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="torret_crossbow" ID="{6748E9A9-4179-46C8-AAF8-D6097FEC939E}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="torret_slingshot" ID="{6748E9A9-4179-46C8-AAF8-D6097FEC939E}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="click_credits" ID="{36DFEBA2-1809-471C-B4DD-0F06D5911F74}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="level_prep" ID="{0704A1D1-0418-47E6-B8A4-380EC0BDDABF}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="explotion_attack" ID="{9BBDC911-E611-488C-9F38-02526802165C}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="button_start" ID="{C1F5C75B-D940-4A58-8A56-9E90F91590AD}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="click_torret_construction" ID="{80DF0336-AC2F-4AAB-98D0-F29740F51025}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="click_torret_menu" ID="{C9AD34E2-207C-4AFC-BF82-5AA6F7D5CEE4}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
