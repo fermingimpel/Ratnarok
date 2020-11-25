@@ -8,6 +8,7 @@
 						<Switch Name="menu" ID="{20151CA6-91F3-4D9A-BDB3-B99D77EEFED0}"/>
 						<Switch Name="credits" ID="{FB2651B9-DD32-474E-BE15-E6AB91AD2724}"/>
 						<Switch Name="tutorial" ID="{5189BA5D-1262-4348-B4BE-ED39912DFDB4}"/>
+						<Switch Name="map" ID="{04A04FFA-5FE0-4A61-A54B-9E2F3BF3F7CB}"/>
 					</ChildrenList>
 				</SwitchGroup>
 				<SwitchGroup Name="General_music" ID="{48E60DD9-89EE-48BE-A220-69896BCD4DE6}">

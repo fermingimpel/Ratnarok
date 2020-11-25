@@ -18,10 +18,10 @@ public class LoaderManager : MonoBehaviour {
     IEnumerator Load(string stl) {
         if (!changingLevel) {
             changingLevel = true;
+            AkSoundEngine.StopAll();
             loadScreen.gameObject.SetActive(true);
             yield return new WaitForSeconds(1.0f);
             SceneManager.LoadScene(stl);
-
             while (!stl.Equals(SceneManager.GetActiveScene().name)) {
                 yield return null;
             }

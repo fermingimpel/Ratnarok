@@ -449,6 +449,106 @@
 						<ActiveSource Name="Dead rat" ID="{F56AC075-3C6E-429D-8D19-80CBF0E5E906}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<RandomSequenceContainer Name="catapulta_hit" ID="{151EC320-F2C3-428C-BAB2-3E4A917884FC}" ShortID="1018278035">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{A449A0D3-1508-4E22-8F19-4A8BB06CA763}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="303"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="catapulta_attack_01" ID="{C47D582D-D777-4A03-A397-E97DDD23209B}" ShortID="24354014">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="distancia" ID="{15393248-2BE9-4835-A7F7-5C59D79D6EFF}" WorkUnitID="{460E327D-0351-4C05-A164-0AA198343F91}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="catapulta_attack" ID="{E5E00188-5646-4423-9325-4394B58385FC}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="1.63669135802468"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="26.3358518518519"/>
+										<Property Name="TrimEnd" Type="Real64" Value="28.3445185185186"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>catapulta_attack.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1034499391"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<PositioningInfo>
+								<Position Name="" ID="{0693137D-CA85-4EE5-9B45-441F252C6E52}"/>
+							</PositioningInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="catapulta_attack" ID="{E5E00188-5646-4423-9325-4394B58385FC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="catapulta_attack_02" ID="{2B55A60C-40E2-4282-83E4-4F03303DFF6F}" ShortID="916335617">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="distancia" ID="{15393248-2BE9-4835-A7F7-5C59D79D6EFF}" WorkUnitID="{460E327D-0351-4C05-A164-0AA198343F91}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9CB756A3-8C97-4326-8F27-A2DE43E77EF0}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FFE2C114-B073-4E4F-B871-27E1C619E01E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="catapulta_attack" ID="{FECA7B28-6083-494E-8AE5-A494ED886904}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="1.63669135802466"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="7.7370864197531"/>
+										<Property Name="TrimEnd" Type="Real64" Value="9.37377777777776"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>catapulta_attack.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="664664371"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<PositioningInfo>
+								<Position Name="" ID="{C4468241-DDCB-4BCB-96B0-8B09ABBFC66E}"/>
+							</PositioningInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="catapulta_attack" ID="{FECA7B28-6083-494E-8AE5-A494ED886904}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

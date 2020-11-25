@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="12" SoundbankVersion="135">
 	<RootPaths>
-		<ProjectRoot>D:\Documentos\RatnarokRepository\Ratnarok-master\TD_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>D:\Documentos\RatnarokRepository\Ratnarok-master\TD_WwiseProject\.cache\Mac\</SourceFilesRoot>
-		<SoundBanksRoot>D:\Documentos\RatnarokRepository\Ratnarok-master\TD_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\Fer\Desktop\TD\TD_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Fer\Desktop\TD\TD_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Fer\Desktop\TD\TD_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\Documentos\RatnarokRepository\Ratnarok-master\TD_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\Fer\Desktop\TD\TD_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -16,7 +16,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3297747470" Language="SFX" Hash="572207618">
+		<SoundBank Id="3297747470" Language="SFX" Hash="683714342">
 			<ObjectPath>\SoundBanks\Default Work Unit\GeneralSoundBank</ObjectPath>
 			<ShortName>GeneralSoundBank</ShortName>
 			<Path>GeneralSoundBank.bnk</Path>
@@ -182,54 +182,6 @@
 						</File>
 					</IncludedMemoryFiles>
 					<SwitchContainers>
-						<SwitchContainer SwitchValue="{B5519A27-A3CF-4EAC-9C39-EAE20BC07A3E}">
-							<Children>
-								<SwitchContainer SwitchValue="{20151CA6-91F3-4D9A-BDB3-B99D77EEFED0}">
-									<Media>
-										<File Id="670125093"/>
-										<File Id="719023667"/>
-									</Media>
-									<Children>
-										<SwitchContainer SwitchValue="{8CC146C8-178D-47A2-A789-052373811008}">
-											<Children>
-												<SwitchContainer SwitchValue="{87562DFF-695D-42F9-B13A-458905DC3CF4}">
-													<Media>
-														<File Id="253981036"/>
-													</Media>
-												</SwitchContainer>
-											</Children>
-										</SwitchContainer>
-										<SwitchContainer SwitchValue="{3D461FE8-020F-4440-9B58-470C417099FA}">
-											<Children>
-												<SwitchContainer SwitchValue="{87562DFF-695D-42F9-B13A-458905DC3CF4}">
-													<Media>
-														<File Id="823775830"/>
-													</Media>
-												</SwitchContainer>
-											</Children>
-										</SwitchContainer>
-										<SwitchContainer SwitchValue="{8CC146C8-178D-47A2-A789-052373811008}">
-											<Children>
-												<SwitchContainer SwitchValue="{A04193BA-DD84-47D8-851C-6C1CE5B55887}">
-													<Media>
-														<File Id="369906034"/>
-													</Media>
-												</SwitchContainer>
-											</Children>
-										</SwitchContainer>
-										<SwitchContainer SwitchValue="{8CC146C8-178D-47A2-A789-052373811008}">
-											<Children>
-												<SwitchContainer SwitchValue="{F92D55A3-9508-4C54-81B0-5ED536F67C38}">
-													<Media>
-														<File Id="559386916"/>
-													</Media>
-												</SwitchContainer>
-											</Children>
-										</SwitchContainer>
-									</Children>
-								</SwitchContainer>
-							</Children>
-						</SwitchContainer>
 						<SwitchContainer SwitchValue="{BD543E5E-D711-4A71-9FA7-40E31F8A10FB}">
 							<Children>
 								<SwitchContainer SwitchValue="{20151CA6-91F3-4D9A-BDB3-B99D77EEFED0}">
@@ -269,6 +221,57 @@
 							<Children/>
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{BD543E5E-D711-4A71-9FA7-40E31F8A10FB}">
+							<Children/>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{B5519A27-A3CF-4EAC-9C39-EAE20BC07A3E}">
+							<Children>
+								<SwitchContainer SwitchValue="{20151CA6-91F3-4D9A-BDB3-B99D77EEFED0}">
+									<Media>
+										<File Id="670125093"/>
+										<File Id="719023667"/>
+									</Media>
+									<Children>
+										<SwitchContainer SwitchValue="{3D461FE8-020F-4440-9B58-470C417099FA}">
+											<Children>
+												<SwitchContainer SwitchValue="{87562DFF-695D-42F9-B13A-458905DC3CF4}">
+													<Media>
+														<File Id="823775830"/>
+													</Media>
+												</SwitchContainer>
+											</Children>
+										</SwitchContainer>
+										<SwitchContainer SwitchValue="{8CC146C8-178D-47A2-A789-052373811008}">
+											<Children>
+												<SwitchContainer SwitchValue="{A04193BA-DD84-47D8-851C-6C1CE5B55887}">
+													<Media>
+														<File Id="369906034"/>
+													</Media>
+												</SwitchContainer>
+											</Children>
+										</SwitchContainer>
+										<SwitchContainer SwitchValue="{8CC146C8-178D-47A2-A789-052373811008}">
+											<Children>
+												<SwitchContainer SwitchValue="{F92D55A3-9508-4C54-81B0-5ED536F67C38}">
+													<Media>
+														<File Id="559386916"/>
+													</Media>
+												</SwitchContainer>
+											</Children>
+										</SwitchContainer>
+										<SwitchContainer SwitchValue="{8CC146C8-178D-47A2-A789-052373811008}">
+											<Children>
+												<SwitchContainer SwitchValue="{F1750007-D457-4C33-A2DA-80AD2CE9A8B3}">
+													<Media>
+														<File Id="253981036"/>
+													</Media>
+												</SwitchContainer>
+											</Children>
+										</SwitchContainer>
+									</Children>
+								</SwitchContainer>
+							</Children>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{B5519A27-A3CF-4EAC-9C39-EAE20BC07A3E}">
 							<Children/>
 						</SwitchContainer>
 					</SwitchContainers>
@@ -354,7 +357,18 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="46674184" Name="torret_catapult" ObjectPath="\Events\Default Work Unit\Torrets\torret_catapult" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="46674184" Name="torret_catapult" ObjectPath="\Events\Default Work Unit\Torrets\torret_catapult" MaxAttenuation="200.000000" DurationType="OneShot" DurationMin="1.373905" DurationMax="2.008667">
+					<IncludedMemoryFiles>
+						<File Id="664664371" Language="SFX">
+							<ShortName>catapulta_attack.wav</ShortName>
+							<Path>SFX\catapulta_attack_3D1566A3.wem</Path>
+						</File>
+						<File Id="1034499391" Language="SFX">
+							<ShortName>catapulta_attack.wav</ShortName>
+							<Path>SFX\catapulta_attack_C7AC1083.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="3717628084" Name="torret_destruction" ObjectPath="\Events\Default Work Unit\Torrets\torret_destruction" MaxAttenuation="200.000000" DurationType="OneShot" DurationMin="1.350050" DurationMax="1.917586">
 					<IncludedMemoryFiles>
 						<File Id="382614952" Language="SFX">
@@ -477,6 +491,10 @@
 					<ShortName>torret_construct.wav</ShortName>
 					<Path>SFX\torret_construct_B7F9EFD8.wem</Path>
 				</File>
+				<File Id="664664371" Language="SFX">
+					<ShortName>catapulta_attack.wav</ShortName>
+					<Path>SFX\catapulta_attack_3D1566A3.wem</Path>
+				</File>
 				<File Id="670125093" Language="SFX">
 					<ShortName>Transición Nivel - Horda.wav</ShortName>
 					<Path>SFX\Transición Nivel - Horda_D79FB2B7.wem</Path>
@@ -529,6 +547,10 @@
 					<ShortName>credits_music.wav</ShortName>
 					<Path>SFX\credits_music_D79FB2B7.wem</Path>
 				</File>
+				<File Id="1034499391" Language="SFX">
+					<ShortName>catapulta_attack.wav</ShortName>
+					<Path>SFX\catapulta_attack_C7AC1083.wem</Path>
+				</File>
 			</IncludedMemoryFiles>
 			<GameParameters>
 				<GameParameter Id="1109521862" Name="music_option" ObjectPath="\Game Parameters\Default Work Unit\Options\music_option"/>
@@ -573,6 +595,7 @@
 						<Switch Id="2607556080" Name="menu" ObjectPath="\Switches\Default Work Unit\Menu\menu"/>
 						<Switch Id="2201105581" Name="credits" ObjectPath="\Switches\Default Work Unit\Menu\credits"/>
 						<Switch Id="3762955427" Name="tutorial" ObjectPath="\Switches\Default Work Unit\Menu\tutorial"/>
+						<Switch Id="1048449605" Name="map" ObjectPath="\Switches\Default Work Unit\Menu\map"/>
 					</Switches>
 				</SwitchGroup>
 			</SwitchGroups>

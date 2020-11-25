@@ -27,6 +27,7 @@
 						<ObjectRef Name="torret_slingshot" ID="{6748E9A9-4179-46C8-AAF8-D6097FEC939E}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="click_credits" ID="{36DFEBA2-1809-471C-B4DD-0F06D5911F74}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="level_prep" ID="{0704A1D1-0418-47E6-B8A4-380EC0BDDABF}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="GeneralSFX" ID="{B407530D-72BF-487E-8546-EA754E0B2236}" WorkUnitID="{C8C5706F-C75F-4F9C-B645-B4A5FD1DC957}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="explotion_attack" ID="{9BBDC911-E611-488C-9F38-02526802165C}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="button_start" ID="{C1F5C75B-D940-4A58-8A56-9E90F91590AD}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="click_torret_construction" ID="{80DF0336-AC2F-4AAB-98D0-F29740F51025}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
@@ -35,6 +36,7 @@
 						<ObjectRef Name="level_win" ID="{B07434B0-30D7-4B9C-B79B-76A2C6F639FD}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="torret_destruction" ID="{7406909E-78E1-4C12-A013-57FE30A804FB}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="FactoryEnemy" ID="{650E708F-B7D0-4C8C-9158-A18D50466077}" WorkUnitID="{650E708F-B7D0-4C8C-9158-A18D50466077}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="map_playlist" ID="{C1C1ED9E-E6D4-4D6D-BD60-49AA121843DA}" WorkUnitID="{4DFDD36A-F97F-40D4-ABB9-1BAF00842671}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="FactoryTorrets" ID="{7961E230-2249-4E91-A439-9F2806FA19BB}" WorkUnitID="{7961E230-2249-4E91-A439-9F2806FA19BB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="game_start" ID="{69305A0C-9907-4EEF-930D-910D50B10EB4}" WorkUnitID="{722643FB-DD12-4388-A067-BD1978F2A504}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>

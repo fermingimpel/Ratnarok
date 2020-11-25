@@ -22,6 +22,13 @@ public class TutorialManager : MonoBehaviour {
         UITutorial.BuildTutorialPressed += ClickedTurretUI;
         UITutorial.ClickedRatary += ClickedRatary;
         Enemy.Dead += KilledEnemy;
+
+        AkSoundEngine.SetSwitch("General_music", "menu_general", this.gameObject);
+        AkSoundEngine.SetSwitch("Menu", "tutorial", this.gameObject);
+        AkSoundEngine.SetState("menu_scene", "tut");
+
+        AkSoundEngine.PostEvent("game_start", this.gameObject);
+
     }
     private void OnDisable() {
         UITutorial.BuildTutorialPressed -= ClickedTurretUI;

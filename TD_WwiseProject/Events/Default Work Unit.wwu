@@ -118,7 +118,17 @@
 				</Folder>
 				<Folder Name="Torrets" ID="{ACBDDE06-C25F-4CE9-A968-1AAB0AEAA94D}" ShortID="236539116">
 					<ChildrenList>
-						<Event Name="torret_catapult" ID="{A5D2CEC0-80EE-468A-B6DA-7A4825415072}"/>
+						<Event Name="torret_catapult" ID="{A5D2CEC0-80EE-468A-B6DA-7A4825415072}">
+							<ChildrenList>
+								<Action Name="" ID="{792A3D4A-10EB-42DB-BFC8-E3EC0E2FF9C5}" ShortID="922601863">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="catapulta_hit" ID="{151EC320-F2C3-428C-BAB2-3E4A917884FC}" WorkUnitID="{650E708F-B7D0-4C8C-9158-A18D50466077}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 						<Event Name="torret_destruction" ID="{7406909E-78E1-4C12-A013-57FE30A804FB}">
 							<ChildrenList>
 								<Action Name="" ID="{B71140D7-FB02-42D1-A20B-DC2E756E259C}" ShortID="896834789">
@@ -235,7 +245,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="bardo_attack" ID="{2ED2F4EE-DF95-44FB-8242-E44E3A987BC6}">
+				<Event Name="bardo_hit" ID="{2ED2F4EE-DF95-44FB-8242-E44E3A987BC6}">
 					<ChildrenList>
 						<Action Name="" ID="{C7A4EA4D-62CC-4C08-9878-7C549B2B62F6}" ShortID="619811299">
 							<ReferenceList>

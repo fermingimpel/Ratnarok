@@ -97,7 +97,11 @@ public class GameplayManager : MonoBehaviour {
         if (UIStateUpdate != null)
             UIStateUpdate(Stage.Attack);
 
-        //AkSoundEngine.PostEvent("level_horde_music", this.gameObject);
+        AkSoundEngine.SetSwitch("General_music", "level_general", this.gameObject);
+        AkSoundEngine.SetSwitch("Menu", "menu", this.gameObject);
+        AkSoundEngine.SetState("player_state", "alive_state");
+        AkSoundEngine.SetState("level_state", "Level_state_alive");
+        AkSoundEngine.PostEvent("game_start", this.gameObject);
 
         while (!em.GetAllHordesCompleted()) {
             yield return new WaitForSeconds(0.5f);
