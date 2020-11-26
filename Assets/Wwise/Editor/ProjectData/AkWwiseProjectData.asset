@@ -230,7 +230,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: bc51ad12897b6e4da538752c3e792c22
     GuidInternal: 
-    m_lastTime: -8585954492078999286
+    m_lastTime: -8585952868743884915
     List:
     - name: GeneralSoundBank
       guid: d3c104a94afb6147917d6038eb1d65d3
@@ -249,8 +249,20 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: fb43267212dd8843a067bd1978f2a504
     GuidInternal: 
-    m_lastTime: -8585954492156009739
+    m_lastTime: -8585953048627007884
     List:
+    - name: bardo_hit
+      guid: eef4d22e95dffb448242e44e3a987bc6
+      id: 3885493553
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: bardo_hit
+        ObjectType: 3
+      Path: Default Work Unit\bardo_hit
+      maxAttenuation: 200000000
+      maxDuration: 2524396
+      minDuration: 2524396
     - name: bite_cheese
       guid: 2e3d69d0104323418d52baaafc30b0a9
       id: 2943011873
@@ -276,7 +288,7 @@ MonoBehaviour:
       - ElementName: button_generic
         ObjectType: 3
       Path: Default Work Unit\Click\button_generic
-      maxAttenuation: 0
+      maxAttenuation: 200000000
       maxDuration: 1690491
       minDuration: 915909
     - name: button_start
@@ -330,7 +342,7 @@ MonoBehaviour:
       - ElementName: click_torret_construction
         ObjectType: 3
       Path: Default Work Unit\Click\click_torret_construction
-      maxAttenuation: 0
+      maxAttenuation: 200000000
       maxDuration: 1286729
       minDuration: 1286729
     - name: click_torret_menu
@@ -344,23 +356,9 @@ MonoBehaviour:
       - ElementName: click_torret_menu
         ObjectType: 3
       Path: Default Work Unit\Click\click_torret_menu
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: coin_get
-      guid: 9eb83a8ccb7c5346a658be5e85d7a6f9
-      id: 2941738795
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Click
-        ObjectType: 4
-      - ElementName: coin_get
-        ObjectType: 3
-      Path: Default Work Unit\Click\coin_get
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxAttenuation: 200000000
+      maxDuration: 469878
+      minDuration: 289574
     - name: Enemy
       guid: 81acd670c51a9744aac953ec276eec23
       id: 2299321487
@@ -384,7 +382,7 @@ MonoBehaviour:
       - ElementName: enemy_attack
         ObjectType: 3
       Path: Default Work Unit\Enemy\enemy_attack
-      maxAttenuation: 0
+      maxAttenuation: 200000000
       maxDuration: 1178481
       minDuration: 611078
     - name: enemy_death
@@ -398,9 +396,21 @@ MonoBehaviour:
       - ElementName: enemy_death
         ObjectType: 3
       Path: Default Work Unit\Enemy\enemy_death
+      maxAttenuation: 200000000
+      maxDuration: 1339660
+      minDuration: 1339660
+    - name: explotion_attack
+      guid: 11c9bd9b11e68c489f3802526802165c
+      id: 1523805078
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: explotion_attack
+        ObjectType: 3
+      Path: Default Work Unit\explotion_attack
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 2962708
+      minDuration: 1229676
     - name: game_close
       guid: 78355115e136ad418328884c18526010
       id: 2457774286
@@ -452,9 +462,21 @@ MonoBehaviour:
       - ElementName: hit_cheese
         ObjectType: 3
       Path: Default Work Unit\Enemy\hit_cheese
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxAttenuation: 200000000
+      maxDuration: 1922653
+      minDuration: 1922653
+    - name: jugger_attack
+      guid: 03a2d732b6617446a27f128eb379cfd0
+      id: 2260791472
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: jugger_attack
+        ObjectType: 3
+      Path: Default Work Unit\jugger_attack
+      maxAttenuation: 200000000
+      maxDuration: 1272792
+      minDuration: 770892
     - name: Level
       guid: b2b88124def64848a887c65f3b5634b1
       id: 2782712965
@@ -481,6 +503,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 4541202
       minDuration: 4541202
+    - name: level_music
+      guid: 93c9d808eab9e04cbd8b88025940e16c
+      id: 1244594577
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: level_music
+        ObjectType: 3
+      Path: Default Work Unit\level_music
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: level_prep
       guid: d1a104071804e647b8a4380ec0bddabf
       id: 3824902441
@@ -523,6 +557,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: select_level
+      guid: c381b3da4c62b5438f2ea1d3a9daa82f
+      id: 1145326226
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: select_level
+        ObjectType: 3
+      Path: Default Work Unit\select_level
+      maxAttenuation: 200000000
+      maxDuration: 5650000
+      minDuration: 5027766
     - name: torret_catapult
       guid: c0ced2a5ee808a46b6da7a4825415072
       id: 46674184
@@ -534,23 +580,9 @@ MonoBehaviour:
       - ElementName: torret_catapult
         ObjectType: 3
       Path: Default Work Unit\Torrets\torret_catapult
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: torret_crossbow
-      guid: a9e948677941c846aaf8d6097fec939e
-      id: 1695855716
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Torrets
-        ObjectType: 4
-      - ElementName: torret_crossbow
-        ObjectType: 3
-      Path: Default Work Unit\Torrets\torret_crossbow
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxAttenuation: 200000000
+      maxDuration: 2008667
+      minDuration: 1373905
     - name: torret_destruction
       guid: 9e900674e178124ca01357fe30a804fb
       id: 3717628084
@@ -562,9 +594,9 @@ MonoBehaviour:
       - ElementName: torret_destruction
         ObjectType: 3
       Path: Default Work Unit\Torrets\torret_destruction
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxAttenuation: 200000000
+      maxDuration: 1917586
+      minDuration: 1350050
     - name: torret_fire
       guid: 409e40fec3d8ed40870153c19f7ed76d
       id: 1568618364
@@ -576,9 +608,23 @@ MonoBehaviour:
       - ElementName: torret_fire
         ObjectType: 3
       Path: Default Work Unit\Torrets\torret_fire
-      maxAttenuation: 0
+      maxAttenuation: 200000000
       maxDuration: 2979795
       minDuration: 2979795
+    - name: torret_slingshot
+      guid: a9e948677941c846aaf8d6097fec939e
+      id: 2241551251
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Torrets
+        ObjectType: 4
+      - ElementName: torret_slingshot
+        ObjectType: 3
+      Path: Default Work Unit\Torrets\torret_slingshot
+      maxAttenuation: 200000000
+      maxDuration: 11390000
+      minDuration: 11390000
     - name: torret_stuff
       guid: 740db13efb3493419b306164bafa6b72
       id: 3143536294
@@ -590,9 +636,9 @@ MonoBehaviour:
       - ElementName: torret_stuff
         ObjectType: 3
       Path: Default Work Unit\Torrets\torret_stuff
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxAttenuation: 200000000
+      maxDuration: 2766077
+      minDuration: 1734486
     - name: Torrets
       guid: 06debdac5fc2e94ca9681aab0aeaa94d
       id: 1599200060
@@ -1018,7 +1064,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 76be174f7486c444b8e5ad499a4d654f
     GuidInternal: 
-    m_lastTime: -8585954492066910816
+    m_lastTime: -8585953316256966391
     List:
     - name: General_music
       guid: d90de648ee89be48a22069896bcd4de6
@@ -1045,6 +1091,31 @@ MonoBehaviour:
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
+    - name: Level_music
+      guid: 20007cce00e1d54db7063ac9687ac313
+      id: 1244594577
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level_music
+        ObjectType: 11
+      Path: Default Work Unit\Level_music
+      values:
+      - name: Horde
+        guid: 7b6fdadbd9d92048ac731d9212e85961
+        id: 4005846101
+        PathAndIcons:
+        - ElementName: Horde
+          ObjectType: 10
+      - name: Normal
+        guid: 137b9e057905ec489fd411d4f0c4b2d4
+        id: 1160234136
+        PathAndIcons:
+        - ElementName: Normal
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
     - name: Menu
       guid: 5639e0ba07dc7a4c968cac9e8b2ca5da
       id: 2607556080
@@ -1060,6 +1131,12 @@ MonoBehaviour:
         id: 2201105581
         PathAndIcons:
         - ElementName: credits
+          ObjectType: 10
+      - name: map
+        guid: fa4fa004e05f614aa54b9e2f3bf3f7cb
+        id: 1048449605
+        PathAndIcons:
+        - ElementName: map
           ObjectType: 10
       - name: menu
         guid: a61c1520f3919a4dbdb3b99d77eefed0

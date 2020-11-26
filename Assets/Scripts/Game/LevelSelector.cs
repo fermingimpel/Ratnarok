@@ -10,4 +10,18 @@ public class LevelSelector : MonoBehaviour {
 
         AkSoundEngine.PostEvent("game_start", this.gameObject);
     }
+
+    bool rataryDisplayed = false;
+    [SerializeField] GameObject rataryGO;
+
+    public void ClickRatary() {
+        rataryDisplayed = !rataryDisplayed;
+
+        if (rataryDisplayed) {
+            rataryGO.SetActive(true);
+            return;
+        }
+        rataryGO.SetActive(false);
+    }
+
 }
