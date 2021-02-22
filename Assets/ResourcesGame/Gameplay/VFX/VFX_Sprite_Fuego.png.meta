@@ -791,6 +791,18 @@ TextureImporter:
   - first:
       213: 2678891241974829569
     second: VFX_Sprite_Fuego_262
+  - first:
+      213: -1972968850633780313
+    second: VFX_Sprite_Fuego_0
+  - first:
+      213: -782109489273841101
+    second: VFX_Sprite_Fuego_1
+  - first:
+      213: -204523592440420752
+    second: VFX_Sprite_Fuego_2
+  - first:
+      213: -1865814048698276127
+    second: VFX_Sprite_Fuego_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -903,61 +915,19 @@ TextureImporter:
       name: VFX_Sprite_Fuego_0
       rect:
         serializedVersion: 2
-        x: 29
-        y: 1044
-        width: 626
-        height: 439
+        x: 169
+        y: 926
+        width: 253
+        height: 584
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 835cebe0ad3d169b0800000000000000
-      internalID: -5088553170448235208
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: VFX_Sprite_Fuego_1
-      rect:
-        serializedVersion: 2
-        x: 678
-        y: 1030
-        width: 799
-        height: 416
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2b78a3282a692b480800000000000000
-      internalID: -8884873490134825038
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: VFX_Sprite_Fuego_2
-      rect:
-        serializedVersion: 2
-        x: 1515
-        y: 997
-        width: 846
-        height: 472
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6acde67adc62336f0800000000000000
-      internalID: -706178051847824218
+      spriteID: 7a31019984b9e94e0800000000000000
+      internalID: -1972968850633780313
       vertices: []
       indices: 
       edges: []
@@ -966,19 +936,61 @@ TextureImporter:
       name: VFX_Sprite_Fuego_3
       rect:
         serializedVersion: 2
-        x: 2404
-        y: 874
-        width: 1003
-        height: 657
+        x: 869
+        y: 881
+        width: 362
+        height: 736
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c864a47725d8f540800000000000000
-      internalID: 5042014148278642886
+      spriteID: 1e6e76a120c4b16e0800000000000000
+      internalID: -1865814048698276127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_Sprite_Fuego_5
+      rect:
+        serializedVersion: 2
+        x: 1739
+        y: 824
+        width: 405
+        height: 831
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 657c2fbd3c8158590800000000000000
+      internalID: -7672699160667961514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_Sprite_Fuego_7
+      rect:
+        serializedVersion: 2
+        x: 2628
+        y: 659
+        width: 564
+        height: 981
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a835482f8d6413560800000000000000
+      internalID: 7291687169285182346
       vertices: []
       indices: 
       edges: []

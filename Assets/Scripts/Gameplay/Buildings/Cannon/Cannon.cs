@@ -2,35 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cannon : Building {
+public class Cannon : Structure {
     [SerializeField] Bullet shoot;
-    [SerializeField] Vector3 upset;
-
-    protected override void StopDefend() {
-        StopCoroutine(PrepareAttack());
-        defending = false;
-    }
-
-    protected override void StartDefend() {
-        StartCoroutine(PrepareAttack());
-        defending = true;
-    }
-    IEnumerator PrepareAttack() {
-        yield return new WaitForSeconds(preparationTime);
-        Attack();
-        yield return null;
-    }
-    protected override void Attack() {
-        if (!defending) 
+    [SerializeField] Vector3 bulletUpset;
+    float timerToAttack = 0;
+    private void Update() {
+        if (!defending)
             return;
 
+        timerToAttack += Time.deltaTime;
+        if (timerToAttack >= attackPreparationTime) {
+            timerToAttack = 0;
+            Attack();
+        }
+    }
+    protected override void Attack() {
         animator.Play("Shoot");
         AkSoundEngine.PostEvent("torret_stuff", this.gameObject);
-        Bullet s = Instantiate(shoot, transform.position + upset, Quaternion.identity);
-        s.SetDirection(lookPos + upset);
+        Bullet s = Instantiate(shoot, transform.position + bulletUpset, Quaternion.identity);
+        s.SetDirection(lookPos + bulletUpset);
         s.SetDamage(damage);
-        StartCoroutine(PrepareAttack());
     }
-
-
 }

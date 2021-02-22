@@ -3,18 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
+
     [SerializeField] protected float health;
     [SerializeField] protected float maxHealth;
     [SerializeField] protected float speed;
     [SerializeField] protected float timeToAttack;
+    [SerializeField] protected float timerToAttack = 0;
     [SerializeField] protected float damage;
-    int index;
-
-    public delegate void EnemyDead(Enemy e);
-    public static event EnemyDead Dead;
-
-    Building buildToAttack;
-    bool attackingBuild = false;
+    Structure structureToAttack;
+    bool attackingStructure = false;
+    public bool attacking = true;
 
     [SerializeField] Town town;
 
@@ -27,8 +25,8 @@ public class Enemy : MonoBehaviour {
     [SerializeField] Color hittedColor;
     bool hitted = false;
 
-    [HideInInspector] public bool cheatsChangedHP = false;
     [SerializeField] Animator animator;
+
     public enum Type {
         Attacker,
         Tank,
@@ -45,27 +43,26 @@ public class Enemy : MonoBehaviour {
     [SerializeField] GameObject model;
     [SerializeField] BoxCollider bc;
 
-    protected virtual void Start() {
+    public delegate void EnemyDead(Enemy e);
+    public static event EnemyDead Dead;
 
-        model.transform.position += new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f));
+    protected void Start() {
+        model.transform.position += new Vector3(Random.Range(-0.5f, 0.5f), 0f, Random.Range(-0.5f, 0.5f));
         model.transform.LookAt(path[0].transform.position + posY);
+    }
 
-        GameplayManager.EndEnemyAttack += OnDie;
-        Town.DestroyedTown += OnDie;
-    }
-    private void OnDisable() {
-        GameplayManager.EndEnemyAttack -= OnDie;
-        Town.DestroyedTown -= OnDie;
-    }
     protected virtual void Update() {
-        if (attackingBuild)
+        if (!attacking)
             return;
 
-        if (path[actualPath] != null) {
+        if (attackingStructure) 
+            return;
+
+        if(path[actualPath]!=null) {
             transform.position = Vector3.MoveTowards(transform.position, path[actualPath].transform.position + posY, speed * Time.deltaTime);
-            if (transform.position == path[actualPath].transform.position + posY) {
+            if(transform.position == path[actualPath].transform.position + posY) {
                 actualPath++;
-                if (actualPath == path.Count - 1)
+                if (actualPath == path.Count - 1 && !townAttacked)
                     AttackTown();
                 else
                     model.transform.LookAt(path[actualPath].transform.position + posY);
@@ -73,80 +70,38 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-    public virtual void ReceiveDamage(float d) {
-        health -= d;
-        if (!hitted)
-            StartCoroutine(Hit());
-        if (health <= 0) {
-            OnDie();
-        }
-    }
+    void AttackTown() {
+        townAttacked = true;
+        if (town != null)
+            town.ReceiveDamage(damage * 2f);
+        Die();
 
-    public virtual void Heal(float h) {
-        health += h;
-        if (health >= maxHealth)
-            health = maxHealth;
     }
-
-    IEnumerator Hit() {
-        hitted = true;
-        rend.material.color = hittedColor;
-        yield return new WaitForSeconds(0.15f);
-        rend.material.color = normalColor;
-        StopCoroutine(Hit());
-        hitted = false;
-        yield return null;
-    }
-    protected void OnDie() {
+    void Die() {
         if (Dead != null)
             Dead(this);
         Destroy(this.gameObject);
     }
-    public bool GetTownAttacked() {
-        return townAttacked;
+    public void ReceiveDamage(float d) {
+        health -= d;
+        if (!hitted)
+            StartCoroutine(HittedEffect());
+        if (health <= 0)
+            Die();
     }
-    public void SetPath(List<Transform> p) {
-        path = p;
+    public void Heal(float h) {
+        health += h;
+        if (health >= maxHealth)
+            health = maxHealth;
     }
-    IEnumerator Attack() {
-        attackingBuild = true;
-
-        float t = 0;
-        if(animator!=null && buildToAttack != null)
-            animator.Play("Attack");
-        if (buildToAttack != null)
-            while (t < timeToAttack && buildToAttack != null) {
-                t += Time.deltaTime;
-                yield return null;
-            }
-
-        if (buildToAttack != null) {
-            AkSoundEngine.PostEvent("enemy_attack", this.gameObject);
-            buildToAttack.HitBuild(damage);
-        }
-        ResetAttack();
+    IEnumerator HittedEffect() {
+        hitted = true;
+        float timeWithHittedcolor = 0.15f;
+        rend.material.color = hittedColor;
+        yield return new WaitForSeconds(timeWithHittedcolor);
+        rend.material.color = normalColor;
+        hitted = false;
         yield return null;
-    }
-
-    public void SetTown(Town t) {
-        town = t;
-    }
-
-    void ResetAttack() {
-        if (attackingBuild && buildToAttack != null)
-            StartCoroutine(Attack());
-        else {
-            bc.enabled = false;
-            attackingBuild = false;
-            bc.enabled = true;
-        }
-    }
-
-    void AttackTown() {
-        if (town != null)
-            town.ReceiveDamage(damage*2f);
-        townAttacked = true;
-        OnDie();
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -154,9 +109,9 @@ public class Enemy : MonoBehaviour {
             return;
 
         if (other.gameObject.CompareTag("Structure")) {
-            buildToAttack = other.GetComponent<Building>();
-            if (!attackingBuild)
-                StartCoroutine(Attack());
+            structureToAttack = other.GetComponent<Structure>();
+            if (!attackingStructure)
+                StartCoroutine(AttackStructure());
             return;
         }
     }
@@ -164,55 +119,47 @@ public class Enemy : MonoBehaviour {
     private void OnTriggerExit(Collider other) {
         if (!attackBuilds)
             return;
-
         if (other.gameObject.CompareTag("Structure")) {
-            attackingBuild = false;
-            buildToAttack = null;
+            attackingStructure = false;
+            structureToAttack = null;
         }
     }
 
-    public void SetTypeOfEnemy(Type t) {
-        type = t;
-    }
-    public Type GetTypeOfEnemy() {
-        return type;
+    IEnumerator AttackStructure() {
+        attackingStructure = true;
+
+        float t = 0;
+        if (animator != null && structureToAttack != null)
+            animator.Play("Attack");
+        if (structureToAttack != null)
+            while (t < timeToAttack && structureToAttack != null) {
+                t += Time.deltaTime;
+                yield return null;
+            }
+
+        if (structureToAttack != null) {
+            AkSoundEngine.PostEvent("enemy_attack", this.gameObject);
+            structureToAttack.HitStructure(damage);
+        }
+        ResetAttack();
+        yield return null;
     }
 
-    // [SerializeField] protected int health;
-    // int maxHealth;
-    // [SerializeField] protected int speed;
-    // [SerializeField] protected float timeToAttack;
-    // [SerializeField] protected int damage;
-
-    public void SetDamage(float d) {
-        damage = d;
-    }
-    public float GetDamage() {
-        return damage;
+    void ResetAttack() {
+        if (attackingStructure && structureToAttack != null)
+            StartCoroutine(AttackStructure());
+        else {
+            bc.enabled = false;
+            attackingStructure = false;
+            bc.enabled = true;
+        }
     }
 
-    public void SetMaxHealth(float mh) {
-        cheatsChangedHP = true;
-        health = mh;
-        maxHealth = mh;
+    public void SetTown(Town t) {
+        town = t;
     }
-    public float GetMaxHealth() {
-        return maxHealth;
+    public void SetPath(List<Transform> p) {
+        path = p;
     }
-
-    public void SetSpeed(float s) {
-        speed = s;
-    }
-    public float GetSpeed() {
-        return speed;
-    }
-
-    public void SetTimeToAttack(float tta) {
-        timeToAttack = tta;
-    }
-    public float GetTimeToAttack() {
-        return timeToAttack;
-    }
-
 }
 

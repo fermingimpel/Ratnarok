@@ -46,12 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aea0b0d6f063d8f4db6ef991fcc78ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolsCost: 125
-  preparationTime: 3
-  cooldownToCreate: 18
+  cheeseCost: 125
+  attackPreparationTime: 3
+  cooldownToCreate: 13
   health: 11
   damage: 7
-  index: 0
   defending: 0
   path: []
   lookPos: {x: 0, y: 0, z: 0}
@@ -76,14 +75,13 @@ MonoBehaviour:
   - {fileID: 2875938025466794698}
   hittedColor: {r: 1, g: 0.627451, b: 0.627451, a: 1}
   normalColor: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 1}
-  cheatsChangedHP: 0
-  canvas: {fileID: 9031884405094687786}
+  timeHittedColor: 0
+  canvasStructure: {fileID: 9031884405094687786}
   hpBars:
   - {fileID: 1059067988843023553}
   - {fileID: 7093032321441841011}
   animation: {fileID: 1669831832869616486}
   animator: {fileID: 998510620844793964}
-  type: 3
   shoot: {fileID: 7725327777904427297, guid: 463de70085845a64ba028e0c3d7140de, type: 3}
   offset: {x: 0, y: 0, z: 0}
 --- !u!65 &7352969111540256073

@@ -4,31 +4,40 @@ using UnityEngine;
 
 public class ShootCatapult : Bullet {
     [SerializeField] Vector3 initPos;
-    [SerializeField] Vector3 finalPos;
     [SerializeField] Vector3 midPos;
-    float t = 0;
-    void Start() {
-        initPos = transform.position;
-        finalPos = direction * 20 + initPos;
-        midPos = Vector3.Lerp(initPos, finalPos, 0.33f) + (Vector3.up * 1.5f);
+    [SerializeField] Vector3 finalPos;
+    [SerializeField] float distanceToMove;
 
-        StartCoroutine(Move());
+    bool goingUp = true;
+    bool moving = false;
+    private void Start() {
+        StartCoroutine(LateStart());
     }
 
-    IEnumerator Move() {
-        while (transform.position != midPos) {
+    IEnumerator LateStart() {
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        initPos = transform.position;
+        finalPos = direction * distanceToMove + initPos;
+        midPos = Vector3.Lerp(initPos, finalPos, 0.33f) + (Vector3.up * 1.5f);
+        moving = true;
+    }
+
+    private void Update() {
+        if (!moving)
+            return;
+
+        if (goingUp) {
             transform.position = Vector3.MoveTowards(transform.position, midPos, speed * Time.deltaTime);
-            yield return null;
+            if (transform.position == midPos)
+                goingUp = false;
+            return;
         }
+        transform.position = Vector3.MoveTowards(transform.position, finalPos, speed * Time.deltaTime);
 
-        while (transform.position != finalPos) {
-            transform.position = Vector3.MoveTowards(transform.position, finalPos, speed * Time.deltaTime);
-            yield return null;
-        }
-
-        StopCoroutine(Move());
-        Destroy(this.gameObject);
-        yield return null;
+        if (transform.position == finalPos)
+            Destroy(this.gameObject);
     }
 
     private void OnTriggerEnter(Collider other) {

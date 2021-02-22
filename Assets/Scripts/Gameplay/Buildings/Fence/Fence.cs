@@ -2,6 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fence : Building {
+public class Fence : Structure {
    
 }

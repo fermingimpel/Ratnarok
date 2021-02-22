@@ -2,38 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Catapult : Building {
+public class Catapult : Structure {
     [SerializeField] Bullet shoot;
     [SerializeField] Vector3 offset;
-    protected override void Start() {
-        base.Start();
-    }
-    protected override void StopDefend() {
-        StopCoroutine(PrepareAttack());
-        defending = false;
-    }
+    float timerToAttack = 0f;
 
-    protected override void StartDefend() {
-        StartCoroutine(PrepareAttack());
-        defending = true;
-    }
-
-    IEnumerator PrepareAttack() {
-        yield return new WaitForSeconds(preparationTime);
-        StopCoroutine(PrepareAttack());
-        Attack();
-        yield return null;
-    }
-    protected override void Attack() {
+    private void Update() {
         if (!defending)
             return;
 
+        timerToAttack += Time.deltaTime;
+        if (timerToAttack >= attackPreparationTime) {
+            timerToAttack = 0;
+            Attack();
+        }
+    }
+    protected override void Attack() {
         animator.Play("Shoot");
         AkSoundEngine.PostEvent("torret_catapult", this.gameObject);
-
         Bullet s = Instantiate(shoot, transform.position + offset, shoot.transform.rotation);
         s.SetDirection(transform.forward + offset);
         s.SetDamage(damage);
-        StartCoroutine(PrepareAttack());
     }
+
 }

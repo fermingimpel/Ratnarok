@@ -4,32 +4,18 @@ using UnityEngine;
 
 public class ShootCannon : Bullet {
     bool hitSomething = false;
-    private void Start() {
-        StartCoroutine(LateStart());
-    }
-    IEnumerator LateStart() {
-        yield return new WaitForEndOfFrame();
-        StartCoroutine(Move());
-        StopCoroutine(LateStart());
-        yield return null;
-    }
 
-    IEnumerator Move() {
-        while (transform.position != direction) {
-            transform.position = Vector3.MoveTowards(transform.position, direction, speed * Time.deltaTime);
-            yield return null;
-        }
-        Destroy(this.gameObject);
-        StopCoroutine(Move());
-        yield return null;
+    private void Update() {
+        transform.position = Vector3.MoveTowards(transform.position, direction, speed * Time.deltaTime);
+        if (transform.position == direction)
+            Destroy(this.gameObject);
     }
-
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Enemy")) {
             if (!hitSomething) {
+                hitSomething = true;
                 other.GetComponent<Enemy>().ReceiveDamage(damage);
                 Destroy(this.gameObject);
-                hitSomething = true;
             }
         }
     }

@@ -6,7 +6,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UIGameplay : MonoBehaviour {
-    [SerializeField] TextMeshProUGUI goldText;
+    [SerializeField] GameObject winScreenUI;
+    [SerializeField] GameObject loseScreenUI;
+
+    [SerializeField] TextMeshProUGUI cheeseText;
     [SerializeField] TextMeshProUGUI hordeText;
     [SerializeField] GameObject hordeGO;
     [SerializeField] Image hpBar;
@@ -23,82 +26,64 @@ public class UIGameplay : MonoBehaviour {
 
     public static Action ClickedPause;
     public static Action ClickedResume;
-    bool gamePaused = false;
-    void Awake() {
+    private void Start() {
         hpGO.SetActive(false);
         startText.SetActive(false);
-        GameplayManager.StartEnemyAttack += StartGame;
-        GameplayManager.StartPreAtk += PreStart;
-        BuildingCreator.ChangedGold += ChangedGold;
-        EnemyManager.HordeUpdate += ChangeHordeBar;
+
         Town.ChangedHP += ChangeHP;
-        gamePaused = false;
+        EnemyManager.HordeUpdate += ChangeHordeBar;
     }
+
     private void OnDisable() {
-        GameplayManager.StartEnemyAttack -= StartGame;
-        GameplayManager.StartPreAtk -= PreStart;
-        BuildingCreator.ChangedGold -= ChangedGold;
-        EnemyManager.HordeUpdate -= ChangeHordeBar;
         Town.ChangedHP -= ChangeHP;
+        EnemyManager.HordeUpdate -= ChangeHordeBar;
     }
-    void StartGame() {
-        hpGO.SetActive(true);
-    }
-    void PreStart() {
-        StartCoroutine(PreStartGame());
-    }
-    IEnumerator PreStartGame() {
+
+    public void PreStartGameUI() {
         prepareText.SetActive(false);
         startText.SetActive(true);
-        yield return new WaitForSeconds(2.0f);
+    }
+
+    public void StartGameUI() {
+        hpGO.SetActive(true);
         startText.SetActive(false);
         hordeGO.SetActive(true);
-        yield return null;
-
-    }
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            if (!gamePaused)
-                ClickedPauseButton();
-            else
-                ClickedResumeButton();
-        }
-    }
-    void ChangedGold(float g) {
-        goldText.text = ((int)g).ToString();
-    }
-    void ChangeHP(float hp, float maxHP) {
-        hpBar.fillAmount = hp / maxHP;
-    }
-    void ChangeHordeBar(int actualHorde, int maxHorde) {
-        hordeText.text = "HORDE: " + actualHorde + " | " + maxHorde;
     }
 
-    public void ClickedPauseButton() {
+    public void ActivateLoseScreen() {
+        winScreenUI.SetActive(false);
+        loseScreenUI.SetActive(true);
+    }
+    public void ActivateWinScreen() {
+        loseScreenUI.SetActive(false);
+        winScreenUI.SetActive(true);
+    }
+    public void ChangeCheese(float c) {
+        cheeseText.text = ((int)c).ToString();
+    }
+
+    public void ClickPauseButton() {
         if (ClickedPause != null)
             ClickedPause();
-        gamePaused = true;
         pauseMenu.SetActive(true);
-        Time.timeScale = 0.0f;
+        Time.timeScale = 0f;
     }
-    public void ClickedResumeButton() {
+    public void ClickResumeButton() {
         if (ClickedResume != null)
             ClickedResume();
-        gamePaused = false;
         pauseMenu.SetActive(false);
         rataryMenu.SetActive(false);
-        Time.timeScale = 1.0f;
+        Time.timeScale = 1f;
     }
-
-    public void ClickedRatary() {
+    public void ClickRatary() {
         if (ClickedPause != null)
             ClickedPause();
         rataryMenu.SetActive(true);
         Time.timeScale = 0f;
     }
-
-    public void ClickedOptions() {
+    public void ClickOptions() {
         configDisplayed = !configDisplayed;
+
         if (!configDisplayed) {
             pauseMenu.SetActive(false);
             configMenu.SetActive(true);
@@ -109,7 +94,6 @@ public class UIGameplay : MonoBehaviour {
         configMenu.SetActive(false);
         return;
     }
-
     public void ClickedToggleScreenType() {
         for (int i = 0; i < configOpen.Length; i++)
             if (configOpen[i] != null) {
@@ -120,4 +104,11 @@ public class UIGameplay : MonoBehaviour {
             }
     }
 
+    void ChangeHP(float hp, float maxHP) {
+        hpBar.fillAmount = hp / maxHP;
+    }
+
+    void ChangeHordeBar(int actualHorde, int maxHorde) {
+        hordeText.text = "HORDE: " + actualHorde + " | " + maxHorde;
+    }
 }

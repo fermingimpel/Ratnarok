@@ -3,22 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Fire : Bullet {
-    [SerializeField] int maxHits;
-    [SerializeField] float timeBetweenHits;
-    int actualHits = 0;
+   [SerializeField] float timeBetweenHits;
     [SerializeField] BoxCollider bc;
+    int actualHits = 0;
+    [SerializeField] int maxHits;
 
     private void OnEnable() {
         StartCoroutine(WaitToAttack());
     }
-
     private void OnDisable() {
         StopCoroutine(WaitToAttack());
     }
 
     IEnumerator WaitToAttack() {
         actualHits = 0;
-        while (actualHits < maxHits) {
+        while(actualHits < maxHits) {
             yield return new WaitForSeconds(timeBetweenHits);
             Attack();
             actualHits++;
@@ -35,5 +34,4 @@ public class Fire : Bullet {
             other.GetComponent<Enemy>().ReceiveDamage(damage);
         }
     }
-
 }
