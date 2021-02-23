@@ -41,14 +41,15 @@ public class Enemy : MonoBehaviour {
     bool townAttacked = false;
 
     [SerializeField] GameObject model;
-    [SerializeField] BoxCollider bc;
+    [SerializeField] protected BoxCollider bc;
 
     public delegate void EnemyDead(Enemy e);
     public static event EnemyDead Dead;
 
-    protected void Start() {
+    protected virtual void Start() {
         model.transform.position += new Vector3(Random.Range(-0.5f, 0.5f), 0f, Random.Range(-0.5f, 0.5f));
         model.transform.LookAt(path[0].transform.position + posY);
+        MovementAnimation();
     }
 
     protected virtual void Update() {
@@ -74,13 +75,19 @@ public class Enemy : MonoBehaviour {
         townAttacked = true;
         if (town != null)
             town.ReceiveDamage(damage * 2f);
-        Die();
 
-    }
-    void Die() {
         if (Dead != null)
             Dead(this);
         Destroy(this.gameObject);
+    }
+    protected virtual void Die() {
+        DeathAnimation();
+        attackBuilds = false;
+        attacking = false;
+        
+        if (Dead != null)
+            Dead(this);
+        Destroy(this.gameObject, 1.0f);
     }
     public void ReceiveDamage(float d) {
         health -= d;
@@ -129,8 +136,9 @@ public class Enemy : MonoBehaviour {
         attackingStructure = true;
 
         float t = 0;
-        if (animator != null && structureToAttack != null)
-            animator.Play("Attack");
+        if (animator != null && structureToAttack != null) 
+            AttackAnimation();
+
         if (structureToAttack != null)
             while (t < timeToAttack && structureToAttack != null) {
                 t += Time.deltaTime;
@@ -152,7 +160,27 @@ public class Enemy : MonoBehaviour {
             bc.enabled = false;
             attackingStructure = false;
             bc.enabled = true;
+            MovementAnimation();
         }
+    }
+
+    protected virtual void AttackAnimation() {
+        animator.SetBool("Attack", true);
+        animator.SetBool("Death", false);
+        animator.SetBool("Move", false);
+        animator.Play("Attack");
+    }
+    protected virtual void MovementAnimation() {
+        animator.SetBool("Attack", false);
+        animator.SetBool("Death", false);
+        animator.SetBool("Move", true);
+        animator.Play("Movement");
+    }
+    protected virtual void DeathAnimation() {
+        animator.SetBool("Attack", false);
+        animator.SetBool("Death", true);
+        animator.SetBool("Move", false);
+        animator.Play("Death");
     }
 
     public void SetTown(Town t) {

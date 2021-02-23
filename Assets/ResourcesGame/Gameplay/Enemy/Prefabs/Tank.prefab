@@ -80,7 +80,7 @@ MonoBehaviour:
   speed: 1.5
   timeToAttack: 1
   timerToAttack: 0
-  damage: 0.5
+  damage: 2
   attacking: 1
   town: {fileID: 0}
   path: []
