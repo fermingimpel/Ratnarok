@@ -824,13 +824,14 @@ MonoBehaviour:
   - {fileID: 9034987778233398553}
   hittedColor: {r: 1, g: 0.627451, b: 0.627451, a: 1}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  timeHittedColor: 0
+  timeHittedColor: 0.15
   canvasStructure: {fileID: 9062639860176818659}
   hpBars:
   - {fileID: 4038980828619997377}
   - {fileID: 1186400751455289914}
   animation: {fileID: 6460013005530791871}
   animator: {fileID: 8708660371229117482}
+  ratAnimator: {fileID: 0}
   shoot: {fileID: 142972629410484654, guid: fecdaa57c18899243a762eca16832f21, type: 3}
   bulletUpset: {x: 0, y: 2, z: 0}
 --- !u!65 &3267920380603093571

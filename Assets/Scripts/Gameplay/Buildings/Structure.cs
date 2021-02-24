@@ -27,7 +27,6 @@ public class Structure : MonoBehaviour {
     [SerializeField] GameObject canvasStructure;
     [SerializeField] Image[] hpBars;
 
-    [SerializeField] protected Animation animation;
     [SerializeField] protected Animator animator;
     [SerializeField] protected Animator ratAnimator;
 

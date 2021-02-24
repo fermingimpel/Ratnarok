@@ -5867,18 +5867,18 @@ MonoBehaviour:
   - {fileID: 5635340487500104535}
   - {fileID: 4150082442056319359}
   hittedColor: {r: 1, g: 0.627451, b: 0.627451, a: 1}
-  normalColor: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 1}
-  timeHittedColor: 0
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  timeHittedColor: 0.15
   canvasStructure: {fileID: 4498882111860750509}
   hpBars:
   - {fileID: 4816887199738637427}
   - {fileID: 6892964512209976342}
-  animation: {fileID: 1049108213724429431}
   animator: {fileID: 5670853464025056984}
+  ratAnimator: {fileID: 0}
   fire: {fileID: 6665745077158796709}
   timeAttacking: 3
   ps: {fileID: 2829174166444716410}
-  fireOn: 1
+  fireOn: 0
 --- !u!1 &8605598600477226525
 GameObject:
   m_ObjectHideFlags: 0

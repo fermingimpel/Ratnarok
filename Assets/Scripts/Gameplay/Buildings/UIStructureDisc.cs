@@ -43,12 +43,16 @@ public class UIStructureDisc : MonoBehaviour {
     public void UpdateWheel(float ch) {
         for (int i = 0; i < structuresSprites.Count; i++) {
             if (ch >= structureCreator.GetCheeseCost((StructureCreator.TypeOfStructure)i) && structureCreator.GetCanCreateStructure((StructureCreator.TypeOfStructure)i)) {
-                discPapers[i].color = normalPaperColor;
-                structuresInPapers[i].sprite = structuresSprites[i].sprites[(int)TypeOfSprite.Ready];
+                if (discPapers[i] != null && structuresInPapers[i] != null) {
+                    discPapers[i].color = normalPaperColor;
+                    structuresInPapers[i].sprite = structuresSprites[i].sprites[(int)TypeOfSprite.Ready];
+                }
             }
             else {
-                discPapers[i].color = noCheesePaperColor;
-                structuresInPapers[i].sprite = structuresSprites[i].sprites[(int)TypeOfSprite.NotReady];
+                if (discPapers[i] != null && structuresInPapers[i] != null) {
+                    discPapers[i].color = noCheesePaperColor;
+                    structuresInPapers[i].sprite = structuresSprites[i].sprites[(int)TypeOfSprite.NotReady];
+                }
             }
         }
     }
