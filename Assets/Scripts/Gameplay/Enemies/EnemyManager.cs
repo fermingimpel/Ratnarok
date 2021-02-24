@@ -29,7 +29,7 @@ public class EnemyManager : MonoBehaviour {
     [Serializable]
     public class HordeManager {
         public enum Order {
-            Attacker, Tank, Bomberrat, Bard
+            Attacker, Tank, Bomberrat, Bard, Acid
         }
         public Order[] order;
         [Space]

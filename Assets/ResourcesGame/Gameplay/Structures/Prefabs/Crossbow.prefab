@@ -1335,11 +1335,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c22f0ce9c05345429493110e6eeaacd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cheeseCost: 0
-  attackPreparationTime: 0
-  cooldownToCreate: 18
+  cheeseCost: 200
+  attackPreparationTime: 2.5
+  cooldownToCreate: 13
   health: 6
-  damage: 5
+  damage: 6
   defending: 0
   path: []
   lookPos: {x: 0, y: 0, z: 0}
@@ -1355,6 +1355,9 @@ MonoBehaviour:
   - {fileID: 5555402742116671540}
   animation: {fileID: 0}
   animator: {fileID: 0}
+  ratAnimator: {fileID: 0}
+  shoot: {fileID: 0}
+  upset: {x: 0, y: 0, z: 0}
 --- !u!65 &1546387539671894437
 BoxCollider:
   m_ObjectHideFlags: 0

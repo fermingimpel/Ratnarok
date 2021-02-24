@@ -10,8 +10,8 @@ public class Enemy : MonoBehaviour {
     [SerializeField] protected float timeToAttack;
     [SerializeField] protected float timerToAttack = 0;
     [SerializeField] protected float damage;
-    Structure structureToAttack;
-    bool attackingStructure = false;
+    [SerializeField] protected Structure structureToAttack;
+    protected bool attackingStructure = false;
     public bool attacking = true;
 
     [SerializeField] Town town;
@@ -25,19 +25,20 @@ public class Enemy : MonoBehaviour {
     [SerializeField] Color hittedColor;
     bool hitted = false;
 
-    [SerializeField] Animator animator;
+    [SerializeField] protected Animator animator;
 
     public enum Type {
         Attacker,
         Tank,
         Bard,
         Bomberrat,
+        Acid,
         None
     }
 
     public Type type;
 
-    protected bool attackBuilds = true;
+    [SerializeField] protected bool attackBuilds = true;
     bool townAttacked = false;
 
     [SerializeField] GameObject model;
@@ -132,7 +133,7 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-    IEnumerator AttackStructure() {
+    protected virtual IEnumerator AttackStructure() {
         attackingStructure = true;
 
         float t = 0;
@@ -145,15 +146,19 @@ public class Enemy : MonoBehaviour {
                 yield return null;
             }
 
-        if (structureToAttack != null) {
-            AkSoundEngine.PostEvent("enemy_attack", this.gameObject);
-            structureToAttack.HitStructure(damage);
-        }
+        if (structureToAttack != null)
+            Attack();
+    
         ResetAttack();
         yield return null;
     }
 
-    void ResetAttack() {
+    void Attack() {
+        AkSoundEngine.PostEvent("enemy_attack", this.gameObject);
+        structureToAttack.HitStructure(damage);
+    }
+
+    protected void ResetAttack() {
         if (attackingStructure && structureToAttack != null)
             StartCoroutine(AttackStructure());
         else {

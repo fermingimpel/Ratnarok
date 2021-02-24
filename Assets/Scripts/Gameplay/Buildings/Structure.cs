@@ -29,6 +29,7 @@ public class Structure : MonoBehaviour {
 
     [SerializeField] protected Animation animation;
     [SerializeField] protected Animator animator;
+    [SerializeField] protected Animator ratAnimator;
 
     protected void Start() {
         maxHealth = health;
