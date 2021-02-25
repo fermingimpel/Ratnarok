@@ -17768,6 +17768,13 @@ MonoBehaviour:
     - {fileID: 5048338359013881545}
     - {fileID: 5048338359923819752}
     - {fileID: 1817803621}
+  - pos:
+    - {fileID: 1604419745}
+    - {fileID: 1052523798}
+    - {fileID: 389626286}
+    - {fileID: 704494411}
+    - {fileID: 139016315}
+    - {fileID: 1817803621}
 --- !u!4 &1468725832
 Transform:
   m_ObjectHideFlags: 0
@@ -22555,10 +22562,14 @@ MonoBehaviour:
   town: {fileID: 159124124}
   enemiesCreated: []
   hordes:
-  - order: 04000000
-    cantOfEnemiesToCreateOfTypeInOrder: 02000000
+  - order: 0000000001000000020000000300000004000000
+    cantOfEnemiesToCreateOfTypeInOrder: 0100000001000000010000000100000002000000
     timeBetweenEveryEnemy:
     - 3
+    - 6
+    - 9
+    - 12
+    - 15
   timeBetweenHordes: 6
   actualHorde: 0
   enemiesRemaining: 0

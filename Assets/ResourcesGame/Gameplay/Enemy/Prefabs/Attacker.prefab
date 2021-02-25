@@ -97,6 +97,7 @@ MonoBehaviour:
   bc: {fileID: 4654793529021173381}
   cheeseCoin: {fileID: 8775782827587753507, guid: 056682911d6f16f4db9f5457bc41bb6f,
     type: 3}
+  cheesePercoin: 25
 --- !u!1001 &6105621991362738075
 PrefabInstance:
   m_ObjectHideFlags: 0

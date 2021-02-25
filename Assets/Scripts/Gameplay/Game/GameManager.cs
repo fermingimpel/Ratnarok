@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour {
     public float timeScale;
 
     bool gamePaused = false;
+    bool gameEnded = false;
+
     private void Start() {
         cam = Camera.main;
         Town.TownDestroyed += PlayerLose;
@@ -56,6 +58,9 @@ public class GameManager : MonoBehaviour {
     }
     private void Update() {
         if (gamePaused)
+            return;
+
+        if (gameEnded)
             return;
 
         Time.timeScale = timeScale;
@@ -158,6 +163,8 @@ public class GameManager : MonoBehaviour {
         uiGameplay.ActivateWinScreen();
     }
     void StopThings() {
+        gameEnded = true;
+        canSelectTile = false;
         enemyManager.StopAttack();
         structureCreator.StopDefending();
         cameraController.LockCameraMovement();

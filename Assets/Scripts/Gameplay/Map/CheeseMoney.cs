@@ -10,7 +10,13 @@ public class CheeseMoney : MonoBehaviour
     public static event MoneyGrabbed GrabbedMoney;
     bool grabbed = false;
     [SerializeField] float cheesePerCoin;
-
+    [SerializeField] float posY;
+    private void Start() {
+        transform.position = new Vector3(transform.position.x, posY, transform.position.z);
+    }
+    public void SetCheesePerCoinc(float c) {
+        cheesePerCoin = c;
+    }
     public void GrabMoney() {
         if (grabbed) return;
 

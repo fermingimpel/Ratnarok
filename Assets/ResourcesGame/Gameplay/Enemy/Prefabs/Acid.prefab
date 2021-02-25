@@ -178,6 +178,7 @@ MonoBehaviour:
   bc: {fileID: 6090162347548311345}
   cheeseCoin: {fileID: 8775782827587753507, guid: 056682911d6f16f4db9f5457bc41bb6f,
     type: 3}
+  cheesePercoin: 35
   timeAcidOn: 3
   acid: {fileID: 4623980348867250162}
 --- !u!65 &6090162347548311345

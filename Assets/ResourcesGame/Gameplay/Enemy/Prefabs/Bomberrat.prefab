@@ -113,6 +113,7 @@ MonoBehaviour:
   bc: {fileID: 4654793529021173381}
   cheeseCoin: {fileID: 8775782827587753507, guid: 056682911d6f16f4db9f5457bc41bb6f,
     type: 3}
+  cheesePercoin: 30
   rb: {fileID: -3156021865077513048}
   balloons:
   - {fileID: 5181806278746303765}

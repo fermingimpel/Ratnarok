@@ -48,6 +48,7 @@ public class Enemy : MonoBehaviour {
     public static event EnemyDead Dead;
 
     [SerializeField] CheeseMoney cheeseCoin;
+    [SerializeField] float cheesePercoin;
     bool moneyDropped = false;
 
     protected virtual void Start() {
@@ -91,7 +92,8 @@ public class Enemy : MonoBehaviour {
 
         if (cheeseCoin != null && !moneyDropped) {
             moneyDropped = true;
-            Instantiate(cheeseCoin, transform.position + transform.right, cheeseCoin.transform.rotation);
+            CheeseMoney c = Instantiate(cheeseCoin, transform.position + transform.right, cheeseCoin.transform.rotation);
+            c.SetCheesePerCoinc(cheesePercoin);
         }
         if (Dead != null)
             Dead(this);
