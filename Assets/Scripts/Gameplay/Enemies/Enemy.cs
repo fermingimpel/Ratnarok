@@ -47,6 +47,8 @@ public class Enemy : MonoBehaviour {
     public delegate void EnemyDead(Enemy e);
     public static event EnemyDead Dead;
 
+    [SerializeField] CheeseMoney cheeseCoin;
+
     protected virtual void Start() {
         model.transform.position += new Vector3(Random.Range(-0.5f, 0.5f), 0f, Random.Range(-0.5f, 0.5f));
         model.transform.LookAt(path[0].transform.position + posY);
@@ -57,12 +59,12 @@ public class Enemy : MonoBehaviour {
         if (!attacking)
             return;
 
-        if (attackingStructure) 
+        if (attackingStructure)
             return;
 
-        if(path[actualPath]!=null) {
+        if (path[actualPath] != null) {
             transform.position = Vector3.MoveTowards(transform.position, path[actualPath].transform.position + posY, speed * Time.deltaTime);
-            if(transform.position == path[actualPath].transform.position + posY) {
+            if (transform.position == path[actualPath].transform.position + posY) {
                 actualPath++;
                 if (actualPath == path.Count - 1 && !townAttacked)
                     AttackTown();
@@ -85,7 +87,10 @@ public class Enemy : MonoBehaviour {
         DeathAnimation();
         attackBuilds = false;
         attacking = false;
-        
+
+        if (cheeseCoin != null)
+            Instantiate(cheeseCoin, transform.position + transform.right, cheeseCoin.transform.rotation);
+
         if (Dead != null)
             Dead(this);
         Destroy(this.gameObject, 1.0f);
@@ -137,7 +142,7 @@ public class Enemy : MonoBehaviour {
         attackingStructure = true;
 
         float t = 0;
-        if (animator != null && structureToAttack != null) 
+        if (animator != null && structureToAttack != null)
             AttackAnimation();
 
         if (structureToAttack != null)
@@ -148,7 +153,7 @@ public class Enemy : MonoBehaviour {
 
         if (structureToAttack != null)
             Attack();
-    
+
         ResetAttack();
         yield return null;
     }

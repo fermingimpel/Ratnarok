@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField] StructureCreator structureCreator;
     [SerializeField] UIStructureDisc structureDisc;
 
-    [SerializeField] float cheese = 100;
+    [SerializeField] float cheese;
     public delegate void CheeseChanged(float c);
     public static event CheeseChanged ChangedCheese;
 
@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour {
         UIStructureDisc.CreatedStructure += StructureCreated;
         UIGameplay.ClickedPause += PauseGame;
         UIGameplay.ClickedResume += ResumeGame;
+        CheeseMoney.GrabbedMoney += CoinGrabbed;
         uiGameplay.ChangeCheese(cheese);
         StartCoroutine(PreparationPhase());
     }
@@ -51,6 +52,7 @@ public class GameManager : MonoBehaviour {
         UIStructureDisc.CreatedStructure -= StructureCreated;
         UIGameplay.ClickedPause  -= PauseGame;
         UIGameplay.ClickedResume -= ResumeGame;
+        CheeseMoney.GrabbedMoney -= CoinGrabbed;
     }
     private void Update() {
         if (gamePaused)
@@ -79,6 +81,9 @@ public class GameManager : MonoBehaviour {
                     cameraController.LockCameraMovement();
                     structureDisc.ActivateStructuresWheel();
                 }
+            }
+            else if (hit.transform.CompareTag("Money")) {
+                hit.transform.GetComponent<CheeseMoney>().GrabMoney();
             }
         }
         else
@@ -159,6 +164,10 @@ public class GameManager : MonoBehaviour {
     }
     void StructureCreated() {
         structureDisc.DesactivateStructuresWheel();
+        uiGameplay.ChangeCheese(cheese);
+    }
+    void CoinGrabbed(float c) {
+        cheese += c;
         uiGameplay.ChangeCheese(cheese);
     }
 }

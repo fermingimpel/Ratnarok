@@ -21127,8 +21127,8 @@ MonoBehaviour:
   town: {fileID: 159124124}
   enemiesCreated: []
   hordes:
-  - order: 00000000
-    cantOfEnemiesToCreateOfTypeInOrder: 01000000
+  - order: 04000000
+    cantOfEnemiesToCreateOfTypeInOrder: 02000000
     timeBetweenEveryEnemy:
     - 3
   timeBetweenHordes: 6

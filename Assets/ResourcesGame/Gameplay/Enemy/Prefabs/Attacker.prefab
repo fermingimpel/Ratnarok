@@ -81,6 +81,7 @@ MonoBehaviour:
   timeToAttack: 0.5
   timerToAttack: 0
   damage: 1
+  structureToAttack: {fileID: 0}
   attacking: 1
   town: {fileID: 0}
   path: []
@@ -91,8 +92,11 @@ MonoBehaviour:
   hittedColor: {r: 1, g: 0.6273585, b: 0.6273585, a: 1}
   animator: {fileID: 4239935838377273823}
   type: 0
+  attackBuilds: 1
   model: {fileID: 3897354203120653452}
   bc: {fileID: 4654793529021173381}
+  cheeseCoin: {fileID: 8775782827587753507, guid: 056682911d6f16f4db9f5457bc41bb6f,
+    type: 3}
 --- !u!1001 &6105621991362738075
 PrefabInstance:
   m_ObjectHideFlags: 0

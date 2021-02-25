@@ -16,6 +16,7 @@ TagManager:
   - Spell
   - Button
   - Structure
+  - Money
   layers:
   - Default
   - TransparentFX
