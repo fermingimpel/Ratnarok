@@ -48,6 +48,7 @@ public class Enemy : MonoBehaviour {
     public static event EnemyDead Dead;
 
     [SerializeField] CheeseMoney cheeseCoin;
+    bool moneyDropped = false;
 
     protected virtual void Start() {
         model.transform.position += new Vector3(Random.Range(-0.5f, 0.5f), 0f, Random.Range(-0.5f, 0.5f));
@@ -88,9 +89,10 @@ public class Enemy : MonoBehaviour {
         attackBuilds = false;
         attacking = false;
 
-        if (cheeseCoin != null)
+        if (cheeseCoin != null && !moneyDropped) {
+            moneyDropped = true;
             Instantiate(cheeseCoin, transform.position + transform.right, cheeseCoin.transform.rotation);
-
+        }
         if (Dead != null)
             Dead(this);
         Destroy(this.gameObject, 1.0f);
