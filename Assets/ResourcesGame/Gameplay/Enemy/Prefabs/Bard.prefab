@@ -75,9 +75,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 880ab6a2834090e49b38925ae49bb203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 7
-  maxHealth: 7
-  speed: 2
+  health: 8
+  maxHealth: 8
+  speed: 1.5
   timeToAttack: 3
   timerToAttack: 0
   damage: 1
@@ -97,7 +97,7 @@ MonoBehaviour:
   bc: {fileID: 4654793529021173381}
   cheeseCoin: {fileID: 8775782827587753507, guid: 056682911d6f16f4db9f5457bc41bb6f,
     type: 3}
-  cheesePercoin: 25
+  cheesePerCoin: 25
   timeToHeal: 2
   heal: 2
   rangeToHeal: 3

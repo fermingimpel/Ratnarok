@@ -1565,6 +1565,8 @@ MonoBehaviour:
   - {fileID: 571145883}
   discPapers:
   - {fileID: 1557923955}
+  cheeseCostTexts:
+  - {fileID: 475587419}
   normalPaperColor: {r: 1, g: 1, b: 1, a: 1}
   noCheesePaperColor: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
   canvas: {fileID: 631325757}
@@ -9143,7 +9145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   structureCreator: {fileID: 1468725831}
   structureDisc: {fileID: 151242305}
-  cheese: 1000
+  cheese: 200
   cameraController: {fileID: 672363709}
   goCursorOverTile: {fileID: 420812585}
   timeInPreparationPhase: 3
@@ -13894,7 +13896,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7b46e52b8785ca2419d27c860b0fefed, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4da24ff68cfaf5e43817449bee5c5dc0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

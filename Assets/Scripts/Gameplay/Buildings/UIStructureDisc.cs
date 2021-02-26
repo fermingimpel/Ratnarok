@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,6 +23,7 @@ public class UIStructureDisc : MonoBehaviour {
     [SerializeField] List<StructuresImages> structuresSprites;
     [SerializeField] List<Image> structuresInPapers;
     [SerializeField] List<Image> discPapers;
+    [SerializeField] List<TextMeshProUGUI> cheeseCostTexts;
 
     [SerializeField] Color normalPaperColor;
     [SerializeField] Color noCheesePaperColor;
@@ -32,9 +34,14 @@ public class UIStructureDisc : MonoBehaviour {
     public void ActivateStructuresWheel() {
         UIWheel.SetActive(true);
         backButton.SetActive(true);
-       
+
         Vector3 mousePos = Input.mousePosition;
         UIWheel.transform.position = CheckScreenLimits(mousePos);
+
+        for (int i = 0; i < cheeseCostTexts.Count; i++)
+            if (cheeseCostTexts[i] != null)
+                cheeseCostTexts[i].text = structureCreator.GetCheeseCost((StructureCreator.TypeOfStructure)i).ToString();
+    
     }
     public void DesactivateStructuresWheel() {
         UIWheel.SetActive(false);

@@ -46,11 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aea0b0d6f063d8f4db6ef991fcc78ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cheeseCost: 125
+  cheeseCost: 100
   attackPreparationTime: 3
   cooldownToCreate: 13
-  health: 11
-  damage: 7
+  health: 12
+  damage: 6
   defending: 0
   path: []
   lookPos: {x: 0, y: 0, z: 0}

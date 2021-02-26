@@ -82,6 +82,7 @@ public class Structure : MonoBehaviour {
         defending = d;
     }
     public float GetCheeseCost() {
+        Debug.Log(this.name + ": " + cheeseCost);
         return cheeseCost;
     }
     public float GetCooldownToCreate() {

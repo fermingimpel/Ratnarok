@@ -80,7 +80,7 @@ MonoBehaviour:
   speed: 1.5
   timeToAttack: 1
   timerToAttack: 0
-  damage: 2
+  damage: 3
   structureToAttack: {fileID: 0}
   attacking: 1
   town: {fileID: 0}
@@ -97,7 +97,7 @@ MonoBehaviour:
   bc: {fileID: 4654793529021173381}
   cheeseCoin: {fileID: 8775782827587753507, guid: 056682911d6f16f4db9f5457bc41bb6f,
     type: 3}
-  cheesePercoin: 50
+  cheesePerCoin: 50
 --- !u!1001 &956508792870468169
 PrefabInstance:
   m_ObjectHideFlags: 0

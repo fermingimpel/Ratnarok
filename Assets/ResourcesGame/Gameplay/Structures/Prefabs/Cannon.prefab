@@ -803,10 +803,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b3ba6a1d3bba341813cc4ccbdfc7fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cheeseCost: 100
+  cheeseCost: 75
   attackPreparationTime: 1.5
   cooldownToCreate: 7
-  health: 12
+  health: 20
   damage: 2
   defending: 0
   path: []
@@ -829,7 +829,6 @@ MonoBehaviour:
   hpBars:
   - {fileID: 4038980828619997377}
   - {fileID: 1186400751455289914}
-  animation: {fileID: 6460013005530791871}
   animator: {fileID: 8708660371229117482}
   ratAnimator: {fileID: 0}
   shoot: {fileID: 142972629410484654, guid: fecdaa57c18899243a762eca16832f21, type: 3}

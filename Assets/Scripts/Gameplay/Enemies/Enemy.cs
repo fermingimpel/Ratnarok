@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour {
     public static event EnemyDead Dead;
 
     [SerializeField] CheeseMoney cheeseCoin;
-    [SerializeField] float cheesePercoin;
+    [SerializeField] float cheesePerCoin;
     bool moneyDropped = false;
 
     protected virtual void Start() {
@@ -60,7 +60,6 @@ public class Enemy : MonoBehaviour {
     protected virtual void Update() {
         if (!attacking)
             return;
-
         if (attackingStructure)
             return;
 
@@ -93,7 +92,7 @@ public class Enemy : MonoBehaviour {
         if (cheeseCoin != null && !moneyDropped) {
             moneyDropped = true;
             CheeseMoney c = Instantiate(cheeseCoin, transform.position + transform.right, cheeseCoin.transform.rotation);
-            c.SetCheesePerCoinc(cheesePercoin);
+            c.SetCheesePerCoinc(cheesePerCoin);
         }
         if (Dead != null)
             Dead(this);
@@ -143,22 +142,24 @@ public class Enemy : MonoBehaviour {
     }
 
     protected virtual IEnumerator AttackStructure() {
-        attackingStructure = true;
+        if (health > 0) {
+            attackingStructure = true;
 
-        float t = 0;
-        if (animator != null && structureToAttack != null)
-            AttackAnimation();
+            float t = 0;
+            if (animator != null && structureToAttack != null)
+                AttackAnimation();
 
-        if (structureToAttack != null)
-            while (t < timeToAttack && structureToAttack != null) {
-                t += Time.deltaTime;
-                yield return null;
-            }
+            if (structureToAttack != null)
+                while (t < timeToAttack && structureToAttack != null) {
+                    t += Time.deltaTime;
+                    yield return null;
+                }
 
-        if (structureToAttack != null)
-            Attack();
+            if (structureToAttack != null)
+                Attack();
 
-        ResetAttack();
+            ResetAttack();
+        }
         yield return null;
     }
 
@@ -168,6 +169,9 @@ public class Enemy : MonoBehaviour {
     }
 
     protected void ResetAttack() {
+        if (health <= 0)
+            return;
+
         if (attackingStructure && structureToAttack != null)
             StartCoroutine(AttackStructure());
         else {

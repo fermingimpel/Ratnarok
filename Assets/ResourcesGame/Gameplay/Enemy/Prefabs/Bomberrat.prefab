@@ -91,8 +91,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c49a770cd40c4af439f15ffa46af4f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 4
-  maxHealth: 4
+  health: 6
+  maxHealth: 6
   speed: 3
   timeToAttack: 2
   timerToAttack: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
   bc: {fileID: 4654793529021173381}
   cheeseCoin: {fileID: 8775782827587753507, guid: 056682911d6f16f4db9f5457bc41bb6f,
     type: 3}
-  cheesePercoin: 30
+  cheesePerCoin: 30
   rb: {fileID: -3156021865077513048}
   balloons:
   - {fileID: 5181806278746303765}
