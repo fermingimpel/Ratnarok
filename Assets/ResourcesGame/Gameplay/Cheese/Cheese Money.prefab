@@ -143,6 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cheesePerCoin: 25
   posY: 0.5
+  timeToDestroy: 3
 --- !u!54 &7341212582933035903
 Rigidbody:
   m_ObjectHideFlags: 0

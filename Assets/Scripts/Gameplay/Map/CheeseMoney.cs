@@ -11,8 +11,10 @@ public class CheeseMoney : MonoBehaviour
     bool grabbed = false;
     [SerializeField] float cheesePerCoin;
     [SerializeField] float posY;
+    [SerializeField] float timeToDestroy;
     private void Start() {
         transform.position = new Vector3(transform.position.x, posY, transform.position.z);
+        Destroy(this.gameObject, timeToDestroy);
     }
     public void SetCheesePerCoinc(float c) {
         cheesePerCoin = c;

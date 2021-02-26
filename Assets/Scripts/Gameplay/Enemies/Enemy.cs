@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour {
     [SerializeField] protected bool attackBuilds = true;
     bool townAttacked = false;
 
-    [SerializeField] GameObject model;
+    [SerializeField] protected GameObject model;
     [SerializeField] protected BoxCollider bc;
 
     public delegate void EnemyDead(Enemy e);
@@ -91,7 +91,7 @@ public class Enemy : MonoBehaviour {
 
         if (cheeseCoin != null && !moneyDropped) {
             moneyDropped = true;
-            CheeseMoney c = Instantiate(cheeseCoin, transform.position + transform.right, cheeseCoin.transform.rotation);
+            CheeseMoney c = Instantiate(cheeseCoin, transform.position, cheeseCoin.transform.rotation);
             c.SetCheesePerCoinc(cheesePerCoin);
         }
         if (Dead != null)

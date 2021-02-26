@@ -65,7 +65,9 @@ public class EnemyManager : MonoBehaviour {
         for(int i = 0; i < hordes.Count; i++) 
             for(int j = 0; j < hordes[i].cantOfEnemiesToCreateOfTypeInOrder.Length; j++) 
                 enemiesRemaining += hordes[i].cantOfEnemiesToCreateOfTypeInOrder[j];
-            
+
+        if (HordeUpdate != null)
+            HordeUpdate(actualHorde+1, hordes.Count);
     }
     private void OnDisable() {
         Enemy.Dead -= RemoveEnemy;
@@ -109,6 +111,8 @@ public class EnemyManager : MonoBehaviour {
                 enemiesOfOrderCreated.Add(0);
             }
             attacking = true;
+            if (HordeUpdate != null)
+                HordeUpdate(actualHorde + 1, hordes.Count);
         }
         changingHorde = false;
         yield return null;

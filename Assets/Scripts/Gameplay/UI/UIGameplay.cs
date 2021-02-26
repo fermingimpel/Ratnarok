@@ -26,7 +26,7 @@ public class UIGameplay : MonoBehaviour {
 
     public static Action ClickedPause;
     public static Action ClickedResume;
-    private void Start() {
+    private void Awake() {
         hpGO.SetActive(false);
         startText.SetActive(false);
 
