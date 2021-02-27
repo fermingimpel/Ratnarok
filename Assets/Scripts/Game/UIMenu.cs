@@ -8,8 +8,6 @@ public class UIMenu : MonoBehaviour {
     bool configDisplayed = false;
     [SerializeField] TextMeshProUGUI textVersion;
 
-    [SerializeField] GameObject[] configOpen;
-
     [SerializeField] GameObject credits;
     bool creditsDisplayed = false;
     void Start() {
@@ -49,14 +47,5 @@ public class UIMenu : MonoBehaviour {
 
         UIConfig.SetActive(false);
         return;
-    }
-    public void ClickedToggleScreenType() {
-        for(int i=0;i<configOpen.Length;i++)
-            if (configOpen[i] != null) {
-                if (configOpen[i].activeSelf)
-                    configOpen[i].SetActive(false);
-                else
-                    configOpen[i].SetActive(true);
-            }
     }
 }

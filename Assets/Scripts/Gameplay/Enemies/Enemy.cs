@@ -163,8 +163,11 @@ public class Enemy : MonoBehaviour {
         yield return null;
     }
 
-    void Attack() {
+    protected virtual void SoundAttack() {
         AkSoundEngine.PostEvent("enemy_attack", this.gameObject);
+    }
+    void Attack() {
+        SoundAttack();
         structureToAttack.HitStructure(damage);
     }
 

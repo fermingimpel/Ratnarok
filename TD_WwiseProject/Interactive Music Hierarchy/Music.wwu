@@ -53,6 +53,34 @@
 									</ValueList>
 								</Property>
 								<Property Name="OverLimitBehavior" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{A8CE6C9E-E76B-42E9-A23B-5618528F39C8}" ShortID="940611499">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="music_option" ID="{55838968-5809-47FD-B1BE-B823597515EB}" WorkUnitID="{93120F39-8D7E-4C04-9B99-15DF423C4258}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{4606C1CF-69B3-4BBC-99A6-0221EA41120E}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-200</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>0</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -501,6 +529,34 @@
 						<MusicSwitchContainer Name="Level" ID="{EFC690E2-A01B-42CD-86E5-6173E1FFED96}" ShortID="295607913">
 							<PropertyList>
 								<Property Name="ContinuePlay" Type="bool" Value="False"/>
+								<Property Name="Volume" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{5BA1C78A-799A-40D5-BC5E-E5E4F3CB12C9}" ShortID="722678230">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="music_option" ID="{55838968-5809-47FD-B1BE-B823597515EB}" WorkUnitID="{93120F39-8D7E-4C04-9B99-15DF423C4258}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{6851E88F-4C13-470C-B868-812FE252BE4E}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-200</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>0</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1155,6 +1211,32 @@
 									<ValueList>
 										<Value>-6</Value>
 									</ValueList>
+									<RTPCList>
+										<RTPC Name="" ID="{4201B1EF-EF3B-47B2-BADD-C76D58ADB4C5}" ShortID="334450024">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="music_option" ID="{55838968-5809-47FD-B1BE-B823597515EB}" WorkUnitID="{93120F39-8D7E-4C04-9B99-15DF423C4258}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{B67B268C-6231-421E-BC37-9EC6EDE05E8D}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-200</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>0</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
 								</Property>
 							</PropertyList>
 							<ReferenceList>
@@ -1281,6 +1363,32 @@
 									<ValueList>
 										<Value>-7</Value>
 									</ValueList>
+									<RTPCList>
+										<RTPC Name="" ID="{91093602-BCD5-4BD5-B224-7805CBC9CA5F}" ShortID="159738189">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="music_option" ID="{55838968-5809-47FD-B1BE-B823597515EB}" WorkUnitID="{93120F39-8D7E-4C04-9B99-15DF423C4258}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{D24EEA7A-9462-4656-9997-EF322485C42D}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-200</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>0</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
 								</Property>
 							</PropertyList>
 							<ReferenceList>

@@ -9,6 +9,9 @@ public class BomberRat : Enemy {
     [SerializeField] Rigidbody rbBomb;
 
     [SerializeField] Vector3 initialBombPos;
+    protected override void SoundAttack() {
+        AkSoundEngine.PostEvent("explotion_attack", this.gameObject);
+    }
     protected override void AttackAnimation() {
         base.AttackAnimation();
         bomb.transform.localPosition = initialBombPos;

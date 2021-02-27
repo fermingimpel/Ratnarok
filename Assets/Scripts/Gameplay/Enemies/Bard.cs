@@ -29,7 +29,9 @@ public class Bard : Enemy {
         if(!ps.isPlaying)
             healBase.SetActive(false);
     }
-
+    protected override void SoundAttack() {
+        AkSoundEngine.PostEvent("bardo_hit", this.gameObject);
+    }
     void HealAllies() {
         healBase.SetActive(true);
         ps.Play();
@@ -37,5 +39,6 @@ public class Bard : Enemy {
             if (allies[i] != null)
                 if (Vector3.Distance(transform.position, allies[i].transform.position) <= rangeToHeal) 
                     allies[i].Heal(heal);
+        SoundAttack();
     }
 }

@@ -21,7 +21,6 @@ public class UIGameplay : MonoBehaviour {
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject rataryMenu;
     [SerializeField] GameObject configMenu;
-    [SerializeField] GameObject[] configOpen;
     bool configDisplayed = true;
 
     public static Action ClickedPause;
@@ -94,16 +93,6 @@ public class UIGameplay : MonoBehaviour {
         configMenu.SetActive(false);
         return;
     }
-    public void ClickedToggleScreenType() {
-        for (int i = 0; i < configOpen.Length; i++)
-            if (configOpen[i] != null) {
-                if (configOpen[i].activeSelf)
-                    configOpen[i].SetActive(false);
-                else
-                    configOpen[i].SetActive(true);
-            }
-    }
-
     void ChangeHP(float hp, float maxHP) {
         hpBar.fillAmount = hp / maxHP;
     }

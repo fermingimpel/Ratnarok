@@ -38,6 +38,32 @@
 							<ValueList>
 								<Value>12</Value>
 							</ValueList>
+							<RTPCList>
+								<RTPC Name="" ID="{637FD782-B22D-46C7-A6B8-8282CF086577}" ShortID="434504556">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="sfx_option" ID="{086672CD-C00B-406B-A0CE-3ACF8D71DBD5}" WorkUnitID="{93120F39-8D7E-4C04-9B99-15DF423C4258}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{341C0864-1F86-4D09-B954-BAE00E9B285D}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="3"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>-200</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>100</XPos>
+												<YPos>0</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
 						</Property>
 					</PropertyList>
 					<ReferenceList>
