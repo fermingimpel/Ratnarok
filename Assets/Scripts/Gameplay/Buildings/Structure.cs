@@ -32,7 +32,6 @@ public class Structure : MonoBehaviour {
 
     protected void Start() {
         maxHealth = health;
-        ratAnimator.gameObject.SetActive(false);
     }
     protected virtual void FixedUpdate() {
         for (int i = 0; i < hpBars.Length; i++)
@@ -81,7 +80,8 @@ public class Structure : MonoBehaviour {
     }
     public void SetDefending(bool d) {
         defending = d;
-        if(defending)
+        Debug.Log(d);
+        if(d)
             ratAnimator.gameObject.SetActive(true);
         else
             ratAnimator.gameObject.SetActive(false);
