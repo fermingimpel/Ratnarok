@@ -30,6 +30,7 @@ public class FlameThrower : Structure {
 
         timerFireOn += Time.deltaTime;
         if (timerFireOn >= timeAttacking) {
+            ratAnimator.Play("Attack");
             fireOn = false;
             timerFireOn = 0;
             fire.gameObject.SetActive(false);

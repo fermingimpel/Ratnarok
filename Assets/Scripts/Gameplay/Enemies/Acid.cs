@@ -19,6 +19,7 @@ public class Acid : Enemy {
                     AttackAnimation();
                 if (structureToAttack != null)
                     yield return new WaitForSeconds(acid.timeBetweenHits);
+                AkSoundEngine.PostEvent("torret_stuff", this.gameObject);
                 actualTics++;
             }
             //yield return new WaitForSeconds(timeAcidOn);

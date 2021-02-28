@@ -1,0 +1,9 @@
+Hay que remplazar el fondo del libro. (El ratary es una pantalla flotante) 
+Mantené los botones que estaban en el anterior en lo que sería el menu principal. 
+El AD Y LAS FLECHAS NO TIENE QUE ESTAR EN EL MENU PRINCIPAL OSEA DONDE ESTAN LOS CUADROS
+Hay que agregar las estadisticas finales de las torretas y los enemigos. 
+El Back cuando estas adentro de uno de los menues llevaría al Menu Princial del Ratary
+Las flechas se pueden clickear y el A y D sería las teclas con las que podes cambiar de pagina
+
+Algo extra
+Si podes pone que se pueda poner Pausa con Esc

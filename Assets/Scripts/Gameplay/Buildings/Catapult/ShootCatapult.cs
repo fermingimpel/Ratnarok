@@ -9,7 +9,7 @@ public class ShootCatapult : Bullet {
     [SerializeField] float distanceToMove;
 
     bool goingUp = true;
-    bool moving = false;
+    [SerializeField] bool moving = false;
     private void Start() {
         StartCoroutine(LateStart());
     }

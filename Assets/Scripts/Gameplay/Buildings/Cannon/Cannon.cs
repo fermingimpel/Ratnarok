@@ -18,6 +18,7 @@ public class Cannon : Structure {
     }
     protected override void Attack() {
         animator.Play("Shoot");
+        ratAnimator.Play("Attack");
         AkSoundEngine.PostEvent("torret_stuff", this.gameObject);
         Bullet s = Instantiate(shoot, transform.position + bulletUpset, Quaternion.identity);
         s.SetDirection(lookPos + bulletUpset);

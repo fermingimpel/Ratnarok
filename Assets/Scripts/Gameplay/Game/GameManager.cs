@@ -152,13 +152,20 @@ public class GameManager : MonoBehaviour {
         enemyManager.StartAttack();
         structureCreator.StartDefending();
         uiGameplay.StartGameUI();
+        AkSoundEngine.SetSwitch("General_music", "level_general", this.gameObject);
+        AkSoundEngine.SetSwitch("Menu", "menu", this.gameObject);
+        AkSoundEngine.SetState("player_state", "alive_state");
+        AkSoundEngine.SetState("level_state", "Level_state_alive");
+        AkSoundEngine.PostEvent("game_start", this.gameObject);
     }
 
     void PlayerLose() {
+        AkSoundEngine.PostEvent("level_lose", this.gameObject);
         StopThings();
         uiGameplay.ActivateLoseScreen();
     }
     void PlayerWin() {
+        AkSoundEngine.PostEvent("level_win", this.gameObject);
         StopThings();
         uiGameplay.ActivateWinScreen();
     }

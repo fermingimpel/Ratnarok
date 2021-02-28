@@ -17,7 +17,7 @@ public class Crossbow : Structure {
     }
     protected override void Attack() {
         AkSoundEngine.PostEvent("torret_slingshot", this.gameObject);
-        ratAnimator.Play("CrossbowAttack");
+        ratAnimator.Play("Attack");
         animator.Play("Shoot");
         Bullet s = Instantiate(shoot, transform.position + upset, Quaternion.identity);
         s.SetDirection(lookPos + upset);

@@ -19,6 +19,7 @@ public class Catapult : Structure {
     }
     protected override void Attack() {
         animator.Play("Shoot");
+        ratAnimator.Play("Attack");
         AkSoundEngine.PostEvent("torret_catapult", this.gameObject);
         Bullet s = Instantiate(shoot, transform.position + offset, shoot.transform.rotation);
         s.SetDirection(transform.forward + offset);

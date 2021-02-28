@@ -76,13 +76,13 @@ public class StructureCreator : MonoBehaviour {
         defending = true;
         for (int i = 0; i < structuresCreated.Count; i++)
             if (structuresCreated[i] != null)
-                structuresCreated[i].defending = true;
+                structuresCreated[i].SetDefending(true);
     }
     public void StopDefending() {
         defending = false;
         for (int i = 0; i < structuresCreated.Count; i++)
             if (structuresCreated[i] != null)
-                structuresCreated[i].defending = false;
+                structuresCreated[i].SetDefending(false);
     }
     public float GetCheeseCost(TypeOfStructure tos) {
         return cheeseCosts[(int)tos];
