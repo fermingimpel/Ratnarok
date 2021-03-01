@@ -63,6 +63,9 @@ public class GameManager : MonoBehaviour {
         if (gameEnded)
             return;
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+            uiGameplay.ClickPauseButton();
+
         Time.timeScale = timeScale;
         Vector3 mousePos = Input.mousePosition;
         Ray ray = cam.ScreenPointToRay(mousePos);
@@ -123,11 +126,13 @@ public class GameManager : MonoBehaviour {
 
     void PauseGame() {
         gamePaused = true;
+        cameraController.LockCameraMovement();
         structureCreator.StopDefending();
         enemyManager.PauseAttack();
     }
     void ResumeGame() {
         gamePaused = false;
+        cameraController.UnlockCameraMovement();
         structureCreator.StartDefending();
         enemyManager.ResumeAttack();
     }

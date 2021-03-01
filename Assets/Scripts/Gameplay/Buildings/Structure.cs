@@ -80,10 +80,9 @@ public class Structure : MonoBehaviour {
     }
     public void SetDefending(bool d) {
         defending = d;
-        Debug.Log(d);
-        if(d)
-            ratAnimator.gameObject.SetActive(true);
-        else
+        if(d && ratAnimator!=null)
+                ratAnimator.gameObject.SetActive(true);
+        else if(!d && ratAnimator!=null)
             ratAnimator.gameObject.SetActive(false);
     }
     public float GetCheeseCost() {

@@ -7,7 +7,7 @@ public class BomberRat : Enemy {
     [SerializeField] List<GameObject> balloons;
     [SerializeField] GameObject bomb;
     [SerializeField] Rigidbody rbBomb;
-
+    [SerializeField] ParticleSystem ps;
     [SerializeField] Vector3 initialBombPos;
     protected override void SoundAttack() {
         AkSoundEngine.PostEvent("explotion_attack", this.gameObject);
@@ -18,6 +18,7 @@ public class BomberRat : Enemy {
         rbBomb.velocity = Vector3.zero;
         rbBomb.angularVelocity = Vector3.zero;
         rbBomb.useGravity = true;
+        ps.Play();
     }
     protected override void MovementAnimation() {
         base.MovementAnimation();

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Acid : Enemy {
     [SerializeField] float timeAcidOn;
     [SerializeField] AcidSpread acid;
+    [SerializeField] ParticleSystem ps;
     protected override void Update() {
         base.Update();
     }
@@ -15,6 +16,7 @@ public class Acid : Enemy {
         if (structureToAttack != null) {
             acid.gameObject.SetActive(true);
             while (actualTics < acid.maxHits && structureToAttack != null) {
+                ps.Play();
                 if (animator != null && structureToAttack != null)
                     AttackAnimation();
                 if (structureToAttack != null)

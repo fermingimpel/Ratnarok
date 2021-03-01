@@ -1,10 +1,37 @@
 fileFormatVersion: 2
-guid: 18cea8e26723fe84d93a3e79ae6e4bb3
+guid: f0737685248bd6d438b4ce422f9d8ceb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7185254950942605723
-    second: VFX_Sprite_Acido1_0
+      213: 8913387244716741426
+    second: VFX_Sprite_Acido_0
+  - first:
+      213: -6408913317925985672
+    second: VFX_Sprite_Acido_1
+  - first:
+      213: 3369473068054798497
+    second: VFX_Sprite_Acido_2
+  - first:
+      213: -2148394248398500359
+    second: VFX_Sprite_Acido_3
+  - first:
+      213: 7293592869895139660
+    second: VFX_Sprite_Acido_4
+  - first:
+      213: -3359808592497627945
+    second: VFX_Sprite_Acido_5
+  - first:
+      213: -4643350032311513573
+    second: VFX_Sprite_Acido_6
+  - first:
+      213: -1845868856481081984
+    second: VFX_Sprite_Acido_7
+  - first:
+      213: 1550499055258551108
+    second: VFX_Sprite_Acido_8
+  - first:
+      213: -7943536215443306583
+    second: VFX_Sprite_Acido_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -43,7 +70,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -114,22 +141,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: VFX_Sprite_Acido1_0
+      name: VFX_Sprite_Acido_1
       rect:
         serializedVersion: 2
-        x: 1058
-        y: 1016
-        width: 1426
-        height: 623
+        x: 746
+        y: 493
+        width: 176
+        height: 83
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b910d8b0f4727b360800000000000000
-      internalID: 7185254950942605723
+      spriteID: 87260c01b47fe07a0800000000000000
+      internalID: -6408913317925985672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_Sprite_Acido_4
+      rect:
+        serializedVersion: 2
+        x: 1521
+        y: 464
+        width: 212
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c41fb62721c083560800000000000000
+      internalID: 7293592869895139660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_Sprite_Acido_6
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 492
+        width: 124
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1e06444fb18f8fb0800000000000000
+      internalID: -4643350032311513573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_Sprite_Acido_8
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 473
+        width: 197
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 443c3450daa748510800000000000000
+      internalID: 1550499055258551108
       vertices: []
       indices: 
       edges: []

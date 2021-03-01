@@ -4854,7 +4854,7 @@ MonoBehaviour:
     type: 3}
   cheesePerCoin: 25
   timeToHeal: 3
-  heal: 2
+  heal: 1.5
   rangeToHeal: 3
   allies: []
   ps: {fileID: 6564765649090829522}
