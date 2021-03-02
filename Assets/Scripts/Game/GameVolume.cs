@@ -13,5 +13,6 @@ public class GameVolume : MonoBehaviour {
             return;
         }
         DontDestroyOnLoad(gameObject);
+        gv = this;
     }
 }

@@ -238,7 +238,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2954704317588580018}
         m_MethodName: SetSpecificVolume
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -262,6 +262,7 @@ MonoBehaviour:
   slider: {fileID: 2954704317588580019}
   musicVolume: 0
   soundsVolume: 0
+  value: Music
 --- !u!1 &2954704317697307847
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +612,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2954704318406865978}
         m_MethodName: SetSpecificVolume
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -635,6 +636,7 @@ MonoBehaviour:
   slider: {fileID: 2954704318406865979}
   musicVolume: 0
   soundsVolume: 0
+  value: SFX
 --- !u!1 &2954704318607858981
 GameObject:
   m_ObjectHideFlags: 0
