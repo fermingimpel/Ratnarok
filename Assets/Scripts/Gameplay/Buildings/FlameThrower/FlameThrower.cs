@@ -11,6 +11,9 @@ public class FlameThrower : Structure {
 
     float timerFireOn = 0;
     float timerFireOff = 0;
+    protected override void Attack() {
+        timerFireOff = attackPreparationTime;
+    }
     private void Update() {
         if (!defending)
             return;
