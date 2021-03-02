@@ -31,6 +31,7 @@ public class BomberRat : Enemy {
         base.Die();
         for (int i = 0; i < balloons.Count; i++)
             balloons[i].SetActive(false);
+        bomb.SetActive(false);
         rb.useGravity = true;
         rb.constraints = RigidbodyConstraints.None | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
     }

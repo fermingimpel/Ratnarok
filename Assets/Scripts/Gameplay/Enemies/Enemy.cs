@@ -126,6 +126,7 @@ public class Enemy : MonoBehaviour {
 
         if (other.gameObject.CompareTag("Structure")) {
             structureToAttack = other.GetComponent<Structure>();
+            Attack();
             if (!attackingStructure)
                 StartCoroutine(AttackStructure());
             return;
@@ -155,10 +156,12 @@ public class Enemy : MonoBehaviour {
                     yield return null;
                 }
 
-            if (structureToAttack != null)
-                Attack();
+            if (health > 0) {
+                if (structureToAttack != null)
+                    Attack();
 
-            ResetAttack();
+                ResetAttack();
+            }
         }
         yield return null;
     }

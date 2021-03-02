@@ -15,7 +15,7 @@ public class Acid : Enemy {
         int actualTics = 0;
         if (structureToAttack != null) {
             acid.gameObject.SetActive(true);
-            while (actualTics < acid.maxHits && structureToAttack != null) {
+            while (actualTics < acid.maxHits && structureToAttack != null && health > 0) {
                 ps.Play();
                 if (animator != null && structureToAttack != null)
                     AttackAnimation();
@@ -29,8 +29,8 @@ public class Acid : Enemy {
         }
         if (structureToAttack != null)
             yield return new WaitForSeconds(timeToAttack);
-
-        ResetAttack();
+        if(health > 0)
+         ResetAttack();
         yield return null;
     }
 }

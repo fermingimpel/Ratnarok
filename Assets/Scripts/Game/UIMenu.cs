@@ -9,7 +9,7 @@ public class UIMenu : MonoBehaviour {
     [SerializeField] TextMeshProUGUI textVersion;
 
     [SerializeField] GameObject credits;
-    bool creditsDisplayed = false;
+    [SerializeField] bool creditsDisplayed = false;
     void Start() {
         textVersion.text = "V: " + Application.version;
 
@@ -29,12 +29,12 @@ public class UIMenu : MonoBehaviour {
         AkSoundEngine.PostEvent("button_generic", this.gameObject);
         if (creditsDisplayed) {
             credits.SetActive(true);
-            AkSoundEngine.SetSwitch("Menu", "credits", this.gameObject);
-            AkSoundEngine.SetState("menu_scene", "credits");
+            //AkSoundEngine.SetSwitch("Menu", "credits", this.gameObject);
+            //AkSoundEngine.SetState("menu_scene", "credits");
             return;
         }
-        AkSoundEngine.SetSwitch("Menu", "menu", this.gameObject);
-        AkSoundEngine.SetState("menu_scene", "menu");
+        //AkSoundEngine.SetSwitch("Menu", "menu", this.gameObject);
+        //AkSoundEngine.SetState("menu_scene", "menu");
         credits.SetActive(false); ;
     }
     public void ClickedOptions() {

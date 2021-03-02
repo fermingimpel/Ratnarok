@@ -18142,13 +18142,14 @@ MonoBehaviour:
   - order: 0000000000000000
     cantOfEnemiesToCreateOfTypeInOrder: 0f00000009000000
     timeBetweenEveryEnemy:
-    - 7
-    - 12
-  - order: 0000000001000000
-    cantOfEnemiesToCreateOfTypeInOrder: 0a00000006000000
+    - 5
+    - 9
+  - order: 000000000100000001000000
+    cantOfEnemiesToCreateOfTypeInOrder: 0a0000000800000008000000
     timeBetweenEveryEnemy:
     - 5
-    - 8
+    - 6
+    - 6
   timeBetweenHordes: 6
   actualHorde: 0
   enemiesRemaining: 0
