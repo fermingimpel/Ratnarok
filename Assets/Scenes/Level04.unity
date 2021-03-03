@@ -20509,13 +20509,13 @@ MonoBehaviour:
   enemiesCreated: []
   hordes:
   - order: 0000000001000000020000000300000004000000
-    cantOfEnemiesToCreateOfTypeInOrder: 140000000a0000000a000000080000000e000000
+    cantOfEnemiesToCreateOfTypeInOrder: 140000000900000008000000080000000e000000
     timeBetweenEveryEnemy:
     - 7
     - 16
     - 25
     - 16
-    - 12
+    - 15
   timeBetweenHordes: 6
   actualHorde: 0
   enemiesRemaining: 0

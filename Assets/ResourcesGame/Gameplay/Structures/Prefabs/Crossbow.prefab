@@ -1497,8 +1497,13 @@ MonoBehaviour:
   path: []
   lookPos: {x: 0, y: 0, z: 0}
   rends:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4609110991995556778}
+  - {fileID: 6498624636701549097}
+  - {fileID: 4678210058804632296}
+  - {fileID: 7082661683984670077}
+  - {fileID: 5627888947997619021}
+  - {fileID: 5925273848560637838}
+  - {fileID: 5123367926886715699}
   hittedColor: {r: 1, g: 0.627451, b: 0.627451, a: 1}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   timeHittedColor: 0.15
